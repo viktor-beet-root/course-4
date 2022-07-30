@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Profile</h2>
+    <form id="data" enctype="multipart/form-data" method="post">
+        <div>
+            <img src="images/Image.png" alt="photo">
+            <div>
+                <p><input type="file" name="photo" accept="image/png,image/jpeg" form="data" required></p>
+                <small>Up to 1 MB (300x300 px)</small>
+            </div>
+            <span><input type="reset"></span>
+        </div>
+        <div>
+            <label>
+                <input type="text" name="name" form="data" required>
+                <span>Name</span>
+            </label>
+            <label>
+                <input type="email" pattern=".+@globex\.com" size="30" form="data" required>
+                <span>E-mail</span>
+            </label>
+        </div>
+        <div>
+            <label>
+                <select name="country" id="country" form="data">
+                    <option selected hidden disabled>Select</option>
+                    <option value="ukrain">Ukrain</option>
+                    <option value="latvia">Latvia</option>
+                    <option value="lithuania">Lithuania</option>
+                    <option value="estonia">Estonia</option>
+                    <option value="austria">Austria</option>
+                    <option value="germany">Germany</option>
+                    <option value="belgium">Belgium </option>
+                    <option value="netherlands">Netherlands</option>
+                    <option value="switzerland">Switzerland</option>
+                    <option value="france">France</option>
+                    <option value="portugal">Portugal</option>
+                    <option value="spain">Spain</option>
+                </select>
+                <span>Country</span>
+            </label>
+            <label>
+                <input type="text" name="city" form="data">
+                <span>City</span>
+            </label>
+        </div>
+        <div>
+            <label>
+                <input type="text" name="zip-code" form="data" required>
+                <span>Zip Code</span>
+            </label>
+            <label>
+                <input type="tel" id="phone" name="phone" form="data" required>
+                <span>Phone Number</span>
+            </label>
+        </div>
+        <button>Update</button>
+        <p>
+            <a href="form_1.html">to form_1</a>
+        </p>
+    </form>
+</body>
+
+</html>

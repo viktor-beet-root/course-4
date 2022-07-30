@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form_1</title>
+</head>
+
+<body>
+    <h2>Create an Account</h2>
+    <form name="new_account" action="#" method="post">
+        <div>
+            <label>
+                <input type="text" name="first_name" required>
+                <span>First name</span>
+            </label>
+        </div>
+        <div>
+            <label>
+                <input type="text" name="last_name" required>
+                <span>Last name</span>
+            </label>
+        </div>
+        <div>
+            <label>
+                <input type="email" pattern=".+@globex\.com" size="30" required>
+                <span>E-mail</span>
+                <p>We'll never share your email with anyone else.</p>
+            </label>
+        </div>
+        <div>
+            <label>
+                <span>Male</span>
+                <input name="gender" value="male" type="radio" checked>
+            </label>
+            <label>
+                <span>Female</span>
+                <input name="gender" value="female" type="radio">
+            </label>
+        </div>
+        <div>
+            <label for="country">Country</label>
+            <select name="country" id="country" placeholder="select">
+                <option selected hidden disabled>Select</option>
+                <option value="ukrain">Ukrain</option>
+                <option value="latvia">Latvia</option>
+                <option value="lithuania">Lithuania</option>
+                <option value="estonia">Estonia</option>
+                <option value="austria">Austria</option>
+                <option value="germany">Germany</option>
+                <option value="belgium">Belgium </option>
+                <option value="netherlands">Netherlands</option>
+                <option value="switzerland">Switzerland</option>
+                <option value="france">France</option>
+                <option value="portugal">Portugal</option>
+                <option value="spain">Spain</option>
+            </select>
+        </div>
+        <div>
+            <label>
+                <input type="text" name="city">
+                <span>City</span>
+            </label>
+        </div>
+        <button type="submit">Sign Up</button>
+    </form>
+    <p>By clicking the 'Sign Up' button, you confirm that you accept our<br><a href="#">Terms of Use</a> and <a
+            href="#">Privacy Policy</a>.</p>
+    <hr>
+    <p>Have an account?</p> <a href="#">Log In</a>
+    <p>
+        <a href="form_2.html">to form_2</a>
+    </p>
+</body>
+
+</html>
