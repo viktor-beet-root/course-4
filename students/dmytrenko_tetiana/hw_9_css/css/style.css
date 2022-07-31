@@ -1,0 +1,182 @@
+@font-face {
+    font-family: 'OpenSansRegular';
+    src: url("../fonts/OpenSans-Regular.woff2") format("woff2"), url("../fonts/OpenSans.woff") format("woff");
+}
+
+@font-face {
+    font-family: 'OpenSansBold';
+    src: url("../fonts/OpenSans-Bold.woff2") format("woff2"), url("../fonts/OpenSans-Bold.woff") format("woff");
+}
+
+header div,
+section div,
+footer {
+    padding-left: 16%;
+    padding-right: 16%;
+    margin: 0 auto;
+}
+
+img {
+    width: 100%;
+}
+
+#about_me,
+#portfolio {
+    background: #F6F6F6;
+}
+
+#home {
+    padding-bottom: 100px;
+}
+
+#about_me,
+#skills,
+#portfolio,
+#contacts {
+    padding: 100px 0 100px;
+}
+
+body {
+    font-family: 'OpenSansRegular';
+    font-size: 18px;
+    line-height: 25px;
+    letter-spacing: 0.02em;
+    color: #070707;
+}
+
+h1,
+h2 {
+    font-family: 'OpenSansBold';
+    color: #070707;
+}
+
+h1 {
+    font-size: 48px;
+    line-height: 65px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+h2 {
+    font-size: 34px;
+    line-height: 46px;
+    text-align: center;
+    margin-bottom: 34px;
+}
+
+p {
+    text-align: center;
+}
+
+header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+}
+
+hr {
+    margin: 0;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+header nav ul li a {
+    display: inline-block;
+    color: #828282;
+    text-decoration: none;
+    padding: 25px 30px;
+    outline: none;
+}
+
+header nav ul li a:hover {
+    color: #070707;
+}
+
+#about_me div {
+    width: 27%;
+}
+
+#about_me div p {
+    margin-bottom: 25px;
+}
+
+#skills p {
+    margin-bottom: 80px;
+}
+
+#skills ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+#skills ul li {
+    width: 170px;
+}
+
+#skills ul li img {
+    width: 80px;
+    height: 80px;
+}
+
+#skills ul li figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#skills ul li figcaption {
+    margin-top: 30px;
+    margin-bottom: 60px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: 0.02em;
+    color: #828282
+}
+
+#skills ul li figcaption.figma {
+    margin-bottom: 83px;
+}
+
+#skills ul.stars li img {
+    height: 27px;
+    width: 26px;
+}
+
+#portfolio figcaption {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+#portfolio figure {
+    padding-top: 40px;
+}
+
+#contacts button {
+    display: block;
+    margin: 90px auto 50px;
+    padding: 0px 16px;
+    width: 180px;
+    height: 44px;
+    background: #070707;
+    border-radius: 22px;
+    color: #fff;
+}
+
+#contacts ul li {
+    margin: 0 26px;
+}
+
+#contacts p:last-child {
+    font-size: 14px;
+    line-height: 19px;
+    color: #828282;
+    margin-top: 100px;
+}
