@@ -5,37 +5,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create an Account</title>
+    <title>Profile</title>
 </head>
 
 <body>
     <form action="" method="post">
-        <h1>Create an Account</h1>
-        <div>
-            <label for="first_name">First name</label>
-            <input type="text" id="first_name" name="first_name">
-        </div>
+        <label for="file"></label>
+        <input type="file" name="file" id="file">
         <div>
             <label>
-                <span>Last name</span>
-                <input name="last_name" type="text">
+                <span>Name</span>
+                <input name="name" type="text">
             </label>
         </div>
         <div>
             <label>
                 <span>E-mail</span>
                 <input type="email" name="email" id="email">
-            </label>
-            <p>We'll never share your email with anyone else.</p>
-        </div>
-        <div>
-            <label>
-                <span>Male</span>
-                <input type="radio" name="mf">
-            </label>
-            <label>
-                <span>Female</span>
-                <input type="radio" name="mf">
             </label>
         </div>
         <div>
@@ -81,11 +67,20 @@
                 <option value="">Чернігів</option>
             </select>
         </div>
-        <input type="button" value="Sign Up">
-
+        <div>
+            <label>
+                <span>Zip code</span>
+                <input type="text">
+            </label>
+        </div>
+        <div>
+            <label>
+                <span>Phone Number</span>
+                <input type="tel">
+            </label>
+        </div>
+        <input type="button" value="Update">
     </form>
-
-
 </body>
 
 </html>
