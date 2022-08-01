@@ -5,35 +5,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>form_1</title>
+    <title>Create an Account</title>
 </head>
 
 <body>
     <h2>Create an Account</h2>
     <form name="new_account" action="#" method="post">
         <div>
-            <label>
-                <input type="text" name="first_name" required>
-                <span>First name</span>
-            </label>
+            <label for="first_name">First_name</label>
+            <input id="first_name" type="text" name="name">
         </div>
         <div>
-            <label>
-                <input type="text" name="last_name" required>
-                <span>Last name</span>
-            </label>
+            <label for="last_name">Last_name</label>
+            <input id="last_name" type="text" name="name">
         </div>
         <div>
-            <label>
-                <input type="email" pattern=".+@globex\.com" size="30" required>
-                <span>E-mail</span>
-                <p>We'll never share your email with anyone else.</p>
-            </label>
+            <label for="emile">Emile</label>
+            <input id="emile" type="email" pattern=".+@globex\.com" size="30" required>
         </div>
         <div>
             <label>
                 <span>Male</span>
-                <input name="gender" value="male" type="radio" checked>
+                <input name="gender" value="male" type="radio">
             </label>
             <label>
                 <span>Female</span>
@@ -42,7 +35,7 @@
         </div>
         <div>
             <label for="country">Country</label>
-            <select name="country" id="country" placeholder="select">
+            <select name="country" id="country">
                 <option selected hidden disabled>Select</option>
                 <option value="ukrain">Ukrain</option>
                 <option value="latvia">Latvia</option>
@@ -59,10 +52,8 @@
             </select>
         </div>
         <div>
-            <label>
-                <input type="text" name="city">
-                <span>City</span>
-            </label>
+            <label for="city">City</label>
+            <input id="city" type="text" name="city">
         </div>
         <button type="submit">Sign Up</button>
     </form>
@@ -70,9 +61,7 @@
             href="#">Privacy Policy</a>.</p>
     <hr>
     <p>Have an account?</p> <a href="#">Log In</a>
-    <p>
-        <a href="form_2.html">to form_2</a>
-    </p>
+    <p><a href="form_2.html">to form_2</a></p>
 </body>
 
 </html>
