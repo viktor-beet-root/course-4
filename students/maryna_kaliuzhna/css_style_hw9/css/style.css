@@ -1,0 +1,64 @@
+html {
+    font-family: "Open Sans";
+}
+
+header li {
+    display: inline-block;
+    font-size: 18px;
+    color: #828282;
+}
+
+ul {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+
+.name {
+    color: #070707;
+}
+
+h1 {
+    font-size: 48px;
+    font-style: normal;
+    color: #070707;
+}
+
+.name>li {
+    display: inline-block;
+}
+
+h2 {
+    font-size: 34px;
+    font-style: normal;
+    color: #070707;
+    line-height: 46px;
+}
+
+p {
+    font-size: 18px;
+    color: #070707;
+}
+
+h3 {
+    font-size: 14px;
+    color: #828282;
+}
+
+section {
+    text-align: center;
+}
+
+.icon>li {
+    display: inline-block;
+}
+
+button {
+    font-size: 18px;
+    color: #ffffff;
+    background-color: Black;
+}
+
+.footer {
+    text-align: center;
+}
