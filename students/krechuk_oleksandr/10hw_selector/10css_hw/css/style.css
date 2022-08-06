@@ -1,0 +1,120 @@
+* {
+    transition: all .1s ease-in;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: #3B3F45;
+
+}
+
+header {
+    background: #4A4F56;
+    text-align: center;
+    color: #FF8984;
+}
+
+h1 {
+    padding: 19px 0 4px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+}
+
+p {
+    padding-bottom: 12px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+
+
+button {
+    display: block;
+    margin: 0 auto;
+    border: none;
+    text-align: center;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FF8984;
+    width: 534px;
+    height: 45px;
+    left: 129px;
+    top: 417px;
+
+    background: #4A4F56;
+}
+
+ul {
+    max-width: 534px;
+    margin: 0px auto;
+    padding: 20px 0 45px;
+    margin: 0 auto;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+}
+
+li {
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+}
+
+li:hover {
+    background-color: #625e77;
+    border-top: 3px solid #ffff;
+    border-bottom: 3px solid #fff;
+}
+
+ul li label {
+    display: block;
+    padding: 13px 0;
+}
+
+ul li:nth-child(odd) {
+    background-color: #88839E;
+}
+
+li:nth-child(even) {
+    background-color: #7A7593;
+}
+
+input:checked+span {
+    text-decoration: line-through;
+}
+
+::after {
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13px;
+    vertical-align: middle;
+    padding-left: 5px;
+}
+
+
+[name="v1"]::after {
+    content: "(for the next lessons about CSS)";
+}
+
+[name="v2"]::after {
+    content: "(for more CSS manipulations)";
+}
+
+[name="v3"]::after {
+    content: "(because they are awesome)";
+}
+
+[name="v4"]::after {
+    content: "(hm... they always dissapear)";
+}
+
+[name="v6"]::after {
+    content: "(for my friends)";
+}
+
+button span::before {
+    content: "Bon appetit";
+}
