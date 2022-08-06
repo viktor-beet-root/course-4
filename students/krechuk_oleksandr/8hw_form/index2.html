@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+</head>
+
+<body>
+    <h1>Profile</h1>
+    <form action="#">
+        <div>
+            <img src="./images/Image.png" alt="">
+            <form action="#">
+                <input type="file">
+                <button type="reset" for="file">Erase</button>
+                <p style="font-size: 70%;">Up to 1 MB (300x300 px)</p>
+            </form>
+        </div>
+        <div>
+            <div><label for="name">Name</label></div>
+            <input type="text" id="name">
+        </div>
+        <div>
+            <div><label for="email">E-mail</label></div>
+            <input type="email" id="email">
+        </div>
+        <div>
+            <label for="country">Country</label>
+            <br>
+            <select id="country">
+                <option selected hidden disabled>Select</option>
+                <option value="australia">Australia</option>
+                <option value="japan">Japan</option>
+                <option value="poland">Poland</option>
+                <option value="ukraine">Ukraine</option>
+            </select>
+        </div>
+        <div>
+            <label for="city">City</label>
+            <br>
+            <select id="city">
+                <option selected hidden disabled>Select city</option>
+                <option value="vinnytsia">Vinnytsia</option>
+                <option value="dnipro">Dnipro</option>
+                <option value="donetsk">Donetsk</option>
+                <option value="zhytomyr">Zhytomyr</option>
+                <option value="zaporizhzhia">Zaporizhzhia</option>
+                <option value="ivano_frankivsk">Ivano-Frankivsk</option>
+                <option value="kyiv">Kyiv</option>
+                <option value="kropyvnytskyi">Kropyvnytskyi</option>
+                <option value="luhansk">Luhansk</option>
+                <option value="lutsk">Lutsk</option>
+                <option value="lviv">Lviv</option>
+                <option value="mykolaiv">Mykolaiv</option>
+                <option value="odesa">Odesa</option>
+                <option value="poltava">Poltava</option>
+                <option value="rivne">Rivne</option>
+                <option value="sumy">Sumy</option>
+                <option value="ternopil">Ternopil</option>
+                <option value="uzhhorod">Uzhhorod</option>
+                <option value="kharkiv">Kharkiv</option>
+                <option value="kherson">Kherson</option>
+                <option value="khmelnytskyi">Khmelnytskyi</option>
+                <option value="cherkasy">Cherkasy</option>
+                <option value="chernivtsi">Chernivtsi</option>
+                <option value="chernihiv">Chernihiv</option>
+            </select>
+        </div>
+        <div>
+            <div><label for="zip_code">Zip Code</label></div>
+            <input type="text" id="zip_code">
+        </div>
+        <div>
+            <div><label for="phone_number">Phone Number</label></div>
+            <input type="tel" id="phone_number">
+        </div>
+        <div>
+            <button type="submit">Update</button>
+        </div>
+    </form>
+</body>
+
+</html>
