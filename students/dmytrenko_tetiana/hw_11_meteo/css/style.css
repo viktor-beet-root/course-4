@@ -1,0 +1,198 @@
+@font-face {
+    font-family: 'OpenSans';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+        url('./fonts/open-sans-v29-latin-regular.woff2') format('woff2'),
+        url('./fonts/open-sans-v29-latin-regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'OpenSans';
+    font-style: normal;
+    font-weight: 500;
+    src: local(''),
+        url('./fonts/open-sans-v29-latin-500.woff2') format('woff2'),
+        url('./fonts/open-sans-v29-latin-500.woff') format('woff');
+}
+
+body {
+    min-height: 100vh;
+    background-color: #199ed3;
+    border: #0378a7 solid 26px;
+    font-family: OpenSans, Arial, Helvetica, sans-serif;
+    color: #fff;
+    font-size: 22px;
+    line-height: 26px;
+    font-weight: 500;
+}
+
+h1 {
+    font-size: 21px;
+    line-height: 25px;
+}
+
+div.name i {
+    font-weight: 400;
+    font-size: 27px;
+    line-height: 39px;
+}
+
+p.temperature {
+    opacity: 0.6;
+    margin-right: 12px;
+}
+
+p.temperature,
+i.wi {
+    display: inline-block;
+}
+
+.wishes p {
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 400;
+    margin-top: 35px;
+}
+
+i {
+    font-weight: 400;
+    font-size: 42px;
+    line-height: 61px;
+    opacity: 0.7;
+}
+
+.container {
+    width: 1170px;
+    margin: 34px auto;
+}
+
+.name h1,
+.name i {
+    display: inline-block;
+}
+
+.name i {
+    opacity: 1;
+    margin-left: 4px;
+}
+
+.weather-table {
+    margin-top: 37px;
+    width: calc(100% - 2px);
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    background-color: #fff;
+}
+
+.row {
+    font-size: 0;
+    border-top: 2px solid #fff;
+    border-left: 2px solid #fff;
+}
+
+.row>div>p {
+    font-size: 22px;
+    line-height: 26px;
+    margin-top: 27px;
+}
+
+.row>div {
+    display: inline-block;
+    height: 147px;
+    text-align: center;
+    opacity: 0.7;
+    -webkit-transition: all .1s ease-in;
+    ;
+    -moz-transition: all .1s ease-in;
+    ;
+    -o-transition: all .1s ease-in;
+    ;
+    transition: all .1s ease-in;
+}
+
+.row>div:hover {
+    opacity: 1;
+}
+
+.row>div:not(:last-child) {
+    border-right: 2px solid #fff;
+}
+
+.paris,
+.belgrade,
+.venice,
+.tel-avive,
+.cair,
+.new-york,
+.new-delhi,
+.tokyo {
+    width: 25%;
+}
+
+.lisbon,
+.san-francisco {
+    width: 50%;
+}
+
+.sydney {
+    width: 100%;
+}
+
+.paris {
+    background-color: #33CCCC;
+    width: calc(25% - 1px);
+}
+
+.belgrade {
+    background-color: #996699;
+    width: calc(25% - 1px);
+}
+
+.venice {
+    background-color: #C24747;
+    width: calc(25% - 2px);
+}
+
+.tel-avive {
+    background-color: #E2674A;
+    width: calc(25% - 2px);
+}
+
+.cair {
+    background-color: #FFCC66;
+    width: calc(25% - 1px);
+}
+
+.new-york {
+    background-color: #99CC99;
+    width: calc(25% - 1px);
+}
+
+.new-delhi {
+    background-color: #669999;
+    width: calc(25% - 2px);
+}
+
+.tokyo {
+    background-color: #339966;
+    width: calc(25% - 1px);
+}
+
+.lisbon {
+    background-color: #3399CC;
+    width: calc(50% - 2px);
+}
+
+.san-francisco {
+    background-color: #CC6699;
+    width: calc(50% - 1px);
+}
+
+.sydney {
+    background-color: #666699;
+}
+
+.san-francisco:hover~.item {
+    opacity: 0.7;
+}
