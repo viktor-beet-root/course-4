@@ -1,0 +1,272 @@
+@font-face {
+    font-family: 'Staatliches';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+        url('fonts/staatliches-v11-latin-regular.woff2') format('woff2'),
+        url('fonts/staatliches-v11-latin-regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Francois One';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+        url('fonts/francois-one-v20-latin-regular.woff2') format('woff2'),
+        url('fonts/francois-one-v20-latin-regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'PT Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+        url('fonts/pt-sans-v17-latin-regular.woff2') format('woff2'),
+        url('fonts/pt-sans-v17-latin-regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'PT Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: local(''),
+        url('fonts/pt-sans-v17-latin-700.woff2') format('woff2'),
+        url('fonts/pt-sans-v17-latin-700.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'PT Sans';
+    font-style: italic;
+    font-weight: 400;
+    src: local(''),
+        url('../fonts/pt-sans-v17-latin-italic.woff2') format('woff2'),
+        url('../fonts/pt-sans-v17-latin-italic.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'PT Sans';
+    font-style: italic;
+    font-weight: 400;
+    src: local(''),
+        url('fonts/pt-sans-v17-latin-italic.woff2') format('woff2'),
+        url('fonts/pt-sans-v17-latin-italic.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Farro';
+    font-style: normal;
+    font-weight: 300;
+    src: local(''),
+        url('fonts/farro-v14-latin-300.woff2') format('woff2'),
+        url('fonts/farro-v14-latin-300.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Farro';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+        url('fonts/farro-v14-latin-regular.woff2') format('woff2'),
+        url('fonts/farro-v14-latin-regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Tourney';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+        url('fonts/tourney-v7-latin-regular.woff2') format('woff2'),
+        url('fonts/tourney-v7-latin-regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Tourney';
+    font-style: normal;
+    font-weight: 600;
+    src: local(''),
+        url('fonts/tourney-v7-latin-600.woff2') format('woff2'),
+        url('fonts/tourney-v7-latin-600.woff') format('woff');
+}
+
+
+/* \1F355 pizza*/
+body {
+    font-family: 'PT Sans';
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 48px;
+}
+
+a {
+    outline: none;
+}
+
+.container {
+    padding: 0 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.row {
+    margin: 0 -15px;
+    width: 100%;
+}
+
+.col {
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+header {
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    z-index: 200;
+}
+
+header .col {
+    display: inline-block;
+}
+
+header .row {
+    position: relative;
+}
+
+header .col p {
+    font-family: 'Tourney';
+    font-weight: 600;
+    font-size: 22px;
+    letter-spacing: 0.06em;
+}
+
+header a {
+    text-decoration: none;
+    font-family: 'Staatliches';
+    font-weight: 400;
+    font-size: 22px;
+    letter-spacing: 0.03em;
+    color: #000000;
+    outline: none;
+}
+
+header a:first-child::after {
+    content: '';
+    display: inline-block;
+    width: 2px;
+    height: 16px;
+    background-color: #000;
+    margin-left: 11px;
+    margin-right: 3px;
+    transform: skewX(-12deg);
+}
+
+header div.logo {
+    position: absolute;
+    right: 0;
+}
+
+main .col:first-child {
+    width: 35%;
+}
+
+main .col:last-child {
+    width: 65%;
+}
+
+main .row {
+    display: flex;
+}
+
+main ul li a {
+    display: inline-block;
+    text-decoration: none;
+    font-family: 'Francois One';
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 48px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #000000;
+    margin-top: 70px;
+}
+
+main ul li::after {
+    content: '';
+    display: block;
+    background-color: #BDBDBD;
+    width: 100%;
+    height: 1px;
+    margin-top: 5px;
+}
+
+main {
+    position: relative;
+}
+
+main nav ul {
+    position: sticky;
+    top: 85px;
+    z-index: 100;
+}
+
+main .article {
+    margin-top: 70px;
+}
+
+.article h2 {
+    font-family: 'Francois One';
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 48px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #000000;
+    position: relative;
+    margin-bottom: 35px;
+}
+
+.article h2 sup {
+    position: absolute;
+    top: 17px;
+    font-family: 'Farro';
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 0.04em;
+    text-transform: none;
+    color: #000000;
+    margin-left: 10px;
+}
+
+.article h2::before {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 8px;
+    background-color: #000;
+    margin-bottom: 20px;
+}
+
+main section {
+    margin-bottom: 70px;
+}
+
+main section p {
+    margin-bottom: 40px;
+}
+
+main section mark {
+    background-color: #DADADA;
+}
+
+main {
+    background-image: url(../images/bg-picture.svg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 85% 48%;
+    ;
+}
