@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>CSS Position and Transform</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-container">
+            <nav class="header-row">
+                <ul class="header-row-list">
+                    <li class="header-list-name"><b>ENG</b></li>
+                    <li class="header-list-name"><b>DOCUMENTATION / WHO'S USING</b></li>
+                    <li class="header-list-name"> <img class="header-images" src="./images/company-logo-black.svg" alt="logo"></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="main">
+        <div class="hero_container">
+            <div class="hero_row">
+                <div class="col1">
+                    <nav class="col1-name">
+                        <ul class="col1-name-list">
+                            <li class="col1-list"> <a href="#introduction">INTRODACTION</a></li>
+                            <li class="col1-list"> <a href="#core_components"> CORE COMPONENTS</a></li>
+                            <li class="col1-list"> <a href="#react_fundamentals">REACT FUNDAMENTALS</a></li>
+                            <li class="col1-list"> <a href="#handling_text_input">HANDLING TEXT INPUT</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col2">
+                    <dl class="col2-section">
+                        <dt class="col2-name">
+                            <h3 id="introduction"><b class="col2-name-first">INTRODUCTION</b> <small>Chapter 1</small></h3>
+                        </dt>
+                        <dd class="col2-list">
+                            <p>Welcome to the very start of your React Native journey! If you're looking for
+                                environment setup <br>
+                                instructions, they've moved to <ins>their own section</ins>. Continue reading for an
+                                introduction to the
+                                <br>
+                                documentation, Native Components, React, and more!
+                            </p>
+                        </dd>
+                    </dl>
+                    <dl class="col2-section">
+                        <dt class="col2-name" >
+                            <h3  id="core_components"> <b class="col2-name-second">CORE COMPONENTS</b> <small>Chapter 2</small></h3>
+                        </dt>
+                        <dd class="col2-list">
+                            <p>React Native is an open source framework for building Android and iOS applications using
+                                React
+                                and <br>
+                                the app platform’s native capabiles. With React Native, you use JavaScript to access
+                                your
+                                platform’s
+                                <br>
+                                APIs as well as to describe the appearance and behavior of your UI using React
+                                components:
+                                <i>bundles
+                                    <br>
+                                    of reusable, nestable code</i>. You can learn more about React in the next section.
+                                But
+                                first, let’s
+                                cover <br>
+                                how components work in React Native.
+                            </p>
+                        </dd>
+                    </dl>
+                    <dl class="col2-section">
+                        <dt>
+                            <h3 id="react_fundamentals"> <b class="col2-name-third">REACT FUNDAMENTALS</b><small>Chapter 3</small> </a> </h3>
+                        </dt>
+                        <dd class="col2-list">
+                            <p>React Native runs on <ins>React</ins>, a popular open source library for building user
+                                interfaces
+                                with
+                                <br>
+                                JavaScript. To make the most of React Native, it helps to understand React itself. This
+                                section
+                                can get
+                                <br>
+                                you started or can serve as a refresher course.
+                            </p>
+                            <p> We’re going to cover the core concepts behind React:</p>
+                            <p> <b>+ components.</b> The rest of this introduction to React uses cats in its examples:
+                                friendly,
+                                <br>
+                                approachable creatures that need names and a cafe to work in.
+                            </p>
+                            <p> <b>+ JSX. </b> React and React Native use JSX, a syntax that lets you write elements
+                                inside
+                                JavaScript
+                                like so: <br>
+                                <mark> &lt;Text&gt;Hello, I am your cat!&lt;&frasl;Text&gt;.</mark>
+                            </p>
+                            <p>The React docs have <ins> a comprehensive guide to JSX</ins> you can refer to learn even
+                                more.
+                                Because
+                                JSX is <br>
+                                JavaScript, you can use variables inside it. Here you are declaring a <mark>name</mark>
+                                for
+                                the
+                                cat,
+                                name, and <br>
+                                embedding it with curly braces inside <mark>&lt;Text&gt;</mark></p>
+                            <p> <b>+ props.</b> Props is short for “properties”. </p>
+                            <p> <b>+ state.</b> While you can think of props as arguments you use to configure how
+                                components
+                                render,
+                                <br>
+                                state is like a component’s personal data storage. State is useful for handling data
+                                that
+                                changes over
+                                <br>
+                                time or that comes from user interaction. State gives your components memory!
+                            </p>
+                        </dd>
+                    </dl>
+                    <dl class="col2-section">
+                        <dt class="col2-name">
+                            <h3 id="handling_text_input"> <b class="col2-name-fourth">YANDLING TEXT INPUT</b> <small>Chapter 4</small> </a> </h3>
+                        </dt>
+                        <dd class="col2-list">
+                            <p>TextInput is a Core Component that allows the user to enter text. It has an
+                                <i>onChangeText</i>
+                                prop that
+                                <br>
+                                takes a function to be called every time the text changed, and an onSubmitEditing prop
+                                that
+                                takes a <br>
+                                function to be called when the text is submitted.
+                            </p>
+                            <p>For example, let's say that as the user types, you're translating their words into a
+                                different
+                                language.
+                                <br>
+                                In this new language, every single word is written the same way: 🍕. So the sentence
+                                "Hello
+                                there <br>
+                                Bob" would be translated as "🍕 🍕".
+                            </p>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
