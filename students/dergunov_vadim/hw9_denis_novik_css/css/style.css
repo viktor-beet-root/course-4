@@ -1,0 +1,80 @@
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/open-sans-v29-latin-regular.woff2') format('woff2');
+    src: url('../fonts/open-sans-v29-latin-regular.woff') format('woff');
+
+}
+
+.body {
+    font-family: Open Sans, Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
+
+img {
+    max-width: 100%;
+}
+
+.header {
+    background-color: #FFFFFF;
+}
+
+.home {
+
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+    color: #070707;
+}
+
+.about_me,
+.skills,
+.portfolio,
+.contact {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+    color: #828282;
+}
+
+.header>nav>ul>li {
+    display: inline-block;
+    padding: 0 5%;
+}
+
+h1 {
+    text-align: left;
+}
+
+.section__1 {
+    background-color: #F6F6F6;
+    text-align: center;
+    color: #070707;
+}
+
+.section__2,
+footer {
+    background-color: #FFFFFF;
+    text-align: center;
+}
+
+footer>button+img {
+    display: inline-block;
+    margin: 0 auto;
+}
+
+
+.section__2>h2>p>img {
+    display: inline-block;
+    margin: 0 auto;
+
+
+}
+
+.section__3 {
+    background-color: #F6F6F6;
+    text-align: center;
+}
