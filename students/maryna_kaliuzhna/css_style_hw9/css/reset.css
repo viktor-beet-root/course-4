@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 html,
 body,
 div,
@@ -85,12 +86,34 @@ video {
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
+=======
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+>>>>>>> css_style_hw9
 }
 
 :focus {
     outline: 0;
 }
 
+<<<<<<< HEAD
 article,
 aside,
 details,
@@ -130,6 +153,34 @@ q:after {
 table {
     border-collapse: collapse;
     border-spacing: 0;
+=======
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+>>>>>>> css_style_hw9
 }
 
 input[type=search]::-webkit-search-cancel-button,
@@ -173,8 +224,13 @@ audio:not([controls]) {
 }
 
 html {
+<<<<<<< HEAD
     font-size: 100%;
     -webkit-text-size-adjust: 100%;
+=======
+    font-size: 100%; 
+    -webkit-text-size-adjust: 100%; 
+>>>>>>> css_style_hw9
     -ms-text-size-adjust: 100%;
 }
 
@@ -188,9 +244,14 @@ a:hover {
 }
 
 img {
+<<<<<<< HEAD
     border: 0;
     /* 1 */
     -ms-interpolation-mode: bicubic;
+=======
+    border: 0; /* 1 */
+    -ms-interpolation-mode: bicubic; 
+>>>>>>> css_style_hw9
 }
 
 figure {
@@ -209,20 +270,34 @@ fieldset {
 }
 
 legend {
+<<<<<<< HEAD
     border: 0;
     padding: 0;
     white-space: normal;
     *margin-left: -7px;
+=======
+    border: 0; 
+    padding: 0;
+    white-space: normal; 
+    *margin-left: -7px; 
+>>>>>>> css_style_hw9
 }
 
 button,
 input,
 select,
 textarea {
+<<<<<<< HEAD
     font-size: 100%;
     margin: 0;
     vertical-align: baseline;
     *vertical-align: middle;
+=======
+    font-size: 100%; 
+    margin: 0;
+    vertical-align: baseline; 
+    *vertical-align: middle; 
+>>>>>>> css_style_hw9
 }
 
 button,
@@ -236,11 +311,19 @@ select {
 }
 
 button,
+<<<<<<< HEAD
 html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
     -webkit-appearance: button;
     cursor: pointer;
+=======
+html input[type="button"], 
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer; 
+>>>>>>> css_style_hw9
     *overflow: visible;
 }
 
@@ -253,6 +336,7 @@ input[type="checkbox"],
 input[type="radio"] {
     box-sizing: border-box;
     padding: 0;
+<<<<<<< HEAD
     *height: 13px;
     *width: 13px;
 }
@@ -261,6 +345,16 @@ input[type="search"] {
     -webkit-appearance: textfield;
     -moz-box-sizing: content-box;
     -webkit-box-sizing: content-box;
+=======
+    *height: 13px; 
+    *width: 13px; 
+}
+
+input[type="search"] {
+    -webkit-appearance: textfield; 
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box; 
+>>>>>>> css_style_hw9
     box-sizing: content-box;
 }
 
@@ -276,7 +370,11 @@ input::-moz-focus-inner {
 }
 
 textarea {
+<<<<<<< HEAD
     overflow: auto;
+=======
+    overflow: auto; 
+>>>>>>> css_style_hw9
     vertical-align: top;
 }
 
