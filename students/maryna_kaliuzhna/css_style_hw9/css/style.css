@@ -29,7 +29,7 @@ ul {
          url('./fonts/open-sans-v29-latin-ext_latin-700.woff') format('woff');
   }
 
-html {
+body {
     font-family:'Open Sans', Arial, Helvetica, sans-serif;
  }
 header li{
