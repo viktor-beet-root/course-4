@@ -1,0 +1,40 @@
+main .col:first-child {
+    padding: 65px 0;
+}
+
+
+.image {
+    width: 400px;
+    height: 400px;
+    border: 1px solid $border-color;
+    padding: 15px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 100;
+}
+
+.image::before {
+    content: '';
+    display: block;
+    width: 200px;
+    height: 446px;
+    background-color: #fff;
+    position: absolute;
+    top: -9px;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: -1;
+}
+
+.image::after {
+    content: '';
+    display: block;
+    width: 446px;
+    height: 200px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -9px;
+    z-index: -1;
+}

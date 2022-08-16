@@ -1,0 +1,26 @@
+@font-face {
+    font-family: $default-font-name;
+    font-style: normal;
+    font-weight: 500;
+    src: local(''),
+    url('#{$path-fonts}raleway-v28-latin-500.woff2') format('woff2'),
+    url('#{$path-fonts}raleway-v28-latin-500.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 900;
+    src: local(''),
+    url('#{$path-fonts}roboto-v30-latin-900.woff2') format('woff2'),
+    url('#{$path-fonts}roboto-v30-latin-900.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: local(''),
+    url('#{$path-fonts}open-sans-v29-latin-700.woff2') format('woff2'),
+    url('#{$path-fonts}open-sans-v29-latin-700.woff') format('woff');
+}

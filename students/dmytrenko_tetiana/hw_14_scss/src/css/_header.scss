@@ -1,0 +1,43 @@
+h1 {
+    font-family: $title-font-name;
+    font-weight: 900;
+    font-size: 60px;
+    line-height: 66px;
+    text-transform: uppercase;
+    color: $border-color;
+    margin: 15px 0 40px;
+}
+
+header strong {
+    display: block;
+    font-family: 'Raleway';
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: #898F8F;
+
+}
+
+.title {
+    padding: 90px 0 15px;
+    max-width: 450px;
+    margin: 0 auto;
+    border-bottom: 1px solid $border-color;
+    position: relative;
+}
+
+.title:after {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-image: url(../images/bonfire-sharp.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #fff;
+    position: absolute;
+    top: 97%;
+    left: 50%;
+    transform: translate(-50%);
+}
