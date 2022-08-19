@@ -10,66 +10,68 @@
 
 <body>
     <main>
-        <div>
-            <h2>Profile</h2>
-            <img src="./images/Image.jpg" alt="User foto">
-            <label for="user_photo"></label>
-            <input name="user_photo" type="file" id="user_photo">
-            <button type="button"> <img src="./images/Trash.svg" alt="delete" width="20"> </button>
-            <p> <sub> Up to 1 MB (300x300 px)</sub></p>
-        </div>
-        <div>
-            <label for="country_profile"> Country </label>
-            <select id="country_profile" name="country_profile" title="Name country">
-                <option value="ukrain">Україна</option>
-                <option value="austria">Австрія</option>
-                <option value="albania">Албанія</option>
-                <option value="andorra">Андорра</option>
-                <option value="belgium">Бельгія</option>
-                <option value="bulgaria">Болгарія </option>
-                <option value="vatican">Ватикан</option>
-                <option value="united_kindom">Велика Британія</option>
-                <option value="lithuania">Литва </option>
-                <option value="denmark">Данія</option>
-                <option value="estonia">Естонія</option>
-                <option value="italy">Італія</option>
-                <option value="latvia">Латвія</option>
-            </select>
-        </div>
-        <div>
-            <label for="city_profile"> City </label>
-            <select id="city_profile" name="city_profile" title="Name city">
-                <option value="sumy">Суми</option>
-                <option value="ivano-Frankivsk">Івано-Франківськ</option>
-                <option value="ternopil">Тернопіль</option>
-                <option value="lviv">Львів</option>
-                <option value="zhytomyr">Житомир</option>
-                <option value="vinnytsia">Вінниця</option>
-                <option value="kyiv">Київ</option>
-                <option value="chernihiv">Чернігів</option>
-                <option value="poltava">Полтава</option>
-                <option value="cherkasy">Черкаси</option>
-                <option value="kirovohrad">Кіровоград</option>
-                <option value="zaporizhzhia">Запоріжжя</option>
-                <option value="odesa">Одеса</option>
-                <option value="mykolayiv">Миколаїв</option>
-                <option value="kherson">Херсон</option>
-                <option value="kharkiv">Харків</option>
-                <option value="dnipro">Дніпро</option>
-            </select>
-        </div>
-        <div>
-            <label for="zip_code">
-                <span>Zip Code</span>
-                <input name="zip_code" id="zip_code" type="text">
-            </label>
-        </div>
-        <div>
-            <label for="phone">Phon Number</label>
-            <input name="phone" id="phone" type="tel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
-        </div>
-        <button type="submit">Update</button>
-    
+        <h1>Profile</h1>
+        <form action="./index1.html" method="post" autocomplete="off">
+            <div>
+                <img src="./images/Image.jpg" alt="User foto">
+                <label for="user_photo"></label>
+                <input name="user_photo" type="file" id="user_photo">
+                <button type="button"> <img src="./images/Trash.svg" alt="delete" width="20"> </button>
+                <p> <sub> Up to 1 MB (300x300 px)</sub></p>
+            </div>
+            <div>
+                <label for="country_profile"> Country </label>
+                <select id="country_profile" name="country_profile" title="Name country">
+                    <option value="ukrain">Україна</option>
+                    <option value="austria">Австрія</option>
+                    <option value="albania">Албанія</option>
+                    <option value="andorra">Андорра</option>
+                    <option value="belgium">Бельгія</option>
+                    <option value="bulgaria">Болгарія </option>
+                    <option value="vatican">Ватикан</option>
+                    <option value="united_kindom">Велика Британія</option>
+                    <option value="lithuania">Литва </option>
+                    <option value="denmark">Данія</option>
+                    <option value="estonia">Естонія</option>
+                    <option value="italy">Італія</option>
+                    <option value="latvia">Латвія</option>
+                </select>
+            </div>
+            <div>
+                <label for="city_profile"> City </label>
+                <select id="city_profile" name="city_profile" title="Name city">
+                    <option value="sumy">Суми</option>
+                    <option value="ivano-Frankivsk">Івано-Франківськ</option>
+                    <option value="ternopil">Тернопіль</option>
+                    <option value="lviv">Львів</option>
+                    <option value="zhytomyr">Житомир</option>
+                    <option value="vinnytsia">Вінниця</option>
+                    <option value="kyiv">Київ</option>
+                    <option value="chernihiv">Чернігів</option>
+                    <option value="poltava">Полтава</option>
+                    <option value="cherkasy">Черкаси</option>
+                    <option value="kirovohrad">Кіровоград</option>
+                    <option value="zaporizhzhia">Запоріжжя</option>
+                    <option value="odesa">Одеса</option>
+                    <option value="mykolayiv">Миколаїв</option>
+                    <option value="kherson">Херсон</option>
+                    <option value="kharkiv">Харків</option>
+                    <option value="dnipro">Дніпро</option>
+                </select>
+            </div>
+            <div>
+                <label for="zip_code">
+                    <span>Zip Code</span>
+                    <input name="zip_code" id="zip_code" type="text">
+                </label>
+            </div>
+            <div>
+                <label for="phone">Phon Number</label>
+                <input name="phone" id="phone" type="tel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+            </div>
+            <button type="submit">Update</button>
+        </form>
     </main>
-    </body>
+</body>
+
 </html>
