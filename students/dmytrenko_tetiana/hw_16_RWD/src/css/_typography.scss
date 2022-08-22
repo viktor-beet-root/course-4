@@ -1,0 +1,88 @@
+body {
+    font-family: $main-font;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+    color: $main-type-color;
+
+    @include media (md) {
+        font-size: 14px;
+        line-height: 24px;
+    }
+}
+
+.hero {
+    p {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 28px;
+
+        @include media (md) {
+            font-size: 17px;
+            line-height: 27px;
+        }
+    }
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: $main-font;
+    font-weight: 700;
+    color: $title-type-color;
+}
+
+h1 {
+    font-size: 44px;
+    line-height: 54px;
+
+    @include media (md) {
+        font-size: 41px;
+        line-height: 50px;
+    }
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+
+    @include media (md) {
+        font-size: 34px;
+        line-height: 42px;
+    }
+}
+
+h3 {
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 27px;
+
+    @include media (md) {
+        font-size: 18px;
+        line-height: 25px;
+    }
+}
+
+h4 {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.button {
+    a {
+        font-family: $links-font;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
+
+button {
+    font-family: $links-font;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+}
