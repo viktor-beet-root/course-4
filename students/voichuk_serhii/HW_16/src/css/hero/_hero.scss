@@ -1,0 +1,35 @@
+@import './vars';
+
+
+.hero{
+    margin-bottom: 100px;
+
+    &__info{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    &__title{
+        font-style: normal;
+        font-weight: 700;
+        font-size: 44px;
+        line-height: 54px;
+        color: $def-title;
+
+    }
+
+    &__text{
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 28px;
+        color: $def-text;
+        margin: 30px 0 20px;
+
+    }
+
+    &__img{
+        margin-left: 26px;
+    }
+}
