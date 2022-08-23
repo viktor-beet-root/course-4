@@ -1,0 +1,28 @@
+.navbar{
+
+    &__item{
+        @extend %df;
+        list-style-type: none;
+    }
+
+    &__link{
+        text-decoration: none;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 28px;
+        color: #2F281E;
+        margin-right: 20px;
+        padding: 0;
+        transition: color .4s ease-in-out;
+
+        &:last-child{
+            margin-right: 0;
+        }
+
+        &:hover{
+            color: #FF9900;
+        }
+    }
+}
