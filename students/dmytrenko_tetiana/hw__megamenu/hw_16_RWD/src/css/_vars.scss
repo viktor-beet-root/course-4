@@ -1,0 +1,26 @@
+$path-fonts: '../fonts/';
+$main-font-name: 'Montserrat';
+$main-font: $main-font-name, Arial, Helvetica, sans-serif;
+$links-font-name: 'Poppins';
+$links-font: $links-font-name, Arial, Helvetica, sans-serif;
+
+$gap: 15px;
+$breack-points: (
+    "lg": 1200px,
+    "md": 992px,
+    "sm": 768px,
+    "xs": 576px,
+    "sxs": 480px,
+    "uxs": 320px
+);
+
+$yellow: #FF9900;
+$bg-color-button: $yellow;
+$white: #fff;
+$links-type-color: $white;
+$dark: #2F281E;
+$title-type-color: $dark;
+$midle: #544837;
+$main-type-color: $midle;
+$light: #BCD0E5;
+$placeholder-type-color: $light;
