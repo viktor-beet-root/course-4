@@ -1,97 +1,26 @@
-.nav-opener {
-    @include visibility-hidden;
-}
-
-.burger-menu {
-    visibility: hidden;
-    opacity: 0;
-    pointer-events: none;
-}
-
 @include media('xs') {
-    .page {
+    .authorization {
+        justify-content: unset;
 
-        &__header {
-            margin-bottom: 10px;
-        }
 
-        &__section-hero {
-            margin-bottom: 10px;
-        }
-
-        &__section-features {
-            margin-bottom: 10px;
-        }
-
-        &__sections {
-            margin-bottom: 10px;
-        }
-
-        &__footer {
+        &__sign-in {
             padding-top: 10px;
             padding-bottom: 10px;
+
+        }
+
+        &__sign-up {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            flex-grow: 2;
+
+            &-wrapper {
+                flex-grow: 2;
+            }
         }
     }
 
-    .logo {
-        max-width: 100%;
-    }
-
-    .navigation-wrapper {
-        order: 3;
-    }
-
-    .authorization {
-        justify-content: space-around;
-    }
-
-    .navigation {
-        flex-direction: column;
-
-        &__item {
-            border-bottom: 1px solid $color_borders;
-        }
-
-    }
-
-    .features {
-        &__items {
-            flex-wrap: wrap;
-        }
-    }
-
-    .order-two {
-        order: 2;
-    }
-
-    .order-three {
-        order: 3;
-    }
-
-    .footer-block {
-        position: relative;
-
-        &__list-item {
-            border-bottom: 1px solid $color_borders;
-        }
-    }
-
-    .burger-menu {
-        visibility: visible;
-        opacity: 1;
-        pointer-events: all;
-        border: 1px solid $color_borders;
-        background-color: $color_bg;
-        color: $color_header;
-        border-radius: 4px;
-        display: block;
-        width: 110px;
-        font-weight: 600;
-        font-size: 1.6rem;
-        line-height: 2.0rem;
-        text-align: center;
-        padding-top: 13px;
-        padding-bottom: 13px;
-        text-decoration: none;
+    .burger-menu-wrapper {
+        justify-self: flex-end;
     }
 }

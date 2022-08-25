@@ -14,12 +14,15 @@
     <header class="page__header">
         <div class="container">
             <div class="row row_space-between-center">
-                <div class="col-3 col-xs-12">
+                <div class="col-3 col-xs-12 col-sm-5 col-md-6">
                     <img class="logo" src="./images/logo.svg" alt="Productly">
                 </div>
-                <nav class="col-4 col-xs-12 order-three ">
+                <input type="checkbox" id="menu-switch" class="invisible-checkbox">
+                <nav class="col-4 col-xs-12 col-sm-12 col-md-12 order-three navigation-wrapper">
                     <ul class="navigation">
-                        <li class="navigation__item"><a class="navigation__link" href="#">Product</a>
+                        <input type="checkbox" id="submenu-opener-1" class="invisible-checkbox submenu-opener-checkbox">
+                        <li class="navigation__item"><a class="navigation__link" href="#">Product</a><label
+                                for="submenu-opener-1" class="submenu-opener">»</label>
                             <ul class="navigation__submenu submenu">
                                 <li class="submenu__item"><a href="#" class="submenu__link">Design</a>
                                     <ul class="sub1 submenu_sub1">
@@ -114,7 +117,9 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="navigation__item"><a class="navigation__link" href="#">Customers</a>
+                        <input type="checkbox" id="submenu-opener-2" class="invisible-checkbox submenu-opener-checkbox">
+                        <li class="navigation__item"><a class="navigation__link" href="#">Customers</a><label
+                                for="submenu-opener-2" class="submenu-opener">»</label>
                             <ul class="navigation__submenu submenu">
                                 <li class="submenu__item"><a href="#" class="submenu__link">Personal&nbsp;manager</a>
                                     <ul class="sub1 submenu_sub1">
@@ -190,7 +195,9 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="navigation__item"><a class="navigation__link" href="#">Pricing</a>
+                        <input type="checkbox" id="submenu-opener-3" class="invisible-checkbox submenu-opener-checkbox">
+                        <li class="navigation__item"><a class="navigation__link" href="#">Pricing</a><label
+                                for="submenu-opener-3" class="submenu-opener">»</label>
                             <ul class="navigation__submenu submenu">
                                 <li class="submenu__item"><a href="#" class="submenu__link">Our&nbsp;prices</a>
                                     <ul class="sub1 submenu_sub1">
@@ -250,7 +257,9 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="navigation__item"><a class="navigation__link" href="#">Resources</a>
+                        <input type="checkbox" id="submenu-opener-4" class="invisible-checkbox submenu-opener-checkbox">
+                        <li class="navigation__item"><a class="navigation__link" href="#">Resources</a><label
+                                for="submenu-opener-4" class="submenu-opener">»</label>
                             <ul class="navigation__submenu submenu">
                                 <li class="submenu__item"><a href="#" class="submenu__link">Documentation</a>
                                     <ul class="sub1 submenu_sub1">
@@ -329,10 +338,14 @@
                         </li>
                     </ul>
                 </nav>
-                <div class="col-3 col-xs-12">
+                <div class="col-3 col-xs-12 col-sm-7 col-md-6">
                     <ul class="authorization ">
-                        <li><a class="authorization__sign-in" href="#">Sign&nbsp;in</a></li>
-                        <li><a class="authorization__sign-up" href="#">Sign&nbsp;up</a></li>
+                        <li class="authorization__sign-in-wrapper"><a class="authorization__sign-in"
+                                href="#">Sign&nbsp;in</a></li>
+                        <li class="authorization__sign-up-wrapper"><a class="authorization__sign-up"
+                                href="#">Sign&nbsp;up</a></li>
+                        <li class="burger-menu-wrapper"><label for="menu-switch" class="burger-menu"> <span
+                                    class="burger-menu__line"></span></label></li>
                     </ul>
                 </div>
             </div>
@@ -341,7 +354,7 @@
     <section class="page__section-hero">
         <div class="container">
             <div class="row row_space-between-center">
-                <div class="col-5 col-xs-12">
+                <div class="col-5 col-xs-12 col-sm-12 col-md-7">
                     <div class="hero-block">
                         <h1 class="h1 hero-block__header">The Design Thinking superpowers</h1>
                         <p class="hero-block__paragraph">Tools, tutorials, design and innovation experts, all in one
@@ -351,7 +364,7 @@
                         <a href="#" class="button">Get started</a>
                     </div>
                 </div>
-                <div class="col-7 right col-xs-12">
+                <div class="col-7 right col-xs-12 col-sm-12 col-md-5">
                     <img src="./images/first-screen.svg" alt="happy people">
                 </div>
             </div>
@@ -361,7 +374,7 @@
         <div class="container">
             <div class="features">
                 <div class="row row_center-center">
-                    <div class="features__header col-6 col-xs-12">
+                    <div class="features__header col-6 col-xs-12 col-sm-12 col-md-8">
                         <h2 class="h2 h2_center">
                             We design tools to unveil your superpowers
                         </h2>
@@ -369,28 +382,28 @@
                 </div>
                 <div class="row">
                     <ul class="features__items">
-                        <li class="col-3 col-xs-12">
+                        <li class="col-3 col-xs-12 col-sm-6">
                             <div class="feature-item">
                                 <img class="feature-item__image" src="./images/features_icon_1.svg" alt="icon">
                                 <strong class="feature-item__feature">First click tests</strong>
                                 <p class="feature-item__text">While most people enjoy casino gambling,</p>
                             </div>
                         </li>
-                        <li class="col-3 col-xs-12">
+                        <li class="col-3 col-xs-12 col-sm-6">
                             <div class="feature-item">
                                 <img class="feature-item__image" src="./images/features_icon_2.svg" alt="icon">
                                 <strong class="feature-item__feature">Design surveys</strong>
                                 <p class="feature-item__text">Sports betting, lottery and bingo playing for the fun</p>
                             </div>
                         </li>
-                        <li class="col-3 col-xs-12 ">
+                        <li class="col-3 col-xs-12 col-sm-6">
                             <div class="feature-item">
                                 <img class="feature-item__image" src="./images/features_icon_3.svg" alt="icon">
                                 <strong class="feature-item__feature">Preference tests</strong>
                                 <p class="feature-item__text">The Myspace page defines the individual.</p>
                             </div>
                         </li>
-                        <li class="col-3 col-xs-12">
+                        <li class="col-3 col-xs-12 col-sm-6">
                             <div class="feature-item">
                                 <img class="feature-item__image" src="./images/features_icon_4.svg" alt="icon">
                                 <strong class="feature-item__feature">Five second tests</strong>
@@ -411,7 +424,7 @@
     <section class="page__sections">
         <div class="container">
             <div class="row row_space-between-center">
-                <div class="col-6 col-xs-12">
+                <div class="col-6 col-xs-12 col-sm-12 col-md-7">
                     <div class="info-block">
                         <h2 class="h2 info-block__header">
                             <span class="info-block__simple-text">
@@ -440,15 +453,17 @@
                             more money, </p>
                     </div>
                 </div>
-                <div class="col-6  col-xs-12 right"><img src="./images/second-screen.svg" alt="image"></div>
+                <div class="col-6  col-xs-12  col-sm-12  col-md-5 right"><img src="./images/second-screen.svg"
+                        alt="image"></div>
             </div>
         </div>
     </section>
     <section class="page__sections">
         <div class="container">
             <div class="row row_space-between-center">
-                <div class="col-6 col-xs-12 order-two"><img src="./images/third-screen.svg" alt="image"></div>
-                <div class="col-6 col-xs-12">
+                <div class="col-6 col-xs-12 col-sm-12 order-two col-md-5"><img src="./images/third-screen.svg"
+                        alt="image"></div>
+                <div class="col-6 col-xs-12 col-sm-12 col-md-7">
                     <div class="info-block">
                         <h2 class="h2 info-block__header">
                             <span class="info-block__simple-text">
@@ -484,7 +499,7 @@
     <section class="page__sections">
         <div class="container">
             <div class="row row_space-between-center">
-                <div class="col-6 col-xs-12">
+                <div class="col-6 col-xs-12 col-sm-12 col-md-7">
                     <div class="info-block">
                         <h2 class="h2 info-block__header">
                             <span class="info-block__simple-text">
@@ -514,17 +529,18 @@
                             more money, </p>
                     </div>
                 </div>
-                <div class="col-6 col-xs-12 right"><img src="./images/forth-screen.svg" alt="image"></div>
+                <div class="col-6 col-xs-12 col-sm-12 right col-md-5"><img src="./images/forth-screen.svg" alt="image">
+                </div>
             </div>
         </div>
     </section>
     <footer class="page__footer">
         <div class="container">
             <div class="row row_space-between-top">
-                <div class="col-3 col-xs-12">
+                <div class="col-3 col-xs-12 col-sm-12 col-md-12">
                     <img class="logo" src="./images/logo.svg" alt="Productly">
                 </div>
-                <div class="col-2 col-xs-12">
+                <div class="col-2 col-xs-12 col-sm-6 col-md-3">
                     <nav class="footer-block">
                         <h3 class="footer-block__header">Quick Links</h3>
                         <ul class="footer-block__list">
@@ -535,7 +551,7 @@
                         </ul>
                     </nav>
                 </div>
-                <div class="col-2 col-xs-12">
+                <div class="col-2 col-xs-12 col-sm-6 col-md-3">
                     <nav class="footer-block">
                         <h3 class="footer-block__header">Legal stuff</h3>
                         <ul class="footer-block__list">
@@ -548,7 +564,7 @@
                         </ul>
                     </nav>
                 </div>
-                <div class="col-4 col-xs-12">
+                <div class="col-4 col-xs-12 col-sm-12 col-md-6">
                     <form class="footer-block" action="index.html" method="post">
                         <h3 class="footer-block__header">Knowing you're always on the best energy deal.
                         </h3>

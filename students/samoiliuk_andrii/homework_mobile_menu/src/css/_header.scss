@@ -36,6 +36,31 @@
     max-width: 200px;
 }
 
+@media screen and (min-width: calc(map-get($break-points, "xs") + 1px)) {
+    .navigation__item:hover {
+
+        background-color: $color_bg;
+
+        &::before {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 3px;
+            background-color: $color_contrast;
+            position: absolute;
+            left: 0;
+            bottom: 7px;
+        }
+    }
+
+    .navigation__item:hover .navigation__submenu {
+        visibility: visible;
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
+
 .navigation {
     display: flex;
     justify-content: center;
@@ -44,15 +69,6 @@
         box-sizing: border-box;
         padding: 9px 10px;
         position: relative;
-
-        &:hover {
-            background-color: $color_bg;
-            @extend %line;
-
-            .navigation__submenu {
-                @extend %visible;
-            }
-        }
     }
 
     &__link {
@@ -175,7 +191,7 @@
 
 .authorization {
     display: flex;
-    justify-content: right;
+    justify-content: flex-end;
 
     &__sign-in {
         border: 1px solid $color_borders;
@@ -183,6 +199,7 @@
         color: $color_header;
         border-radius: 4px;
         @extend %header-button;
+        margin-right: 16px;
     }
 
     &__sign-up {
@@ -190,8 +207,8 @@
         color: $color_bg;
         border: 1px solid $color_contrast;
         border-radius: 4px;
-        margin-left: 20px;
         @extend %header-button;
+        margin-left: 16px;
     }
 
     &__sign-up:link {

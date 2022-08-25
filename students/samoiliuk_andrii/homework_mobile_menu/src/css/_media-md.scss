@@ -1,0 +1,35 @@
+@include media('md') {
+    .page {
+
+        &__header {
+            margin-bottom: 30px;
+        }
+
+        &__section-hero {
+            margin-bottom: 30px;
+        }
+
+        &__section-features {
+            margin-bottom: 30px;
+        }
+
+        &__sections {
+            margin-bottom: 30px;
+        }
+
+        &__footer {
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+    }
+
+    .order-three {
+        order: 3;
+    }
+
+    .navigation {
+        justify-content: flex-start;
+        margin-left: -10px;
+    }
+
+}
