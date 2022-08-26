@@ -36,7 +36,7 @@
     max-width: 200px;
 }
 
-@media screen and (min-width: calc(map-get($break-points, "xs") + 1px)) {
+@media screen and (min-width: calc(map-get($break-points, "sm") + 1px)) {
     .navigation__item:hover {
 
         background-color: $color_bg;
@@ -57,6 +57,77 @@
         visibility: visible;
         opacity: 1;
         pointer-events: all;
+    }
+
+    .submenu__item {
+
+
+        &::after {
+            margin-left: 10px;
+            display: block;
+            content: '»';
+            color: $color_borders;
+
+        }
+
+        &:hover {
+            &::before {
+                content: '';
+                display: block;
+                width: 100%;
+                height: 3px;
+                background-color: $color_contrast;
+                position: absolute;
+                left: 0;
+                bottom: 7px;
+            }
+
+            .submenu_sub1 {
+                visibility: visible;
+                opacity: 1;
+                pointer-events: all;
+            }
+        }
+
+    }
+
+    .sub1__item:hover {
+        &::before {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 3px;
+            background-color: $color_contrast;
+            position: absolute;
+            left: 0;
+            bottom: 7px;
+        }
+
+        .sub1__sub2 {
+            visibility: visible;
+            opacity: 1;
+            pointer-events: all;
+        }
+    }
+
+    .sub2__item:hover {
+        &::before {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 3px;
+            background-color: $color_contrast;
+            position: absolute;
+            left: 0;
+            bottom: 7px;
+        }
+    }
+
+    .sub1__item::after {
+        margin-left: 10px;
+        display: block;
+        content: '»';
+        color: $color_borders;
     }
 }
 
@@ -102,19 +173,12 @@
         justify-content: space-between;
         padding: 9px 10px;
         position: relative;
-        @extend %arrow-right;
+
 
         &:not(:last-of-type) {
             border-bottom: 1px solid $color_borders;
         }
 
-        &:hover {
-            @extend %line;
-
-            .submenu_sub1 {
-                @extend %visible;
-            }
-        }
     }
 
     &_sub1 {
@@ -127,6 +191,8 @@
     }
 }
 
+
+
 .sub1 {
 
     &__item {
@@ -135,20 +201,11 @@
         justify-content: space-between;
         padding: 9px 10px;
         position: relative;
-        @extend %arrow-right;
 
         &:not(:last-of-type) {
             border-bottom: 1px solid $color_borders;
         }
 
-        &:hover {
-            @extend %line;
-
-            .sub1__sub2 {
-                @extend %visible;
-            }
-
-        }
     }
 
     &__sub2 {
@@ -161,6 +218,7 @@
     }
 }
 
+
 .sub2 {
     &__item {
         padding: 9px 25px 9px 10px;
@@ -169,10 +227,6 @@
 
         &:not(:last-of-type) {
             border-bottom: 1px solid $color_borders;
-        }
-
-        &:hover {
-            @extend %line;
         }
     }
 }
