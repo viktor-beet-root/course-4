@@ -6,18 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
-    <img alt src="images/profile.jpg">
-    <form>
-        <button>
-            <label for="myfile"><input type="text" class="filestyle"></label>
-            <label for="myfile"><img alt src="images/camera.png" height="30"></label><br><br>
-        </button>
-        <button><img alt src="images/trash.svg.png" height="20"></button><br>
-        <label for="myfile"><span class="validity"></span></label>
-        <p>Up to 1 MB (300x300 px)</p>
+    <form action="./profile.html" method="post" target="_blank" autocomplete="on">
+        <h1>Profile</h1>
+        <div class="photo_upload">
+            <img class="photo" src="./images/profile.jpg" alt="photo">
+            <input type="file" name="pic" class="upload_image">
+            <div>
+                <label for="pic" class="pic_label">
+                    <img alt src="images/camera.png" height="30">
+                    <img alt src="images/trash.svg.png" height="30">
+                </label>
+            </div>
+            <label for="pic" class="text_label">
+                <p>Up to 1 MB (300x300 px)</p>
+            </label>
+        </div>
         <p><label for="name">Name:</label>
             <input type="text" id="name" name="name">
             <label for="email">E-mail</label>
@@ -76,7 +83,8 @@
             <option value="Colombia">Colombia</option>
             <option value="Comoros">Comoros</option>
             <option value="Congo">Congo</option>
-            <option value="Congo, The Democratic Republic of The">Congo, The Democratic Republic of The</option>
+            <option value="Congo, The Democratic Republic of The">Congo, The Democratic Republic of The
+            </option>
             <option value="Cook Islands">Cook Islands</option>
             <option value="Costa Rica">Costa Rica</option>
             <option value="Cote D'ivoire">Cote D'ivoire</option>
@@ -141,7 +149,9 @@
             <option value="Kazakhstan">Kazakhstan</option>
             <option value="Kenya">Kenya</option>
             <option value="Kiribati">Kiribati</option>
-            <option value="Korea, Democratic People's Republic of">Korea, Democratic People's Republic of</option>
+            <option value="Korea, Democratic People's Republic of">Korea, Democratic People's Republic
+                of
+            </option>
             <option value="Korea, Republic of">Korea, Republic of</option>
             <option value="Kuwait">Kuwait</option>
             <option value="Kyrgyzstan">Kyrgyzstan</option>
@@ -155,7 +165,9 @@
             <option value="Lithuania">Lithuania</option>
             <option value="Luxembourg">Luxembourg</option>
             <option value="Macao">Macao</option>
-            <option value="Macedonia, The Former Yugoslav Republic of">Macedonia, The Former Yugoslav Republic of
+            <option value="Macedonia, The Former Yugoslav Republic of">Macedonia, The Former Yugoslav
+                Republic
+                of
             </option>
             <option value="Madagascar">Madagascar</option>
             <option value="Malawi">Malawi</option>
@@ -229,7 +241,9 @@
             <option value="Solomon Islands">Solomon Islands</option>
             <option value="Somalia">Somalia</option>
             <option value="South Africa">South Africa</option>
-            <option value="South Georgia and The South Sandwich Islands">South Georgia and The South Sandwich Islands
+            <option value="South Georgia and The South Sandwich Islands">South Georgia and The South
+                Sandwich
+                Islands
             </option>
             <option value="Spain">Spain</option>
             <option value="Sri Lanka">Sri Lanka</option>
@@ -259,7 +273,8 @@
             <option value="United Arab Emirates">United Arab Emirates</option>
             <option value="United Kingdom">United Kingdom</option>
             <option value="United States">United States</option>
-            <option value="United States Minor Outlying Islands">United States Minor Outlying Islands</option>
+            <option value="United States Minor Outlying Islands">United States Minor Outlying Islands
+            </option>
             <option value="Uruguay">Uruguay</option>
             <option value="Uzbekistan">Uzbekistan</option>
             <option value="Vanuatu">Vanuatu</option>
@@ -276,32 +291,32 @@
         <label for="country">City</label>
         <select id="city" name="city" class="form-control">
             <option selected hidden disabled>Select</option>
-            <option value="Вінниця">Вінниця</option>
-            <option value="Дніпро">Дніпро</option>
-            <option value="Донецьк">Донецьк</option>
-            <option value="Житомир">Житомир</option>
-            <option value="Запоріжжя">Запоріжжя </option>
-            <option value="Івано-Франківськ ">Івано-Франківськ </option>
-            <option value="Київ ">Київ </option>
-            <option value="Кропивницький ">Кропивницький </option>
-            <option value="Луганськ ">Луганськ </option>
-            <option value="Луцьк ">Луцьк </option>
-            <option value="Львів ">Львів </option>
-            <option value=" Миколаїв"> Миколаїв</option>
-            <option value="Одеса ">Одеса </option>
-            <option value="Полтава ">Полтава </option>
-            <option value="Рівне ">Рівне </option>
-            <option value="Севастополь ">Севастополь </option>
-            <option value="Сімферополь ">Сімферополь </option>
-            <option value="Суми ">Суми </option>
-            <option value="Тернопіль ">Тернопіль </option>
-            <option value="Ужгород ">Ужгород </option>
-            <option value="Харків ">Харків </option>
-            <option value="Херсон ">Херсон </option>
-            <option value="Хмельницький ">Хмельницький </option>
-            <option value="Черкаси ">Черкаси </option>
-            <option value="Чернівці ">Чернівці </option>
-            <option value="Чернігів">Чернігів</option>
+            <option value="Vinnytsia">Вінниця</option>
+            <option value="Dnipro">Дніпро</option>
+            <option value="Donetsk">Донецьк</option>
+            <option value="Zhytomyr">Житомир</option>
+            <option value="Zaporizhzhia">Запоріжжя </option>
+            <option value="Ivano-Frankivsk">Івано-Франківськ </option>
+            <option value="Kyiv">Київ </option>
+            <option value="Kropyvnytskyi">Кропивницький </option>
+            <option value="Luhansk">Луганськ </option>
+            <option value="Lutsk">Луцьк </option>
+            <option value="Lviv">Львів </option>
+            <option value="Mykolayiv"> Миколаїв</option>
+            <option value="Odesa">Одеса </option>
+            <option value="Poltava">Полтава </option>
+            <option value="Rivne">Рівне </option>
+            <option value="Sevastopol">Севастополь </option>
+            <option value="Simferopol">Сімферополь </option>
+            <option value="Sumy">Суми </option>
+            <option value="Ternopil">Тернопіль </option>
+            <option value="Uzhhorod">Ужгород </option>
+            <option value="Kharkiv">Харків </option>
+            <option value="Kherson">Херсон </option>
+            <option value="Khmelnytskyi">Хмельницький </option>
+            <option value="Cherkasy">Черкаси </option>
+            <option value="Chernivtsi">Чернівці </option>
+            <option value="Chernihiv">Чернігів</option>
         </select><br><br>
         <label for="myfile">Zip code</label>
         <input id="zip" name="zip" type="text" pattern="[0-9]*">
@@ -309,6 +324,7 @@
         <input type="tel"><br><br>
         <button>Update</button>
     </form>
+
 </body>
 
 </html>
