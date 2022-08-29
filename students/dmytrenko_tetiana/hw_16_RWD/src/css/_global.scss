@@ -1,0 +1,6 @@
+@include font-face($main-font-name, 'montserrat-v25-latin-regular', 400);
+@include font-face($main-font-name, 'montserrat-v25-latin-500', 500);
+@include font-face($main-font-name, 'montserrat-v25-latin-600', 600);
+@include font-face($main-font-name, 'montserrat-v25-latin-700', 700);
+@include font-face($links-font-name, 'poppins-v20-latin-700', 700);
+@include grid(12);
