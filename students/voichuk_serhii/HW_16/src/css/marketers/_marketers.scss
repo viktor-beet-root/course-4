@@ -1,11 +1,31 @@
 .marketers{
     margin-bottom: 100px;
 
+    @media screen and (max-width: 1024px) {
+        margin-bottom: 50px;
+    }
+
+    @media screen and (max-width: 768px) {
+        margin-bottom: 30px;
+    }
+
+    @media screen and (max-width: 576px) {
+        margin-bottom: unset;
+    }
+
     &__info{
         margin-right: 94px;
+
+        @media screen and (max-width: 768px) {
+            margin-right: unset;
+        }
     }
 
     &__img{
         margin-left: 50px;
+
+        @media screen and (max-width: 768px) {
+            margin-left: unset;
+        }
     }
 }

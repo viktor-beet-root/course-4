@@ -13,9 +13,25 @@
     padding: 24px 0;
     margin-bottom: 70px;
 
+    @media screen and (max-width: 1024px) {
+        margin-bottom: 50px;
+    }
+
+    @media screen and (max-width: 768px) {
+        margin-bottom: unset;
+    }
+
+    @media screen and (max-width: 576px) {
+        padding: 15px 0;
+    }
+
     &__navbar {
         width: 100%;
         max-width: 352px;
         margin: 0 auto;
+
+        @media screen and (max-width: 768px) {
+            display: none;
+        }
     }
 }

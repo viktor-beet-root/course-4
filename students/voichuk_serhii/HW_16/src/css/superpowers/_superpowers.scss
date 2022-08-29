@@ -12,6 +12,24 @@
     width: 100%;
     margin: 0 auto 20px;
     text-align: center;
+
+    @media screen and (max-width: 1024px) {
+        font-size: 30px;
+    }
+
+    @media screen and (max-width: 768px) {
+        margin: 0 auto 10px;
+        font-size: 27px;
+    }
+
+    @media screen and (max-width: 576px) {
+        font-size: 24px;
+        line-height: 35px;
+    }
+
+    @media screen and (max-width: 320px) {
+        margin: 0 auto;
+    }
 }
 
 .superpowers{
@@ -21,11 +39,27 @@
     
 
     &__box{
-        
+        @media screen and (max-width: 480px) {
+            max-width: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+        }  
     }
 
     &__icon{
+        @media screen and (max-width: 1024px) {
+            max-width: 40px;
+            max-height: 40px;
+        }
 
+        @media screen and (max-width: 576px) {
+            max-width: 35px;
+            max-height: 35px;
+        }
+        
     }
 
     &__title{
@@ -35,6 +69,21 @@
         font-weight: 600;
         font-size: 22px;
         line-height: 27px;
+
+        @media screen and (max-width: 1024px) {
+            font-size: 19px;
+        }
+
+        @media screen and (max-width: 768px) {
+            margin: 15px 0 10px;
+            font-size: 18px;
+        }
+
+        @media screen and (max-width: 576px) {
+            margin: 10px 0 8px;
+            font-size: 15px;
+            line-height: 20px;
+        }
     }
 
     &__subtitle{
@@ -43,9 +92,34 @@
         font-size: 16px;
         line-height: 26px;
         color: $def-text;
+
+        @media screen and (max-width: 1024px) {
+            font-size: 14px;
+        }
+
+        @media screen and (max-width: 768px) {
+            font-size: 12px;
+        }
+
+        @media screen and (max-width: 576px) {
+            font-size: 10px;
+            line-height: 20px;
+        }
+
+        @media screen and (max-width: 480px) {
+            text-align: center;
+        }
     }
 }
 
-.batton-margin{
+.button-margin{
     margin: 40px auto 78px;
+
+    @media screen and (max-width: 768px) {
+        margin: 20px auto 50px;
+    }
+
+    @media screen and (max-width: 576px) {
+        margin: 10px auto 25px;
+    }
 }
