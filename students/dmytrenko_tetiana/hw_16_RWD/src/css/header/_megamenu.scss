@@ -1,0 +1,98 @@
+.megamenu {
+    position: absolute;
+    width: 100%;
+    top: 70px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    z-index: 500;
+    transform: translate(-100%);
+    @extend %invisibility;
+    transition: all .4s ease-in-out;
+
+    @include media(lg) {
+        top: 75px;
+    }
+
+    @include media(sm) {
+        top: 95px;
+    }
+
+    @include media(sm) {
+        [class^="col-"]:first-child {
+            display: none;
+        }
+    }
+
+
+    .submenu {
+        width: 100%;
+
+        &__item {
+            display: inline-block;
+
+            @include media(sm) {
+                display: block;
+            }
+
+            position: relative;
+
+            // &:first-child:before {
+            //     content: '';
+            //     display: block;
+            //     width: 7px;
+            //     height: 7px;
+            //     border-right: 1px solid $main-type-color;
+            //     border-bottom: 1px solid $main-type-color;
+            //     position: absolute;
+            //     right: 7px;
+            //     top: 10px;
+            //     transform: rotate(-45deg);
+            //     transition: transform .3s ease-in-out;
+            // }
+        }
+    }
+}
+
+.submenu {
+
+    &__item:not(:last-child) {
+        border-right: 1px solid $bg-color-button;
+        position: relative;
+
+        @include media(sm) {
+            border-right: unset;
+        }
+
+        &:hover {
+            color: $bg-color-button;
+
+            &:first-child:before {
+                transform: rotate(45deg);
+            }
+
+            @media screen and (min-width: 769px) {
+                .sub-submenu {
+                    visibility: visible;
+                    opacity: 1;
+                    pointer-events: all;
+                }
+            }
+
+        }
+    }
+
+    &__link {
+        padding: 20px;
+
+        @include media(sm) {
+            padding: $gap;
+        }
+    }
+}
+
+.sub-submenu {
+    position: absolute;
+    @extend %invisibility;
+}
