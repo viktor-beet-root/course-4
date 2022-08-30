@@ -1,0 +1,11 @@
+%visibility {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: all;
+}
+
+%invisibility {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
