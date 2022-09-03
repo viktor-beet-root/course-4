@@ -1,0 +1,38 @@
+$default-width: 1200px;
+$gap: 15px;
+$breack-points: (
+    "lg": 1200px,
+    "md": 992px,
+    "sm": 768px,
+    "xs": 576px,
+    "xxs": 480px
+);
+
+/*Fonts*/
+$default-font: 'Lato';
+$default-font-fallback: ', Arial, Helvetica, sans-serif';
+$default-font-header: 'Playfair Display';
+// $default-font-header-fallback: ;
+
+/*colors*/
+$color_red: #F1897B;
+$color_green: #85BBB1;
+$color_green-neon: #53F3CD;
+$color-green-neon-gradient: 'linear-gradient(96.73deg, #53F3CD 6.73%, rgba(83, 243, 205, 0) 116.9%)';
+$color_blue: #689FF2;
+$color_white: #FFFFFF;
+$color_blue_deep: #161926;
+$color_dark-blue: #262A3F;
+
+
+
+
+
+/*page*/
+$page-background-dark: $color_blue_deep;
+
+/*header*/
+$header-nav-color-light: $color_dark-blue;
+$header-nav-color-dark: $color_white;
+$header-nav-color-hover-light: $color_red;
+$header-nav-color-hover-dark: $color-green-neon-gradient;

@@ -1,0 +1,46 @@
+html {
+    font-size: 10px;
+}
+
+.hidden-checkbox {
+    @include visibility-hidden;
+
+    &:checked+.page {
+        background-image: url(../images/first-screen-black.png);
+        background-color: $page-background-dark;
+
+        .nav__item {
+            &::after {
+                background: #{$header-nav-color-hover-dark};
+            }
+
+            &>.nav__link {
+                color: $header-nav-color-dark;
+
+                &:visited {
+                    color: $header-nav-color-dark;
+                }
+            }
+        }
+    }
+}
+
+
+.page {
+    background-image: url(../images/first-screen-white.png);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 200vh;
+    font-family: $default-font #{$default-font-fallback};
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 2.6rem;
+    border: 1px solid transparent;
+    margin: -1px;
+
+    &__header {
+        margin-top: 30px;
+    }
+}
