@@ -1,0 +1,38 @@
+// colors
+$color-red: red;
+$color-black: black;
+$color-white: white;
+
+/* Color styles */
+$color-red: #F1897B;
+$color-green: #85BBB1;
+$color-green-neon: #53F3CD;
+$color-blue: #689FF2;
+$color-white: #FFFFFF;
+$color-gray-light: #BBBCC1;
+$color-red-dark: #E54F3A;
+$color-green-neon-dark: #02E0AB;
+$color-blue-dark: #262A3F;
+$color-blue-deep: #161926;
+$color-gray-dark: #515773;
+
+
+$bg-color-body: $color-white;
+
+// fonts
+$default-font-name: 'Lato';
+$main-font: $default-font-name,
+Arial,
+Helvetica,
+sans-serif;
+$path-fonts: '../fonts/';
+
+$gap: 15px;
+
+$default-width: 1200px;
+
+$breack-points: ("lg": 1200px,
+    "md": 1024px,
+    "sm": 768px,
+    "xs": 576px,
+    "xxs": 480px);

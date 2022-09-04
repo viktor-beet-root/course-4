@@ -1,0 +1,17 @@
+.welcome {
+    &__title {
+        font-family: 'Playfair Display';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 44px;
+        line-height: 52px;
+
+        & span {
+            color: $color-green;
+            font-style: italic;
+        }
+    }
+
+    &__text {
+    }
+}
