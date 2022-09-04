@@ -12,27 +12,46 @@ $breack-points: (
 $default-font: 'Lato';
 $default-font-fallback: ', Arial, Helvetica, sans-serif';
 $default-font-header: 'Playfair Display';
-// $default-font-header-fallback: ;
+$default-font-header-fallback: ", 'Times New Roman', Times, serif";
 
 /*colors*/
 $color_red: #F1897B;
+$color-red-bright: #E54F3A;
 $color_green: #85BBB1;
 $color_green-neon: #53F3CD;
+$color_green-neon-dark: #02E0AB;
 $color-green-neon-gradient: 'linear-gradient(96.73deg, #53F3CD 6.73%, rgba(83, 243, 205, 0) 116.9%)';
 $color_blue: #689FF2;
 $color_white: #FFFFFF;
 $color_blue_deep: #161926;
 $color_dark-blue: #262A3F;
-
-
-
-
+$color-grey: #E4E4E4;
+$color-grey-dark: #515773;
+$white-transparent: rgba(255, 255, 255, .9);
+$black-transparent: rgba(22, 25, 38, .9);
 
 /*page*/
 $page-background-dark: $color_blue_deep;
-
+$page-main-color: $color_dark-blue;
+$page-main-color-dark: $color_white;
+$header1_main_color: $color_dark-blue;
+$header1_main_color-dark: $color_white;
+$header1_main_color_accent: $color_green;
+$header1_main_color_accent-dark: $color_blue;
+$global-link-color: $color_red;
+$global-link-color-dark: $color_green-neon;
+$global-link-hover: $color-red-bright;
+$global-link-hover-dark: $color_green-neon-dark;
 /*header*/
 $header-nav-color-light: $color_dark-blue;
 $header-nav-color-dark: $color_white;
 $header-nav-color-hover-light: $color_red;
 $header-nav-color-hover-dark: $color-green-neon-gradient;
+/*Sections*/
+$section2_wrapper_bg: $white-transparent;
+$section2_wrapper_bg-dark: $black-transparent;
+$section2_digits_dollar: $color-grey;
+$section2_digits_devider: $color_green;
+$section2_digits_devider-dark: $color_blue ;
+$section3_border_color: $color-grey;
+$section3_border_color-dark: $color-grey-dark;

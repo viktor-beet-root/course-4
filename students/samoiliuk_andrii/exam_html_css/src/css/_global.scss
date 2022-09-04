@@ -2,45 +2,95 @@ html {
     font-size: 10px;
 }
 
-.hidden-checkbox {
-    @include visibility-hidden;
-
-    &:checked+.page {
-        background-image: url(../images/first-screen-black.png);
-        background-color: $page-background-dark;
-
-        .nav__item {
-            &::after {
-                background: #{$header-nav-color-hover-dark};
-            }
-
-            &>.nav__link {
-                color: $header-nav-color-dark;
-
-                &:visited {
-                    color: $header-nav-color-dark;
-                }
-            }
-        }
-    }
-}
-
 
 .page {
     background-image: url(../images/first-screen-white.png);
     background-position: top center;
     background-repeat: no-repeat;
     background-size: contain;
-    height: 200vh;
     font-family: $default-font #{$default-font-fallback};
     font-style: normal;
-    font-weight: 400;
+    font-weight: 300;
     font-size: 1.8rem;
     line-height: 2.6rem;
     border: 1px solid transparent;
     margin: -1px;
+    color: $page-main-color;
+
 
     &__header {
         margin-top: 30px;
+        margin-bottom: 126px;
+    }
+
+    &__section1 {
+        margin-bottom: 135px;
+    }
+
+    &__section2 {
+        margin-bottom: 90px;
+    }
+
+    &__section3 {
+        margin-bottom: 90px;
+    }
+}
+
+.header1 {
+    font-family: $default-font-header #{$default-font-header-fallback};
+    font-weight: 400;
+    font-size: 4.4rem;
+    line-height: 5.2rem;
+    color: $header1_main_color;
+
+    &_accent {
+        font-style: italic;
+        color: $header1_main_color_accent;
+    }
+}
+
+.header2 {
+    font-weight: 400;
+    font-family: $default-font-header #{$default-font-header-fallback};
+    font-size: 4.0rem;
+    line-height: 4.8rem;
+    color: $header1_main_color;
+
+    &_accent {
+        font-style: italic;
+        color: $header1_main_color_accent;
+    }
+}
+
+.global-link {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 2.0rem;
+    line-height: 2.0rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: $global-link-color;
+    position: relative;
+    z-index: 0;
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 13px;
+        bottom: -4px;
+        left: 8px;
+        z-index: -10;
+        background: $global-link-color;
+        opacity: 0.3;
+    }
+
+    &:hover {
+        color: $global-link-hover;
+
+        &::after {
+            background: $global-link-hover;
+        }
+
     }
 }

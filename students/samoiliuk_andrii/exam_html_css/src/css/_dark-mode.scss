@@ -1,0 +1,76 @@
+.hidden-checkbox {
+    @include visibility-hidden;
+
+    &:checked+.page {
+        background-image: url(../images/first-screen-black.png);
+        background-color: $page-background-dark;
+        color: $page-main-color-dark;
+
+        .nav__item {
+            &::after {
+                background: #{$header-nav-color-hover-dark};
+            }
+
+            &>.nav__link {
+                color: $header-nav-color-dark;
+
+                &:visited {
+                    color: $header-nav-color-dark;
+                }
+            }
+        }
+
+        .header1 {
+            color: $header1_main_color-dark;
+
+            &_accent {
+                color: $header1_main_color_accent-dark;
+            }
+        }
+
+        .header2 {
+            color: $header1_main_color-dark;
+
+            &_accent {
+                color: $header1_main_color_accent-dark;
+            }
+        }
+
+        .global-link {
+            color: $global-link-color-dark;
+
+            &::after {
+                background: $global-link-color-dark;
+            }
+
+            &:hover {
+                color: $global-link-hover-dark;
+
+                &::after {
+                    background: $global-link-hover-dark;
+                }
+            }
+        }
+
+        .section2 {
+            &__wrapper {
+                background-color: $section2_wrapper_bg-dark;
+            }
+        }
+
+        .digits {
+            &__item {
+                &:not(:last-of-type) {
+                    &::after {
+                        content: '';
+                        background-color: $section2_digits_devider-dark;
+                    }
+                }
+            }
+        }
+
+        .feature {
+            border-top: 1px solid $section3_border_color-dark;
+        }
+    }
+}
