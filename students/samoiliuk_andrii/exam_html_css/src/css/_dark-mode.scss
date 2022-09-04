@@ -72,5 +72,32 @@
         .feature {
             border-top: 1px solid $section3_border_color-dark;
         }
+
+        .quote {
+            &__image-light {
+                display: none;
+            }
+
+            &__image-dark {
+                display: block;
+            }
+        }
+
+        .section5 {
+            &__video-wrapper {
+                border: 1px solid $section5-video-frame-dark;
+
+                &::before {
+                    content: '';
+                    border: 1px solid $section5-video-frame-dark;
+                }
+
+                &::after {
+                    content: '';
+                    border: 1px solid $section5-video-frame-dark;
+                }
+            }
+        }
+
     }
 }
