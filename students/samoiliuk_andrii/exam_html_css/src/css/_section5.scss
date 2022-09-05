@@ -1,12 +1,8 @@
 .section5 {
-    &__container {}
-
 
     &__row {
         justify-content: center;
     }
-
-    // .section5__video-wrapper
 
     &__video-wrapper {
         border: 1px solid $section5-video-frame;
@@ -27,7 +23,6 @@
             left: 8px;
             transform: translate(0, -50%);
         }
-
 
         &::after {
             content: '';

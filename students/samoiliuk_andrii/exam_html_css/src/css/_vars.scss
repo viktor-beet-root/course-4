@@ -1,4 +1,4 @@
-$default-width: 1200px;
+$default-width: 1170px;
 $gap: 15px;
 $breack-points: (
     "lg": 1200px,
@@ -28,7 +28,11 @@ $color_dark-blue: #262A3F;
 $color-grey: #E4E4E4;
 $color-grey-dark: #515773;
 $white-transparent: rgba(255, 255, 255, .9);
+$white-transparent-6: rgba(255, 255, 255, .6);
+$white-transparent-1: rgba(255, 255, 255, .1);
 $black-transparent: rgba(22, 25, 38, .9);
+$grey-transparent-1: rgba(38, 42, 63, .1);
+$grey-transparent: rgba(38, 42, 63, .6);
 
 /*page*/
 $page-background-dark: $color_blue_deep;
@@ -40,6 +44,8 @@ $header1_main_color_accent: $color_green;
 $header1_main_color_accent-dark: $color_blue;
 $global-link-color: $color_red;
 $global-link-color-dark: $color_green-neon;
+$global-link-color-visited: $color_red;
+$global-link-color-dark-visited: $color_green-neon;
 $global-link-hover: $color-red-bright;
 $global-link-hover-dark: $color_green-neon-dark;
 /*header*/
@@ -58,3 +64,27 @@ $section3_border_color-dark: $color-grey-dark;
 $section4-quote-color: $color_white;
 $section5-video-frame: $color-grey;
 $section5-video-frame-dark: $color-grey-dark;
+$section6_wrapper_bg: $white-transparent;
+$section6_wrapper_bg-dark: $black-transparent;
+$section6_feature_header_font: $color_dark-blue;
+$section6_feature_header_font-dark: $color_white;
+$button_frame_color: $color-grey;
+$button_frame_color-dark: $color-grey-dark;
+$button_frame_hover: $color-red-bright;
+$button_frame_hover-dark: $color_green-neon-dark;
+$section7-review-text-color: $color_white;
+
+/*footer*/
+$footer_devider: $color-grey;
+$footer_form_border: $grey-transparent-1;
+$footer_form_color: $color_dark-blue;
+$footer_legal_color: $grey-transparent;
+$footer_link_color: $color_dark-blue;
+$footer_link_color_visited: $color_dark-blue;
+
+$footer_devider-dark: $color-grey-dark;
+$footer_form_border-dark: $white-transparent-1;
+$footer_form_color-dark: $color_white;
+$footer_legal_color-dark: $white-transparent-6;
+$footer_link_color-dark: $color_white;
+$footer_link_color_visited-dark: $color_white;

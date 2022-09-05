@@ -99,5 +99,76 @@
             }
         }
 
+
+        .feature {
+
+            &__item-header {
+
+                color: $section6_feature_header_font-dark;
+
+            }
+
+        }
+
+        .button {
+
+            border: 1px solid $button_frame_color-dark;
+
+
+            &:hover {
+                border: 1px solid $button_frame_hover-dark;
+
+                &>.global-link {
+                    color: $global-link-hover-dark;
+
+                    &::after {
+                        background: $global-link-hover-dark;
+                    }
+                }
+            }
+        }
+
+        .section6 {
+            &__wrapper {
+                background-color: $section6_wrapper_bg-dark;
+            }
+        }
+
+
+
+        .footer {
+            &__line {
+
+                border-top: 1px solid $footer_devider-dark;
+            }
+        }
+
+        .form {
+            &__input {
+                border-bottom: 1px solid $footer_form_border-dark;
+                color: $footer_form_color-dark;
+                background-color: $page-background-dark;
+
+                @include placeholder() {
+                    color: $footer_form_color-dark;
+                    opacity: .5;
+                }
+            }
+
+
+        }
+
+        .legal {
+            color: $footer_legal_color-dark;
+
+            &__link {
+                color: $footer_link_color-dark;
+
+                &:visited {
+                    color: $footer_link_color_visited-dark;
+                }
+            }
+        }
+
     }
 }

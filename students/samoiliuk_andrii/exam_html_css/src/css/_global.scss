@@ -2,7 +2,6 @@ html {
     font-size: 10px;
 }
 
-
 .page {
     background-image: url(../images/first-screen-white.png);
     background-position: top center;
@@ -41,6 +40,16 @@ html {
     &__section5 {
         margin-bottom: 90px;
     }
+
+    &__section6 {
+        margin-bottom: 90px;
+    }
+
+    &__section7 {
+        margin-bottom: 85px;
+    }
+
+    &__footer {}
 }
 
 .header1 {
