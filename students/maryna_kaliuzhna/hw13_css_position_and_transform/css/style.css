@@ -1,60 +1,63 @@
+/* francois-one-regular - latin-ext_latin */
 @font-face {
     font-family: 'Francois One';
     font-style: normal;
     font-weight: 400;
     src: local(''),
-         url('./fonts/francois-one-v20-latin-ext_latin-regular.woff2') format('woff2'),
-         url('./fonts/francois-one-v20-latin-ext_latin-regular.woff') format('woff'); 
+         url('./fonts/francois-one-v20-latin-ext_latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('./fonts/francois-one-v20-latin-ext_latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
   }
-
+/* staatliches-regular - latin-ext_latin */
+/* staatliches-regular - latin-ext_latin */
 @font-face {
     font-family: 'Staatliches';
     font-style: normal;
     font-weight: 400;
     src: local(''),
-         url('./fonts/staatliches-v11-latin-ext_latin-regular.woff2') format('woff2'),
-         url('./fonts/staatliches-v11-latin-ext_latin-regular.woff') format('woff');
+         url('./fonts/staatliches-v11-latin-ext_latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('./fonts/staatliches-v11-latin-ext_latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
   }
-
+/* pt-sans-regular - latin-ext_latin */
 @font-face {
     font-family: 'PT Sans';
     font-style: normal;
     font-weight: 400;
     src: local(''),
-         url('./fonts/pt-sans-v17-latin-ext_latin-regular.woff2') format('woff2'),
-         url('./fonts/pt-sans-v17-latin-ext_latin-regular.woff') format('woff'); 
+         url('./fonts/pt-sans-v17-latin-ext_latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('./fonts/pt-sans-v17-latin-ext_latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
   }
-
+  /* pt-sans-700 - latin-ext_latin */
   @font-face {
     font-family: 'PT Sans';
     font-style: normal;
     font-weight: 700;
     src: local(''),
-         url('./fonts/pt-sans-v17-latin-ext_latin-700.woff2') format('woff2'),
-         url('./fonts/pt-sans-v17-latin-ext_latin-700.woff') format('woff');
+         url('./fonts/pt-sans-v17-latin-ext_latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('./fonts/pt-sans-v17-latin-ext_latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
   }
 
+  /* farro-300 - latin-ext_latin */
 @font-face {
     font-family: 'Farro';
     font-style: normal;
     font-weight: 300;
     src: local(''),
-         url('../fonts/farro-v14-latin-ext_latin-300.woff2') format('woff2'), 
-         url('../fonts/farro-v14-latin-ext_latin-300.woff') format('woff'); 
+         url('../fonts/farro-v14-latin-ext_latin-300.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../fonts/farro-v14-latin-ext_latin-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
   }
-
+  /* farro-regular - latin-ext_latin */
   @font-face {
     font-family: 'Farro';
     font-style: normal;
     font-weight: 400;
     src: local(''),
-         url('../fonts/farro-v14-latin-ext_latin-regular.woff2') format('woff2'),
-         url('../fonts/farro-v14-latin-ext_latin-regular.woff') format('woff');
+         url('../fonts/farro-v14-latin-ext_latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../fonts/farro-v14-latin-ext_latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
   }
-.header{ 
+.header{
     width: 1440px; 
     margin: 0 auto;
-    padding-bottom: 83px;
+    padding-bottom: 45px;
     height: 80px;
 }
 .header-container{ 
@@ -81,7 +84,7 @@
 }
 
 .header-list-name{
-    font-family: Staatliches, Arial, Helvetica, sans-serif;
+    font-family: 'Staatliches', Arial, Helvetica, sans-serif;
     font-size: 22px;
     font-weight: 400;
     margin: 0 auto;
@@ -125,17 +128,16 @@ a{
 .col1-name{
     width: 100%;
     position: sticky;
-    top: 0;
+    top: 80px;
 }
 .col1{
     display: inline-block;
     width: 45%;
-    font-family: Francois One, Arial, Helvetica, sans-serif;
+    font-family: 'Francois One', Arial, Helvetica, sans-serif;
     font-size: 36px;
     font-weight: 400;
     color: #000000;
     text-align: left;
-    padding-right: 30px;
 }
 .col1-list{
     margin-bottom: 70px;
@@ -154,7 +156,7 @@ h3{
 .col2-name-second,
 .col2-name-third,
 .col2-name-fourth{
-    font-family: Francois One, Arial, Helvetica, sans-serif;
+    font-family: 'Francois One', Arial, Helvetica, sans-serif;
     font-weight: 400;
     font-size: 36px;
     line-height: 48px;
@@ -173,7 +175,7 @@ h3{
 }
 
 .col2-list{
-    font-family: PT Sans, Arial, Helvetica, sans-serif;
+    font-family: 'PT Sans', Arial, Helvetica, sans-serif;
     font-size: 28px;
     font-weight: 400;
 }
@@ -184,7 +186,7 @@ mark{
 
 small{
     text-align: left;
-    font-family: Farro, Arial, Helvetica, sans-serif;
+    font-family: 'Farro', Arial, Helvetica, sans-serif;
     font-weight: 300;
 }
 
