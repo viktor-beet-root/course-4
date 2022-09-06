@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>JS Basics</title>
+    </head>
+    <body>
+        <main>
+            <section class="js-using">
+                <h2 class="js-using__title title">Завдання 01 Мінімум.</h2>
+
+                <h3 class="js-using__subtitle">
+                    Що може вбудований у браузер JavaScript?
+                </h3>
+
+                <ul class="js-using__list list">
+                    <li class="list__item">
+                        Додавати новий HTML-код на сторінку, змінювати існуючий
+                        вміст, змінювати стилі.
+                    </li>
+                    <li class="list__item">
+                        Реагувати на дії користувача, опрацьовувати натискання
+                        миші, переміщення вказівника, натискання на клавіші
+                        клавіатури.
+                    </li>
+                    <li class="list__item">
+                        Відправляти запити через мережу до віддалених серверів,
+                        завантажувати і відвантажувати файли (так звані
+                        технології AJAX і COMET).
+                    </li>
+                    <li class="list__item">
+                        Отримувати і надсилати куки, ставити запитання
+                        відвідувачам, показувати повідомлення.
+                    </li>
+                    <li class="list__item">
+                        Запам’ятовувати дані на стороні клієнта (“local
+                        storage”), які будуть доступні в майбутніх сесіях на
+                        цьому веб-сайті.
+                    </li>
+                    <li class="list__item">
+                        Node.js підтримує функції, які дозволяють JavaScript
+                        читати/записувати довільні файли, здійснювати мережеві
+                        запити, та інше.
+                    </li>
+                </ul>
+            </section>
+
+            <section class="js-variables">
+                <h2 class="js-variables__title">Завдання 02 Мінімум.</h2>
+                <section class="js-variables__total total">
+                    <h3 class="total__title">Змінні в JS</h3>
+                    <p class="total__text">
+                        Змінна це “іменована частинка сховища”, в якій
+                        зберігаються дані. Ми використовуємо змінні, щоб
+                        зберігати дані.
+                    </p>
+                    <p class="total__text">
+                        Щоб створити змінну, використовуємо ключові слова const,
+                        let і var.
+                    </p>
+                </section>
+
+                <section class="js-variables__naming naming">
+                    <h3 class="naming__title">Іменування змінних</h3>
+                </section>
+
+                <p class="naming__text">
+                    В JavaScript є два обмеження, які стосуються імен змінних:
+                </p>
+
+                <ol class="naming__restriction-list restriction-list">
+                    <li class="restriction-list__item">
+                        Ім’я має містити лише букви, цифри або символи $ і _.
+                    </li>
+                    <li class="restriction-list__item">
+                        Перший символ не має бути числом.
+                    </li>
+                    <li class="restriction-list__item">
+                        Є ряд імен які зарезервовні мовою і їх використання для іменування змінних не можливе.
+                    </li>
+                    <li class="restriction-list__item">
+                        Можна використовувати будь-яку мову для іменування змінних. Такі імена дозволені, проте є міжнародна традиція використовувати англійську мову в іменах змінних
+                    </li>
+                </ol>
+                <p class="naming__text">
+                    Для написання імені, яке містить декілька слів, зазвичай
+                    використовують “верблюжий регістр” (camelCase). Тобто слова
+                    йдуть одне за одним, і кожне слово пишуть із великої букви й
+                    без пробілів: myVeryLongName..
+                </p>
+
+                <p class="naming__text">
+                    Наприклад, якщо потрібно зберігати ім’я та прізвище в
+                    змінній, ми можемо записати таким чином:                    
+                        <pre style="background-color: lightgray;">
+                            <code>
+                                const userFirstName = "Ім'я користувача";
+                                const userLastName = "Призвіще користувача";
+
+                                const userFullName = userFirstName + " " + userLastName;
+                            </code>
+                        </pre>                                     
+                </p>
+
+                <p class="naming__text">
+                    Але враховуючи обмеження не можна називати змінні так:
+                    <pre style="background-color: palevioletred;">
+                        <code>
+                            const користувач = "Ім'я користувача";
+                            const user LastName = "Призвіще користувача";
+
+                            const 1повне Імя Користувача = userFirstName + " " + userLastName;
+                        </code>
+                    </pre>   
+                </p>
+            </section>
+
+            <section class="js-comments">
+                <h2 class="js-naming-style">Завдання 03 Мінімум.</h2>
+                <h3 class="js-comments__subtitle">Коментарі</h3>
+
+                <p class="js-comments__text">В JS можливі три види коментарів:</p>
+
+                <p class="js-comments__text"><strong>Однорядкові коментарі починаються з подвійної косої риски //.</strong></p>
+
+                <p class="js-comments__text"><strong>Багаторядкові коментарі починаються з косої риски з зірочкою /* і закінчується зірочкою з косою рискою */.</strong></p>
+
+                <p class="js-comments__text"><strong>І javadoc коментар. Починається із косої риски і двох зірочок /** і закінчується зірочкою з косою рискою */.</strong> Ці коментарі дають можливість додавати в програму інформацію про неї, яка пізніше може бути використана утилітою javadoc (входить до складу Java Development Kit) для створення HTML-файлів. Коментарі документації можна використовувати при коментуванні:
+                </p>
+
+                <p class="js-comments__text">
+                    Характерною рисою останього є те, що кожен новий рядок коментаря пичинається із символа *.
+
+                    <pre style="background-color: lightgray;">
+                        <code>
+                            /**
+                                * строка коментаря
+                                * строка коментаря
+                                * строка коментаря
+                            */
+                        </code>
+                    </pre>
+                </p>
+            </section>
+
+            <section class="js-naming-styles">
+                <h2 class="js-naming-styles__title">Завдання 04 Мінімум.</h2>
+                <h3 class="js-naming-style__subtitle">Стилі написання імен змінних</h3>
+
+                <p class="js-naming-styles__text">
+                    Програмісти використовують численні способи, щоб забезпечити читабельність і впорядкованість коду.
+                </p>
+
+                <p class="js-naming-styles">Іменування змінних є важливим аспектом для того, щоб зробити код читабельним. Назви змінних слідують простій ідеї: створюйте змінні, які описують їх функції та дотримуються узгодженої теми у всьому коді. Давайте розглянемо деякі правила іменування.</p>
+
+                <ul class="js-naming-styles__list list">
+                    <li class="list__item">
+                        <p>Snakecase: Слова відокремлюються знаком підкреслення.
+                            <pre style="background-color: lightgray;">
+                                <code>
+                                    variable_one
+                                    variable_two
+                                </code>
+                            </pre>
+                        </p>
+                    </li>
+                    <li class="list__item">
+                        <p>Pascalcase:: Слова розмежовуються великими літерами.
+                            <pre style="background-color: lightgray;">
+                                <code>
+                                    VariableOne
+                                    VariableTwo
+                                </code>
+                            </pre>
+                        </p>
+                    </li>
+                    <li class="list__item">
+                        <p>Camelcase:: Слова розмежовуються великими літерами, крім початкового слова..
+                            <pre style="background-color: lightgray;">
+                                <code>
+                                    variableOne
+                                    variableTwo
+                                </code>
+                            </pre>
+                        </p>
+                    </li>
+                </ul>
+
+                <p class="js-naming-styles">В JS в переважній більшості випадків ми будемо використовувати <strong>camelcase</strong> нотацію для змінних</p>
+            </section>
+        </main>
+
+        <script src="./js/01_norma_task.js" type="module"></script>
+        <!-- <script src="./js/02_norma_task.js" type="module"></script> -->
+        <!-- <script src="./js/03_norma_task.js" type="module"></script> -->
+        <!-- <script src="./js/01_miximum_task.js" type="module"></script> -->
+        <!-- <script src="./js/02_maximum_task.js" type="module"></script> -->
+        <!-- <script src="./js/03_maximum_task.js" type="module"></script> -->
+    </body>
+</html>
