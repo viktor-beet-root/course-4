@@ -1,1 +1,1 @@
-https://kseniia15.github.io/course-4/students/yakymenko_kseniia/javascript_basics_hw/index.html
+https://kseniia15.github.io/course-4/students/yakymenko_kseniia/homework28_javascript_basics/index.html
