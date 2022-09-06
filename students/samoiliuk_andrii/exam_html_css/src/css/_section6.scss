@@ -4,6 +4,7 @@
     }
 
     &__wrapper {
+        width: math.div($default-width + 2 * $gap, 12) * 8 - $gap;
         position: absolute;
         right: 0;
         top: 50%;
@@ -43,15 +44,14 @@
 
 
 .features {
-    margin: -15px;
-    padding: 5px 0 75px 70px;
+    padding: 75px 15px 15px 69px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 
     &__list {
-        width: 39%;
-        margin-top: 70px;
+        width: 43%;
+        margin-bottom: 58px;
 
         &_button {
             display: flex;
@@ -69,10 +69,15 @@
         font-size: 2.4rem;
         line-height: 4.8rem;
         color: $section6_feature_header_font;
+        margin-bottom: 7px;
+        letter-spacing: 0.00em;
+        word-spacing: 0.00em;
 
     }
 
-    &__item {}
+    &__item {
+        margin-bottom: 10px;
+    }
 }
 
 

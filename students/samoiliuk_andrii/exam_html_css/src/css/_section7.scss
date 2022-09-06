@@ -19,7 +19,7 @@
 
 
     &__content {
-        padding: 30px 30px 30px 40px;
+        padding: 30px 40px 30px 40px;
         position: absolute;
         top: 0;
         left: 0;
@@ -39,6 +39,8 @@
         line-height: 2.6rem;
         color: $section7-review-text-color;
         opacity: 0.8;
+        letter-spacing: 0.00em;
+        word-spacing: 0.05em;
     }
 
 
@@ -50,5 +52,6 @@
         line-height: 2.0rem;
         letter-spacing: 0.08em;
         color: $section7-review-text-color;
+
     }
 }

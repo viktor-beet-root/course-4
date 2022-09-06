@@ -4,9 +4,10 @@
     }
 
     &__wrapper {
+        width: math.div($default-width + 2 * $gap, 12) * 8 - 2 * $gap;
         padding: 45px 0;
         position: absolute;
-        right: 0;
+        right: $gap;
         top: 50%;
         display: flex;
         background-color: $section2_wrapper_bg;
@@ -43,10 +44,15 @@
     &__text {
         box-sizing: border-box;
         width: 52%;
+        padding-right: 5px;
     }
 
     &__paragraph {
-        margin-bottom: 50px;
+        margin-bottom: 30px;
+
+        &:last-of-type {
+            margin-bottom: 47px;
+        }
     }
 }
 

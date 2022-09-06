@@ -14,15 +14,16 @@
     }
 
     &__label {
-        margin-top: 51px;
+        margin-top: 47px;
     }
 
     &__text {
-        margin-top: 29px;
+        margin-top: 24px;
+        padding-right: 0;
     }
 
     &__form {
-        margin-top: 30px;
+        margin-top: 18px;
     }
 }
 
@@ -38,8 +39,8 @@
         line-height: 2.0rem;
         letter-spacing: 0.08em;
         color: $footer_form_color;
-        padding: 12px 0;
-        margin-bottom: 28px;
+        padding: 13px 0;
+        margin-bottom: 24px;
 
         @include placeholder() {
             opacity: .5;
@@ -50,7 +51,8 @@
         font-family: $default-font #{$default-font-fallback};
         border: none;
         background-color: transparent;
-        padding-top: 12px;
+        margin-left: -6px;
+        margin-top: 14px;
     }
 }
 
@@ -60,13 +62,14 @@
     color: $footer_legal_color;
     padding-bottom: 15px;
 
+
     &__links {
         text-align: right;
     }
 
     &__link {
         font-weight: 400;
-        letter-spacing: 0.08em;
+        letter-spacing: 0.07em;
         color: $footer_link_color;
         text-decoration: none;
 

@@ -16,13 +16,15 @@ html {
     margin: -1px;
     color: $page-main-color;
 
+    word-spacing: 0.07em;
+
     &__header {
         margin-top: 30px;
-        margin-bottom: 126px;
+        margin-bottom: 135px;
     }
 
     &__section1 {
-        margin-bottom: 135px;
+        margin-bottom: 120px;
     }
 
     &__section2 {
@@ -30,7 +32,7 @@ html {
     }
 
     &__section3 {
-        margin-bottom: 90px;
+        margin-bottom: 35px;
     }
 
     &__section4 {
@@ -46,7 +48,7 @@ html {
     }
 
     &__section7 {
-        margin-bottom: 85px;
+        margin-bottom: 69px;
     }
 
     &__footer {}
@@ -58,6 +60,8 @@ html {
     font-size: 4.4rem;
     line-height: 5.2rem;
     color: $header1_main_color;
+    letter-spacing: 0.00em;
+    word-spacing: 0.00em;
 
     &_accent {
         font-style: italic;
@@ -71,6 +75,8 @@ html {
     font-size: 4.0rem;
     line-height: 4.8rem;
     color: $header1_main_color;
+    letter-spacing: 0.00em;
+    word-spacing: 0.00em;
 
     &_accent {
         font-style: italic;
@@ -83,7 +89,8 @@ html {
     font-weight: 700;
     font-size: 2.0rem;
     line-height: 2.0rem;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.09em;
+    word-spacing: 0.07em;
     text-transform: uppercase;
     color: $global-link-color;
     position: relative;
@@ -92,10 +99,10 @@ html {
     &::after {
         content: '';
         position: absolute;
-        width: 100%;
+        width: 92%;
         height: 13px;
-        bottom: -4px;
-        left: 8px;
+        bottom: -2px;
+        left: 15px;
         z-index: -10;
         background: $global-link-color;
         opacity: 0.3;
