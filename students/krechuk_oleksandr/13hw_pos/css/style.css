@@ -1,0 +1,307 @@
+@font-face {
+    font-family: 'PT Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+        url('../fonts/pt-sans-v17-latin-regular.woff2') format('woff2'),
+        url('../fonts/pt-sans-v17-latin-regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'PT Sans';
+    font-style: italic;
+    font-weight: 400;
+    src: local(''),
+        url('../fonts/pt-sans-v17-latin-italic.woff2') format('woff2'),
+        url('../fonts/pt-sans-v17-latin-italic.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'PT Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: local(''),
+        url('../fonts/pt-sans-v17-latin-700.woff2') format('woff2'),
+        url('../fonts/pt-sans-v17-latin-700.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Staatliches';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+        url('../fonts/staatliches-v11-latin-regular.woff2') format('woff2'),
+        url('../fonts/staatliches-v11-latin-regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Francois One';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+        url('../fonts/francois-one-v20-latin-regular.woff2') format('woff2'),
+        url('../fonts/francois-one-v20-latin-regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Farro';
+    font-style: normal;
+    font-weight: 300;
+    src: local(''),
+        url('../fonts/farro-v14-latin-300.woff2') format('woff2'),
+        url('../fonts/farro-v14-latin-300.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Farro';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+        url('../fonts/farro-v14-latin-regular.woff2') format('woff2'),
+        url('../fonts/farro-v14-latin-regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Tourney';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+        url('../fonts/tourney-v7-latin-regular.woff2') format('woff2'),
+        url('../fonts/tourney-v7-latin-regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Tourney';
+    font-style: normal;
+    font-weight: 600;
+    src: local(''),
+        url('../fonts/tourney-v7-latin-600.woff2') format('woff2'),
+        url('../fonts/tourney-v7-latin-600.woff') format('woff');
+}
+
+
+body {
+    font-family: 'PT Sans', Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 48px;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1200px;
+    padding: 15px 0;
+    margin: 0 auto;
+}
+
+.head {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.col {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+[class*="col-"] {
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+.col-4 {
+    width: calc(100% / 3);
+}
+
+.col-8 {
+    width: calc(100% / 12 * 8);
+}
+
+header {
+    padding: 26px auto;
+    margin-bottom: 70px;
+}
+
+head {
+    display: flex;
+}
+
+.ch_lang {
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+}
+
+.ch_lang a {
+    font-family: 'Tourney', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 18px;
+    text-align: center;
+    color: #000000;
+    letter-spacing: 0.04em;
+}
+
+.ch_page {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ch_page span {
+    font-family: 'Staatliches', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 28px;
+    color: #000000;
+    padding: 0 10px;
+}
+
+.ch_page a {
+    font-family: 'Staatliches', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 28px;
+    color: #000000;
+    letter-spacing: 0.03em;
+}
+
+.logo {
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+}
+
+.nav {
+    padding: 10px 10px;
+}
+
+.nav li {
+    border-bottom: 1px solid #BDBDBD;
+}
+
+.nav li:not(last-child) {
+    margin-bottom: 70px;
+}
+
+.nav a {
+    font-family: 'Francois One', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 48px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.chapter {
+    margin-bottom: 70px;
+}
+
+h2 {
+    font-family: 'Francois One', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 48px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #000000;
+    padding-bottom: 40px;
+    padding-top: 28px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.before_h2::before {
+    content: '';
+    width: 100px;
+    height: 8px;
+    background: #000000;
+    position: absolute;
+    top: 0;
+}
+
+.content {
+    counter-reset: list;
+}
+
+h2::after {
+    counter-increment: list;
+    content: 'Chapter ' counter(list);
+    padding-left: 10px;
+    font-family: 'Farro', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.04em;
+    color: #000000;
+    text-transform: none;
+    vertical-align: super;
+}
+
+i {
+    font-style: italic;
+}
+
+strong {
+    font-weight: bold;
+}
+
+mark {
+    background: #DADADA;
+}
+
+.ch3_text p:not(last-chikd) {
+    margin-bottom: 40px;
+}
+
+
+header {
+    position: relative;
+}
+
+.head {
+    position: fixed;
+    top: 0;
+    right: calc((100% - 1200px) / 2);
+    width: 1200px;
+    z-index: 100;
+}
+
+.main_div {
+    position: relative;
+
+}
+
+.nav ul {
+    position: sticky;
+    top: 0;
+}
+
+body {
+    background-image: url(../images/bg-picture.svg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top 150px right -132px;
+}
