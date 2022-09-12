@@ -1,11 +1,7 @@
-* {
-    transition: all .1s ease-in;
-}
-
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
     background: #3B3F45;
-
+    transition: all .1s ease-in;
 }
 
 header {
@@ -86,7 +82,8 @@ input:checked+span {
     text-decoration: line-through;
 }
 
-::after {
+
+.span_after {
     font-weight: 400;
     font-size: 11px;
     line-height: 13px;
@@ -94,26 +91,21 @@ input:checked+span {
     padding-left: 5px;
 }
 
-
-[name="v1"]::after {
-    content: "(for the next lessons about CSS)";
+::after {
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13px;
+    padding-left: 5px;
 }
 
-[name="v2"]::after {
-    content: "(for more CSS manipulations)";
+.span_after::after {
+    content: ")";
 }
 
-[name="v3"]::after {
-    content: "(because they are awesome)";
+.span_after::before {
+    content: "(";
 }
 
-[name="v4"]::after {
-    content: "(hm... they always dissapear)";
-}
-
-[name="v6"]::after {
-    content: "(for my friends)";
-}
 
 button span::before {
     content: "Bon appetit";
