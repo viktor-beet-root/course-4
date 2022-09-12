@@ -13,11 +13,9 @@
     <form action="#">
         <div>
             <img src="./images/Image.png" alt="">
-            <form action="#">
-                <input type="file">
-                <button type="reset" for="file">Erase</button>
-                <p style="font-size: 70%;">Up to 1 MB (300x300 px)</p>
-            </form>
+            <input type="file">
+            <button type="button" for="file">Erase</button>
+            <p style="font-size: 70%;">Up to 1 MB (300x300 px)</p>
         </div>
         <div>
             <div><label for="name">Name</label></div>
@@ -30,7 +28,7 @@
         <div>
             <label for="country">Country</label>
             <br>
-            <select id="country">
+            <select name="country" id="country">
                 <option selected hidden disabled>Select</option>
                 <option value="australia">Australia</option>
                 <option value="japan">Japan</option>
@@ -41,7 +39,7 @@
         <div>
             <label for="city">City</label>
             <br>
-            <select id="city">
+            <select name="city" id="city">
                 <option selected hidden disabled>Select city</option>
                 <option value="vinnytsia">Vinnytsia</option>
                 <option value="dnipro">Dnipro</option>
