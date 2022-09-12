@@ -1,0 +1,99 @@
+.statistic {
+
+    .container {
+        background-image: url(../images/statistic-image.jpg);
+        background-repeat: no-repeat;
+        background-size: 50%;
+
+        [class^="col-"]:last-child {
+            margin: 35px 0;
+            background-color: rgba(255, 255, 255, .9);
+            padding-top: 0;
+            padding-bottom: 0;
+
+            p {
+                font-family: $main-font;
+                font-size: 18px;
+                line-height: 26px;
+                color: $main-color;
+            }
+        }
+    }
+
+    .statistic__options {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 0;
+        padding-bottom: 0;
+
+        .options__wrapper {
+            padding: 39px 0;
+            position: relative;
+
+            span {
+                font-family: $title-font;
+                font-size: 68px;
+                line-height: 72px;
+                text-align: center;
+                color: $main-color;
+                display: block;
+                margin-top: 12px;
+            }
+
+            @include p;
+        }
+
+    }
+
+}
+
+.options__wrapper:not(:last-child) {
+    span {
+        position: relative;
+
+        &::before {
+            content: '$';
+            display: block;
+            font-family: $title-font;
+            font-size: 40px;
+            line-height: 50px;
+            color: $text-accent;
+            position: absolute;
+            top: 24px;
+            left: -28px;
+        }
+    }
+}
+
+.options__wrapper:not(:last-child)::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 1px;
+    background-color: $selection-color-light;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.statistic__text {
+    p {
+        margin-bottom: 30px;
+    }
+
+    a {
+        background-image: url(../images/button-sales.svg);
+        background-repeat: no-repeat;
+        height: 26px;
+        width: 180px;
+        display: inline-block;
+        background-position: 50% 24%;
+        margin-top: 25px;
+
+        &:hover {
+            background-position: 50% 74%;
+        }
+    }
+}

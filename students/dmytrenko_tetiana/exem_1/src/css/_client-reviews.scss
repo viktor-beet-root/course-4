@@ -1,0 +1,69 @@
+.client-reviews {
+    @include h3-and-span(40px, 39px);
+    @include p;
+
+
+    .client-reviews__title {
+        margin-bottom: 20px;
+    }
+
+    .client-reviews__text {
+        max-width: 374px;
+        margin-bottom: 50px;
+    }
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.list {
+    &__content {
+        padding: 30px 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &:first-child {
+            background-image: url(../images/bg-1.jpg);
+            background-repeat: no-repeat;
+            max-width: calc(100%/3 - 30px);
+            height: auto;
+        }
+
+        &:nth-child(2) {
+            background-image: url(../images/bg-2.jpg);
+            background-repeat: no-repeat;
+            max-width: calc(100%/3 - 30px);
+            height: auto;
+        }
+
+        &:last-child {
+            background-image: url(../images/bg-3.jpg);
+            background-repeat: no-repeat;
+            max-width: calc(100%/3 - 30px);
+            height: auto;
+        }
+
+        .content__text {
+            font-family: $main-font;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 26px;
+            color: $contrast-color;
+            margin-bottom: 30px;
+        }
+
+        .content__span {
+            display: block;
+            font-family: $title-font;
+            font-style: italic;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 20px;
+            letter-spacing: 0.08em;
+            color: $contrast-color;
+        }
+    }
+}

@@ -1,0 +1,16 @@
+@include font-face($main-font-name, 'lato-v23-latin-300', 300);
+@include font-face($main-font-name, 'lato-v23-latin-300', 400);
+@include font-face($title-font-name, 'playfair-display-v30-latin-regular', 400, normal);
+@include font-face($title-font-name, 'playfair-display-v30-latin-italic', 400, italic);
+
+@include grid(12);
+
+body {
+    background-image: url(../images/First-Screen-Bg-Image.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+section {
+    margin-bottom: 105px;
+}

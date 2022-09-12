@@ -1,0 +1,46 @@
+.swaps {
+    .swaps__cintainer {
+        background-image: url(../images/features-background-image.jpg);
+        background-repeat: no-repeat;
+        background-size: 50%;
+    }
+
+    .swaps__wrapper {
+        display: flex;
+        justify-content: space-around;
+        padding-top: 44px;
+        padding-bottom: 30px;
+    }
+
+    [class^="col-"]:last-child {
+        margin: 35px 0;
+        background-color: rgba(255, 255, 255, .9);
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .swaps__element {
+        margin-bottom: 25px;
+        @include h3(24px, 48px);
+        @include p(18px, 26px);
+        max-width: 300px;
+
+        h3,
+        p {
+            margin-bottom: 7px;
+        }
+
+        a {
+            background-image: url(../images/button-big-red.svg);
+            background-repeat: no-repeat;
+            height: 97px;
+            width: 302px;
+            display: inline-block;
+            background-position: 50% 9%;
+
+            &:hover {
+                background-position: 50% 86%;
+            }
+        }
+    }
+}

@@ -1,0 +1,78 @@
+.benefits {
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__details {
+        padding: 55px 35px 100px;
+        border-top: 1px solid #E4E4E4;
+        max-width: 600px;
+
+        @include h3-and-span(40px, 48px);
+        @include p;
+
+        h3 {
+            margin-bottom: 30px;
+
+            p {
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    &__details:nth-child(3) {
+        h3 {
+            max-width: 487px;
+        }
+    }
+}
+
+.benefits-reviews {
+    background-image: url(../images/quote-background.jpg);
+    background-repeat: no-repeat;
+    padding-top: 8%;
+    padding-bottom: 8%;
+
+    .benefits-reviews__wrapper {
+        max-width: 920px;
+        margin: 0 auto;
+    }
+
+    blockquote {
+        position: relative;
+        max-width: 710px;
+        max-height: 140px;
+        font-family: $main-font;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 46px;
+        letter-spacing: 0.04em;
+        color: $contrast-color;
+        margin-bottom: 40px;
+
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: -31px;
+            left: -61px;
+            width: 109px;
+            height: 88px;
+            background-image: url(../images/quote-icon.svg);
+            background-repeat: no-repeat;
+        }
+    }
+
+    cite {
+        font-family: $title-font;
+        font-style: italic;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 20px;
+        letter-spacing: 0.08em;
+        color: $contrast-color;
+
+    }
+}
