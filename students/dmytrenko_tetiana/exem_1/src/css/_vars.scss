@@ -1,0 +1,35 @@
+$path-fonts: '../fonts/';
+$main-font-name: 'Lato';
+$main-font: $main-font-name, Arial, Helvetica, sans-serif;
+$title-font-name: 'Playfair Display';
+$title-font: $title-font-name, Georgia, 'Times New Roman', Times, serif;
+
+$gap: 15px;
+$breack-points: (
+    "lg": 1200px,
+    "md": 992px,
+    "sm": 768px,
+    "xs": 576px,
+    "sxs": 480px,
+    "uxs": 320px
+);
+
+$dark-color: #262A3F;
+$white: #fff;
+$green: #85BBB1;
+$blue: #689FF2;
+$blue-deep: #161926;
+$hover-color-light: #F1897B;
+$light-gray: #E4E4E4;
+// $hover-gradient-dark: linear-gradient #53F3CD @ 0% rgba(83, 243, 205, 0) @ 100%;
+$main-color: $dark-color;
+$contrast-color: $white;
+$selection-color-light: $green;
+$selection-color-dark: $blue;
+$bg-light-color: $white;
+$bg-dark-color: $blue-deep;
+$hover-color-line: $hover-color-light;
+$text-accent: $light-gray;
+
+
+$default-width: 1200px;

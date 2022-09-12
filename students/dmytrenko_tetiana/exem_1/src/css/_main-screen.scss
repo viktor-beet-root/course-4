@@ -1,0 +1,43 @@
+.main-screen {
+    &__wrapper {
+        max-width: 523px;
+        margin-top: 150px;
+
+        h1 {
+            font-family: $title-font;
+            font-size: 44px;
+            line-height: 52px;
+            text-align: left;
+            color: $main-color;
+            margin-bottom: 20px;
+
+            span {
+                color: $selection-color-light;
+                font-style: italic;
+            }
+        }
+
+        p {
+            font-family: $main-font;
+            font-size: 18px;
+            line-height: 26px;
+            text-align: left;
+            color: $main-color;
+            margin-bottom: 50px;
+        }
+
+        a {
+            background-image: url(../images/button-big-red.svg);
+            background-repeat: no-repeat;
+            height: 24px;
+            width: 122px;
+            display: inline-block;
+            background-position: 50% 25%;
+
+            &:hover {
+                background-position: 50% 76%;
+            }
+        }
+    }
+
+}
