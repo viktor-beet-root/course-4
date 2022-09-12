@@ -1,0 +1,33 @@
+.photo {
+    display: flex;
+    align-items: center;
+
+    &__sub {
+        border: 1px solid $color-gold;
+        position: relative;
+        z-index: 1;
+    }
+
+    &__sub::after {
+        @extend %photo_fig_border;
+        width: 500px;
+        height: 200px;
+        top: 100px;
+        left: -10%;
+    }
+
+    &__sub::before {
+        @extend %photo_fig_border;
+        width: 200px;
+        height: 500px;
+        top: -10%;
+        left: 100px;
+    }
+
+}
+
+.sub__img {
+    margin: 15px;
+    z-index: 2;
+    display: block;
+}

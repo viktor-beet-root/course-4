@@ -1,0 +1,72 @@
+.text {
+    border-left: 1px solid $color-gold;
+}
+
+.mini-container {
+    padding: 70px 70px;
+
+    &__h2 {
+        @include font-style-for-text('Roboto');
+        @include font-for-text(900, 36px, 42px);
+        text-align: center;
+        text-transform: capitalize;
+    }
+
+    &__hr-line1 {
+        content: '';
+        width: 100px;
+        height: 1px;
+        background-color: $color-gold;
+        margin: 30px 0;
+    }
+
+    &__sup-h2 {
+        @include font-for-text(400, 24px, 36px);
+        text-align: center;
+        text-transform: capitalize;
+        margin-bottom: 30px;
+    }
+
+    &__links {
+        display: flex;
+        margin: 49px;
+    }
+
+    &__lorem {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    &__hr-line2 {
+        content: '';
+        width: 50px;
+        height: 4px;
+        position: relative;
+        background-color: $color-gold;
+        margin-bottom: 25px;
+    }
+
+    &__hr-line2::before {
+        content: '';
+        width: 20px;
+        height: 4px;
+        border: 5px solid white;
+        position: absolute;
+        top: -5px;
+        left: 10px;
+    }
+
+    &__view-profile {
+        @include font-style-for-text('Open Sans');
+        @include font-for-text(700, 14px, 14px);
+        text-align: center;
+        text-transform: uppercase;
+        color: $color-main;
+        padding: 5px 10px;
+        border: 1px solid $color-gold;
+    }
+}
+
+.links__a:not(last-child) {
+    padding-right: 5px;
+}

@@ -1,0 +1,14 @@
+@mixin font-style-for-text($_font-fam, $_font-st: normal) {
+    font-family: $_font-fam, $another-fonts;
+    font-style: $_font-st;
+
+    @content;
+}
+
+@mixin font-for-text($_font-w, $_font-s, $_font_h) {
+    font-weight: $_font-w;
+    font-size: $_font-s;
+    line-height: $_font_h;
+
+    @content;
+}
