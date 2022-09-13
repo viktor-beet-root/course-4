@@ -41,7 +41,7 @@
     &__social-list {
         display: flex;
         justify-content: center;
-        padding: 30px 0;
+        padding: 20px 0;
 
         @include media ('sm') {
             padding: 15px;
@@ -54,13 +54,12 @@
         padding: 17px 5px;
 
         &>svg {
-            height: 25px;
+            height: 30px;
             fill: $footer-icons-color;
         }
 
         &>:hover {
             fill: $blue-light-color;
-            transition: color .5s ease-in-out;
         }
     }
 }
