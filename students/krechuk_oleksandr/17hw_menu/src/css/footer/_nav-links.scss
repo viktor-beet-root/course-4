@@ -1,0 +1,33 @@
+.footer {
+    &__links-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.links {
+
+    &__title-h5 {
+        margin-bottom: 30px;
+
+        @include media(xs) {
+            margin-bottom: 10px;
+            ;
+            text-align: center;
+        }
+    }
+
+    &__item {
+        &:not(:last-child) {
+            margin-bottom: 15px;
+        }
+
+        @include media(xs) {
+            margin-bottom: 10px;
+            text-align: center;
+        }
+    }
+
+
+}

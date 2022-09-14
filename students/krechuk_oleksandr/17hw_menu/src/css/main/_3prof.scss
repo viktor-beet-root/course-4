@@ -1,0 +1,63 @@
+.prof {
+
+    margin-top: 100px;
+
+    @include media(xs) {
+        margin-top: 20px;
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        @include media() {
+            justify-content: center;
+            text-align: center;
+        }
+    }
+
+    &__title-h2 {
+        margin-bottom: 20px;
+
+        @include media(xs) {
+            margin-bottom: 10px;
+        }
+    }
+
+    &__subtext {
+        margin-top: 40px;
+
+        @include media(xs) {
+            margin-top: 10px;
+        }
+
+    }
+
+    &__img-wrapper {
+        @include media(xs) {
+            margin-top: 10px;
+        }
+    }
+
+    &__img {
+        display: block;
+
+        @include media(lg) {
+            margin: 0 auto;
+        }
+    }
+}
+
+.subtext {
+
+    &__title-h4 {
+        margin-bottom: 12px;
+    }
+
+    &__text {
+        &:not(:last-child) {
+            margin-bottom: 30px;
+        }
+    }
+}
