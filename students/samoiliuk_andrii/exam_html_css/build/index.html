@@ -14,27 +14,37 @@
     <div class="page">
         <header class="page__header header">
             <div class="container header__container">
-                <div class="row header__row">
-                    <div class="col-2 header__left">
+                <div class="row header__row header-mobile">
+                    <div class="col-2 col-sm-3 header__left header-mobile__logo">
                         <a href="#" class="logo header__logo">
                             <img src="./images/logo-image.svg" alt="" class="logo__image">
                             <img src="./images/logo-text.svg" alt="" class="logo__image-text">
                         </a>
                     </div>
-                    <div class="col-10 header__right">
-                        <nav class="nav header__nav">
-                            <ul class="nav__container">
-                                <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
-                                <li class="nav__item"><a href="#" class="nav__link">About</a></li>
-                                <li class="nav__item"><a href="#" class="nav__link">Products</a></li>
-                                <li class="nav__item"><a href="#" class="nav__link">Use&nbsp;Cases</a></li>
-                                <li class="nav__item"><a href="#" class="nav__link">Pricing</a></li>
-                                <li class="nav__item"><a href="#" class="nav__link">Resources</a></li>
-                                <li class="nav__item"><label for="theme_switcher" class="nav__switch">S</label>
-                                </li>
-                            </ul>
+                    <input type="checkbox" id="menu-opener" class="hidden-checkbox menu-opener-checkbox">
+                    <div class="menu-opener header-mobile__menu"><label for="menu-opener" class="menu-opener__label"><span
+                                class="menu-opener__line"></span></label></div>
+                    <div class="col-9 col-sm-11 col-xs-12 header__right header-mobile__nav">
+                        <nav class="nav header__nav"></nav>
+                        <ul class="nav__container">
+                            <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
+                            <li class="nav__item"><a href="#" class="nav__link">About</a></li>
+                            <li class="nav__item"><a href="#" class="nav__link">Products</a></li>
+                            <li class="nav__item"><a href="#" class="nav__link">Use&nbsp;Cases</a></li>
+                            <li class="nav__item"><a href="#" class="nav__link">Pricing</a></li>
+                            <li class="nav__item"><a href="#" class="nav__link">Resources</a></li>
+                        </ul>
                         </nav>
                     </div>
+        
+                    <div class="header__switch header-mobile__switch"> <label for="theme_switcher" class="nav__switch">
+                            <div class="switch-to-light">
+                                <img class="switch-to-light__img" alt="s" src="./images/sun.svg">
+                            </div>
+                            <div class="switch-to-dark">
+                                <img class="switch-to-dark__img" alt="s" src="./images/moon.svg">
+                            </div>
+                        </label></div>
                 </div>
             </div>
         </header>
@@ -42,7 +52,7 @@
             <section class="page__section1 section1">
                 <div class="container section1__container">
                     <div class="row section1__row">
-                        <div class="col-6 section1__wrapper">
+                        <div class="col-6 col-lg-8 col-md-8 col-sm-11 col-xs-12 section1__wrapper">
                             <h1 class="header1 section1__header1">
                                 A peer-to-peer stablecoin
                                 <span class="header1_accent">clearinghouse</span> for the new economy
@@ -57,7 +67,7 @@
             <section class="page__section2 section2">
                 <div class="container section2__container">
                     <div class="row section2__row">
-                        <div class="col-6 section2__image-wrapper">
+                        <div class="col-6 col-md-7 col-sm-12 section2__image-wrapper">
                             <img src="./images/section2bg.jpg" alt="" class="section2__image">
                         </div>
                         <div class="section2__wrapper">
@@ -91,7 +101,7 @@
             <section class="page__section3 section3">
                 <div class="container section3__container">
                     <div class="row section3__row">
-                        <div class="col-6 section3__feature">
+                        <div class="col-6 col-md-12 section3__feature">
                             <div class="feature ">
                                 <h2 class="header2 feature__header">Qualified <span class="header2_accent">traders</span> and
                                     liquidty
@@ -104,7 +114,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="col-6 section3__feature">
+                        <div class="col-6 col-md-12 section3__feature">
                             <div class="feature">
                                 <h2 class="header2 feature__header">Settlement/OTC API and
                                     <span class="header2_accent">integration</span>
@@ -114,7 +124,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="col-6 section3__feature">
+                        <div class="col-6 col-md-12 section3__feature">
                             <div class="feature">
                                 <h2 class="header2 feature__header">The best
                                     <span class="header2_accent">payments <br> solutions</span>
@@ -125,7 +135,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="col-6 section3__feature">
+                        <div class="col-6 col-md-12 section3__feature">
                             <div class="feature">
                                 <h2 class="header2 feature__header"> <span class="header2_accent">Treasury</span> and <span
                                         class="header2_accent">returns</span> <br>for stablecoin stores
@@ -163,7 +173,7 @@
             <section class="page__section5 section5">
                 <div class="container section5__container">
                     <div class="row section5__row">
-                        <div class="col-10 ">
+                        <div class="col-10 col-lg-12">
                             <div class="section5__video-wrapper">
                                 <div class="section5__video-proportion-corrector">
                                     <div class="section5__video">
@@ -176,7 +186,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-10 section5__text">
+                        <div class="col-10 col-lg-12 section5__text">
                             <h2 class="header2 section5__header">A <span class="header2_accent">powerful API</span> , easy to use
                                 user interface</h2>
                             <p class="section5__caption">Our API allows all members to interact with Stablehouse’s platform, from
@@ -220,13 +230,13 @@
             <section class="page__section7 section7">
                 <div class="container section7__container">
                     <div class="row section7__row">
-                        <div class="col-12 section7__title">
+                        <div class="col-12 col-md-6 col-sm-12 section7__title">
                             <h2 class="header2 section7__header">Client&#160;&#160;<span class="header2_accent">reviews</span></h2>
                             <p class="section7__text">Happy clients, happy us. Read our client reviews <br> about the work process
                                 and
                                 results.</p>
                         </div>
-                        <div class="col-4 section7__review">
+                        <div class="col-4 col-md-6 col-sm-12 section7__review">
                             <div class="review">
                                 <img src="./images/review1.jpg" alt="" class="review__image">
                                 <div class="review__content">
@@ -238,7 +248,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-4 section7__review">
+                        <div class="col-4 col-md-6 col-sm-12 section7__review">
                             <div class="review">
                                 <img src="./images/review2.jpg" alt="" class="review__image">
                                 <div class="review__content">
@@ -250,7 +260,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-4 section7__review">
+                        <div class="col-4 col-md-6 col-sm-12 section7__review">
                             <div class="review">
                                 <img src="./images/review3.jpg" alt="" class="review__image">
                                 <div class="review__content">
@@ -271,14 +281,14 @@
                         <div class="col-12">
                             <div class="footer__line"></div>
                         </div>
-                        <div class="col-5 footer__label">
+                        <div class="col-5 col-lg-6 col-sm-12 footer__label">
                             <h2 class="header2 footer__header">Contact&#160;&#160;<span class="header2_accent">our sales team</span>
                             </h2>
                             <p class="footer__text">Our team is happy to answer your sales questions. <br> Fill out the form and
                                 we’ll be
                                 in touch as soon as possible.</p>
                         </div>
-                        <div class="col-5 footer__form">
+                        <div class="col-5 col-lg-6 col-sm-12 footer__form">
                             <form action="#" method="post" class="form">
                                 <input type="text" name="name" id="form__name" class="form__input form__input_name"
                                     placeholder="Your name" required>
@@ -296,16 +306,16 @@
                         <div class="col-12">
                             <div class="footer__line"></div>
                         </div>
-                        <div class="col-3">
-                            <p class="legal__copyright">© 2020 Solisgroup. All Rights Reserved.</p>
+                        <div class="col-3 col-lg-4">
+                            <p class="legal__copyright">© 2020 Solisgroup. All&#160;Rights&#160;Reserved.</p>
                         </div>
-                        <div class="col-2">
+                        <div class="col-2 col-lg-4 legal__zgraya">
                             <p class="legal__developer">made by&#160;&#160;&#160;<a href="https://zgraya.digital/" target="_blank"
                                     class="legal__link">Zgraya.digital</a></p>
                         </div>
-                        <div class="col-3 legal__links">
-                            <a href="#" class="legal__link legal__link_margin">User Agreement</a>
-                            <a href="#" class="legal__link"> Privacy Policy</a>
+                        <div class="col-3 col-lg-4 legal__links">
+                            <a href="#" class="legal__link legal__link_margin">User&#160;Agreement</a>
+                            <a href="#" class="legal__link"> Privacy&#160;Policy</a>
                         </div>
             
                     </div>

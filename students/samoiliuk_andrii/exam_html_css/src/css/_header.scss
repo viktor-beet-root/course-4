@@ -9,6 +9,7 @@
 
     &__row {
         justify-content: space-between;
+
     }
 
     &__left {
@@ -18,6 +19,11 @@
     &__right {
         display: flex;
         justify-content: flex-end;
+    }
+
+    &__switch {
+        padding: $gap $gap $gap 0;
+
     }
 }
 
@@ -88,7 +94,28 @@
         }
     }
 
-    // .nav__switch
 
-    &__switch {}
+}
+
+.switch-to-light {
+    width: 30px;
+    display: none;
+    cursor: pointer;
+
+    &__img {
+        max-width: 100%;
+    }
+}
+
+.switch-to-dark {
+    width: 25px;
+    cursor: pointer;
+
+    &__img {
+        max-width: 100%;
+    }
+}
+
+.menu-opener {
+    display: none;
 }

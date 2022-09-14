@@ -2,8 +2,11 @@ $default-width: 1170px;
 $gap: 15px;
 $breack-points: (
     "lg": 1200px,
+    //ok
     "md": 992px,
+    //ok
     "sm": 768px,
+    //ok
     "xs": 576px,
     "xxs": 480px
 );
@@ -53,6 +56,8 @@ $header-nav-color-light: $color_dark-blue;
 $header-nav-color-dark: $color_white;
 $header-nav-color-hover-light: $color_red;
 $header-nav-color-hover-dark: $color-green-neon-gradient;
+$header-borders: $color-grey;
+$header-borders-dark: $color-grey-dark;
 /*Sections*/
 $section2_wrapper_bg: $white-transparent;
 $section2_wrapper_bg-dark: $black-transparent;

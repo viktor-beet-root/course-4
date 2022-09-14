@@ -1,26 +1,36 @@
 <header class="page__header header">
     <div class="container header__container">
-        <div class="row header__row">
-            <div class="col-2 header__left">
+        <div class="row header__row header-mobile">
+            <div class="col-2 col-sm-3 header__left header-mobile__logo">
                 <a href="#" class="logo header__logo">
                     <img src="./images/logo-image.svg" alt="" class="logo__image">
                     <img src="./images/logo-text.svg" alt="" class="logo__image-text">
                 </a>
             </div>
-            <div class="col-10 header__right">
-                <nav class="nav header__nav">
-                    <ul class="nav__container">
-                        <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
-                        <li class="nav__item"><a href="#" class="nav__link">About</a></li>
-                        <li class="nav__item"><a href="#" class="nav__link">Products</a></li>
-                        <li class="nav__item"><a href="#" class="nav__link">Use&nbsp;Cases</a></li>
-                        <li class="nav__item"><a href="#" class="nav__link">Pricing</a></li>
-                        <li class="nav__item"><a href="#" class="nav__link">Resources</a></li>
-                        <li class="nav__item"><label for="theme_switcher" class="nav__switch">S</label>
-                        </li>
-                    </ul>
+            <input type="checkbox" id="menu-opener" class="hidden-checkbox menu-opener-checkbox">
+            <div class="menu-opener header-mobile__menu"><label for="menu-opener" class="menu-opener__label"><span
+                        class="menu-opener__line"></span></label></div>
+            <div class="col-9 col-sm-11 col-xs-12 header__right header-mobile__nav">
+                <nav class="nav header__nav"></nav>
+                <ul class="nav__container">
+                    <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Products</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Use&nbsp;Cases</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Pricing</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Resources</a></li>
+                </ul>
                 </nav>
             </div>
+
+            <div class="header__switch header-mobile__switch"> <label for="theme_switcher" class="nav__switch">
+                    <div class="switch-to-light">
+                        <img class="switch-to-light__img" alt="s" src="./images/sun.svg">
+                    </div>
+                    <div class="switch-to-dark">
+                        <img class="switch-to-dark__img" alt="s" src="./images/moon.svg">
+                    </div>
+                </label></div>
         </div>
     </div>
 </header>

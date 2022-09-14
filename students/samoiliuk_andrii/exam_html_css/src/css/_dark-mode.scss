@@ -20,6 +20,44 @@
             }
         }
 
+        @include media('xs') {
+            .nav {
+                &__item {
+                    border-bottom: 1px solid $header-borders-dark;
+                }
+            }
+
+            .menu-opener {
+                border: 1px solid $header-borders-dark;
+
+                &__line {
+                    background-color: $header-nav-color-dark;
+
+                    &::before {
+                        background-color: $header-nav-color-dark;
+                    }
+
+                    &::after {
+                        background-color: $header-nav-color-dark;
+                    }
+                }
+            }
+
+            .header-mobile {
+                &__switch {
+                    border: 1px solid $header-borders-dark;
+                }
+            }
+        }
+
+        .switch-to-light {
+            display: block;
+        }
+
+        .switch-to-dark {
+            display: none;
+        }
+
         .header1 {
             color: $header1_main_color-dark;
 

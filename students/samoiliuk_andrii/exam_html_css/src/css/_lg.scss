@@ -1,0 +1,33 @@
+@include media('lg') {
+    .section2 {
+        &__wrapper {
+            width: math.div($default-width + 2 * $gap, 12) * 8 - 2 * $gap;
+            padding: 3% 0;
+        }
+    }
+
+    .review {
+        &__content {
+            padding: 15px 25px 15px 25px;
+        }
+
+        &__text {
+            font-weight: 400;
+            line-height: 2rem;
+        }
+    }
+
+    .footer {
+        &__label {
+            margin-top: 18px;
+        }
+    }
+
+    .legal {
+        &__developer {
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+}
