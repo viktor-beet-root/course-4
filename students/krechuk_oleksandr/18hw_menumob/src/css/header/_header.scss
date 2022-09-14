@@ -1,0 +1,25 @@
+@import './menu';
+@import './sign';
+
+.header {
+    margin-top: 17px;
+    z-index: 1000;
+    margin-bottom: 90px;
+
+
+    @include media() {
+        margin-top: 15px;
+        margin-bottom: 45px;
+        position: relative;
+    }
+}
+
+.header__logo-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    @include media(xs) {
+        justify-content: center;
+    }
+}

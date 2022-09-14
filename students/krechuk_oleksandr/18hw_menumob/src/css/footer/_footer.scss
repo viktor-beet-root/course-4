@@ -1,0 +1,29 @@
+@import './form';
+@import './nav-links';
+
+.footer {
+    margin-top: 90px;
+    border-top: 1px solid $color-lightgary;
+
+    @include media(xs) {
+        margin-top: 15px;
+    }
+
+
+    &__container {
+        padding-top: 70px;
+        padding-bottom: 70px;
+
+        @include media(xs) {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+    }
+
+    &__logo {
+        @include media() {
+            margin: 0 auto;
+        }
+    }
+
+}

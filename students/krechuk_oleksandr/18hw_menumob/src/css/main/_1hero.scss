@@ -1,0 +1,70 @@
+.hero {
+    &__content {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+
+        @include media() {
+            justify-content: center;
+            text-align: center
+        }
+
+        @include media(xs) {
+            padding-bottom: 10px;
+        }
+
+    }
+
+    &__text {
+        @include font-for-text(400, 18px, 28px);
+        color: $color-main;
+        margin-bottom: 28px;
+
+        @include media(xs) {
+            margin-bottom: 10px;
+            @include font-for-text(400, 16px, 20px);
+        }
+
+    }
+
+    &__btn {
+        width: 180px;
+        height: 50px;
+
+        @include media() {
+            margin: 0 auto;
+        }
+    }
+
+    &__img-wrapper {
+        padding: 0px;
+        margin-left: -30px;
+
+        @include media() {
+            margin-left: 0;
+        }
+    }
+
+    &__img {
+        display: block;
+        max-width: 644px;
+
+        @include media(lg) {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+    }
+}
+
+.title {
+    @include font-for-text(700, 44px, 54px);
+    color: $color-black;
+    margin-top: -10px;
+    margin-bottom: 30px;
+
+    @include media(xs) {
+        @include font-for-text(700, 32px, 36px);
+        margin-bottom: 10px;
+    }
+}

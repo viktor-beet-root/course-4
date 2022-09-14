@@ -1,0 +1,68 @@
+.marketer {
+
+    margin-top: 98px;
+
+    @include media(xs) {
+        margin-top: 10px;
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        @include media() {
+            justify-content: center;
+            text-align: center;
+        }
+    }
+
+    &__title-wrapper {
+        margin-top: -30px;
+        margin-bottom: 10px;
+
+        @include media(xs) {
+            margin-top: 0px;
+        }
+    }
+
+    &__subtext {
+        margin-top: 40px;
+
+        @include media(xs) {
+            margin-top: 10px;
+        }
+    }
+
+    &__img-wrapper {
+        @include media(xs) {
+            margin-top: 10px;
+        }
+    }
+
+    &__img {
+        display: block;
+
+        @include media() {
+            margin: 0 auto;
+        }
+    }
+}
+
+.subtext {
+
+    &__title-h4 {
+        margin-bottom: 12px;
+    }
+
+    &__text {
+        &:not(:last-child) {
+            margin-bottom: 30px;
+
+            @include media(xs) {
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+}

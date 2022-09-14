@@ -1,0 +1,29 @@
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: $color-orange;
+    border-radius: 4px;
+
+    @include font-style-for-text('Poppins');
+    @include font-for-text(700, 16px, 24px);
+
+
+    text-align: center;
+    color: $color-white;
+}
+
+
+input {
+    @include placeholder {
+        padding-left: 10px;
+        @include font-for-text(400, 16px, 20px);
+        color: $color-gray;
+
+        @include media(xs) {
+            @include font-for-text(400, 14px, 20px);
+        }
+
+    }
+}
