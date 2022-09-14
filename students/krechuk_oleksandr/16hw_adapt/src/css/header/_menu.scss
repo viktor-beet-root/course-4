@@ -1,0 +1,41 @@
+.menu {
+
+
+    &__item {
+        padding: 10px;
+
+    }
+
+    &__link {
+        @include font-for-text(400, 16px, 28px);
+        color: $color-black;
+
+        @include media(xxs) {
+            @include font-for-text(400, 14px, 28px);
+        }
+
+    }
+
+
+}
+
+
+.header {
+    position: relative;
+
+    &__menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+
+    &__menu-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+}

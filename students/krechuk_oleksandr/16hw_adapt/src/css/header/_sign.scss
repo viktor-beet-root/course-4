@@ -1,0 +1,72 @@
+.login {
+
+    &__sign-in {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border: 1px solid $color-gray;
+        border-radius: 4px;
+
+        width: 100%;
+        height: 100%;
+        max-width: 108px;
+        max-height: 44px;
+
+        @include font-for-text(600, 16px, 20px);
+        color: $color-black;
+
+        @include media() {
+            width: 108px;
+            height: 44px;
+        }
+
+        @include media(xs) {
+            @include font-for-text(600, 14px, 20px);
+            width: 90px;
+            height: 40px;
+        }
+    }
+
+    &__sign-up {
+
+
+        @include font-style-for-text('Montserrat');
+        width: 100%;
+        height: 100%;
+        max-width: 110px;
+        max-height: 46px;
+
+        @include media() {
+            width: 110px;
+            height: 46px;
+        }
+
+        @include media(xs) {
+            @include font-for-text(600, 14px, 20px);
+            width: 92px;
+            height: 42px;
+        }
+
+    }
+
+
+}
+
+.header__login {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 $gap;
+
+    @include media() {
+        padding: $gap $gap;
+        justify-content: space-evenly;
+    }
+
+    @include media(xs) {
+        padding: 0;
+        justify-content: space-evenly;
+    }
+
+}
