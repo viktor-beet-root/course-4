@@ -164,39 +164,44 @@
 
         &__wrapper {
             width: 100%;
-            top: 0;
-            transform: translate(0, 0);
+            padding: 0;
+            position: static;
             display: flex;
             flex-wrap: wrap;
-            padding: $gap;
+            background-color: $section2_wrapper_bg;
+            z-index: 0;
+            transform: none;
+            padding: $gap 0;
         }
 
         &__image-wrapper {
+            position: absolute;
+            padding: $gap 0;
+
+
             &::after {
-                width: calc(100% - 2 * $gap);
-                margin-bottom: 400px +$gap;
+                top: 0;
+                right: 0;
+                left: 0;
+                bottom: 0;
             }
-
-            margin-bottom: 400px;
         }
-
 
         &__digits {
             width: 100%;
-            margin-bottom: 50px;
         }
 
         &__text {
             width: 100%;
             padding: $gap;
-
         }
 
         &__paragraph {
             margin-bottom: 30px;
 
+
             &:last-of-type {
-                margin-bottom: 47px;
+                margin-bottom: 30px;
             }
         }
     }
@@ -249,9 +254,16 @@
     }
 
     .section6 {
+        &__row {
+            position: relative;
+        }
 
         &__wrapper {
+            width: 100%;
+            position: static;
+            right: 0;
             top: 0;
+            z-index: 100;
             transform: translate(0, 0);
         }
     }
@@ -260,16 +272,29 @@
         max-width: 100%;
         width: 100%;
         flex-basis: 100%;
-        margin-bottom: 100px;
+        padding: 0;
+        position: absolute;
+        top: 1px;
+
+        &::after {
+            z-index: 0;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: 0;
+        }
     }
+
+
 
     .features {
         padding: $gap;
 
         &__list {
             width: 100%;
-            margin-bottom: 20px;
-            padding: 0 $gap;
+            margin-bottom: 30px;
         }
     }
 
