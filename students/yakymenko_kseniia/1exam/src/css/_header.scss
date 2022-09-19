@@ -1,5 +1,5 @@
 .header {
-    background-image: url(../images/main.jpg);
+    background-image: url(../images/HeaderBackground.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -17,8 +17,9 @@
         text-transform: uppercase;
         line-height: 1.2;
         letter-spacing: 4.8px;
-        color: $color-white;
+        color: $white-color;
         text-align: center;
+        padding-top: 60px;
 
         @include media ('sm') {
             font-size: 45px;
@@ -30,12 +31,12 @@
     }
 
     &__title-span {
-        font-family: $main-font;
+        font-family: $main-font-name;
         font-size: 22px;
         font-weight: 400;
         line-height: 26px;
         letter-spacing: 6.82px;
-        color: $color-white;
+        color: $white-color;
         display: block;
         text-align: center;
         padding-bottom: 48px;
@@ -47,7 +48,7 @@
 
     &__search {
         display: flex;
-        border: 2px solid $color-white;
+        border: 2px solid $white-color;
         max-width: 653px;
         width: 100%;
         margin: 0 auto;
@@ -64,10 +65,11 @@
         }
 
         &::placeholder {
-            color: $gray-light-color;
+            color: $gray-dark-color;
             text-align: center;
             font-size: 14px;
             letter-spacing: 2.8px;
+            font-family: $main-font-name;
 
             @include media('xs') {
                 letter-spacing: normal;
@@ -81,7 +83,7 @@
         height: 65px;
         border: none;
         background-color: $blue-light-color;
-        color: $color-white;
+        color: $white-color;
         text-transform: uppercase;
         font-family: $second-font-name;
         font-weight: $base-font-weight;
@@ -127,7 +129,7 @@
         text-transform: uppercase;
         font-size: 24px;
         text-decoration: none;
-        color: $color-white;
+        color: $white-color;
     }
 
     &__list {
@@ -163,11 +165,11 @@
             padding-top: 15px;
             padding-bottom: 15px;
             padding-left: 30px;
-            border-bottom: 1px solid $color-white;
+            border-bottom: 1px solid $white-color;
 
             &:first-child {
                 margin-top: 60px;
-                border-top: 1px solid $color-white;
+                border-top: 1px solid $white-color;
             }
         }
     }
@@ -180,7 +182,7 @@
     &__link {
         font-family: $second-font-name;
         text-decoration: none;
-        color: $color-white;
+        color: $white-color;
         text-transform: uppercase;
         font-size: 14px;
     }
@@ -277,15 +279,15 @@
             height: 10px;
             content: "";
             display: block;
-            border-left: 2px solid $color-white;
-            border-bottom: 2px solid $color-white;
+            border-left: 2px solid $white-color;
+            border-bottom: 2px solid $white-color;
             transform: rotate(-45deg);
             margin: 0 auto;
         }
     }
 
     &__text {
-        color: $color-white;
+        color: $white-color;
         font-size: 14px;
         font-family: $main-font;
         line-height: $base-line-height;
