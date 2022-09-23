@@ -1,1 +1,1 @@
-https://kseniia15.github.io/course-4/students/yakymenko_kseniia/exam1/index.html
+https://kseniia15.github.io/course-4/students/yakymenko_kseniia/1exam/index.html
