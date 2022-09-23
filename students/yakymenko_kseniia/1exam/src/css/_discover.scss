@@ -1,4 +1,4 @@
-.process-wrapper {
+.discover-wrapper {
     background-color: $gray-dark-color;
     background-size: cover;
     padding-top: 70px;
@@ -10,7 +10,7 @@
     }
 }
 
-.process {
+.discover {
     &__scheme {
         display: flex;
         justify-content: space-around;
@@ -77,6 +77,6 @@
     }
 }
 
-.process_after {
+.discover_after {
     justify-content: center;
 }
