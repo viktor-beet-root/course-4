@@ -18,8 +18,8 @@ class Circle {
     }
 
     set radius(r) {
-        let radius = +r;
-        if (radius > 0 && !isNaN(radius)) { this._radius = radius; } else throw 'wrong type';
+        r = +r;
+        if (r > 0 && !isNaN(r)) { this._radius = r; } else throw 'wrong type';
     }
 
     get diameter() {
