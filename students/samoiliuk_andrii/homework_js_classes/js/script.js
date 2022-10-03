@@ -189,7 +189,60 @@ function fillMarker(event) {
 // Завдання 3
 
 // Реалізуй клас Employee, що описує працівника, і створи масив працівників банку.
-// Реалізуй клас EmpTable для генерації HTML-коду таблиці зі списком працівників банку. Масив працівників необхідно передавати через конструктор, а отримувати HTML-код за допомогою методу getHtml ().
+// Реалізуй клас EmpTable для генерації HTML-коду таблиці зі списком працівників банку.
+// Масив працівників необхідно передавати через конструктор, а отримувати HTML-код 
+// за допомогою методу getHtml ().
 // Створи об'єкт класу EmpTable і виведи на екран результат роботи методу getHtml ().
 
-// Виконаю після зауважень.
+
+class Employee {
+    constructor(staffId, name, surname, position) {
+        this.staffId = staffId;
+        this.name = name;
+        this.surname = surname;
+        this.position = position;
+    }
+}
+
+const workers = [
+    new Employee(1, "Richard", "Armstead", "Chief of Division"),
+    new Employee(2, "Elizabeth", "Robinson", "Dept. Chief of Division"),
+    new Employee(3, "James", "Wells", "Dept. Chief of Division"),
+    new Employee(4, "Marcus", "Morgan", "Manager"),
+    new Employee(5, "Frances", "Applegate", "Manager"),
+    new Employee(6, "Henry", "Fogle", "Manager"),
+    new Employee(7, "Mary", "Jones", "Cashier"),
+    new Employee(8, "Gricelda", "Pereira", "Cashier"),
+    new Employee(9, "Irene", "Mattos", "Security"),
+    new Employee(10, "Rodney", "Parks", "Security"),
+]
+
+class EmpTable {
+    constructor(empList) {
+        this.empList = empList;
+    }
+
+    getHtml() {
+        let template = `<table>
+        <tr>
+            <th>Staff ID</th>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Position</th>
+        </tr>`
+        this.empList.forEach(function (element) {
+            template = template + `
+            <tr>
+                <td>${element.staffId}</td>
+                <td>${element.name}</td>
+                <td>${element.surname}</td>
+                <td>${element.position}</td>
+            </tr>`
+        });
+        template = template + `</table>`;
+        return template;
+    }
+}
+
+const bankWorkersTable = new EmpTable(workers);
+document.querySelector(".task3").innerHTML = bankWorkersTable.getHtml();
