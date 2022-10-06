@@ -1,0 +1,106 @@
+.header {
+    &__row {
+        align-items: center;
+    }
+}
+
+.logo {
+    &__img {
+        max-width: 100%;
+    }
+}
+
+.nav {
+    &__list {
+        display: flex;
+    }
+
+    &__item {
+        &:hover {
+            background-color: $color_tomato_light;
+            color: $color_white;
+        }
+    }
+
+    &__link {
+        display: block;
+        padding: 28px 15px;
+        color: inherit;
+        text-decoration: none;
+    }
+}
+
+.functions {
+    display: flex;
+    justify-content: flex-end;
+
+    &__item {
+        &:first-of-type {
+            margin-right: 30px;
+        }
+    }
+
+    &__icon {
+        width: 36px;
+        height: 36px;
+
+        &:hover path {
+            fill: $color_tomato_light;
+        }
+    }
+}
+
+.headerSlider {
+
+    &__row {
+        justify-content: flex-end;
+    }
+
+    &__slide {
+        box-sizing: border-box;
+        position: relative;
+        padding-top: 50%;
+        overflow: hidden;
+
+        &_1 {
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.84) 0%, rgba(217, 217, 217, 0) 100%), url("../images/jumbo_1.jpg") center no-repeat;
+            background-size: contain;
+        }
+
+        &_2 {
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.84) 0%, rgba(217, 217, 217, 0) 100%), url("../images/jumbo_2.jpg") center no-repeat;
+            background-size: contain;
+        }
+
+        &_3 {
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.84) 0%, rgba(217, 217, 217, 0) 100%), url("../images/jumbo_3.jpg") center no-repeat;
+            background-size: contain;
+        }
+
+    }
+
+    &__container {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+}
+
+.jumboText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 120px;
+    padding-right: $gap;
+    width: 350px;
+
+    &__header {
+        margin-bottom: 50px;
+    }
+
+    // .jumboText__link
+
+    &__link {}
+}

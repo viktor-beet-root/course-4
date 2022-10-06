@@ -1,0 +1,56 @@
+.page {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.headerOne {
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 61px;
+    text-align: center;
+    text-transform: uppercase;
+    color: $color_brown_light;
+}
+
+.headerTwo {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 39px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.headerThree {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: #000000;
+}
+
+.button {
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    text-transform: uppercase;
+    color: $color_white;
+    padding: 15px 57px;
+    border: 2px solid $color_brown_light;
+    box-sizing: border-box;
+
+    &:hover {
+        border: 2px solid $color_tomato_light;
+        background-color: $color_tomato_light;
+        color: $color_white;
+    }
+
+    &_black {
+        color: $color_black;
+        border: 2px solid $color_black;
+    }
+
+}
