@@ -19,14 +19,20 @@ $(document).ready(function () {
         {
             arrows: true,
             dots: false,
-            autoplay: true,
-            autoplaySpeed: 5000,
-            pauseOnFocus: true,
-            pauseOnHover: true,
-            pauseOnDotsHover: true,
-            slidesPerRow: 5,
-            adaptiveHeight: true,
+            autoplay: false,
+            infinite: true,
+            slidesToShow: 5,
+        });
+});
 
+$(document).ready(function () {
+    $('.partnersSlider').slick(
+        {
+            arrows: true,
+            dots: false,
+            autoplay: false,
+            infinite: true,
+            slidesToShow: 9,
         });
 });
 

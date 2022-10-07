@@ -1,6 +1,9 @@
 .header {
+    background-color: $color_brown_light;
+
     &__row {
         align-items: center;
+        justify-content: space-between;
     }
 }
 
@@ -13,6 +16,7 @@
 .nav {
     &__list {
         display: flex;
+        justify-content: center;
     }
 
     &__item {
@@ -33,6 +37,7 @@
 .functions {
     display: flex;
     justify-content: flex-end;
+    align-items: center;
 
     &__item {
         &:first-of-type {
@@ -46,6 +51,18 @@
 
         &:hover path {
             fill: $color_tomato_light;
+        }
+    }
+
+    &__link {
+        &>svg {
+            stroke: $color_black;
+            fill: $color_black;
+        }
+
+        &:hover>svg {
+            stroke: $color_tomato;
+            fill: $color_tomato;
         }
     }
 }
@@ -99,8 +116,6 @@
     &__header {
         margin-bottom: 50px;
     }
-
-    // .jumboText__link
 
     &__link {}
 }

@@ -1,6 +1,6 @@
 $gap: 15px;
 $grid-max-width: 1200px;
-$grid-padding-container: 100px;
+$grid-padding-container: 75px;
 $break-points: (
     "lg": 1200px,
     "md": 992px,
@@ -12,11 +12,9 @@ $break-points: (
 .container {
     max-width: $grid-max-width;
     margin: 0 auto;
-    padding-left: $gap;
-    padding-right: $gap;
+    padding-left: $grid-padding-container;
+    padding-right: $grid-padding-container;
 }
-
-
 
 @mixin media($point) {
     @media screen and (max-width: map-get($break-points, $point)) {

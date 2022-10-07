@@ -14038,13 +14038,18 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('.productsSlider').slick({
     arrows: true,
     dots: false,
-    autoplay: true,
-    autoplaySpeed: 5000,
-    pauseOnFocus: true,
-    pauseOnHover: true,
-    pauseOnDotsHover: true,
-    slidesPerRow: 5,
-    adaptiveHeight: true
+    autoplay: false,
+    infinite: true,
+    slidesToShow: 5
+  });
+});
+jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.partnersSlider').slick({
+    arrows: true,
+    dots: false,
+    autoplay: false,
+    infinite: true,
+    slidesToShow: 9
   });
 });
 }();
