@@ -12,7 +12,10 @@ const auto = {
     drivers: 'Olga, Nikita, Anton',
 
     getInfo: function () {
-        console.log(this);
+        const infoAboutCar = 'Машина ' + this.manufacturer + ' ' + this.model + ' ' + this.yearOfManufacture +
+            ' года. ' + 'Средняя скорость - ' + this.averageSpeed + ' км/час, объем бака - ' + this.fuelTankVolume +
+            ', расход - ' + this.averageFuel100Km + ' литров на 100км. Зарегистрированніе водители: ' + this.drivers + '.';
+        console.log(infoAboutCar);
     },
 
     addDriver: function (name) {
@@ -68,8 +71,7 @@ timeOnScreen(timeDescription);
 
 // 1.2 Зміни часу на передану кількість секунд.
 
-function changedSeconds(timeDescription, seconds) {
-    timeDescription.seconds = +seconds + timeDescription.seconds;
+function validateTime(timeDescription) {
     if (timeDescription.seconds >= 60) {
         timeDescription.minutes = timeDescription.minutes + Math.floor(timeDescription.seconds / 60);
         timeDescription.seconds = timeDescription.seconds % 60;
@@ -85,6 +87,10 @@ function changedSeconds(timeDescription, seconds) {
     }
 }
 
+function changedSeconds(timeDescription, seconds) {
+    timeDescription.seconds = +seconds + timeDescription.seconds;
+    validateTime(timeDescription);
+}
 changedSeconds(timeDescription, 2849);
 console.log(timeDescription);
 
@@ -92,17 +98,8 @@ console.log(timeDescription);
 
 function changedMinutes(timeDescription, minutes) {
     timeDescription.minutes = +minutes + timeDescription.minutes;
-
-    if (timeDescription.minutes >= 60) {
-        timeDescription.hours = timeDescription.hours + Math.floor(timeDescription.minutes / 60);
-        timeDescription.minutes = timeDescription.minutes % 60;
-    }
-
-    if (timeDescription.hours >= 24) {
-        timeDescription.hours = timeDescription.hours % 24;
-    }
+    validateTime(timeDescription);
 }
-
 changedMinutes(timeDescription, 133);
 console.log(timeDescription);
 
@@ -110,12 +107,8 @@ console.log(timeDescription);
 
 function changedHours(timeDescription, hours) {
     timeDescription.hours = +hours + timeDescription.hours;
-
-    if (timeDescription.hours >= 24) {
-        timeDescription.hours = timeDescription.hours % 24;
-    }
+    validateTime(timeDescription);
 }
-
 changedHours(timeDescription, 6);
 console.log(timeDescription);
 
