@@ -1,0 +1,103 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .3);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.open-modal {
+    display: flex;
+    color: white;
+    border-radius: 15px;
+    max-width: 100px;
+    width: 100%;
+    justify-content: center;
+    padding: 5px 0;
+    background-color: rgb(120, 120, 212);
+    font-size: 20px;
+}
+
+.modal-window {
+    background-color: rgb(221, 220, 152);
+    min-width: 500px;
+    min-height: 400px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.modal-content {
+    font-size: 30px;
+    font-weight: 500;
+    color: rgb(43, 10, 73);
+}
+
+.close-modal {
+    display: flex;
+    border-radius: 15px;
+    max-width: 120px;
+    width: 100%;
+    justify-content: center;
+    padding: 5px 0;
+    background-color: rgb(155, 155, 212);
+    font-size: 20px;
+}
+
+.content {
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+.traffic-light-block {
+    background: rgb(100, 99, 99);
+    width: 100px;
+    border-radius: 10px;
+    padding: 5px;
+    border: 6px solid #000;
+    margin-top: 25px;
+}
+
+.traffic-light {
+    display: flex;
+    flex-direction: column;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin-bottom: 5px;
+}
+
+.color-red {
+    background: red;
+    border: 5px solid rgb(161, 10, 10);
+
+}
+
+.color-yellow {
+    background: grey;
+    border: 5px solid rgb(196, 196, 9);
+}
+
+.color-green {
+    background: grey;
+    border: 5px solid rgb(7, 97, 7);
+}
+
+.button-traffic-light {
+    display: flex;
+    color: white;
+    border-radius: 15px;
+    max-width: 100px;
+    width: 100%;
+    justify-content: center;
+    padding: 10px 0;
+    background-color: rgb(212, 33, 138);
+    font-size: 20px;
+    margin-top: 20px;
+}
