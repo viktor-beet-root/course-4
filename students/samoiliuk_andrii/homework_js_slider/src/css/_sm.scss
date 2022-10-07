@@ -1,0 +1,278 @@
+@include media(md) {
+    .container {
+        padding-left: $gap;
+        padding-right: $gap;
+    }
+
+    .mobile {
+        &__logo {
+            order: 1;
+
+        }
+
+        &__functions {
+            order: 2
+        }
+
+        &__nav {
+            order: 4;
+            // display: none;
+        }
+
+        &__burger {
+            order: 3;
+            display: flex;
+            cursor: pointer;
+        }
+    }
+
+    .burger {
+        display: block;
+        width: 20px;
+        height: 2px;
+        background-color: $color_black;
+        position: relative;
+
+        &::before {
+            content: '';
+            display: block;
+            width: 20px;
+            height: 2px;
+            background-color: $color_black;
+            position: absolute;
+            top: -7px;
+        }
+
+        &::after {
+            content: '';
+            display: block;
+            width: 20px;
+            height: 2px;
+            background-color: $color_black;
+            position: absolute;
+            bottom: -7px;
+        }
+    }
+
+
+    .logo {
+        &__img {
+            max-width: 100px;
+            padding-bottom: 3px;
+        }
+    }
+
+
+    .nav {
+        &__list {
+            flex-direction: column;
+            padding-bottom: 10px;
+        }
+
+        &__item {
+            border-bottom: 1px solid $color_tomato_light;
+        }
+
+        &__link {
+            display: block;
+            padding: 5px 05px;
+        }
+    }
+
+    .functions {
+
+        padding-top: 22px;
+        padding-bottom: 18px;
+
+        &__item {
+            &:first-of-type {
+                margin-right: 15px;
+            }
+        }
+
+
+
+        &__link {
+            &>svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .headerSlider {
+        &__slide {
+            padding-top: 120%;
+
+            &_1 {
+                background: linear-gradient(180deg, rgba(0, 0, 0, 0.84) 0%, rgba(217, 217, 217, 0) 100%), url("../images/jumbo_1.jpg") 20% no-repeat;
+                background-size: cover;
+            }
+
+            &_2 {
+                background: linear-gradient(180deg, rgba(0, 0, 0, 0.84) 0%, rgba(217, 217, 217, 0) 100%), url("../images/jumbo_2.jpg") 20% no-repeat;
+                background-size: cover;
+            }
+
+            &_3 {
+                background: linear-gradient(180deg, rgba(0, 0, 0, 0.84) 0%, rgba(217, 217, 217, 0) 100%), url("../images/jumbo_3.jpg") 20% no-repeat;
+                background-size: cover;
+            }
+        }
+    }
+
+    .jumboText {
+        padding-top: 60px;
+        padding-right: 10px;
+        width: 210px;
+
+        &__header {
+            margin-bottom: 20px;
+        }
+
+        &__link {}
+    }
+
+    .jumbo {
+        .slick-dots li {
+            margin: 0 6px;
+        }
+
+    }
+
+    .new {
+
+        .slick-dots {
+            bottom: -20px;
+            transform: translate(-50%, 0);
+
+        }
+
+        .slick-dots li {
+            margin: 0 6px;
+        }
+
+        .slick-dots li button {
+            width: 12px;
+            height: 12px;
+            background-color: $color_dark_dot_inactive;
+        }
+
+        .slick-dots li.slick-active button {
+            background-color: $color_tomato_light;
+        }
+    }
+
+    .new {
+        &__button {
+            text-align: center;
+            margin-top: 70px;
+            margin-bottom: 70px;
+        }
+    }
+
+    .partners {
+
+        .slick-dots {
+            bottom: -20px;
+            transform: translate(-50%, 0);
+            background-color: $color_brown_light;
+        }
+
+        .slick-dots li {
+            margin: 0 6px;
+        }
+
+        .slick-dots li button {
+            width: 12px;
+            height: 12px;
+            background-color: $color_dark_dot_inactive;
+        }
+
+        .slick-dots li.slick-active button {
+            background-color: $color_tomato_light;
+        }
+    }
+
+    .partners {
+
+        background-color: $color_brown_light;
+
+
+        &__header {
+            margin-top: 50px;
+        }
+
+        // .partners__slider
+
+        &__slider {
+            margin-top: 30px;
+            margin-bottom: 70px;
+        }
+    }
+
+    .footer {
+        padding-top: 50px;
+    }
+
+    .footerLogoSmall {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &>.footerNav__logo {
+            margin: 0 0 40px 0;
+        }
+
+    }
+
+    .contacts {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        &__header {
+            margin-bottom: 19px;
+        }
+
+        &__list {
+            margin-bottom: 19px;
+        }
+
+        &__item {
+            width: auto;
+            margin-right: 10px;
+
+            &:last-of-type {
+                margin-right: -5px;
+            }
+        }
+
+        &__link {
+            &>svg {
+                height: 20px;
+
+
+            }
+
+        }
+
+    }
+
+    .copyright {
+        padding-top: 50px;
+
+    }
+
+
+}
+
+@media screen and (min-width: calc(map-get($break-points, "md") + 1px)) {
+    .footerLogoSmall {
+        display: none;
+    }
+}

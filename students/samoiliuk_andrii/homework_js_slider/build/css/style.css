@@ -874,6 +874,10 @@ textarea {
   border: 2px solid #000000;
 }
 
+.mobile__burger {
+  display: none;
+}
+
 .header {
   background-color: #F8F1EA;
 }
@@ -1241,6 +1245,7 @@ textarea {
 .partners .slick-slide {
   height: inherit;
   margin: 10px;
+  text-align: center;
 }
 .partners .slick-slide > div {
   display: -webkit-box;
@@ -1509,5 +1514,227 @@ textarea {
   .contacts__phone {
     font-size: 20px;
     line-height: 24px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .mobile__logo {
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1;
+  }
+  .mobile__functions {
+    -webkit-box-ordinal-group: 3;
+    -ms-flex-order: 2;
+    order: 2;
+  }
+  .mobile__nav {
+    -webkit-box-ordinal-group: 5;
+    -ms-flex-order: 4;
+    order: 4;
+  }
+  .mobile__burger {
+    -webkit-box-ordinal-group: 4;
+    -ms-flex-order: 3;
+    order: 3;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    cursor: pointer;
+  }
+  .burger {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: #000000;
+    position: relative;
+  }
+  .burger::before {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: #000000;
+    position: absolute;
+    top: -7px;
+  }
+  .burger::after {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: #000000;
+    position: absolute;
+    bottom: -7px;
+  }
+  .logo__img {
+    max-width: 100px;
+    padding-bottom: 3px;
+  }
+  .nav__list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding-bottom: 10px;
+  }
+  .nav__item {
+    border-bottom: 1px solid #F16A50;
+  }
+  .nav__link {
+    display: block;
+    padding: 5px 5px;
+  }
+  .functions {
+    padding-top: 22px;
+    padding-bottom: 18px;
+  }
+  .functions__item:first-of-type {
+    margin-right: 15px;
+  }
+  .functions__link > svg {
+    width: 20px;
+    height: 20px;
+  }
+  .hidden {
+    display: none;
+  }
+  .headerSlider__slide {
+    padding-top: 120%;
+  }
+  .headerSlider__slide_1 {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.84)), to(rgba(217, 217, 217, 0))), url("../images/jumbo_1.jpg") 20% no-repeat;
+    background: -o-linear-gradient(top, rgba(0, 0, 0, 0.84) 0%, rgba(217, 217, 217, 0) 100%), url("../images/jumbo_1.jpg") 20% no-repeat;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.84) 0%, rgba(217, 217, 217, 0) 100%), url("../images/jumbo_1.jpg") 20% no-repeat;
+    background-size: cover;
+  }
+  .headerSlider__slide_2 {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.84)), to(rgba(217, 217, 217, 0))), url("../images/jumbo_2.jpg") 20% no-repeat;
+    background: -o-linear-gradient(top, rgba(0, 0, 0, 0.84) 0%, rgba(217, 217, 217, 0) 100%), url("../images/jumbo_2.jpg") 20% no-repeat;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.84) 0%, rgba(217, 217, 217, 0) 100%), url("../images/jumbo_2.jpg") 20% no-repeat;
+    background-size: cover;
+  }
+  .headerSlider__slide_3 {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.84)), to(rgba(217, 217, 217, 0))), url("../images/jumbo_3.jpg") 20% no-repeat;
+    background: -o-linear-gradient(top, rgba(0, 0, 0, 0.84) 0%, rgba(217, 217, 217, 0) 100%), url("../images/jumbo_3.jpg") 20% no-repeat;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.84) 0%, rgba(217, 217, 217, 0) 100%), url("../images/jumbo_3.jpg") 20% no-repeat;
+    background-size: cover;
+  }
+  .jumboText {
+    padding-top: 60px;
+    padding-right: 10px;
+    width: 210px;
+  }
+  .jumboText__header {
+    margin-bottom: 20px;
+  }
+  .jumbo .slick-dots li {
+    margin: 0 6px;
+  }
+  .new .slick-dots {
+    bottom: -20px;
+    -webkit-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+  }
+  .new .slick-dots li {
+    margin: 0 6px;
+  }
+  .new .slick-dots li button {
+    width: 12px;
+    height: 12px;
+    background-color: #CAC2BA;
+  }
+  .new .slick-dots li.slick-active button {
+    background-color: #F16A50;
+  }
+  .new__button {
+    text-align: center;
+    margin-top: 70px;
+    margin-bottom: 70px;
+  }
+  .partners .slick-dots {
+    bottom: -20px;
+    -webkit-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    background-color: #F8F1EA;
+  }
+  .partners .slick-dots li {
+    margin: 0 6px;
+  }
+  .partners .slick-dots li button {
+    width: 12px;
+    height: 12px;
+    background-color: #CAC2BA;
+  }
+  .partners .slick-dots li.slick-active button {
+    background-color: #F16A50;
+  }
+  .partners {
+    background-color: #F8F1EA;
+  }
+  .partners__header {
+    margin-top: 50px;
+  }
+  .partners__slider {
+    margin-top: 30px;
+    margin-bottom: 70px;
+  }
+  .footer {
+    padding-top: 50px;
+  }
+  .footerLogoSmall {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  .footerLogoSmall > .footerNav__logo {
+    margin: 0 0 40px 0;
+  }
+  .contacts {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+  }
+  .contacts__header {
+    margin-bottom: 19px;
+  }
+  .contacts__list {
+    margin-bottom: 19px;
+  }
+  .contacts__item {
+    width: auto;
+    margin-right: 10px;
+  }
+  .contacts__item:last-of-type {
+    margin-right: -5px;
+  }
+  .contacts__link > svg {
+    height: 20px;
+  }
+  .copyright {
+    padding-top: 50px;
+  }
+}
+@media screen and (min-width: 769px) {
+  .footerLogoSmall {
+    display: none;
   }
 }

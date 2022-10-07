@@ -3,8 +3,8 @@ import 'slick-carousel';
 
 const breakpoints = {
     max: 4000,
-    lg: 1280,
-    md: 768,
+    lg: 1281,
+    md: 769,
 }
 
 
@@ -76,6 +76,7 @@ $('.partnersSlider').slick(
                     arrows: false,
                     dots: true,
                     slidesToShow: 2,
+                    slidesToScroll: 2,
                 }
             }
         ]
@@ -83,3 +84,10 @@ $('.partnersSlider').slick(
 
 
 
+const burger = document.querySelector(".mobile__burger");
+burger.addEventListener('click', menuOpener);
+
+function menuOpener(event) {
+    console.log(event.target);
+    document.querySelector(".mobile__nav").classList.toggle("hidden");
+}

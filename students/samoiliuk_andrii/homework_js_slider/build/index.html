@@ -12,11 +12,11 @@
 <body class="page">
     <header class="header page__header">
         <div class="container">
-            <div class="row header__row">
-                <div class="col-2 col-lg-3">
+            <div class="row header__row mobile">
+                <div class="col-2 col-lg-3 col-md-6 mobile__logo">
                     <a href="#" class="logo"><img class="logo__img" alt="OnWave" src="./images/logo.svg"></a>
                 </div>
-                <div class="col-5 col-lg-6">
+                <div class="col-5 col-lg-6 col-md-12 mobile__nav hidden">
                     <nav class="nav">
                         <ul class="nav__list">
                             <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
@@ -26,7 +26,7 @@
                         </ul>
                     </nav>
                 </div>
-                <div class="col-2 col-lg-2">
+                <div class="col-2 col-lg-2 col-md-4 mobile__functions">
                     <ul class="functions">
                         <li class="functions__item"><a href="#" class="functions__link">
                                 <svg width="27" height="28" viewBox="0 0 27 28" fill="none"
@@ -47,6 +47,9 @@
                                 </svg></a>
                         </li>
                     </ul>
+                </div>
+                <div class="mobile__burger col-md-2">
+                    <span class="burger"></span>
                 </div>
             </div>
         </div>
@@ -281,8 +284,13 @@
     <footer class="footer page__footer">
         <div class="container footer__container">
             <div class="row footer__row">
-                <div class="col-2 col-lg-6 footer__navigation footerNav">
+                <div class="col-md-12 footerLogoSmall">
                     <a href="#" class="footerNav__logo">
+                        <img src="./images/logo-white.svg" alt="OnWave">
+                    </a>
+                </div>
+                <div class="col-2 col-lg-6 col-md-4 footer__navigation footerNav">
+                    <a href="#" class="footerNav__logo hidden">
                         <img src="./images/logo-white.svg" alt="OnWave">
                     </a>
                     <nav class="footerNav__nav">
@@ -294,7 +302,7 @@
                         </ul>
                     </nav>
                 </div>
-                <div class="col-4 footer__contacts contacts">
+                <div class="col-4 col-md-8 footer__contacts contacts">
                     <h4 class="headerFour contacts__header">Contact Us</h4>
                     <ul class="contacts__list">
                         <li class="contacts__item"><a class="contacts__link" href="#">

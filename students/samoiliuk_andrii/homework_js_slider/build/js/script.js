@@ -14025,8 +14025,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var breakpoints = {
   max: 4000,
-  lg: 1280,
-  md: 768
+  lg: 1281,
+  md: 769
 };
 jquery__WEBPACK_IMPORTED_MODULE_0___default()('.headerSlider').slick({
   arrows: false,
@@ -14083,10 +14083,18 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('.partnersSlider').slick({
     settings: {
       arrows: false,
       dots: true,
-      slidesToShow: 2
+      slidesToShow: 2,
+      slidesToScroll: 2
     }
   }]
 });
+var burger = document.querySelector(".mobile__burger");
+burger.addEventListener('click', menuOpener);
+
+function menuOpener(event) {
+  console.log(event.target);
+  document.querySelector(".mobile__nav").classList.toggle("hidden");
+}
 }();
 /******/ })()
 ;
