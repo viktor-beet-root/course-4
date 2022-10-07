@@ -20,16 +20,16 @@ const avto = {
     fuel_volume: '1360',
     consumption_per_100_km: '6.6',
     drivers: 'Ivan',
-    dispInformation() {
-        return ("Виробник: " + this.manufacturer + "\n" +
-            "Виробник: " +
+    displayInformation() {
+        return console.log("Виробник: " + this.manufacturer + "\n" +
+            "Модель: " +
             this.model + "\n" +
             "Рік випуска: " +
             this.year_of_issue + "\n" +
             "Середня швидкість: " +
-            this.average_speed + "\n" +
-            "Об'єм' топливного бака: " +
-            this.fuel_volume + "\n" +
+            this.average_speed + 'км/год' + "\n" +
+            "Об\'єм топливного бака: " +
+            this.fuel_volume + 'л' + "\n" +
             "Витрати топлива на 100 км: " +
             this.consumption_per_100_km + "\n" +
             "Ім'я водія: " +
@@ -46,20 +46,28 @@ const avto = {
     rounded(number) {
         return +number.toFixed(2);
     },
-    timeOnDistance(distance, breakdistance) {
+    hasDriver(name) {
+        let message = (this.drivers.includes(name) === true) ? 'Ім\'я ' + name +
+            ' присутнє в списку водіїв' : 'Ім\'я ' + name + ' відсутнє в списку водіїв';
+
+        return message;
+    },
+    timeOnDistance(distance, breaktime) {
         let timeclear = (this.rounded(distance) * 100) / this.average_speed * 100 / 10000;
-        let timeOnDistance = +timeclear / breakdistance + +timeclear;
-        return 'Для проходження ' + distance + 'км,' + "\n" +
+        let timeOnDistance = ~~(~~(+timeclear) / breaktime) + +timeclear;
+        const allTime = 'Для проходження ' + distance + 'км,' + "\n" +
             'з урахуванням часових зупинок ' + "\n" +
-            'через кожні ' + breakdistance + 'км, потрібно ' + "\n" +
+            'через кожні ' + breaktime + ' години, потрібно ' + "\n" +
             timeOnDistance.toFixed(1) + ' годин часу';
+        return allTime;
     },
 };
 avto.setName('Ilya');
 avto.setName('Oleg');
-// console.log(avto.dispInformation());
-// console.log(avto.fuelOnDistance(1));
-// console.log(avto.timeOnDistance(5000, 4));
+avto.displayInformation();
+console.log(avto.fuelOnDistance(51));
+console.log(avto.hasDriver('Max'));
+console.log(avto.timeOnDistance(5000, 4));
 
 
 
@@ -79,3 +87,49 @@ avto.setName('Oleg');
 //         може змінитися і інша.Наприклад: якщо до часу «20: 59: 45» додати 30 секунд,
 //             то повинно вийти «21: 00: 15», а не «20: 59: 75». Також потрібно передбачити
 // можливість того що користувач може передати 150 секунд, або 75 хвилин.
+
+const time = {
+    hours: 10,
+    minutes: 15,
+    seconds: 35,
+
+    increaseSeconds(seconds) {
+
+        this.hours = this.hours + Math.round((this.seconds + seconds) / 3600);
+        this.minutes = (this.minutes + Math.round((this.seconds + seconds) / 60)) % 60;
+        this.seconds = (this.seconds + seconds) % 60;
+
+        const message = 'Після збільшення на ' + seconds + ' секунд' +
+            ' час становить ' + this.hours + '.' + this.minutes + '.' + this.seconds;
+        return message;
+    },
+
+    increaseMinutes(minutes) {
+
+        this.hours = (this.hours + Math.round((this.minutes + minutes) / 60));
+        this.minutes = (this.minutes + minutes) % 60;
+
+        const message = 'Після збільшення на ' + minutes + ' мінут' +
+            ' час становить ' + this.hours + '.' + this.minutes + '.' + this.seconds;
+        return message;
+    },
+    increaseHours(hours) {
+
+        this.hours = this.hours + hours;
+
+        const message = 'Після збільшення на ' + hours + ' годин' +
+            ' час становить ' + this.hours + '.' + this.minutes + '.' + this.seconds;
+        return message;
+    },
+}
+
+function displayTime() {
+    const message = 'Наявний час ' + this.hours + '.' + this.minutes + '.' + this.seconds;
+
+    return console.log(message);
+}
+
+displayTime.call(time);
+console.log(time.increaseHours(3));
+console.log(time.increaseMinutes(3570));
+console.log(time.increaseSeconds(3570));
