@@ -46,8 +46,7 @@
     }
 
     &__icon {
-        width: 36px;
-        height: 36px;
+
 
         &:hover path {
             fill: $color_tomato_light;
@@ -56,6 +55,8 @@
 
     &__link {
         &>svg {
+            width: 36px;
+            height: 36px;
             stroke: $color_black;
             fill: $color_black;
         }
@@ -111,7 +112,7 @@
     align-items: center;
     padding-top: 120px;
     padding-right: $gap;
-    width: 350px;
+    width: 400px;
 
     &__header {
         margin-bottom: 50px;

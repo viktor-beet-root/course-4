@@ -14023,34 +14023,69 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var slick_carousel__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(slick_carousel__WEBPACK_IMPORTED_MODULE_1__);
 
 
-jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.headerSlider').slick({
-    arrows: false,
-    dots: true,
-    autoplay: true,
-    autoplaySpeed: 5000,
-    pauseOnFocus: true,
-    pauseOnHover: true,
-    pauseOnDotsHover: true
-  });
+var breakpoints = {
+  max: 4000,
+  lg: 1280,
+  md: 768
+};
+jquery__WEBPACK_IMPORTED_MODULE_0___default()('.headerSlider').slick({
+  arrows: false,
+  dots: true,
+  autoplay: true,
+  autoplaySpeed: 2500,
+  pauseOnFocus: true,
+  pauseOnHover: true,
+  pauseOnDotsHover: true
 });
-jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.productsSlider').slick({
-    arrows: true,
-    dots: false,
-    autoplay: false,
-    infinite: true,
-    slidesToShow: 5
-  });
+jquery__WEBPACK_IMPORTED_MODULE_0___default()('.productsSlider').slick({
+  responsive: [{
+    breakpoint: breakpoints.max,
+    settings: {
+      arrows: true,
+      dots: false,
+      autoplay: false,
+      infinite: true,
+      slidesToShow: 5
+    }
+  }, {
+    breakpoint: breakpoints.lg,
+    settings: {
+      arrows: true,
+      slidesToShow: 3
+    }
+  }, {
+    breakpoint: breakpoints.md,
+    settings: {
+      arrows: false,
+      dots: true,
+      slidesToShow: 1
+    }
+  }]
 });
-jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.partnersSlider').slick({
-    arrows: true,
-    dots: false,
-    autoplay: false,
-    infinite: true,
-    slidesToShow: 9
-  });
+jquery__WEBPACK_IMPORTED_MODULE_0___default()('.partnersSlider').slick({
+  responsive: [{
+    breakpoint: breakpoints.max,
+    settings: {
+      arrows: true,
+      dots: false,
+      autoplay: false,
+      infinite: true,
+      slidesToShow: 9
+    }
+  }, {
+    breakpoint: breakpoints.lg,
+    settings: {
+      arrows: true,
+      slidesToShow: 6
+    }
+  }, {
+    breakpoint: breakpoints.md,
+    settings: {
+      arrows: false,
+      dots: true,
+      slidesToShow: 2
+    }
+  }]
 });
 }();
 /******/ })()

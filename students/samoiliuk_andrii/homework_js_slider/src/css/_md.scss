@@ -1,0 +1,179 @@
+@include media(lg) {
+    .container {
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+
+    .page {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .headerOne {
+        font-size: 26px;
+        line-height: 32px;
+    }
+
+    .headerTwo {
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    .headerFour {
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    .button {
+        font-size: 16px;
+        line-height: 20px;
+        padding: 10px 26px;
+    }
+
+
+    .nav {
+        &__link {
+            padding: 20px 15px;
+        }
+    }
+
+
+    .functions {
+        &__item {
+            &:first-of-type {
+                margin-right: 20px;
+            }
+        }
+
+
+        &__link {
+            &>svg {
+                width: 27px;
+                height: 27px;
+
+            }
+        }
+    }
+
+    .jumbo {
+        .slick-dots {
+            bottom: 20px;
+        }
+
+        .slick-dots li {
+            margin: 0 10px;
+        }
+
+        .slick-dots li button {
+            width: 12px;
+            height: 12px;
+        }
+    }
+
+
+    .jumboText {
+        padding-top: 60px;
+        padding-right: 82px;
+        width: 250px;
+
+        &__header {
+            margin-bottom: 20px;
+        }
+    }
+
+    .new {
+        &__header {
+            margin-top: 50px;
+            margin-bottom: 40px;
+        }
+
+        &__button {
+            margin-top: 40px;
+            margin-bottom: 50px;
+        }
+    }
+
+    .new {
+        .slick-arrow {
+            width: 16px;
+            height: 30px;
+        }
+
+        .slick-arrow.slick-prev {
+            left: -9px;
+        }
+
+        .slick-arrow.slick-next {
+            right: -9px;
+
+        }
+    }
+
+    .partners {
+        &__header {
+            margin-top: 50px;
+        }
+
+        &__slider {
+
+            margin-bottom: 50px;
+        }
+    }
+
+    .partners {
+        .slick-arrow {
+            width: 16px;
+            height: 30px;
+        }
+
+        .slick-arrow.slick-prev {
+            left: -9px;
+        }
+
+        .slick-arrow.slick-next {
+            right: -9px;
+
+        }
+    }
+
+    .footer {
+        padding-top: 50px;
+    }
+
+    .footerNav {
+        flex-direction: row;
+
+        &__logo {
+            width: 150px;
+            margin-bottom: 35px;
+            margin-right: 126px;
+        }
+    }
+
+    .contacts {
+        &__header {
+            margin-bottom: 26px;
+        }
+
+        &__list {
+            margin-bottom: 20px;
+        }
+
+        &__item {
+            width: auto;
+            margin-right: 20px;
+        }
+
+        &__link {
+            &>svg {
+                height: 26px;
+            }
+        }
+
+        &__phone {
+            font-size: 20px;
+            line-height: 24px;
+        }
+    }
+
+}
