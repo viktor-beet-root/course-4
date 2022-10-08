@@ -1,0 +1,24 @@
+@import '../../node_modules/swiper/swiper.scss';
+@import '../../node_modules/swiper/modules/pagination/pagination.scss';
+@import '../../node_modules/swiper/modules/navigation/navigation.scss';
+@import '../../node_modules/swiper/modules/scrollbar/scrollbar.scss';
+
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+li {
+    padding: 15px;
+}
+
+.grid-item {
+    width: 33%;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+}
