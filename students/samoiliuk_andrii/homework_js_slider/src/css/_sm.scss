@@ -5,12 +5,23 @@
     }
 
     .mobile {
+        align-items: stretch;
+
         &__logo {
+            display: flex;
             order: 1;
 
+            &>a {
+                display: flex;
+                align-items: center;
+            }
         }
 
         &__functions {
+            display: flex;
+            padding: 0;
+            justify-content: flex-end;
+            align-items: center;
             order: 2
         }
 
@@ -22,7 +33,9 @@
         &__burger {
             order: 3;
             display: flex;
+            align-items: center;
             cursor: pointer;
+            justify-content: flex-end;
         }
     }
 

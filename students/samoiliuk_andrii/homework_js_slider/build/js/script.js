@@ -14024,7 +14024,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var breakpoints = {
-  max: 4000,
   lg: 1281,
   md: 769
 };
@@ -14038,16 +14037,12 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('.headerSlider').slick({
   pauseOnDotsHover: true
 });
 jquery__WEBPACK_IMPORTED_MODULE_0___default()('.productsSlider').slick({
+  arrows: true,
+  dots: false,
+  autoplay: false,
+  infinite: true,
+  slidesToShow: 5,
   responsive: [{
-    breakpoint: breakpoints.max,
-    settings: {
-      arrows: true,
-      dots: false,
-      autoplay: false,
-      infinite: true,
-      slidesToShow: 5
-    }
-  }, {
     breakpoint: breakpoints.lg,
     settings: {
       arrows: true,
@@ -14063,16 +14058,12 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('.productsSlider').slick({
   }]
 });
 jquery__WEBPACK_IMPORTED_MODULE_0___default()('.partnersSlider').slick({
+  arrows: true,
+  dots: false,
+  autoplay: false,
+  infinite: true,
+  slidesToShow: 9,
   responsive: [{
-    breakpoint: breakpoints.max,
-    settings: {
-      arrows: true,
-      dots: false,
-      autoplay: false,
-      infinite: true,
-      slidesToShow: 9
-    }
-  }, {
     breakpoint: breakpoints.lg,
     settings: {
       arrows: true,
@@ -14088,12 +14079,23 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('.partnersSlider').slick({
     }
   }]
 });
-var burger = document.querySelector(".mobile__burger");
-burger.addEventListener('click', menuOpener);
+var menu = document.querySelector(".mobile__nav");
+document.body.addEventListener('click', menuOpen);
 
-function menuOpener(event) {
-  console.log(event.target);
-  document.querySelector(".mobile__nav").classList.toggle("hidden");
+function menuOpen(event) {
+  if (event.target.closest(".mobile__burger") && menu.classList.contains("hidden")) {
+    menu.classList.remove('hidden');
+    document.body.removeEventListener('click', menuOpen);
+    document.body.addEventListener('click', menuClose);
+  }
+}
+
+function menuClose(event) {
+  if (event.target.closest('.mobile__nav') === null && !menu.classList.contains("hidden")) {
+    document.querySelector(".mobile__nav").classList.add("hidden");
+    document.body.removeEventListener('click', menuClose);
+    document.body.addEventListener('click', menuOpen);
+  }
 }
 }();
 /******/ })()

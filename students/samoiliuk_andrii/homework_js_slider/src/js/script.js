@@ -2,7 +2,6 @@ import $ from 'jquery';
 import 'slick-carousel';
 
 const breakpoints = {
-    max: 4000,
     lg: 1281,
     md: 769,
 }
@@ -21,17 +20,12 @@ $('.headerSlider').slick(
 
 $('.productsSlider').slick(
     {
+        arrows: true,
+        dots: false,
+        autoplay: false,
+        infinite: true,
+        slidesToShow: 5,
         responsive: [
-            {
-                breakpoint: breakpoints.max,
-                settings: {
-                    arrows: true,
-                    dots: false,
-                    autoplay: false,
-                    infinite: true,
-                    slidesToShow: 5,
-                }
-            },
             {
                 breakpoint: breakpoints.lg,
                 settings: {
@@ -52,17 +46,12 @@ $('.productsSlider').slick(
 
 $('.partnersSlider').slick(
     {
+        arrows: true,
+        dots: false,
+        autoplay: false,
+        infinite: true,
+        slidesToShow: 9,
         responsive: [
-            {
-                breakpoint: breakpoints.max,
-                settings: {
-                    arrows: true,
-                    dots: false,
-                    autoplay: false,
-                    infinite: true,
-                    slidesToShow: 9,
-                }
-            },
             {
                 breakpoint: breakpoints.lg,
                 settings: {
@@ -84,10 +73,23 @@ $('.partnersSlider').slick(
 
 
 
-const burger = document.querySelector(".mobile__burger");
-burger.addEventListener('click', menuOpener);
+const menu = document.querySelector(".mobile__nav");
 
-function menuOpener(event) {
-    console.log(event.target);
-    document.querySelector(".mobile__nav").classList.toggle("hidden");
+document.body.addEventListener('click', menuOpen);
+
+function menuOpen(event) {
+    if (event.target.closest(".mobile__burger") && menu.classList.contains("hidden")) {
+        menu.classList.remove('hidden');
+        document.body.removeEventListener('click', menuOpen);
+        document.body.addEventListener('click', menuClose);
+    }
 }
+
+function menuClose(event) {
+    if (event.target.closest('.mobile__nav') === null && !menu.classList.contains("hidden")) {
+        document.querySelector(".mobile__nav").classList.add("hidden");
+        document.body.removeEventListener('click', menuClose);
+        document.body.addEventListener('click', menuOpen);
+    }
+}
+
