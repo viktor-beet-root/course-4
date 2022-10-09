@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework JS classes</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body class="page">
+    <header class="header page__header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="headerOne">Домашня робота Класи</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="page__main main">
+        <section class="section main__section ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>Завдвння 1</h2>
+                        <p>
+                            Реалізуй клас, що описує коло. У класі повинні бути такі компоненти:
+                            поле, що зберігає радіус кола;</p>
+                        <ul>
+                            <li> get-властивість, яке повертає радіус кола;</li>
+                            <li> set-властивість, що встановлює радіус кола;</li>
+                            <li> get-властивість, яке повертає діаметр кола;</li>
+                            <li> метод, що обчислює площу кола;</li>
+                            <li> метод, що обчислює довжину кола.</li>
+                            <li> Продемонструй роботу властивостей і методів.</li>
+                        </ul>
+                    </div>
+                    <div class="col-12">
+                        <form action="#" method="get" class="circle">
+                            <label for="radius">
+                                Введіть радіус (мм):
+                                <input type="number" id="radius" class="circle__radius" placeholder="10" value="10">
+                            </label>
+                            <button type="submit" class="circle__display">Показати</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="row task1">
+                </div>
+            </div>
+        </section>
+        <section class="section main__section"></section>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2>Завдання 2</h2>
+                    <p>Реалізуй клас, що описує канцелярський маркер. У класі повинні бути такі компоненти:</p>
+                    <ul>
+                        <li>поле, яке зберігає колір маркера;</li>
+                        <li>поле, яке зберігає кількість чорнил у маркері (у відсотках);</li>
+                        <li>метод для вводу (приймає рядок і виводить текст відповідним кольором; текст виводиться до
+                            тих пір, поки в маркері є чорнило; один не пробільний символ — це 0,5% чорнил у маркері).
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <form action="#" method="get" class="marker">
+                        <label for="color">Оберіть маркер:
+                            <select id="color" class="marker__color">
+                                <option value="red">Червоний</option>
+                                <option value="orange">Помаранчовий</option>
+                                <option value="yellow">Жовтий</option>
+                                <option value="green">Зелений</option>
+                                <option value="lightblue">Блакитний</option>
+                                <option value="blue">Синій</option>
+                                <option value="purple">Фіолетовий</option>
+                            </select>
+                        </label>
+                        <label for="markerText"><br>
+                            Введіть текст </label><br>
+                        <textarea id="markerText" class="marker__textarea">Lorem ipsum dolor sit?</textarea><br>
+                        <button class="marker__button">Написати</button>
+                    </form>
+                </div>
+                <div class="col-6">
+                    <form action="#" method="get" class="markerFill">
+                        <label for="colorFill">Який маркер заправити:
+                            <select id="colorFill" class="markerFill__color">
+                                <option value="red">Червоний</option>
+                                <option value="orange">Помаранчовий</option>
+                                <option value="yellow">Жовтий</option>
+                                <option value="green">Зелений</option>
+                                <option value="lightblue">Блакитний</option>
+                                <option value="blue">Синій</option>
+                                <option value="purple">Фіолетовий</option>
+                            </select>
+                        </label><br>
+                        <label for="markerFillAmount">
+                            Скільки додати?
+                            <select id="markerFillAmount" class="markerFill__amount">
+                                <option value="25">25%</option>
+                                <option value="50">50%</option>
+                                <option value="75">75%</option>
+                                <option value="100">100%</option>
+                            </select>
+                        </label><br>
+                        <button class="markerFill__button">Заправити</button>
+                    </form>
+                </div>
+                <div class="col-12 task2">
+
+                </div>
+            </div>
+        </div>
+        <section class="section main__section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>Завдання 3</h2>
+                        <ul>
+                            <li> Реалізуй клас Employee, що описує працівника, і створи масив працівників банку.</li>
+                            <li>
+                                Реалізуй клас EmpTable для генерації HTML-коду таблиці зі списком працівників банку.
+                                Масив працівників необхідно передавати через конструктор, а отримувати HTML-код за
+                                допомогою
+                                методу
+                                getHtml ().
+                            </li>
+                            <li>Створи об'єкт класу EmpTable і виведи на екран результат роботи методу getHtml ().</li>
+                        </ul>
+
+                    </div>
+                    <div class="col-12 task3">
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+
+
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

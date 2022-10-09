@@ -1,0 +1,63 @@
+.page {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.page__main {
+    margin-bottom: 100px;
+}
+
+.container {
+    max-width: 1200px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
+}
+
+.row {
+    margin-left: -15px;
+    margin-right: -15px;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+.col-12 {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 15px;
+}
+
+.col-6 {
+    box-sizing: border-box;
+    width: 50%;
+    padding: 15px;
+}
+
+.col-3 {
+    box-sizing: border-box;
+    width: 25%;
+    padding: 15px;
+}
+
+.circleCard {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.circleCard__container {
+    flex-grow: 2;
+    overflow: hidden;
+    max-height: 150px;
+}
+
+.circleCard__circle {
+    border-radius: 50%;
+    border: 1px solid black;
+    background-color: lightcyan;
+}
+
+.marker__textarea {
+    width: 100%;
+}
