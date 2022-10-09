@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Base</title>
+    <!--    1. Створи HTML-файл, в ньому пропиши всі можливі способи використання JS;-->
+    <script>
+
+    </script>
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+    <script>
+        'use strict';
+        /* 2. Тобі потрібно зберігати ім’я та прізвище в змінній, придумай до 4-х імен змінних,
+            що потрібні тобі для даної задачі. Також напиши до 5 неправильних імен
+            (неправильні імена повинні бути закоментовані); */
+        const myFirstName = 'John'; //Best practice
+        const myLastName = 'Doe'; //Best practice
+        const my_first_name = 'John';
+        const my_last_name = 'Doe';
+        // const 111 = 'John';
+        // const my name = 'John';
+        // const my-name = 'John';
+        // const const = 5;
+
+        // 3. Вкажи всі можливі способи коментування коду;
+        /* multiline
+           comment */
+        // single line comment
+        /**
+         * JSDoc comment
+         * example
+         */
+
+            // 4. Які стилі написання імен змінних ти знаєш?
+            // camelCase, PascalCase, snake_case, SCREAMING_SNAKE_CASE, kebab-case, Train-Case, dot.case, flatcase
+
+            // 2_1. Запитай ім’я користувача та виведи у відповідь “Привіт, *ім’я*”;
+        const yourName = prompt('Enter your name', '');
+        const greetings = 'Привіт, ' + yourName;
+        console.log(greetings);
+
+        // 2_2. Запитай рік народження користувача, порахуй його/її вік і виведи результат.
+        // Поточний рік вкажи в коді як константу;
+        const birthdayYear = prompt('Enter your birthday year');
+        const currentYear = 2022;
+        const age = 'Ваш вік: ' + (currentYear - birthdayYear);
+        console.log(age);
+
+        // 2_3. Запитай у користувача довжину сторони квадрату і виведи периметр цього квадрата
+        const squareSide = prompt('Enter length of square side');
+        const perimeter = squareSide * 4;
+        console.log(perimeter);
+
+        // 3_1. Запитай у користувача радіус кола і виведи площу такої окружності.
+        const radius = prompt('Enter radius');
+        const area = Math.PI * Math.pow(radius, 2)
+        console.log(area)
+    </script>
+</body>
+
+</html>
