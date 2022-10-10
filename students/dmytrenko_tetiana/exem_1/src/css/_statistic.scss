@@ -1,21 +1,23 @@
 .statistic {
 
     .container {
-        background-image: url(../images/statistic-image.jpg);
-        background-repeat: no-repeat;
-        background-size: 50%;
+        .back {
+            background-image: url(../images/statistic-image.jpg);
+            background-repeat: no-repeat;
+            background-size: 50%;
 
-        [class^="col-"]:last-child {
-            margin: 35px 0;
-            background-color: rgba(255, 255, 255, .9);
-            padding-top: 0;
-            padding-bottom: 0;
+            [class^="col-"]:last-child {
+                margin: 35px 0;
+                background-color: rgba(255, 255, 255, .9);
+                padding-top: 0;
+                padding-bottom: 0;
 
-            p {
-                font-family: $main-font;
-                font-size: 18px;
-                line-height: 26px;
-                color: $main-color;
+                p {
+                    font-family: $main-font;
+                    font-size: 18px;
+                    line-height: 26px;
+                    color: $main-color;
+                }
             }
         }
     }
@@ -84,16 +86,17 @@
     }
 
     a {
-        background-image: url(../images/button-sales.svg);
-        background-repeat: no-repeat;
-        height: 26px;
-        width: 180px;
-        display: inline-block;
-        background-position: 50% 24%;
-        margin-top: 25px;
+        @extend %red-link;
+        margin-top: 20px;
+
+        &::after {
+            @extend %red-link-line;
+            width: 172px;
+            left: 5%;
+        }
 
         &:hover {
-            background-position: 50% 74%;
+            color: $hover-button-red;
         }
     }
 }

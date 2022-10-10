@@ -1,8 +1,9 @@
 .footer {
     @include p;
 
-    .container {
+    .border {
         border-top: 1px solid $text-accent;
+        padding-top: $gap;
     }
 
     p {
@@ -58,8 +59,3 @@
         }
     }
 }
-
-// .container__row {
-//     display: flex;
-//     justify-content: space-between;
-// }

@@ -14,6 +14,7 @@ $breack-points: (
     "uxs": 320px
 );
 
+$bright-red: #E64F3A;
 $dark-color: #262A3F;
 $white: #fff;
 $green: #85BBB1;
@@ -29,6 +30,8 @@ $selection-color-dark: $blue;
 $bg-light-color: $white;
 $bg-dark-color: $blue-deep;
 $hover-color-line: $hover-color-light;
+$button-red: $hover-color-light;
+$hover-button-red: $bright-red;
 $text-accent: $light-gray;
 
 

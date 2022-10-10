@@ -1,11 +1,15 @@
 .contact {
-    &__row {
-        display: flex;
-        justify-content: space-between;
+    .border {
+        border-top: 1px solid $text-accent;
+        ;
     }
 
-    .container {
-        border-top: 1px solid $text-accent;
+    [class^="col-"] {
+        display: flex;
+    }
+
+    [class^=col-]:last-child {
+        justify-content: flex-end;
     }
 
     @include h3-and-span(40px, 39px);
@@ -17,10 +21,8 @@
 
     .text {
         display: flex;
-
-        &__box {
-            align-self: center;
-        }
+        flex-direction: column;
+        align-self: center;
     }
 
     .form {
@@ -34,11 +36,24 @@
 
 .form {
 
+    input {
+        padding-top: 8px;
+        padding-bottom: 8px;
+        margin-top: 30px;
+    }
+
+    textarea {
+        height: 22px;
+        padding-top: 12px;
+        padding-bottom: 10px;
+        margin-top: 32px;
+        resize: none;
+        overflow: hidden;
+    }
+
     input,
     textarea {
         border: none;
-        height: 70px;
-        padding: 0;
         border-bottom: 1px solid $text-accent;
         position: relative;
         font-family: $main-font;
@@ -49,8 +64,6 @@
         opacity: 0.8;
 
         &::-webkit-input-placeholder {
-            position: absolute;
-            bottom: 0;
             font-family: $title-font;
             font-style: italic;
             font-weight: 400;
@@ -59,12 +72,9 @@
             letter-spacing: 0.08em;
             color: $main-color;
             opacity: 0.5;
-            margin-bottom: 12px;
         }
 
         &::-moz-placeholder {
-            position: absolute;
-            bottom: 0;
             font-family: $title-font;
             font-style: italic;
             font-weight: 400;
@@ -73,14 +83,10 @@
             letter-spacing: 0.08em;
             color: $main-color;
             opacity: 0.5;
-
-            margin-bottom: 12px;
         }
 
         /* Firefox 19+ */
         &:-moz-placeholder {
-            position: absolute;
-            bottom: 0;
             font-family: $title-font;
             font-style: italic;
             font-weight: 400;
@@ -89,14 +95,10 @@
             letter-spacing: 0.08em;
             color: $main-color;
             opacity: 0.5;
-
-            margin-bottom: 12px;
         }
 
         /* Firefox 18- */
         &:-ms-input-placeholder {
-            position: absolute;
-            bottom: 0;
             font-family: $title-font;
             font-style: italic;
             font-weight: 400;
@@ -105,29 +107,29 @@
             letter-spacing: 0.08em;
             color: $main-color;
             opacity: 0.5;
-
-            margin-bottom: 12px;
         }
     }
 
     button {
         border: none;
-        width: 200px;
+        width: 165px;
         padding: 0;
         background: unset;
+        margin-top: 40px;
 
         span {
-            background-image: url(../images/button-request.svg);
-            background-repeat: no-repeat;
-            height: 45px;
-            width: 212px;
-            display: inline-block;
-            background-position: 68% 16%;
-            margin-top: 25px;
+            @extend %red-link;
+
+            &::after {
+                @extend %red-link-line;
+                width: 163px;
+                left: 6%;
+            }
 
             &:hover {
-                background-position: 68% 71%;
+                color: $hover-button-red;
             }
         }
+
     }
 }

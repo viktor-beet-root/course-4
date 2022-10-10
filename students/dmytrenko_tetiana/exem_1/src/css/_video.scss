@@ -1,11 +1,14 @@
+.video__wrapper {
+    max-width: 970px;
+    margin: 0 auto;
+}
+
 .player {
     position: relative;
-    max-width: 970px;
     height: auto;
     border: 1px solid $text-accent;
     padding: 31px 0 30px 30px;
     border-radius: 32px;
-    margin: 0 auto;
     margin-bottom: 35px;
 
     &::before {
@@ -39,32 +42,6 @@
         max-width: 870px;
         border-radius: 8px;
         overflow: hidden;
-
-        &::before {
-            content: '';
-            display: block;
-            position: absolute;
-            width: 120px;
-            height: 120px;
-            background: rgba(88, 98, 145, 0.3);
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            border-radius: 50%;
-        }
-
-        &::after {
-            content: '';
-            display: block;
-            position: absolute;
-            width: 35px;
-            height: 35px;
-            background-image: url(../images/Polygon-black.svg);
-            top: 50%;
-            left: 50%;
-            transform: translate(-25%, -50%);
-            background-repeat: no-repeat;
-        }
     }
 }
 

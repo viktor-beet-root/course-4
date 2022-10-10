@@ -27,15 +27,16 @@
         }
 
         a {
-            background-image: url(../images/button-big-red.svg);
-            background-repeat: no-repeat;
-            height: 24px;
-            width: 122px;
-            display: inline-block;
-            background-position: 50% 25%;
+            @extend %red-link;
+
+            &::after {
+                @extend %red-link-line;
+                width: 112px;
+                left: 9%;
+            }
 
             &:hover {
-                background-position: 50% 76%;
+                color: $hover-button-red;
             }
         }
     }
