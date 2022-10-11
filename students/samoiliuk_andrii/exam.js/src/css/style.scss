@@ -1,0 +1,7 @@
+@use "sass:math";
+@import './grid-class-generator';
+@include grid(12);
+@import './reset.scss';
+@import './global';
+@import './header';
+@import './bgSlider';
