@@ -1,0 +1,50 @@
+.whatWeDo {
+    &__rowOne {
+        margin-bottom: 90px;
+    }
+
+    &__rowTwo {
+        margin-bottom: 120px;
+    }
+
+    &__rowThree {
+        margin-bottom: 150px;
+    }
+
+}
+
+.description {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: end;
+
+    &__header {
+        margin-bottom: 19px;
+    }
+
+    &__text {
+        margin-bottom: 40px;
+    }
+
+    &__button {
+        margin-bottom: 60px;
+    }
+
+    &__location {
+        margin-bottom: 26px;
+    }
+}
+
+.pictureWithBgLeft {
+    padding-right: 40px;
+    margin-top: 57px;
+    box-shadow: -215px -57px 0px 0px $color-light-blue;
+}
+
+.pictureWithBgRight {
+    padding-left: 40px;
+    margin-top: 57px;
+    box-shadow: 215px -57px 0px 0px $color-purple;
+}

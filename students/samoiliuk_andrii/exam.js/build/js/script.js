@@ -14030,7 +14030,8 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('.bgSlider').slick({
   arrows: false,
   dots: true,
   autoplay: true,
-  autoplaySpeed: 3000
+  autoplaySpeed: 3000,
+  pauseOnHover: false
 });
 }();
 /******/ })()
