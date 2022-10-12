@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -1173,6 +1174,19 @@ textarea {
   -ms-transform: translate(-50%, 0);
   transform: translate(-50%, 0);
 }
+.headerTwo_white {
+  color: #ffffff;
+}
+.headerTwo_white::before {
+  border-top: 1px solid #ffffff;
+}
+
+.headerThree {
+  font-family: "Montserrat";
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 27px;
+}
 
 .button {
   display: inline-block;
@@ -1459,4 +1473,182 @@ textarea {
   margin-top: 57px;
   -webkit-box-shadow: 215px -57px 0px 0px #7E5AFF;
   box-shadow: 215px -57px 0px 0px #7E5AFF;
+}
+
+.latestNews {
+  padding: 120px 0 170px 0;
+  background: -o-linear-gradient(212.9deg, #24CCFA 11.16%, #3C7FD4 89.18%);
+  background: linear-gradient(237.1deg, #24CCFA 11.16%, #3C7FD4 89.18%);
+}
+.newsSlider__slide {
+  height: 100%;
+}
+
+.slide {
+  background-color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+}
+.slide__img {
+  width: 100%;
+  margin-bottom: 30px;
+  -webkit-box-flex: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+}
+.slide__header {
+  margin: 0 20px 15px 20px;
+  -webkit-box-flex: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+}
+.slide__text {
+  font-size: 18px;
+  line-height: 25px;
+  margin: 0 20px 39px 20px;
+  -webkit-box-flex: 2;
+  -ms-flex-positive: 2;
+  flex-grow: 2;
+}
+.slide__author {
+  margin: 0 20px;
+  padding-bottom: 30px;
+  -webkit-box-flex: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+}
+
+.author {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.author__picture {
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+.author__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.author__name {
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 22px;
+  margin-bottom: 6px;
+}
+.author__date {
+  font-family: "Montserrat";
+  font-size: 14px;
+  line-height: 17px;
+  color: #55B7FF;
+}
+
+.latestNews {
+  min-width: 0;
+  /* Слайдер */
+  /* Слайдер запущен */
+  /* Слайдер с точками */
+  /* Ограничивающая оболочка */
+  /* Лента слайдов */
+  /* Слайд */
+  /* Слайд активный (показывается) */
+  /* Слайд основной */
+  /* Слайд по центру */
+  /* Клонированный слайд */
+  /* Стрелка */
+  /* Стрелка влево */
+  /* Стрелка вправо */
+  /* Стрелка не активная */
+  /* Точки (булиты) */
+}
+.latestNews .slick-slider {
+  min-width: 0;
+  position: relative;
+}
+.latestNews .slick-list {
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.latestNews .slick-track {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.latestNews .slick-slide {
+  height: inherit;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.latestNews .slick-slide > div {
+  height: 100%;
+}
+.latestNews .slick-arrow {
+  position: absolute;
+  top: 50%;
+}
+.latestNews .slick-arrow.slick-prev {
+  left: 0;
+  z-index: 10;
+  -webkit-transform: translate(-100%, -50%);
+  -ms-transform: translate(-100%, -50%);
+  transform: translate(-100%, -50%);
+  left: -60px;
+}
+.latestNews .slick-arrow.slick-next {
+  right: 0;
+  z-index: 10;
+  -webkit-transform: translate(100%, -50%);
+  -ms-transform: translate(100%, -50%);
+  transform: translate(100%, -50%);
+  right: -60px;
+}
+.latestNews .slick-dots {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  bottom: -43px;
+  -webkit-transform: translate(-50%, 100%);
+  -ms-transform: translate(-50%, 100%);
+  transform: translate(-50%, 100%);
+  z-index: 100;
+  left: 50%;
+}
+.latestNews .slick-dots li {
+  font-size: 0;
+  line-height: 0;
+  margin: 0 20px;
+}
+.latestNews .slick-dots li.slick-active {
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+.latestNews .slick-dots li button {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid #ffffff;
+  background-color: transparent;
 }

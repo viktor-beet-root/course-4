@@ -14033,6 +14033,14 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('.bgSlider').slick({
   autoplaySpeed: 3000,
   pauseOnHover: false
 });
+jquery__WEBPACK_IMPORTED_MODULE_0___default()('.newsSlider').slick({
+  infinite: true,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  arrows: true,
+  dots: true,
+  autoplay: false
+});
 }();
 /******/ })()
 ;
