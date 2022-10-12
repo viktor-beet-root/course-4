@@ -1652,3 +1652,11 @@ textarea {
   border: 1px solid #ffffff;
   background-color: transparent;
 }
+
+#map {
+  height: 850px;
+}
+#map > * {
+  margin: 0;
+  padding: 0;
+}

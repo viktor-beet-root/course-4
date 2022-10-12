@@ -14041,6 +14041,17 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('.newsSlider').slick({
   dots: true,
   autoplay: false
 });
+var map;
+function initMap() {
+  var map = new google.maps.Map(document.getElementById("map"), {
+    center: {
+      lat: 50.450076,
+      lng: 30.524121
+    },
+    zoom: 10
+  });
+}
+window.initMap = initMap;
 }();
 /******/ })()
 ;

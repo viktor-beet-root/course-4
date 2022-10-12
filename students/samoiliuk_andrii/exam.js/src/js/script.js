@@ -22,3 +22,15 @@ $('.newsSlider').slick({
     dots: true,
     autoplay: false,
 });
+
+let map;
+
+function initMap() {
+  const map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: 50.450076, lng: 30.524121 },
+    zoom: 10,
+  });
+}
+
+
+window.initMap = initMap;
