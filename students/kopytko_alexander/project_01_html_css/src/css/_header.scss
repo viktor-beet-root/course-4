@@ -2,9 +2,8 @@
     background-image: url("../images/first-screen-image.jpg");
     position: relative;
     min-height: 500px;
-}
-
-.pre-header {
+    background-repeat: no-repeat;
+    background-size: cover;
     padding-top: 30px;
 }
 
