@@ -33,6 +33,7 @@
     "webpack-stream": "^7.0.0"
   },
   "dependencies": {
+    "@fancyapps/ui": "^4.0.31",
     "jquery": "^3.6.1",
     "slick-carousel": "^1.8.1",
     "swiper": "^8.4.2"

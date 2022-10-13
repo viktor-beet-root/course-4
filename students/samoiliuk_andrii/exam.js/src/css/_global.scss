@@ -10,6 +10,10 @@
     &__main {
         margin-top: 100px;
     }
+
+    &__gallery {
+        margin-top: 150px;
+    }
 }
 
 .headerOne {
@@ -35,6 +39,7 @@
     font-weight: 700;
     font-size: 44px;
     line-height: 54px;
+    text-transform: uppercase;
 
     &_subheader {
         font-family: 'Montserrat', $fallback;

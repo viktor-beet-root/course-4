@@ -1,8 +1,10 @@
 @use "sass:math";
 @import './grid-class-generator';
 @include grid(12);
+@import '../../node_modules/@fancyapps/ui/src/Fancybox/Fancybox.scss';
 @import './reset.scss';
 @import './vars';
+@import './mixins';
 @import './fonts';
 @import './global';
 @import './header';
@@ -10,4 +12,5 @@
 @import './whatwedo';
 @import './latestNews';
 @import './newsslider';
-@import './map'
+@import './gallery';
+@import './map';

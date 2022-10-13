@@ -1,5 +1,6 @@
 import $ from "jquery";
 import 'slick-carousel';
+import { Fancybox } from "@fancyapps/ui";
 
 $('.bgSlider').slick({
   infinite: true,
@@ -12,8 +13,6 @@ $('.bgSlider').slick({
   pauseOnHover: false,
 });
 
-
-
 $('.newsSlider').slick({
   infinite: true,
   slidesToShow: 3,
@@ -22,6 +21,25 @@ $('.newsSlider').slick({
   dots: true,
   autoplay: false,
 });
+
+Fancybox.bind('[data-fancybox="gallery"]', {
+  // Your options go here
+});
+
+const hiddenSlides = document.querySelectorAll(".hiddable");
+const galleryButton = document.querySelector(".galleryButton");
+
+galleryButton.addEventListener("click", openSlides);
+
+function openSlides(event) {
+  event.preventDefault();
+  if (galleryButton.innerHTML === "see more") {
+    galleryButton.innerHTML = "see less";
+  } else { galleryButton.innerHTML = "see more" };
+  for (let i = 0; i < hiddenSlides.length; i++) {
+    hiddenSlides[i].classList.toggle("hiddable");
+  }
+}
 
 let map;
 
@@ -50,5 +68,5 @@ function initMap() {
   });
 }
 
-
+window.Fancybox = Fancybox;
 window.initMap = initMap;
