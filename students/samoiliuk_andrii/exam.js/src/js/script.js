@@ -2,25 +2,25 @@ import $ from "jquery";
 import 'slick-carousel';
 
 $('.bgSlider').slick({
-    infinite: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-    dots: true,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    pauseOnHover: false,
+  infinite: true,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+  dots: true,
+  autoplay: true,
+  autoplaySpeed: 3000,
+  pauseOnHover: false,
 });
 
 
 
 $('.newsSlider').slick({
-    infinite: true,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    arrows: true,
-    dots: true,
-    autoplay: false,
+  infinite: true,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  arrows: true,
+  dots: true,
+  autoplay: false,
 });
 
 let map;
@@ -28,7 +28,25 @@ let map;
 function initMap() {
   const map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 50.450076, lng: 30.524121 },
-    zoom: 10,
+    zoom: 15,
+    mapTypeId: 'terrain',
+  });
+
+  const locations = [
+    {
+      position: { lat: 50.450076, lng: 30.524121 },
+      map,
+      title: "Майдан Незалежності",
+    },
+    {
+      position: { lat: 50.448674, lng: 30.513261 },
+      map,
+      title: "Золоті ворота",
+    }
+  ];
+
+  locations.forEach(function (element) {
+    new google.maps.Marker(element);
   });
 }
 
