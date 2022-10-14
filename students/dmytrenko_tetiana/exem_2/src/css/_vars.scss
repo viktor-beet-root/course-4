@@ -1,0 +1,31 @@
+$main-font-style: 'Montserrat';
+$text-font-style: 'Open Sans';
+$link-text-style: 'Source Sans Pro';
+$main-font: $main-font-style, sans-serif;
+$text-font: $text-font-style, sans-serif;
+$link-text: $link-text-style, sans-serif;
+$path-fonts: '../fonts/';
+
+$gap: 15px;
+$default-width: 1200px;
+
+$breack-points: (
+    "lg": 1200px,
+    "md": 1024px,
+    "sm": 768px,
+    "xs": 576px,
+    "xxs": 480px
+);
+
+// <i class="fa-solid fa-location-dot"></i>
+// <i class="fa-solid fa-phone"></i>
+// <i class="fa-solid fa-inbox"></i>
+// <i class="fa-regular fa-clock-nine"></i>
+// <i class="fa-brands fa-facebook-f"></i>
+// <i class="fa-brands fa-twitter"></i>
+// <i class="fa-brands fa-instagram"></i>
+$blue: #55B7FF;
+$violet: #7E5AFF;
+$main-gradient: linear-gradient(243.43deg, #7E5AFF 16.9%, #55B7FF 83.27%);
+$gradient: linear-gradient(237.1deg, #24CCFA 11.16%, #3C7FD4 89.18%);
+$footer-gradient: linear-gradient(251.06deg, #7E5AFF -2.19%, #55B7FF 103.21%);

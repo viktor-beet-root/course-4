@@ -1,0 +1,7 @@
+@include font-face($link-text-style, 'source-sans-pro-v21-latin-regular', 400);
+@include font-face($main-font-style, 'montserrat-v25-latin-regular', 400);
+@include font-face($main-font-style, 'montserrat-v25-latin-700', 700);
+@include font-face($text-font-style, 'open-sans-v34-latin-regular', 400);
+@include font-face($text-font-style, 'open-sans-v34-latin-italic', 400, italic);
+
+@include grid(12);

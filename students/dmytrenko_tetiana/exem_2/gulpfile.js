@@ -69,6 +69,11 @@ function clean(cb) {
     cb();
 }
 
+function fonts() {
+    return gulp.src(path.src.fonts)
+        .pipe(gulp.dest(path.build.fonts))
+}
+
 function watch() {
     gulp.watch([path.watch.html], html);
     gulp.watch([path.watch.js], js);
@@ -83,6 +88,7 @@ exports.lib = lib;
 exports.clean = clean;
 exports.style = style;
 exports.image = image;
+exports.fonts = fonts;
 
 if (isDev) {
     exports.default = gulp.series(
@@ -91,8 +97,9 @@ if (isDev) {
         lib,
         style,
         image,
+        fonts,
         gulp.parallel(watch, server)
     );
 } else {
-    exports.default = gulp.series(clean, html, js, lib, style, image);
+    exports.default = gulp.series(clean, html, js, lib, style, image, fonts);
 }
