@@ -1,89 +1,81 @@
-// @mixin font-face($_font-name, $_font-file, $_font-weight, $_font-style: normal) {
-//     @font-face {
-//         font-family: $_font-name;
-//         font-style: $_font-style;
-//         font-weight: $_font-weight;
-//         src: local(''),
-//         url('#{$path-fonts}#{$_font-file}.woff2') format('woff2'),
-//         url('#{$path-fonts}#{$_font-file}.woff') format('woff');
-//     }
-// }
+@mixin font-face($_font-name, $_font-file, $_font-weight, $_font-style: normal) {
+    @font-face {
+        font-family: $_font-name;
+        font-style: $_font-style;
+        font-weight: $_font-weight;
+        src: local(''),
+        url('#{$path-fonts}#{$_font-file}.woff2') format('woff2'),
+        url('#{$path-fonts}#{$_font-file}.woff') format('woff');
+    }
+}
 
-// @mixin dflex($_jst, $_wrap: wrap, $_items: stretch) {
-//     display: flex;
-//     justify-content: $_jst;
-//     flex-wrap: $_wrap;
-//     align-items: $_items;
-// }
+@mixin grid($count) {
+    @include container;
 
-// @mixin test {
-//     @include dflex(space-between);
-//     display: inline;
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 (-$gap);
+    }
 
-//     @content;
-// }
+    [class^="col-"] {
+        padding: $gap;
+        box-sizing: border-box;
+    }
 
-// @mixin container {
-//     .container {
-//         max-width: $default-width;
-//         margin: 0 auto;
-//         padding: 0 $gap;
-//     }
-// }
+    @for $i from 1 through $count {
+        $width: math.div(100%, $count) * $i;
 
-// @mixin grid($count) {
-//     @include container;
+        .col-#{$i} {
+            max-width: $width;
+            width: 100%;
+            flex-basis: $width;
+        }
+    }
 
-//     .row {
-//         display: flex;
-//         flex-wrap: wrap;
-//         margin: 0 (-$gap);
-//     }
+    @each $breackpoint,
+    $breackpoint-value in $breack-points {
+        @media screen and (max-width: $breackpoint-value) {
+            @for $i from 1 through $count {
+                $width: math.div(100%, $count) * $i;
 
-//     [class^="col-"] {
-//         padding: $gap;
-//         box-sizing: border-box;
-//     }
+                .col-#{$breackpoint}-#{$i} {
+                    max-width: $width;
+                    width: 100%;
+                    flex-basis: $width;
+                }
+            }
+        }
+    }
+}
 
-//     @for $i from 1 through $count {
-//         $width: math.div(100%, $count) * $i;
+@mixin media($point) {
+    @media screen and (max-width: map-get($breack-points, $point)) {
+        @content;
+    }
+}
 
-//         .col-#{$i} {
-//             max-width: $width;
-//             width: 100%;
-//             flex-basis: $width;
-//         }
-//     }
+@mixin media-min($point) {
+    @media screen and (min-width: map-get($breack-points, $point)) {
+        @content;
+    }
+}
 
-//     @each $breackpoint,
-//     $breackpoint-value in $breack-points {
-//         @media screen and (max-width: $breackpoint-value) {
-//             @for $i from 1 through $count {
-//                 $width: math.div(100%, $count) * $i;
+@mixin container {
+    .container {
+        max-width: $default-width;
+        padding: $gap;
+        margin: 0 auto;
+    }
+}
 
-//                 .col-#{$breackpoint}-#{$i} {
-//                     max-width: $width;
-//                     width: 100%;
-//                     flex-basis: $width;
-//                 }
-//             }
-//         }
-//     }
-// }
-
-// @mixin media($point: sm) {
-//     @media screen and (max-width: map-get($breack-points, $point)) {
-//         @content;
-//     }
-// }
-
-// @mixin visuality-hidden {
-//     border: 0 !important;
-//     height: 1px !important;
-//     width: 1px !important;
-//     overflow: hidden !important;
-//     padding: 0 !important;
-//     position: absolute !important;
-//     clip: rect(0, 0, 0, 0) !important;
-//     margin: -1px !important;
-// }
+@mixin visuality-hidden {
+    border: none !important;
+    height: 1px !important;
+    width: 1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    clip: rect(0, 0, 0, 0) !important;
+    margin: -1px !important;
+}
