@@ -9,32 +9,45 @@
     }
 }
 
-@mixin h3-and-span($font-size, $line-height, $font-family: $title-font, $text-align: left, $color: $main-color) {
+@mixin h3-and-span($font-size, $line-height, $color: $main-color, $font-family: $title-font, $text-align: left) {
     h3 {
         font-family: $font-family;
         font-size: $font-size;
         line-height: $line-height;
         text-align: $text-align;
         color: $color;
+
+        .box-switcher__input:checked~main & {
+            color: $contrast-color;
+        }
 
         span {
             color: $selection-color-light;
             font-style: italic;
+
+            .box-switcher__input:checked~main & {
+                color: $selection-color-dark;
+                font-style: italic;
+            }
         }
     }
 }
 
-@mixin h3($font-size, $line-height, $font-family: $title-font, $text-align: left, $color: $main-color) {
+@mixin h3($font-size, $line-height, $color: $main-color, $font-family: $title-font, $text-align: left) {
     h3 {
         font-family: $font-family;
         font-size: $font-size;
         line-height: $line-height;
         text-align: $text-align;
         color: $color;
+
+        .box-switcher__input:checked~main & {
+            color: $contrast-color;
+        }
     }
 }
 
-@mixin p($font-size: 18px, $line-height: 26px, $font-family: $main-font, $font-weight: 300, $text-align: left, $color: $main-color, $opacity: 0.8) {
+@mixin p($font-size: 18px, $line-height: 26px, $color: $main-color, $font-family: $main-font, $font-weight: 300, $text-align: left, $opacity: 0.8) {
     p {
         font-family: $font-family;
         font-size: $font-size;
@@ -43,6 +56,11 @@
         color: $color;
         font-weight: $font-weight;
         opacity: $opacity;
+
+        .box-switcher__input:checked~main & {
+            color: $contrast-color;
+            opacity: 0.8
+        }
     }
 }
 
@@ -95,12 +113,6 @@
     }
 }
 
-// @mixin media($point) {
-//     @media screen and (max-width: $point) {
-//         @content;
-//     }
-// }
-// міксин для медіазапита
 @mixin media($point) {
     @media screen and (max-width: map-get($breack-points, $point)) {
         @content;
@@ -128,8 +140,6 @@
     overflow: hidden !important;
     padding: 0 !important;
     position: absolute !important;
-    // властивість, яка дозволяє 
-    // обмежувати видиму частину якогось діва
     clip: rect(0, 0, 0, 0) !important;
     margin: -1px !important;
 }

@@ -11,6 +11,15 @@
     outline: none;
     position: relative;
     transition: all .3s ease-in-out;
+
+    .box-switcher__input:checked~main & {
+        color: $button-green;
+    }
+
+    @media screen and (max-width: 576px) {
+        font-size: 17px;
+        line-height: 16px;
+    }
 }
 
 %red-link-line {
@@ -21,4 +30,8 @@
     opacity: 0.3;
     position: absolute;
     top: 50%;
+
+    .box-switcher__input:checked~main & {
+        background-color: $button-green;
+    }
 }

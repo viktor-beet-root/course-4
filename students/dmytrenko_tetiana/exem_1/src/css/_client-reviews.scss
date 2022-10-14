@@ -1,6 +1,16 @@
 .client-reviews {
     @include h3-and-span(40px, 39px);
+
+    @media screen and (max-width: 768px) {
+        @include h3-and-span(30px, 38px);
+    }
+
     @include p;
+
+    @media screen and (max-width: 768px) {
+        @include p(17px, 24px);
+    }
+
 
     [class^="col-"] {
         display: flex;
@@ -13,6 +23,10 @@
     .client-reviews__text {
         max-width: 374px;
         margin-bottom: 50px;
+
+        @media screen and (max-width: 1200px) {
+            margin-bottom: 30px;
+        }
     }
 
     &__list {
@@ -49,6 +63,14 @@
         background-repeat: no-repeat;
         background-size: 100%;
         height: auto;
+
+        @media screen and (max-width: 480px) {
+            padding: 20px 15px;
+        }
+
+        @media screen and (max-width: 480px) {
+            background-size: 121%;
+        }
 
         .content__text {
             font-family: $main-font;
