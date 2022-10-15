@@ -14,13 +14,16 @@ $breack-points: (
     "uxs": 320px
 );
 
+$bright-red: #E64F3A;
 $dark-color: #262A3F;
 $white: #fff;
 $green: #85BBB1;
 $blue: #689FF2;
-$blue-deep: #161926;
+$blue-deep: rgb(22, 25, 38);
 $hover-color-light: #F1897B;
 $light-gray: #E4E4E4;
+$gray-dark: #515773;
+$green-neon: #53F3CD;
 // $hover-gradient-dark: linear-gradient #53F3CD @ 0% rgba(83, 243, 205, 0) @ 100%;
 $main-color: $dark-color;
 $contrast-color: $white;
@@ -29,7 +32,11 @@ $selection-color-dark: $blue;
 $bg-light-color: $white;
 $bg-dark-color: $blue-deep;
 $hover-color-line: $hover-color-light;
+$button-red: $hover-color-light;
+$button-green: $green-neon;
+$hover-button-red: $bright-red;
 $text-accent: $light-gray;
+$border-color-contrast: $gray-dark;
 
 
 $default-width: 1200px;

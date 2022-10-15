@@ -1,7 +1,6 @@
 @use 'sass:math';
 @import './vars';
 @import './reset';
-@import './typography';
 @import './mixins';
 @import './global';
 @import './header';
@@ -13,3 +12,6 @@
 @import './client-reviews';
 @import './contact';
 @import './footer';
+@import './extend';
+@import './menu-wrapper';
+@import './toggle_theme';

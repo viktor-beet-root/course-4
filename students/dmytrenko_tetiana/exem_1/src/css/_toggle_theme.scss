@@ -1,0 +1,99 @@
+body {
+    position: relative;
+}
+
+.header__box-switcher {
+    position: relative;
+}
+
+.box-switcher__btn>span {
+    display: block;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    background-color: $main-color;
+    opacity: 0.8;
+    border-radius: 50%;
+    z-index: 20;
+    top: 3px;
+    right: 0;
+
+    &::before {
+        content: '◐';
+        position: absolute;
+        visibility: visible;
+        opacity: 1;
+        font-size: 25px;
+        color: $bg-light-color;
+        left: -3px;
+        top: -5px;
+    }
+
+    &::after {
+        content: '◑';
+        position: absolute;
+        visibility: hidden;
+        opacity: 0;
+        font-size: 25px;
+        color: $bg-light-color;
+        left: -3px;
+        top: -5px;
+    }
+}
+
+.box-switcher__input {
+    @include visuality-hidden;
+    position: absolute;
+
+    &:checked {
+
+        &~.background {
+            background-image: url(../images/First-Screen-Bg-Image-dark.jpg);
+        }
+
+        &~header {
+            .box-switcher__btn {
+                span {
+
+                    &::before {
+                        visibility: hidden;
+                        opacity: 0;
+                    }
+
+                    &::after {
+                        visibility: visible;
+                        opacity: 1;
+                    }
+
+                }
+
+            }
+
+            .menu .menu__link {
+                color: $contrast-color;
+            }
+        }
+
+        &~footer {
+            .container {
+                .border {
+                    border-top: 1px solid $border-color-contrast;
+
+                    p {
+                        color: $contrast-color;
+                        opacity: 0.3;
+                    }
+
+                    a {
+                        color: $contrast-color;
+                        opacity: 0.8;
+
+                        &:hover {
+                            color: $button-green;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

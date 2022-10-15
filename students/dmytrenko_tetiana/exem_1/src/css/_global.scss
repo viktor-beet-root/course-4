@@ -5,12 +5,18 @@
 
 @include grid(12);
 
-body {
-    background-image: url(../images/First-Screen-Bg-Image.jpg);
-    background-repeat: no-repeat;
-    background-size: 100%;
-}
-
 section {
-    margin-bottom: 105px;
+    margin-bottom: 100px;
+
+    @media screen and (max-width: 1200px) {
+        margin-bottom: 60px;
+    }
+
+    @media screen and (max-width: 992px) {
+        margin-bottom: 20px;
+    }
+
+    @media screen and (max-width: 576px) {
+        margin-bottom: 0;
+    }
 }

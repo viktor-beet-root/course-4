@@ -1,12 +1,25 @@
+.video__wrapper {
+    max-width: 970px;
+    margin: 0 auto;
+}
+
 .player {
     position: relative;
-    max-width: 970px;
     height: auto;
     border: 1px solid $text-accent;
     padding: 31px 0 30px 30px;
     border-radius: 32px;
-    margin: 0 auto;
     margin-bottom: 35px;
+
+    .box-switcher__input:checked~main & {
+        border: 1px solid $border-color-contrast;
+    }
+
+    @media screen and (max-width: 480px) {
+        padding: 13px 0 13px 13px;
+        border-radius: 12px;
+        margin-bottom: 26px;
+    }
 
     &::before {
         content: '';
@@ -19,6 +32,14 @@
         border: 1px solid $text-accent;
         border-radius: 32px;
         transform: translateY(-50%);
+
+        .box-switcher__input:checked~main & {
+            border: 1px solid $border-color-contrast;
+        }
+
+        @media screen and (max-width: 480px) {
+            display: none;
+        }
     }
 
     &::after {
@@ -32,48 +53,60 @@
         border: 1px solid $text-accent;
         border-radius: 32px;
         transform: translateY(-50%);
+
+        .box-switcher__input:checked~main & {
+            border: 1px solid $border-color-contrast;
+        }
+
+        @media screen and (max-width: 480px) {
+            display: none;
+        }
     }
 
     .player__screen {
         position: relative;
-        max-width: 870px;
-        border-radius: 8px;
+        padding-bottom: 56.25%;
+        width: 91%;
+        height: 0;
         overflow: hidden;
+        border-radius: 8px;
 
-        &::before {
-            content: '';
-            display: block;
-            position: absolute;
-            width: 120px;
-            height: 120px;
-            background: rgba(88, 98, 145, 0.3);
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            border-radius: 50%;
+        @media screen and (max-width: 768px) {
+            width: 88%;
         }
 
-        &::after {
-            content: '';
-            display: block;
+        @media screen and (max-width: 480px) {
+            width: 95%;
+        }
+
+        iframe {
             position: absolute;
-            width: 35px;
-            height: 35px;
-            background-image: url(../images/Polygon-black.svg);
-            top: 50%;
-            left: 50%;
-            transform: translate(-25%, -50%);
-            background-repeat: no-repeat;
+            top: 0;
+            width: 100%;
+            height: 100%;
         }
     }
 }
 
 .video {
     @include h3-and-span(40px, 48px);
+
+    @media screen and (max-width: 768px) {
+        @include h3-and-span(30px, 38px);
+    }
+
     @include p;
+
+    @media screen and (max-width: 768px) {
+        @include p(17px, 24px);
+    }
 
     h3 {
         margin-bottom: 20px;
+
+        @media screen and (max-width: 768px) {
+            margin-bottom: 13px;
+        }
     }
 
     p {
