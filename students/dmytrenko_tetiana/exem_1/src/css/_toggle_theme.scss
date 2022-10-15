@@ -2,16 +2,21 @@ body {
     position: relative;
 }
 
+.header__box-switcher {
+    position: relative;
+}
+
 .box-switcher__btn>span {
     display: block;
     width: 15px;
     height: 15px;
     position: absolute;
-    top: 32px;
-    right: $gap;
     background-color: $main-color;
+    opacity: 0.8;
     border-radius: 50%;
     z-index: 20;
+    top: 3px;
+    right: 0;
 
     &::before {
         content: '◐';
@@ -19,10 +24,9 @@ body {
         visibility: visible;
         opacity: 1;
         font-size: 25px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
         color: $bg-light-color;
+        left: -3px;
+        top: -5px;
     }
 
     &::after {
@@ -31,43 +35,40 @@ body {
         visibility: hidden;
         opacity: 0;
         font-size: 25px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
         color: $bg-light-color;
+        left: -3px;
+        top: -5px;
     }
 }
 
 .box-switcher__input {
     @include visuality-hidden;
     position: absolute;
-    top: 32px;
-    z-index: 10;
-    right: $gap;
 
     &:checked {
-        &+.box-switcher__btn {
-            span {
-
-                &::before {
-                    visibility: hidden;
-                    opacity: 0;
-                }
-
-                &::after {
-                    visibility: visible;
-                    opacity: 1;
-                }
-
-            }
-
-        }
 
         &~.background {
             background-image: url(../images/First-Screen-Bg-Image-dark.jpg);
         }
 
         &~header {
+            .box-switcher__btn {
+                span {
+
+                    &::before {
+                        visibility: hidden;
+                        opacity: 0;
+                    }
+
+                    &::after {
+                        visibility: visible;
+                        opacity: 1;
+                    }
+
+                }
+
+            }
+
             .menu .menu__link {
                 color: $contrast-color;
             }
