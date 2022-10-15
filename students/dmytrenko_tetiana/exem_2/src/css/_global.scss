@@ -5,3 +5,8 @@
 @include font-face($text-font-style, 'open-sans-v34-latin-italic', 400, italic);
 
 @include container;
+@include grid(12);
+
+section {
+    margin-bottom: 100px;
+}

@@ -1,4 +1,9 @@
+@use 'sass:math';
 @import './vars';
 @import './normalize';
 @import './mixins';
 @import './global';
+@import './typography';
+@import './menu';
+@import './background';
+@import './projects';
