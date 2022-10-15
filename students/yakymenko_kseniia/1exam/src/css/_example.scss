@@ -11,10 +11,9 @@
     &_second {
         background-repeat: no-repeat;
         background-size: cover;
-
         padding-top: 227px;
         padding-bottom: 100px;
-
+        background-position: bottom;
 
         @include media ('md') {
             padding-top: 200px;
@@ -33,7 +32,7 @@
         justify-content: space-around;
         color: $main-text-color;
         background-color: $gray-dark-color;
-        max-width: 50%;
+        max-width: 44%;
         padding: 50px 30px;
 
         @include media ('sm') {
