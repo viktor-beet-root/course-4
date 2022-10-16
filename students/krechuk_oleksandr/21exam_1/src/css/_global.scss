@@ -1,0 +1,75 @@
+@include font-face(aleo-v11-latin-regular);
+@include font-face($_font-file: josefin-sans-v25-latin-300, $_font-name: 'Josefin Sans', $_font-weight: 300);
+@include font-face($_font-file: josefin-sans-v25-latin-700, $_font-name: 'Josefin Sans', $_font-weight: 700);
+@include font-face($_font-file: josefin-sans-v25-latin-regular, $_font-name: 'Josefin Sans');
+@include grid();
+
+body {
+    font-family: $main-font;
+    color: $color-white;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+.logo {
+
+    @include font-style-for-text('Josefin Sans');
+    @include font-for-text(700, 24px, 28px);
+    letter-spacing: 0.1em;
+    color: $color-white;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    height: 100%
+}
+
+
+.title-h1 {
+    @include font-style-for-text('Josefin Sans');
+    @include font-for-text(700, 48px, 52px);
+    color: $color-white;
+    text-transform: uppercase;
+    text-align: center;
+    // padding-top: 295px;
+
+}
+
+.title-h2 {
+    @include font-for-text(400, 36px, 40px);
+    color: $color-white;
+}
+
+
+.display-none {
+    display: none;
+}
+
+.text {
+    @include font-style-for-text('Josefin Sans');
+    @include font-for-text(300, 16px, 28px);
+    letter-spacing: 0.1em;
+    color: $color-white;
+}
+
+.title-h3 {
+    @include font-style-for-text('Josefin Sans');
+    @include font-for-text(400, 20px, 28px);
+    color: $color-white;
+    text-transform: uppercase;
+}
+
+br {
+    @include media(lg) {
+        display: none;
+    }
+}
+
+.enter {
+    display: block;
+}

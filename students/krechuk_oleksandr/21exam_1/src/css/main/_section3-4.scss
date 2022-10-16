@@ -1,0 +1,62 @@
+.spain {
+
+    &__content {
+        padding: 29px 20px;
+
+    }
+
+    &__bg {
+        background: $color-gray-opacity;
+        margin: 0 15px;
+    }
+
+    &__text {
+        padding-bottom: 24px;
+        padding-top: 16px;
+    }
+
+}
+
+.bg3 {
+    background: url('../../images/bg-3.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.bg4 {
+    background: url('../../images/bg-4.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.spain1 {
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 220px;
+    padding-bottom: 120px;
+
+    @include media() {
+        padding: 120px 0;
+    }
+}
+
+.spain2 {
+    justify-content: flex-end;
+    align-items: center;
+    padding-top: 220px;
+    padding-bottom: 125px;
+
+    @include media() {
+        padding: 120px 0;
+    }
+}
+
+.h3-subtitle {
+    @include font-style-for-text('Josefin Sans');
+    @include font-for-text(300, 20px, 28px);
+    color: $color-white;
+    letter-spacing: 0.1em;
+    padding-bottom: 16px;
+}

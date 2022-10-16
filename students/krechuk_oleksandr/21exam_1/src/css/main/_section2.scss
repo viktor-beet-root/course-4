@@ -1,0 +1,78 @@
+.sprites {
+    background-color: $color-darkgray;
+
+    &__wrapper {
+        padding-top: 125px;
+        padding-bottom: 28px;
+
+        @include media() {
+            padding: 60px 0;
+        }
+    }
+
+    &__container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        z-index: 100;
+
+        &:not(:last-child):after {
+            position: absolute;
+            content: '';
+            color: $color-white;
+            display: block;
+            border: 1px dashed;
+            border-left: none;
+            border-right: none;
+            border-bottom: none;
+            border-radius: 50% 50% 0 0;
+            width: 90%;
+            height: 179px;
+            top: -30%;
+            left: 55%;
+            z-index: -2;
+
+            @include media() {
+                display: none;
+            }
+        }
+
+        &::before {
+            position: absolute;
+            content: '';
+            color: $color-white;
+            display: block;
+            background-color: $color-darkgray;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+
+            @include media() {
+                display: none;
+            }
+        }
+    }
+
+    &__search {
+        fill: $color-darkblue;
+    }
+
+    &__ok {
+        fill: $color-red;
+    }
+
+    &__like {
+        fill: $color-blue;
+    }
+
+}
+
+
+.sprite {
+    &__text {
+        @include font-for-text(400, 36px, 40px);
+        padding-top: 20px;
+    }
+}

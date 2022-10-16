@@ -1,0 +1,29 @@
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: $color-darkblue;
+
+    @include font-style-for-text('Aleo');
+
+    text-align: center;
+    color: $color-white;
+}
+
+.main__btn {
+    width: 213px;
+    height: 60px;
+    text-transform: uppercase;
+}
+
+.iput {
+
+    @include placeholder {
+
+        @include font-for-text(400, 14px, 20px);
+        letter-spacing: 0.2em;
+        color: $color-gray;
+
+    }
+}
