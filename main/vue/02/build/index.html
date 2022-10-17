@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <h2>Двусторонне зв’язування</h2>
+
+        <p>{{ input }}</p>
+        <p><input type="text" @input="setInput" :value="input"></p>
+        <p><input type="text" v-model.lazy="input"></p>
+        <div>
+            <br>First Name <input type="text" v-model="firstName">
+            <br>Last Name <input type="text" v-model="lastName">
+            <br>User Name <input type="text" v-model="userName">
+            <br>Email <input type="text" v-model="email">
+            <br>Password <input :type="typePass" v-model="password">
+            <br>Confinm Password <input :type="typePass" v-model="confirmPassword">
+            <br><input type="checkbox" v-model="isTypePass">
+            <div v-if="isShow">
+                <br>Your Full Name: {{ fullName }}
+                <br>Your User Name: {{ userName }}
+                <br>Your Email: <a :href="viewEmail">{{ email }}</a>
+                <br>Confirmed Password: {{ isConfirmed }}
+            </div>
+        </div>
+
+        <h2>Watching</h2>
+
+        <h3>Conditional Rendering</h3>
+        <p>
+            <span v-if="isTypePass">sdfsdfsdf</span>
+            <span v-else>11111111</span>
+        </p>
+        <p><input type="text" v-model="type"></p>
+        <div v-if="type === 'a'">A</div>
+        <div v-else-if="type === 'b'">B</div>
+        <div v-else-if="type === 'c'">C</div>
+        <div v-else>dddd</div>
+
+        <p>
+            <span v-show="isTypePass">22222</span>
+            <span v-show="!isTypePass">33333</span>
+        </p>
+
+        <template v-if="isTypePass">
+            <h2>1111</h2>
+            <p>11111</p>
+            <p>1111</p>
+        </template>
+        <template v-else>
+            <h2>2222</h2>
+            <p>2222</p>
+            <p>2222</p>
+        </template>
+    </div>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
