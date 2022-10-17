@@ -9,16 +9,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://kit.fontawesome.com/608af45c21.js" crossorigin="anonymous"></script>
 </head>
 
 <body class="page">
-    <header class="header main__header">
+    <header class="header page__header">
         <div class="container">
             <div class="row">
                 <div class="col-3">
-                    <div class="header__logo">
-                        <img src="images/Logo.svg" alt="logo">
+                    <div class="logo header__logo">
+                        <img class="logo__image" src="images/Logo.svg" alt="logo">
                     </div>
                 </div>
                 <div class="col-7">
@@ -52,19 +51,21 @@
                     </nav>
                 </div>
                 <div class="col-2">
-                    <ul class="sotial header__sotial">
-                        <li class="sotial__item"><a href="#" class="sotial__link"><img class="sotial__image"
-                                    src="images/fasebook.svg" alt="fasebook"></a></li>
-                        <li class="sotial__item"><a href="#" class="sotial__link"><img class="sotial__image"
-                                    src="images/twitter.svg" alt="twitter"></a></li>
-                        <li class="sotial__item"><a href="#" class="sotial__link"><img class="sotial__image"
-                                    src="images/instagramm.svg" alt="instagramm"></a></li>
-                    </ul>
+                    <div class="sotial-links header__sotial-links">
+                        <ul class="sotial sotial-links__sotial">
+                            <li class="sotial__item"><a href="#" class="sotial__link"><img class="sotial__image"
+                                        src="images/fasebook.svg" alt="fasebook"></a></li>
+                            <li class="sotial__item"><a href="#" class="sotial__link"><img class="sotial__image"
+                                        src="images/twitter.svg" alt="twitter"></a></li>
+                            <li class="sotial__item"><a href="#" class="sotial__link"><img class="sotial__image"
+                                        src="images/instagramm.svg" alt="instagramm"></a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </header>
-    <section class="main">
+    <section class="main page__main">
         <div class="container">
             <div class="screen main__screen">
                 <h2 class="title title_main screen__title">Simple & Modern</h2>
@@ -74,37 +75,61 @@
         </div>
     </section>
     <section class="projects">
-        <div class="container">
-            <h2 class="title title_section">What we do</h2>
-            <div class="option">
-                <div class="row">
-                    <div class="col-7">
-                        <div class="option__image"><img src="images/trade.jpg" alt=""></div>
-                    </div>
-                    <div class="col-5">
-                        <div class="content option__content">
-                            <p class="note content__note">ONE WORLD</p>
-                            <h3 class="title content__title">Trade Center</h3>
-                            <p class="text content__text">Increasing prosperity in our lives can be accomplished by
-                                having the right frame of mind. The truth is, our thoughts are very powerful.</p>
-                            <button class="button content__button">More Detals</button>
-                            <p class="content__location">New York City, United States - 1776 feet </p>
+        <div class="projects__wrapper">
+            <div class="container">
+                <h2 class="title title_section">What we do</h2>
+                <div class="projects__wrapper_option">
+                    <div class="option">
+                        <div class="row">
+                            <div class="col-7">
+                                <div class="option__image">
+                                    <img class="image" src="images/trade.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="col-5">
+                                <div class="content option__content">
+                                    <div class="content__wrapper">
+                                        <p class="note content__note">ONE WORLD</p>
+                                        <h3 class="title content__title">Trade Center</h3>
+                                        <p class="text content__text">Increasing prosperity in our lives can be
+                                            accomplished
+                                            by
+                                            having the right frame of mind. The truth is, our thoughts are very
+                                            powerful.
+                                        </p>
+                                        <a class="button content__button" href="#">More Detals</a>
+                                        <p class="content__location">
+                                            New York City, United States - 1776 feet
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-5">
-                        <div class="content option__content">
-                            <p class="note content__note">INTERNATIONAL</p>
-                            <h3 class="title content__title">Commerce Center</h3>
-                            <p class="text content__text">Successful businesses have many things in common, today we’ll
-                                look at the big ‘R’ of recognition and how a digital advertising network may help.</p>
-                            <button class="button content__button">More Detals</button>
-                            <p class="content__location">Hong Kong - 1588 feet</p>
+                    <div class="option">
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="content option__content">
+                                    <div class="content__wrapper">
+                                        <p class="note content__note">INTERNATIONAL</p>
+                                        <h3 class="title content__title">Commerce Center</h3>
+                                        <p class="text content__text">Successful businesses have many things in common,
+                                            today
+                                            we’ll
+                                            look at the big ‘R’ of recognition and how a digital advertising network may
+                                            help.
+                                        </p>
+                                        <a class="button content__button" href="#">More Detals</a>
+                                        <p class="content__location">
+                                            Hong Kong - 1588 feet
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-7">
+                                <div class="option__image"><img class="displayed" src="images/commers.jpg" alt=""></div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-7">
-                        <div class="option__image"><img src="images/commers.jpg" alt=""></div>
                     </div>
                 </div>
             </div>
@@ -112,59 +137,63 @@
     </section>
     <section class="news">
         <div class="container">
-            <h2 class="title title_section">LATEST NEWS</h2>
+            <h2 class="title title_section news__title">LATEST NEWS</h2>
             <div class="slider-news news__slider-news">
                 <div class="row">
                     <div class="col-4">
                         <div class="card slider-news__card">
-                            <div class="card__images"><img src="images/news-1.jpg" alt=""></div>
+                            <div class="card__images"><img class="card__item" src="images/news-1.jpg" alt=""></div>
                             <div class="container">
                                 <div class="content card__content">
-                                    <h4 class="title content__title">SEE THE UNMATCHED BEAUTY OF THE GREAT.</h4>
-                                    <p class="text content__text">Free directories: directories are perfect for
+                                    <h4 class="title content__title_news">SEE THE UNMATCHED BEAUTY OF THE GREAT.</h4>
+                                    <p class="text content__text_news">Free directories: directories are perfect for
                                         customers
-                                        that are searching for...</p>
-                                </div>
-                                <div class="source card__source">
-                                    <div class="source__image"><img src="images/source-1.jpg" alt=""></div>
-                                    <p class="note source__note">ALJA BRUN</p>
-                                    <p class="source__date">20 Jan 2020</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="card slider-news__card">
-                            <div class="card__images"><img src="images/news-2.jpg" alt=""></div>
-                            <div class="container">
-                                <div class="content card__content">
-                                    <h4 class="title content__title">EFFECTIVE ADVERTISING POINTERS.</h4>
-                                    <p class="text content__text">Having a home based business is a wonderful asset to
-                                        your
-                                        life...</p>
-                                </div>
-                                <div class="source card__source">
-                                    <div class="source__image"><img src="images/source-2.jpg" alt=""></div>
-                                    <p class="note source__note">DOMINIC FREEMAN</p>
-                                    <p class="source__date">13 Dec 2019</p>
+                                        that are searching for ...</p>
+                                    <div class="source card__source">
+                                        <div class="source__image"><img src="images/source-1.jpg" alt=""></div>
+                                        <div class="writer source__writer">
+                                            <p class="note writer__note">ALJA BRUN</p>
+                                            <p class="writer__date">20 Jan 2020</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-4">
                         <div class="card slider-news__card">
-                            <div class="card__images"><img src="images/news-3.jpg" alt=""></div>
+                            <div class="card__images"><img class="card__item" src="images/news-2.jpg" alt=""></div>
                             <div class="container">
                                 <div class="content card__content">
-                                    <h4 class="title content__title">HYPNOTIZE YOURSELF INTO THE GHOST.</h4>
-                                    <p class="text content__text">There are many things that are important to catalog
-                                        design...</p>
+                                    <h4 class="title content__title_news">EFFECTIVE ADVERTISING POINTERS.</h4>
+                                    <p class="text content__text_news">Having a home based business is a wonderful asset
+                                        to your life...</p>
+                                    <div class="source card__source">
+                                        <div class="source__image"><img src="images/source-2.jpg" alt=""></div>
+                                        <div class="writer source__writer">
+                                            <p class="note writer__note">DOMINIC FREEMAN</p>
+                                            <p class="writer__date">13 Dec 2019</p>
+                                        </div>
+                                    </div>
                                 </div>
-
-                                <div class="source card__source">
-                                    <div class="source__image"><img src="images/source-3.jpg" alt=""></div>
-                                    <p class="note source__note">ALICE WARD</p>
-                                    <p class="source__date">30 Nov 2019</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card slider-news__card">
+                            <div class="card__images"><img class="card__item" src="images/news-3.jpg" alt=""></div>
+                            <div class="container">
+                                <div class="content card__content">
+                                    <h4 class="title content__title_news">HYPNOTIZE YOURSELF INTO THE GHOST.</h4>
+                                    <p class="text content__text_news">There are many things that are important to
+                                        catalog design...</p>
+                                    <div class="source card__source">
+                                        <div class="source__image"><img src="images/source-3.jpg" alt=""></div>
+                                        <div class="writer source__writer">
+                                            <p class="note writer__note">ALICE WARD</p>
+                                            <p class="writer__date">30 Nov 2019</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -177,10 +206,10 @@
         <div class="container">
             <h2 class="title title_section">GALLERY</h2>
             <div class="table gallery__table"></div>
-            <button class="button">SEE MORE</button>
+            <a class="button">SEE MORE</a>
         </div>
     </section>
-    <section class="contact">
+    <!-- <section class="contact">
         <div class="container">
             <div class="map contact__map"></div>
             <div class="getInTouch contact__getInTouch">
@@ -230,7 +259,7 @@
                 </div>
             </div>
         </div>
-    </footer>
+    </footer> -->
 </body>
 
 </html>

@@ -10,26 +10,6 @@
     }
 }
 
-header {
-    [class^="col-"] {
-        display: flex;
-    }
-
-    &__logo {
-        display: block;
-        width: 300px;
-    }
-}
-
-.menu-wrapper {
-    display: flex;
-    justify-content: flex-end;
-
-    &__item {
-        margin: -$gap 0;
-    }
-}
-
 .menu {
     display: flex;
     list-style-type: none;

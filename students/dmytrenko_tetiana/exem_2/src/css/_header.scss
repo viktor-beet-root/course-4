@@ -1,7 +1,32 @@
 header {
-    position: absolute;
+    position: sticky;
     top: 0;
     right: 0;
     left: 0;
-    // background-image: $header-gradient;
+    z-index: 100;
+
+    .menu-wrapper,
+    &__sotial-links {
+        justify-content: flex-end;
+    }
+}
+
+.menu-wrapper,
+.logo,
+.sotial-links {
+    display: flex;
+}
+
+.logo {
+    max-width: 241px;
+    height: 100%;
+}
+
+.sotial-links {
+    height: 100%;
+
+    &__sotial {
+        padding-top: 9px;
+        align-self: center;
+    }
 }

@@ -1,43 +1,104 @@
-.projects {}
+// .projects {}
+.projects {
+    &__wrapper {
+        position: relative;
+
+        &::before {
+            content: '';
+            width: 40%;
+            height: 470px;
+            background-color: $bg-elem-before;
+            position: absolute;
+            z-index: -1;
+            left: 0;
+            top: 165px;
+        }
+
+        &::after {
+            content: '';
+            width: 40%;
+            height: 470px;
+            background-color: $bg-elem-after;
+            position: absolute;
+            z-index: -1;
+            right: 0;
+            bottom: 100px;
+
+        }
+    }
+}
 
 .option {
-
-    // .option__image
+    margin-top: 147px;
 
     &__image {
-        max-width: 630px;
+        height: 470px;
     }
 
-    // .option__content
-
-    &__content {}
+    &__content {
+        display: flex;
+        height: 100%;
+    }
 }
 
 .content {
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        align-self: flex-end;
+        margin-bottom: 20px;
+    }
 
-    // .content__note
+    &__title {
+        text-align: left;
+        margin-bottom: 19px;
+    }
 
-    &__note {}
+    &__text {
+        margin-bottom: 40px;
+    }
 
-    // .content__title
+    &__button {
+        align-self: flex-start;
+        margin-bottom: 60px;
+    }
 
-    &__title {}
+    &__location {
+        position: relative;
+        padding-left: 19px;
 
-    // .content__text
-
-    &__text {}
-
-    // .content__button
-
-    &__button {}
-
-    // .content__location
-
-    &__location {}
+        &::before {
+            content: '';
+            display: block;
+            width: 9px;
+            height: 17px;
+            background-image: url(../images/location.svg);
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 3px;
+            left: 0;
+        }
+    }
 }
 
-.note {}
+.button {
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 16px 41px 17px;
+    border: 1px solid $text-color;
+}
 
-.text {}
+.projects__wrapper_option:nth-child(2n) {
+    .option__image {
+        position: relative;
 
-.button {}
+        img.displayed {
+            width: 630px;
+            display: block;
+            position: absolute;
+            right: 0;
+        }
+
+    }
+}

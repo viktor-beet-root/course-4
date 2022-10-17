@@ -1,6 +1,6 @@
 @use 'sass:math';
+@import './reset';
 @import './vars';
-@import './normalize';
 @import './mixins';
 @import './global';
 @import './typography';
@@ -10,3 +10,4 @@
 @import './sotial';
 @import './header';
 @import './mainScreen';
+@import './news';
