@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <h1>sfdf {{ message }} sdf</h1>
+        <p v-text="message"></p>
+        <p v-once>{{ message }}</p>
+        <p>{{ 2 + 2 }}</p>
+        <p>{{ "2" + 4 }}</p>
+        <p>{{ age * 2 }}</p>
+        <p>{{ !(age % 2) ? 'even' : 'odd' }}</p>
+        <p>{{ message.split('').reverse().join('') }}</p>
+        <p>{{ firstName }}</p>
+        <p>{{ user.name }}
+            <a :href="'mailto:' + user.email">
+                {{ user.email }}
+            </a>
+        </p>
+
+        <h2>Attributes</h2>
+        <p><a v-bind:href="url">sdfsdf</a></p>
+        <p><a :href="url" :title="message">sdfsdf</a></p>
+        <p><button :disabled="isDisabled">ok</button></p>
+
+        <h2>Computed</h2>
+        <p>{{ isAge }}</p>
+        <p>
+            <button :disabled="isDisabled">
+                {{ buttonText }}
+            </button>
+        </p>
+        <!-- так можно, но не треба -->
+        <p v-html="buttonTextHtml"></p>
+
+        <h2>Methods and Events</h2>
+        <p>{{ getUserInfo() }}</p>
+        <p>
+            <button v-on:click="age++">
+                {{ age }}
+            </button>
+            <button v-on:click="setAge">
+                {{ age }}
+            </button>
+            <button v-on:click="setAge($event, 5)">
+                {{ age }} + 5
+            </button>
+            <button v-on:mouseover="setAge(), setLog()">
+                {{ age }}
+            </button>
+        </p>
+        <p>
+            <a @click="setGo" :href="url">{{url}}</a>
+        </p>
+        <p>
+            <a @click.prevent :href="url">{{url}}</a>
+        </p>
+
+        <h2 ref="title">Referense</h2>
+        <p><button @click="setColor">color</button></p>
+    </div>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
