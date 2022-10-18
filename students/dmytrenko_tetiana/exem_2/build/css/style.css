@@ -1344,30 +1344,6 @@ section {
   background-size: cover;
 }
 
-.projects__wrapper {
-  position: relative;
-}
-.projects__wrapper::before {
-  content: "";
-  width: 40%;
-  height: 470px;
-  background-color: #55B7FF;
-  position: absolute;
-  z-index: -1;
-  left: 0;
-  top: 165px;
-}
-.projects__wrapper::after {
-  content: "";
-  width: 40%;
-  height: 470px;
-  background-color: #7E5AFF;
-  position: absolute;
-  z-index: -1;
-  right: 0;
-  bottom: 100px;
-}
-
 .option {
   margin-top: 147px;
 }
@@ -1429,14 +1405,15 @@ section {
   border: 1px solid #2C4058;
 }
 
-.projects__wrapper_option:nth-child(2n) .option__image {
-  position: relative;
-}
-.projects__wrapper_option:nth-child(2n) .option__image img.displayed {
-  width: 630px;
+.projects__wrapper_option .option__image img.displayed {
+  width: 100%;
   display: block;
-  position: absolute;
   right: 0;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
 }
 
 .sotial__item {
