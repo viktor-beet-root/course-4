@@ -1,0 +1,25 @@
+.quote {
+  background-image: url("../images/quote-background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 46px;
+  letter-spacing: 0.04em;
+  color: $color-white;
+
+  padding: 85px 145px;
+
+  &__text {
+    margin-bottom: 40px;
+  }
+
+  &__signature {
+    font-family: $font-playfair;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 20px;
+    letter-spacing: 0.08em;
+  }
+}
