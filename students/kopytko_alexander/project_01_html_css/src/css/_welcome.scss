@@ -1,17 +1,13 @@
 .welcome {
-    margin: 135px 0;
+    margin-top: 135px;
+    margin-bottom: 30px;
 
     &__title {
-        font-family: $font-playfair;
-        font-style: normal;
-        font-weight: 400;
+
         font-size: 44px;
         line-height: 52px;
 
-        & span {
-            color: $color-green;
-            font-style: italic;
-        }
+
     }
 
     &__text {

@@ -21,6 +21,10 @@ body {
   line-height: 26px;
 }
 
+.section {
+  margin-bottom: 105px;
+}
+
 h1,
 h2,
 h3 {
@@ -29,6 +33,7 @@ h3 {
 
 p {
   margin: 0 0 20px 0;
+  opacity: 0.8;
 }
 
 a {
@@ -45,7 +50,6 @@ a {
   margin-top: 50px;
   display: inline-block;
   text-transform: uppercase;
-
 
 
   &::after {
@@ -69,12 +73,15 @@ a {
 }
 
 .title {
-  width: 700px;
-  color: aqua;
-  font-size: 45px;
+  font-family: $font-playfair;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 48px;
 
-  @media screen and (max-width: 600px) {
-    background-color: bisque;
+  &__accent {
+    color: $color-green;
+    font-style: italic;
   }
 }
 

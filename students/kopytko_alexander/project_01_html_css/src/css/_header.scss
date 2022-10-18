@@ -1,9 +1,10 @@
 .page {
-    background-image: url("../images/first-screen-image.jpg");
+    background-image: url("../images/bg.jpg");
+    //background-image: url("../images/first-screen-image.jpg");
     position: relative;
     min-height: 500px;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     padding-top: 30px;
 }
 
@@ -51,7 +52,7 @@
             right: 0;
             bottom: 1px;
             background-color: $color-red;
-
+            opacity: 0.3;
         }
     }
 }
