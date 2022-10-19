@@ -1,5 +1,4 @@
 .news__title {
-    margin-bottom: 90px;
     color: $link-text-color;
 
     &::before {
@@ -37,12 +36,14 @@
         line-height: 27px;
         text-align: left;
         margin-bottom: 15px;
+        @include ellipsis(2);
     }
 
     &__text_news {
         font-size: 18px;
         line-height: 25px;
         margin-bottom: 39px;
+        @include ellipsis(2);
     }
 }
 

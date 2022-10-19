@@ -10,3 +10,17 @@
 section {
     margin-bottom: 100px;
 }
+
+.button {
+    display: inline-block;
+    padding: 16px 41px;
+    color: $text-button-color;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid $text-button-color;
+
+    &:hover,
+    &:focus {
+        text-decoration: underline;
+    }
+}

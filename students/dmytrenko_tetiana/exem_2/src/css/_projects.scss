@@ -1,53 +1,83 @@
-// .projects {}
 .projects {
-    // &__wrapper {
-    //     position: relative;
-
-    //     &::before {
-    //         content: '';
-    //         width: 40%;
-    //         height: 470px;
-    //         background-color: $bg-elem-before;
-    //         position: absolute;
-    //         z-index: -1;
-    //         left: 0;
-    //         top: 165px;
-    //     }
-
-    //     &::after {
-    //         content: '';
-    //         width: 40%;
-    //         height: 470px;
-    //         background-color: $bg-elem-after;
-    //         position: absolute;
-    //         z-index: -1;
-    //         right: 0;
-    //         bottom: 100px;
-
-    //     }
-    // }
-}
-
-.option {
-    margin-top: 147px;
+    &__image-wrapper {
+        max-width: 90%;
+        height: auto;
+        overflow: hidden;
+        position: relative;
+        box-sizing: border-box;
+    }
 
     &__image {
-        height: 470px;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
     }
 
-    &__content {
-        display: flex;
+    &__info {
         height: 100%;
+        display: flex;
+        box-sizing: border-box;
+    }
+
+    &__info-wrapper {
+        height: auto;
+        align-self: flex-end;
+        box-sizing: border-box;
+    }
+
+    // [class^=col-]:nth-child(5n+1) {
+
+    //     .background {
+    //         position: relative;
+
+    //         &::before {
+    //             content: '';
+    //             display: block;
+    //             width: 105%;
+    //             padding-top: 67%;
+    //             background-color: #55B7FF;
+    //             position: absolute;
+    //             top: -12%;
+    //             left: -51%;
+    //         }
+    //     }
+    // }
+
+    // [class^=col-]:nth-child(4n+4) {
+    //     .projects__image-wrapper {
+    //         margin-right: unset;
+    //         margin-left: 10%;
+    //     }
+
+    //     .background {
+    //         position: relative;
+
+    //         &::before {
+    //             content: '';
+    //             display: block;
+    //             width: 105%;
+    //             padding-top: 67%;
+    //             background-color: #7E5AFF;
+    //             position: absolute;
+    //             top: -12%;
+    //             right: -51%;
+    //         }
+    //     }
+    // }
+
+    [class^=col-] {
+        &:first-child {
+            margin-top: 57px;
+        }
+
+        &:not(:nth-last-child(-n+2)) {
+            margin-bottom: 177px;
+        }
     }
 }
 
-.content {
-    &__wrapper {
-        display: flex;
-        flex-direction: column;
-        align-self: flex-end;
-        margin-bottom: 20px;
-    }
+.info {
+
 
     &__title {
         text-align: left;
@@ -59,47 +89,31 @@
     }
 
     &__button {
-        align-self: flex-start;
         margin-bottom: 60px;
     }
-
-    &__location {
-        position: relative;
-        padding-left: 19px;
-
-        &::before {
-            content: '';
-            display: block;
-            width: 9px;
-            height: 17px;
-            background-image: url(../images/location.svg);
-            background-repeat: no-repeat;
-            position: absolute;
-            top: 3px;
-            left: 0;
-        }
-    }
 }
 
-.button {
-    display: block;
-    text-decoration: none;
-    text-transform: uppercase;
-    padding: 16px 41px 17px;
-    border: 1px solid $text-color;
-}
+.location {
+    font-family: $text-font;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 20px;
 
-.projects__wrapper_option {
-    .option__image {
+    color: $text-button-color;
+    margin-bottom: 30px;
+    position: relative;
+    padding-left: 17px;
 
-        img.displayed {
-            width: 100%;
-            display: block;
-            right: 0;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-        }
-
+    &::before {
+        content: '';
+        display: block;
+        width: 9px;
+        height: 20px;
+        background-image: url("../images/location.svg");
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 0;
+        left: 0;
     }
 }
