@@ -1,0 +1,33 @@
+.video {
+  max-width: 970px;
+  margin: auto;
+
+  &__wrapper {
+  }
+
+  &__tablet {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    border: 1px solid;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  &__content {
+    padding: 31px 70px 31px 30px;
+    border: 1px solid;
+    border-radius: 32px;
+
+    & iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__text {
+  }
+}
