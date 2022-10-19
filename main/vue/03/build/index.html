@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <h2>List Rendering</h2>
+        <ul>
+            <li v-for="(value, index) in list">
+                {{ getNumber(index) }}. {{ value }}
+            </li>
+        </ul>
+        <p>
+            <span v-for="n in 10" :key="n"> adsfdf {{ n }}; </span>
+        </p>
+        <ul>
+            <li v-for="(userValue, key) in user" :key="key">
+                {{ key }}: {{ userValue }}
+            </li>
+        </ul>
+        <p></p>
+        <ul>
+            <li v-for="(user, index) in userList" :key="user.id">
+                {{ user.id }}. First Name: <strong>{{ user.firstName }}</strong><br>
+                Last Name: {{ user.lastName }}<br>
+                Email: {{ user.email }}<br>
+                Password: {{ user.pass }}
+            </li>
+        </ul>
+
+        <h2>Css Class and inline style</h2>
+        <p class="test" :class="{active: isShowActive, 'two-dsds': true}">test</p>
+        <p :class="classList">{{ classList.join(', ') }}</p>
+        <p>
+            <input type="text" v-model="inputClass">
+            <button @click="addClass">add</button>
+        </p>
+        <p :style="{color: 'red'}">asdfsdfs</p>
+        <p :style="myStyle">!111111</p>
+        <p :style="{color: textColor}">22222</p>
+        <div>
+            <select name="" id="" v-model="textColor">
+                <option v-for="color in colors" :value="color">{{ color }}</option>
+            </select>
+        </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
