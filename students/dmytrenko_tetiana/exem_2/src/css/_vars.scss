@@ -11,23 +11,34 @@ $link-text: $link-text-style, sans-serif;
 $blue: #55B7FF;
 $violet: #7E5AFF;
 $gray: #2C4058;
-$black: #000;
+$black: #000000;
+$black-blur: rgba(0, 0, 0, 0.08);
 $white: #fff;
-$color-before: $gray;
+$light-gray: #4b5562;
 
+
+$color-before: $gray;
+$color-plaseholder: $light-gray;
 $text-color: $gray;
 $text-button-color: $black;
+$text-contact-color: $black;
 $link-text-color: $white;
 $header-gradient: linear-gradient(243.43deg, #7E5AFF 16.9%, #55B7FF 83.27%);
 $bg-elem-before: $blue;
 $bg-elem-left: $blue;
 $bg-elem-right: $violet;
+$shadow-color: $black-blur;
 
 
 
 $path-fonts: '../fonts/';
 $default-width: 1200px;
 $gap: 15px;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+
+$font-weight-text: $font-weight-normal;
+$font-weight-title: $font-weight-bold;
 
 $breack-points: (
     "lg": 1200px,

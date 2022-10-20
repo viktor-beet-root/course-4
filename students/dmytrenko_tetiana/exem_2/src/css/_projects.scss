@@ -78,7 +78,6 @@
 
 .info {
 
-
     &__title {
         text-align: left;
         margin-bottom: 19px;
@@ -96,7 +95,7 @@
 .location {
     font-family: $text-font;
     font-style: italic;
-    font-weight: 400;
+    font-weight: $font-weight-text;
     font-size: 15px;
     line-height: 20px;
 

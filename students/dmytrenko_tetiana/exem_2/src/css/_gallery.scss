@@ -1,6 +1,7 @@
 .box {
     display: grid;
-    grid-template-columns: repeat(4, calc(100%/4));
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
     margin-bottom: 60px;
 
     &__item {
@@ -8,6 +9,11 @@
         padding-top: 76%;
         overflow: hidden;
         position: relative;
+
+        &:first-child {
+            grid-column: 1 / span 2;
+            grid-row: 1 / span 2;
+        }
     }
 
     &__imges {

@@ -1,7 +1,7 @@
 .title {
     font-family: $main-font;
     font-style: normal;
-    font-weight: 700;
+    font-weight: $font-weight-title;
     font-size: 44px;
     line-height: 54px;
     text-align: center;
@@ -31,7 +31,7 @@
 .note {
     font-family: $main-font;
     font-style: normal;
-    font-weight: 400;
+    font-weight: $font-weight-text;
     font-size: 22px;
     line-height: 27px;
     color: $text-color;
@@ -40,7 +40,7 @@
 .text {
     font-family: $text-font;
     font-style: normal;
-    font-weight: 400;
+    font-weight: $font-weight-text;
     font-size: 18px;
     line-height: 30px;
     color: $text-color;
@@ -49,7 +49,7 @@
 .content__location {
     font-family: $text-font;
     font-style: italic;
-    font-weight: 400;
+    font-weight: $font-weight-text;
     font-size: 15px;
     line-height: 20px;
     color: $text-button-color;
@@ -58,7 +58,7 @@
 .button {
     font-family: 'Montserrat';
     font-style: normal;
-    font-weight: 400;
+    font-weight: $font-weight-text;
     font-size: 14px;
     line-height: 17px;
     color: $text-button-color;
