@@ -1,0 +1,28 @@
+.promises {
+  background-image: url(../images/features-background-image.jpg);
+
+  &__block {
+  }
+
+  &__heading {
+    font-family: $font-playfair;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 48px;
+    margin-bottom: 15px;
+  }
+
+  &__list {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  &__item {
+    margin-bottom: 8px;
+    opacity: 0.8;
+  }
+
+  &__button {
+  }
+}
