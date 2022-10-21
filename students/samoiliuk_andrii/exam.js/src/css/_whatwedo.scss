@@ -1,4 +1,6 @@
 .whatWeDo {
+    padding-top: 100px;
+
     &__rowOne {
         margin-bottom: 90px;
     }
@@ -25,7 +27,7 @@
     }
 
     &__text {
-        margin-bottom: 40px;
+        margin-bottom: 31px;
     }
 
     &__button {
@@ -40,11 +42,34 @@
 .pictureWithBgLeft {
     padding-right: 40px;
     margin-top: 57px;
-    box-shadow: -215px -57px 0px 0px $color-light-blue;
+
+    &::before {
+        content: " ";
+        width: 37%;
+        height: 470px;
+        display: block;
+        z-index: -10;
+        background-color: $color-light-blue;
+        position: absolute;
+        left: 0;
+        transform: translate(0, -57px);
+    }
 }
 
 .pictureWithBgRight {
     padding-left: 40px;
     margin-top: 57px;
-    box-shadow: 215px -57px 0px 0px $color-purple;
+
+
+    &::before {
+        content: " ";
+        width: 37%;
+        height: 470px;
+        display: block;
+        z-index: -10;
+        background-color: $color-purple;
+        position: absolute;
+        right: 0;
+        transform: translate(0, -57px);
+    }
 }

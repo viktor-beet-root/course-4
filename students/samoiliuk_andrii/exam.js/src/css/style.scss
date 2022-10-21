@@ -2,6 +2,7 @@
 @import './grid-class-generator';
 @include grid(12);
 @import '../../node_modules/@fancyapps/ui/src/Fancybox/Fancybox.scss';
+@import './leaflet';
 @import './reset.scss';
 @import './vars';
 @import './mixins';

@@ -16,7 +16,7 @@
     .slick-dots {
         position: absolute;
         top: 50%;
-        transform: translate(0, -50%);
+        transform: translate(0, -43%);
         right: 52px;
         z-index: 100;
     }
@@ -24,8 +24,8 @@
     .slick-dots li {
         font-size: 0;
         line-height: 0;
-        margin-top: 20px;
-        margin-bottom: 20px;
+        margin-top: 0px;
+        margin-bottom: 40px;
     }
 
     .slick-dots li.slick-active {

@@ -1,3 +1,7 @@
+// html {
+//     scroll-behavior: smooth;
+// }
+
 .page {
 
     font-family: 'Open Sans', $fallback;
@@ -6,18 +10,6 @@
     font-size: 18px;
     line-height: 30px;
     color: $font-color-black;
-
-    &__main {
-        margin-top: 100px;
-    }
-
-    &__gallery {
-        margin-top: 150px;
-    }
-
-    &__footer {}
-
-    ;
 }
 
 .headerOne {
@@ -115,4 +107,18 @@
     &::before {
         content: url('../images/location.svg');
     }
+}
+
+.upButton {
+    @include scrollButton;
+    background-color: $color-purple;
+    position: fixed;
+    right: 5vh;
+    top: 95vh;
+    transform: translate(0%, -100%) rotate(180deg);
+    z-index: 1100;
+}
+
+.hidden {
+    display: none;
 }

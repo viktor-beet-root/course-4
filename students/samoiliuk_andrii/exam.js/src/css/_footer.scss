@@ -1,10 +1,10 @@
-.footer {
+.footer {}
+
+.footerBg {
     background: url('../images/footerbg.png') top right, linear-gradient(251.06deg, #7E5AFF -2.19%, #55B7FF 103.21%);
     background-size: cover;
     padding-top: 550px;
     position: relative;
-
-    &__rowOne {}
 }
 
 .displace {
@@ -14,6 +14,7 @@
     left: 0;
     right: 0;
     top: -300px;
+    z-index: 1000;
 }
 
 .contacts {
@@ -60,4 +61,153 @@
     line-height: 17px;
     color: $font-color-white;
     padding-top: 41px;
+}
+
+
+.contacts {
+
+    // .contacts__info
+
+    &__info {}
+}
+
+.contactInformation {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Montserrat';
+    font-size: 18px;
+    line-height: 28px;
+    color: $font-color-dark;
+
+    &__item {
+        margin-bottom: 28px;
+    }
+
+    &__address {
+        display: flex;
+        align-items: center;
+
+        &::before {
+            content: url("../images/location-dot-solid.svg");
+            display: block;
+            width: 13px;
+            object-fit: contain;
+            font-size: 0;
+            line-height: 0;
+            margin-right: 17px;
+        }
+    }
+
+    &__phone {
+        color: $font-color-dark;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+
+        &::before {
+            content: url("../images/phone-solid.svg");
+            display: block;
+            width: 16px;
+            object-fit: contain;
+            font-size: 0;
+            line-height: 0;
+            margin-right: 14px;
+        }
+    }
+
+    &__email {
+        text-decoration: none;
+        color: $font-color-dark;
+        display: flex;
+        align-items: center;
+
+        &::before {
+            content: url("../images/envelope-regular.svg");
+            display: block;
+            width: 18px;
+            object-fit: contain;
+            font-size: 0;
+            line-height: 0;
+            margin-right: 12px;
+        }
+    }
+
+    &__workingHours {
+        display: flex;
+        align-items: center;
+
+        &::before {
+            content: url("../images/clock-regular.svg");
+            display: block;
+            width: 18px;
+            object-fit: contain;
+            font-size: 0;
+            line-height: 0;
+            margin-right: 12px;
+        }
+    }
+}
+
+.footerForm {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+
+    &__name {
+        width: 100%;
+        font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 27px;
+        color: $font-color-dark;
+        border: none;
+        border-bottom: 1px solid #4B5562;
+        margin-bottom: 33px;
+
+
+        &::placeholder {
+            color: #4B5562;
+            opacity: 0.5;
+        }
+
+        &:focus {
+            color: $font-color-dark;
+            border-bottom: 1px solid #2C4058;
+            opacity: 1;
+        }
+    }
+
+
+    &__email {
+        width: 100%;
+        width: 100%;
+        font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 27px;
+        border: none;
+        border-bottom: 1px solid #4B5562;
+        color: $font-color-dark;
+        margin-bottom: 33px;
+
+        &::placeholder {
+            color: #4B5562;
+            opacity: 0.5;
+        }
+
+        &:focus {
+            color: $font-color-dark;
+            border-bottom: 1px solid #2C4058;
+            opacity: 1;
+        }
+    }
+
+    &__submit {
+        max-width: 140px;
+        background: none;
+        background-color: transparent;
+    }
 }

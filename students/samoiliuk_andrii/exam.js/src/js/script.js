@@ -1,6 +1,107 @@
 import $ from "jquery";
 import 'slick-carousel';
 import { Fancybox } from "@fancyapps/ui";
+import L from "leaflet";
+
+const upButton = document.querySelector(".upButton");
+const topBar = document.querySelector(".header__topBar");
+const nextButton = document.querySelector(".scrollButton");
+
+const aboutUs = document.querySelector(".whatWeDo");
+const news = document.querySelector(".latestNews");
+const projects = document.querySelector(".gallery");
+const contact = document.querySelector(".footer");
+
+const sections = [aboutUs, news, projects, contact];
+const links = document.querySelectorAll(".navigation__link");
+
+const hiddenSlides = document.querySelectorAll(".hiddable");
+const galleryButton = document.querySelector(".galleryButton");
+
+const formName = document.querySelector(".footerForm__name");
+const formEmail = document.querySelector(".footerForm__email");
+const formSubmit = document.querySelector(".footerForm__submit");
+
+function scrollTo(coordinate, time = 500) {
+  $('html, body').animate({
+    scrollTop: coordinate,
+  }, time);
+}
+
+function nextButtonBehavior(event) {
+  event.preventDefault;
+  scrollTo(aboutUs.offsetTop);
+}
+
+nextButton.addEventListener('click', nextButtonBehavior);
+
+function upButtonBehavior(event) {
+  event.preventDefault;
+  scrollTo(0);
+}
+
+upButton.addEventListener('click', upButtonBehavior);
+
+function navLinksBehavior() {
+  for (let i = 0; i < links.length; i++) {
+    links[i].addEventListener('click', function (event) {
+      event.preventDefault();
+      scrollTo(sections[i].offsetTop);
+    })
+  }
+}
+
+navLinksBehavior();
+
+function displayUpButton(scrollFromTop = 500) {
+  if (window.scrollY > scrollFromTop) {
+    upButton.classList.remove("hidden");
+  }
+  if (window.scrollY <= scrollFromTop) {
+    upButton.classList.add("hidden");
+  }
+}
+
+function navBarBehavior() {
+  const marginTop = {
+    zero: "margin-top: 0; ",
+    fifty: 'margin-top: 50px; ',
+  };
+  const transition = "transition: margin-top 0.04s linear; "
+  const background = "background: linear-gradient(243.43deg, #7E5AFF 16.9%, #55B7FF 83.27%); "
+
+  if ((window.scrollY >= 50)) {
+    topBar.style = marginTop.zero + transition;
+  }
+
+  if (topBar.getBoundingClientRect().bottom >= aboutUs.getBoundingClientRect().top) {
+    topBar.style = marginTop.zero + transition + background;
+  }
+
+  if (topBar.getBoundingClientRect().bottom < aboutUs.getBoundingClientRect().top) {
+    topBar.style = marginTop.zero + transition;
+  }
+
+  if (window.scrollY < 50) {
+    topBar.style = marginTop.fifty + transition;
+  }
+}
+
+function navDotsBehavior() {
+  sections.forEach(function (section, index) {
+    if ((topBar.getBoundingClientRect().bottom > section.getBoundingClientRect().top) && (topBar.getBoundingClientRect().bottom < section.getBoundingClientRect().bottom)) {
+      links[index].classList.add("navigation__link_inside");
+    } else {
+      links[index].classList.remove("navigation__link_inside");
+    }
+  });
+}
+
+document.addEventListener("scroll", (event) => {
+  displayUpButton();
+  navBarBehavior();
+  navDotsBehavior();
+})
 
 $('.bgSlider').slick({
   infinite: true,
@@ -22,14 +123,7 @@ $('.newsSlider').slick({
   autoplay: false,
 });
 
-Fancybox.bind('[data-fancybox="gallery"]', {
-  // Your options go here
-});
-
-const hiddenSlides = document.querySelectorAll(".hiddable");
-const galleryButton = document.querySelector(".galleryButton");
-
-galleryButton.addEventListener("click", openSlides);
+Fancybox.bind('[data-fancybox="gallery"]', {});
 
 function openSlides(event) {
   event.preventDefault();
@@ -41,32 +135,50 @@ function openSlides(event) {
   }
 }
 
-let map;
+galleryButton.addEventListener("click", openSlides);
 
-function initMap() {
-  const map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: 50.450076, lng: 30.524121 },
-    zoom: 15,
-    mapTypeId: 'terrain',
-  });
+const mapOptions = {
+  zoomControl: true,
+  scrollWheelZoom: false,
+};
 
-  const locations = [
-    {
-      position: { lat: 50.450076, lng: 30.524121 },
-      map,
-      title: "Майдан Незалежності",
-    },
-    {
-      position: { lat: 50.448674, lng: 30.513261 },
-      map,
-      title: "Золоті ворота",
-    }
-  ];
+const map = L.map('map', mapOptions).setView([40.66, -73.89], 13);
 
-  locations.forEach(function (element) {
-    new google.maps.Marker(element);
-  });
+L.tileLayer('https://tile.jawg.io/jawg-light/{z}/{x}/{y}{r}.png?access-token=1RSWcIKFGBx6iaqbkPud1enTVg16aOTk5NptER0YeAOAaYZQlu3KpKcOrUD4XqWl', {}).addTo(map);
+map.attributionControl.addAttribution("<a href=\"https://www.jawg.io\" target=\"_blank\">&copy; Jawg</a> - <a href=\"https://www.openstreetmap.org\" target=\"_blank\">&copy; OpenStreetMap</a>&nbsp;contributors")
+
+const customIcon = L.icon({
+  iconUrl: '../images/marker.svg',
+  iconSize: [106, 106],
+  iconAnchor: [54, 54],
+});
+
+L.marker([40.68, -73.897], { icon: customIcon }).addTo(map);
+
+function validateName() {
+  return !!formName.value;
 }
+
+function validateEmail() {
+  const emailRegex = new RegExp(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+  return emailRegex.test(formEmail.value);
+}
+
+function formValidation(event) {
+  formName.style = " ";
+  formEmail.style = " ";
+  if (!validateName() || !validateEmail()) {
+    event.preventDefault();
+    if (!validateName()) {
+      formName.style = "border-bottom: 1px solid rgba(238, 114, 123, 1)";
+    };
+    if (!validateEmail()) {
+      formEmail.style = "border-bottom: 1px solid rgba(238, 114, 123, 1)";
+    };
+  }
+}
+
+formSubmit.addEventListener('click', formValidation)
 
 window.Fancybox = Fancybox;
 window.initMap = initMap;

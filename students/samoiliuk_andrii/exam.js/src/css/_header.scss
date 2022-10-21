@@ -10,11 +10,13 @@
     }
 
     &__topBar {
-        position: absolute;
-        z-index: 20;
+        margin-top: 51px;
+        position: fixed;
+        z-index: 990;
         left: 0;
         right: 0;
-        top: 50px
+        top: 0px;
+        transition: margin-top 0.3 linear;
     }
 
     &__scrollButton {
@@ -41,7 +43,7 @@
 .logo {
 
     &__img {
-        max-width: 223px;
+        max-width: 240px;
     }
 }
 
@@ -67,6 +69,7 @@
 }
 
 .navigation {
+    padding-left: 80px;
     display: flex;
     justify-content: center;
     font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
@@ -103,6 +106,12 @@
             }
         }
     }
+
+    &__link_inside {
+        &::before {
+            background-color: white;
+        }
+    }
 }
 
 .social {
@@ -112,12 +121,13 @@
 
     &__item {
         width: 40px;
+        min-width: 40px;
         height: 40px;
         border-radius: 50%;
         border: 1px solid white;
         overflow: hidden;
 
-        margin-right: 20px;
+        margin-right: 18px;
 
         &:last-of-type {
             margin-right: 0;
