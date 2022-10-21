@@ -98,16 +98,7 @@
 
 }
 
-.location {
-    font-style: italic;
-    font-size: 15px;
-    line-height: 20px;
-    color: $font-color-dark;
 
-    &::before {
-        content: url('../images/location.svg');
-    }
-}
 
 .upButton {
     @include scrollButton;

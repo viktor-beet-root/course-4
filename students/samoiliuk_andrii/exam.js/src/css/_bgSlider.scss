@@ -7,10 +7,21 @@
 
     .slick-list {
         overflow: hidden; //important
+        height: 100%;
     }
 
     .slick-track {
-        display: flex; //important*
+        display: flex; //important
+        height: 100%;
+    }
+
+    .slick-slide {
+        height: 100%;
+
+
+        &>div {
+            height: 100%;
+        }
     }
 
     .slick-dots {

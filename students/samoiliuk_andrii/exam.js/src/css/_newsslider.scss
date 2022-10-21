@@ -17,8 +17,6 @@
     .slick-list {
         overflow: hidden; //important
         box-sizing: border-box;
-        margin-left: -$gap;
-        margin-right: -$gap;
     }
 
     /* Лента слайдов */
@@ -60,7 +58,7 @@
         left: 0;
         z-index: 10;
         transform: translate(-100%, -50%) rotate(90deg);
-        left: -60px;
+        left: -45px;
         background-color: transparent;
         font-size: 0;
         line-height: 0;
@@ -75,7 +73,7 @@
         right: 0;
         z-index: 10;
         transform: translate(100%, -50%) rotate(-90deg);
-        right: -60px;
+        right: -45px;
         background-color: transparent;
         @include scrollButton;
     }
@@ -87,7 +85,7 @@
     .slick-dots {
         display: flex;
         position: absolute;
-        bottom: -43px;
+        bottom: -40px;
         transform: translate(-50%, 100%);
         z-index: 100;
         left: 50%;

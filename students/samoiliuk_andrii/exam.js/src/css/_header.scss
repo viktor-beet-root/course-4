@@ -33,9 +33,17 @@
 
 .bgSlider {
     background: $header-bg-gradient;
+    height: 100vh;
+
+    &__slide {
+        height: 100%;
+        position: relative;
+    }
 
     &__image {
         width: 100%;
+        height: 100%;
+        object-fit: cover;
         opacity: 0.1;
     }
 }

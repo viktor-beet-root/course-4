@@ -13,7 +13,7 @@
     margin: 0 auto;
     left: 0;
     right: 0;
-    top: -300px;
+    top: -302px;
     z-index: 1000;
 }
 
@@ -21,7 +21,7 @@
     display: flex;
     flex-wrap: wrap;
     background-color: $font-color-white;
-    padding: 60px 60px 70px 60px;
+    padding: 60px 60px 40px 60px;
 
     &__header {
         width: 100%;
@@ -94,7 +94,7 @@
             object-fit: contain;
             font-size: 0;
             line-height: 0;
-            margin-right: 17px;
+            margin-right: 7px;
         }
     }
 
@@ -111,7 +111,7 @@
             object-fit: contain;
             font-size: 0;
             line-height: 0;
-            margin-right: 14px;
+            margin-right: 7px;
         }
     }
 
@@ -124,11 +124,11 @@
         &::before {
             content: url("../images/envelope-regular.svg");
             display: block;
-            width: 18px;
+            width: 16px;
             object-fit: contain;
             font-size: 0;
             line-height: 0;
-            margin-right: 12px;
+            margin-right: 10px;
         }
     }
 
@@ -139,11 +139,11 @@
         &::before {
             content: url("../images/clock-regular.svg");
             display: block;
-            width: 18px;
+            width: 15px;
             object-fit: contain;
             font-size: 0;
             line-height: 0;
-            margin-right: 12px;
+            margin-right: 11px;
         }
     }
 }
@@ -152,7 +152,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-
+    padding-left: 4px;
 
     &__name {
         width: 100%;
@@ -165,6 +165,7 @@
         border: none;
         border-bottom: 1px solid #4B5562;
         margin-bottom: 33px;
+        padding-bottom: 10px;
 
 
         &::placeholder {
@@ -192,6 +193,7 @@
         border-bottom: 1px solid #4B5562;
         color: $font-color-dark;
         margin-bottom: 33px;
+        padding-bottom: 10px;
 
         &::placeholder {
             color: #4B5562;
@@ -209,5 +211,6 @@
         max-width: 140px;
         background: none;
         background-color: transparent;
+        font-size: 18px;
     }
 }
