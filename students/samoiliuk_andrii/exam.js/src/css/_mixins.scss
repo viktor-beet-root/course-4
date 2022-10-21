@@ -9,6 +9,7 @@
     font-size: 0;
     line-height: 0;
     padding: 0;
+    background-color: transparent;
 
     &::after {
         content: url("../images/header/arrow.svg");

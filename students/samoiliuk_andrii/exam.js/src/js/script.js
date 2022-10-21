@@ -98,6 +98,7 @@ function navDotsBehavior() {
 }
 
 document.addEventListener("scroll", (event) => {
+  console.log(scrollY);
   displayUpButton();
   navBarBehavior();
   navDotsBehavior();

@@ -31551,6 +31551,7 @@ function navDotsBehavior() {
   });
 }
 document.addEventListener("scroll", function (event) {
+  console.log(scrollY);
   displayUpButton();
   navBarBehavior();
   navDotsBehavior();
