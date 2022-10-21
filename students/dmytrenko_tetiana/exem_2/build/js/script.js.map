@@ -1,0 +1,1 @@
+{"version":3,"file":"script.js","mappings":";;;;;AAAAA,OAAO,CAACC,GAAG,CAAC,cAAc,CAAC,C","sources":["webpack://12_gulp_webpack/./src/js/script.js"],"sourcesContent":["console.log(\"Hello World!\");\r\n"],"names":["console","log"],"sourceRoot":""}
