@@ -12,42 +12,43 @@ html {
     font-weight: 300;
     font-size: 1.8rem;
     line-height: 2.6rem;
-    border: 1px solid transparent;
-    margin: -1px;
+    border-top: 1px solid transparent;
+    margin-top: -1px;
     color: $page-main-color;
 
     word-spacing: 0.07em;
+    transition: background-image 0.3s linear, background-color 0.3s linear;
 
     &__header {
         margin-top: 30px;
         margin-bottom: 135px;
     }
 
-    &__section1 {
+    &__sectionPeerToPeer {
         margin-bottom: 120px;
     }
 
-    &__section2 {
+    &__sectionContactSales {
         margin-bottom: 90px;
     }
 
-    &__section3 {
+    &__sectionFeatures {
         margin-bottom: 35px;
     }
 
-    &__section4 {
+    &__sectionQuote {
         margin-bottom: 90px;
     }
 
-    &__section5 {
+    &__sectionVideo {
         margin-bottom: 90px;
     }
 
-    &__section6 {
+    &__sectionTrading {
         margin-bottom: 90px;
     }
 
-    &__section7 {
+    &__sectionReviews {
         margin-bottom: 69px;
     }
 

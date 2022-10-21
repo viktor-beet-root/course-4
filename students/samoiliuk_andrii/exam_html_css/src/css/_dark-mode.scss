@@ -5,6 +5,7 @@
         background-image: url(../images/first-screen-black.png);
         background-color: $page-background-dark;
         color: $page-main-color-dark;
+        transition: background-image 0.3s linear, background-color 0.3s linear;
 
         .nav__item {
             &::after {
@@ -90,7 +91,7 @@
             }
         }
 
-        .section2 {
+        .sectionContactSales {
             &__wrapper {
                 background-color: $section2_wrapper_bg-dark;
             }
@@ -121,7 +122,7 @@
             }
         }
 
-        .section5 {
+        .sectionVideo {
             &__video-wrapper {
                 border: 1px solid $section5-video-frame-dark;
 
@@ -170,7 +171,7 @@
             }
         }
 
-        .section6 {
+        .sectionTrading {
             &__wrapper {
                 background-color: $section6_wrapper_bg-dark;
             }
@@ -180,8 +181,8 @@
 
         .footer {
             &__line {
-
                 border-top: 1px solid $footer_devider-dark;
+                border-bottom: 1px solid $footer_devider-dark;
             }
         }
 

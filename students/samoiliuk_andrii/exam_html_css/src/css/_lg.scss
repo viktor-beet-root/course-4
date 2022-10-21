@@ -1,5 +1,5 @@
 @include media('lg') {
-    .section2 {
+    .sectionContactSales {
         &__wrapper {
             width: math.div($default-width + 2 * $gap, 12) * 8 - 2 * $gap;
             padding: 3% 0;

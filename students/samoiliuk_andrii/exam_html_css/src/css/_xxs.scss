@@ -9,31 +9,31 @@
             margin-bottom: 20px;
         }
 
-        &__section1 {
+        &__sectionPeerToPeer {
             margin-bottom: 20px;
         }
 
-        &__section2 {
+        &__sectionContactSales {
             margin-bottom: 10px;
         }
 
-        &__section3 {
+        &__sectionFeatures {
             margin-bottom: 10px;
         }
 
-        &__section4 {
+        &__sectionQuote {
             margin-bottom: 10px;
         }
 
-        &__section5 {
+        &__sectionVideo {
             margin-bottom: 10px;
         }
 
-        &__section6 {
+        &__sectionTrading {
             margin-bottom: 10px;
         }
 
-        &__section7 {
+        &__sectionReviews {
             margin-bottom: 5px;
         }
     }
@@ -94,7 +94,7 @@
 
     }
 
-    .section3 {
+    .sectionFeatures {
         &__feature {
             margin-bottom: 15px;
         }
@@ -114,7 +114,7 @@
         }
     }
 
-    .section4 {
+    .sectionQuote {
         &__wrapper {
             padding: $gap;
         }
@@ -133,7 +133,7 @@
         }
     }
 
-    .section5 {
+    .sectionVideo {
         &__video-wrapper {
             margin: -$gap;
         }
@@ -151,8 +151,7 @@
         }
     }
 
-    .section7 {
-
+    .sectionReviews {
         &__title {
             padding: $gap;
         }

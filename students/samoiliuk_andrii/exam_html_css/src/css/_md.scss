@@ -5,37 +5,37 @@
             margin-bottom: 105px;
         }
 
-        &__section1 {
+        &__sectionPeerToPeer {
             margin-bottom: 90px;
         }
 
-        &__section2 {
+        &__sectionContactSales {
             margin-bottom: 60px;
         }
 
-        &__section3 {
+        &__sectionFeatures {
             margin-bottom: 5px;
         }
 
-        &__section4 {
+        &__sectionQuote {
             margin-bottom: 60px;
         }
 
-        &__section5 {
+        &__sectionVideo {
             margin-bottom: 60px;
         }
 
-        &__section6 {
+        &__sectionTrading {
             margin-bottom: 60px;
         }
 
-        &__section7 {
+        &__sectionReviews {
             margin-bottom: 39px;
         }
     }
 
 
-    .section2 {
+    .sectionContactSales {
         &__row {
             position: relative;
         }
@@ -58,13 +58,13 @@
         }
     }
 
-    .section3 {
+    .sectionFeatures {
         &__feature {
             margin-bottom: 32px;
         }
     }
 
-    .section4 {
+    .sectionQuote {
         &__wrapper {
             padding: 50px 150px 50px 80px;
         }
@@ -79,7 +79,7 @@
 
 
 
-    .section6 {
+    .sectionTrading {
         &__wrapper {
             width: 100%;
             position: absolute;
@@ -102,7 +102,7 @@
         }
     }
 
-    .section7 {
+    .sectionReviews {
 
         &__title {
             padding: 30px 40px 30px 40px;
