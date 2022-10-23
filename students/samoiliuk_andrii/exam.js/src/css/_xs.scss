@@ -1,0 +1,43 @@
+@include media("xs") {
+    .logo {
+        &__img {
+            max-width: 100%;
+        }
+    }
+
+    .header {
+        &__topBar {
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+    }
+
+    .headerOne {
+        font-size: 35px;
+        line-height: 45px;
+
+
+        &_subheader {
+            font-size: 12px;
+            line-height: 14px;
+        }
+    }
+
+    .mainHeader {
+        &__header {
+            margin-bottom: 5px;
+        }
+    }
+
+    .subfooter {
+        &__logo {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        &__social {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}

@@ -12,7 +12,7 @@
     &__topBar {
         margin-top: 51px;
         position: fixed;
-        z-index: 990;
+        z-index: 999;
         left: 0;
         right: 0;
         top: 0px;
@@ -134,10 +134,9 @@
         border-radius: 50%;
         border: 1px solid white;
         overflow: hidden;
-
         margin-right: 18px;
 
-        &:last-of-type {
+        &:nth-child(3) {
             margin-right: 0;
         }
     }
@@ -158,4 +157,8 @@
             fill: white;
         }
     }
+}
+
+.responsiveTopbar__burger {
+    display: none;
 }

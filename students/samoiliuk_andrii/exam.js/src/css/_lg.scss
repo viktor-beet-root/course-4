@@ -1,0 +1,93 @@
+@include media("lg") {
+    .headerOne {
+        font-size: 60px;
+        line-height: 78px;
+
+        &_subheader {
+            font-size: 16px;
+            line-height: 28px;
+        }
+    }
+
+    .responsiveTopbar {
+        justify-content: center;
+
+        &__logo {
+            order: 1;
+            padding: 0;
+        }
+
+        &__menu {
+            order: 3;
+            margin-top: 15px;
+            padding: 0;
+            padding-bottom: 5px;
+        }
+
+        &__social {
+            justify-content: flex-end;
+            padding: 0;
+            margin: 0;
+            order: 2;
+        }
+    }
+
+    .navigation {
+        padding-left: 0;
+        display: flex;
+        justify-content: space-between;
+
+        &__item {
+            margin: 0;
+        }
+
+        &__link {
+            margin: 0;
+            text-align: center;
+        }
+    }
+
+    .pictureWithBgLeft {
+        &__shadow {
+            margin-right: 17.5vw;
+            padding-top: 33.5vw;
+        }
+    }
+
+    .pictureWithBgRight {
+        &__shadow {
+            margin-left: 17.5vw;
+            padding-top: 33.5vw;
+        }
+    }
+
+    .whatWeDo {
+        &__rowThree {
+            margin-bottom: 75px;
+        }
+    }
+
+    .latestNews {
+        padding: 120px 0 90px 0;
+    }
+
+    .gallery {
+        padding-bottom: 75px;
+    }
+
+    .mapWrapper {
+        padding-top: 500px;
+    }
+
+    .footerBg {
+        padding-top: 350px;
+    }
+
+    .upButton {
+        right: $gap;
+        top: unset;
+        bottom: $gap;
+        transform: translate(0, 0) rotate(180deg);
+
+    }
+}

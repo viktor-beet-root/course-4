@@ -4,6 +4,10 @@
     position: relative;
 }
 
+.leaflet-control-container {
+    z-index: 800 !important;
+}
+
 #map {
     position: absolute;
     top: 0;

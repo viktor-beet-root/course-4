@@ -12,7 +12,6 @@
     &__rowThree {
         margin-bottom: 150px;
     }
-
 }
 
 .description {
@@ -43,16 +42,20 @@
     padding-right: 40px;
     margin-top: 57px;
 
-    &::before {
-        content: " ";
-        width: 37%;
-        height: 470px;
-        display: block;
-        z-index: -10;
-        background-color: $color-light-blue;
+    &__wrapper {
         position: absolute;
         left: 0;
-        transform: translate(0, -57px);
+        transform: translate(0, -112%);
+        z-index: -10;
+        max-height: 470px;
+        overflow: hidden;
+        width: 50vw;
+    }
+
+    &__shadow {
+        margin-right: 215px;
+        background-color: $color-light-blue;
+        padding-top: 40vw;
     }
 }
 
@@ -60,17 +63,20 @@
     padding-left: 40px;
     margin-top: 57px;
 
-
-    &::before {
-        content: " ";
-        width: 37%;
-        height: 470px;
-        display: block;
-        z-index: -10;
-        background-color: $color-purple;
+    &__wrapper {
         position: absolute;
         right: 0;
-        transform: translate(0, -57px);
+        transform: translate(0, -112%);
+        z-index: -10;
+        max-height: 470px;
+        overflow: hidden;
+        width: 50vw;
+    }
+
+    &__shadow {
+        margin-left: 215px;
+        background-color: $color-purple;
+        padding-top: 40vw;
     }
 }
 

@@ -1,0 +1,80 @@
+@include media("md") {
+    .headerOne {
+        font-size: 50px;
+        line-height: 68px;
+
+        &_subheader {
+            font-size: 14px;
+            line-height: 24px;
+        }
+    }
+
+    .responsiveTopbar {
+        justify-content: space-between;
+        padding-left: $gap;
+        padding-right: $gap;
+    }
+
+    .pictureWithBgLeft {
+        padding-right: 0px;
+
+        &__shadow {
+            margin-right: 115px;
+            padding-top: 30vw;
+        }
+    }
+
+    .pictureWithBgRight {
+        padding-left: 0px;
+
+        &__shadow {
+            margin-left: 115px;
+            padding-top: 30vw;
+        }
+    }
+
+    .headerTwo {
+        font-size: 34px;
+        line-height: 44px;
+
+        &_subheader {
+            font-size: 18px;
+            line-height: 22px;
+        }
+
+        &_line {
+            padding-top: 25px;
+        }
+    }
+
+    .latestNews {
+
+        &__rowOne {
+            margin-bottom: 60px;
+        }
+    }
+
+    .pictures {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .hiddableMd {
+        padding-top: 0;
+        transition: padding-top 0.3s ease-in-out;
+    }
+
+    .subfooter {
+        padding-left: $gap;
+        padding-right: $gap;
+    }
+
+    .contacts {
+        padding-left: $gap;
+        padding-right: $gap;
+    }
+
+    .copyright {
+        padding-left: $gap;
+        padding-right: $gap;
+    }
+}

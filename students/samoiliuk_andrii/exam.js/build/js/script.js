@@ -31480,6 +31480,7 @@ var contact = document.querySelector(".footer");
 var sections = [aboutUs, news, projects, contact];
 var links = document.querySelectorAll(".navigation__link");
 var hiddenSlides = document.querySelectorAll(".hiddable");
+var hiddenSlidesMd = document.querySelectorAll(".hiddableMd");
 var galleryButton = document.querySelector(".galleryButton");
 var formName = document.querySelector(".footerForm__name");
 var formEmail = document.querySelector(".footerForm__email");
@@ -31551,7 +31552,6 @@ function navDotsBehavior() {
   });
 }
 document.addEventListener("scroll", function (event) {
-  console.log(scrollY);
   displayUpButton();
   navBarBehavior();
   navDotsBehavior();
@@ -31564,7 +31564,13 @@ jquery__WEBPACK_IMPORTED_MODULE_6___default()('.bgSlider').slick({
   dots: true,
   autoplay: true,
   autoplaySpeed: 3000,
-  pauseOnHover: false
+  pauseOnHover: false,
+  responsive: [{
+    breakpoint: 481,
+    settings: {
+      dots: false
+    }
+  }]
 });
 jquery__WEBPACK_IMPORTED_MODULE_6___default()('.newsSlider').slick({
   infinite: true,
@@ -31572,7 +31578,18 @@ jquery__WEBPACK_IMPORTED_MODULE_6___default()('.newsSlider').slick({
   slidesToScroll: 1,
   arrows: true,
   dots: true,
-  autoplay: false
+  autoplay: false,
+  responsive: [{
+    breakpoint: 993,
+    settings: {
+      slidesToShow: 2
+    }
+  }, {
+    breakpoint: 769,
+    settings: {
+      slidesToShow: 1
+    }
+  }]
 });
 _fancyapps_ui__WEBPACK_IMPORTED_MODULE_8__.Fancybox.bind('[data-fancybox="gallery"]', {});
 function openSlides(event) {
@@ -31585,6 +31602,9 @@ function openSlides(event) {
   ;
   for (var i = 0; i < hiddenSlides.length; i++) {
     hiddenSlides[i].classList.toggle("hiddable");
+  }
+  for (var _i = 0; _i < hiddenSlidesMd.length; _i++) {
+    hiddenSlidesMd[_i].classList.toggle("hiddableMd");
   }
 }
 galleryButton.addEventListener("click", openSlides);
@@ -31611,16 +31631,17 @@ function validateEmail() {
   return emailRegex.test(formEmail.value);
 }
 function formValidation(event) {
+  var redUnderline = "border-bottom: 1px solid rgba(238, 114, 123, 1)";
   formName.style = " ";
   formEmail.style = " ";
   if (!validateName() || !validateEmail()) {
     event.preventDefault();
     if (!validateName()) {
-      formName.style = "border-bottom: 1px solid rgba(238, 114, 123, 1)";
+      formName.style = redUnderline;
     }
     ;
     if (!validateEmail()) {
-      formEmail.style = "border-bottom: 1px solid rgba(238, 114, 123, 1)";
+      formEmail.style = redUnderline;
     }
     ;
   }

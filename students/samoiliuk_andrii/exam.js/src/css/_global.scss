@@ -1,9 +1,4 @@
-// html {
-//     scroll-behavior: smooth;
-// }
-
 .page {
-
     font-family: 'Open Sans', $fallback;
     font-style: normal;
     font-weight: 400;
@@ -107,7 +102,7 @@
     right: 5vh;
     top: 95vh;
     transform: translate(0%, -100%) rotate(180deg);
-    z-index: 1100;
+    z-index: 999;
 }
 
 .hidden {

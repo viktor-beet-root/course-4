@@ -16,6 +16,7 @@ const sections = [aboutUs, news, projects, contact];
 const links = document.querySelectorAll(".navigation__link");
 
 const hiddenSlides = document.querySelectorAll(".hiddable");
+const hiddenSlidesMd = document.querySelectorAll(".hiddableMd");
 const galleryButton = document.querySelector(".galleryButton");
 
 const formName = document.querySelector(".footerForm__name");
@@ -98,7 +99,6 @@ function navDotsBehavior() {
 }
 
 document.addEventListener("scroll", (event) => {
-  console.log(scrollY);
   displayUpButton();
   navBarBehavior();
   navDotsBehavior();
@@ -113,6 +113,14 @@ $('.bgSlider').slick({
   autoplay: true,
   autoplaySpeed: 3000,
   pauseOnHover: false,
+  responsive: [
+    {
+      breakpoint: 481,
+      settings: {
+        dots: false,
+      }
+    },
+  ]
 });
 
 $('.newsSlider').slick({
@@ -122,6 +130,20 @@ $('.newsSlider').slick({
   arrows: true,
   dots: true,
   autoplay: false,
+  responsive: [
+    {
+      breakpoint: 993,
+      settings: {
+        slidesToShow: 2,
+      }
+    },
+    {
+      breakpoint: 769,
+      settings: {
+        slidesToShow: 1,
+      }
+    },
+  ]
 });
 
 Fancybox.bind('[data-fancybox="gallery"]', {});
@@ -131,8 +153,12 @@ function openSlides(event) {
   if (galleryButton.innerHTML === "see more") {
     galleryButton.innerHTML = "see less";
   } else { galleryButton.innerHTML = "see more" };
+
   for (let i = 0; i < hiddenSlides.length; i++) {
     hiddenSlides[i].classList.toggle("hiddable");
+  }
+  for (let i = 0; i < hiddenSlidesMd.length; i++) {
+    hiddenSlidesMd[i].classList.toggle("hiddableMd");
   }
 }
 
@@ -166,15 +192,16 @@ function validateEmail() {
 }
 
 function formValidation(event) {
+  const redUnderline = "border-bottom: 1px solid rgba(238, 114, 123, 1)";
   formName.style = " ";
   formEmail.style = " ";
   if (!validateName() || !validateEmail()) {
     event.preventDefault();
     if (!validateName()) {
-      formName.style = "border-bottom: 1px solid rgba(238, 114, 123, 1)";
+      formName.style = redUnderline;
     };
     if (!validateEmail()) {
-      formEmail.style = "border-bottom: 1px solid rgba(238, 114, 123, 1)";
+      formEmail.style = redUnderline;
     };
   }
 }

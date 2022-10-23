@@ -78,6 +78,21 @@
         @include scrollButton;
     }
 
+    @media screen and (max-width: 1400px) {
+        .slick-arrow.slick-prev {
+            transform: translate(-50%, -100%) rotate(90deg);
+            top: -$gap;
+            right: 45px;
+            left: unset;
+        }
+
+        .slick-arrow.slick-next {
+            right: -5px;
+            transform: translate(-50%, -100%) rotate(-90deg);
+            top: -$gap;
+        }
+    }
+
     /* Стрелка не активная */
     .slick-arrow.slick-disabled {}
 
