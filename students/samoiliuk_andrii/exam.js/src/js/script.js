@@ -180,7 +180,7 @@ L.tileLayer('https://tile.jawg.io/jawg-light/{z}/{x}/{y}{r}.png?access-token=1RS
 map.attributionControl.addAttribution("<a href=\"https://www.jawg.io\" target=\"_blank\">&copy; Jawg</a> - <a href=\"https://www.openstreetmap.org\" target=\"_blank\">&copy; OpenStreetMap</a>&nbsp;contributors")
 
 const customIcon = L.icon({
-  iconUrl: '../images/marker.svg',
+  iconUrl: './images/marker.svg',
   iconSize: [106, 106],
   iconAnchor: [54, 54],
 });
