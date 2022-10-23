@@ -1,8 +1,9 @@
-import $ from "jquery";
+import $, { event } from "jquery";
 import 'slick-carousel';
 import { Fancybox } from "@fancyapps/ui";
 import L from "leaflet";
 
+const logo = document.querySelector(".logo");
 const upButton = document.querySelector(".upButton");
 const topBar = document.querySelector(".header__topBar");
 const nextButton = document.querySelector(".scrollButton");
@@ -23,6 +24,9 @@ const formName = document.querySelector(".footerForm__name");
 const formEmail = document.querySelector(".footerForm__email");
 const formSubmit = document.querySelector(".footerForm__submit");
 
+const burger = document.querySelector(".burger");
+const mobileMenu = document.querySelector(".responsiveTopbar__menu");
+
 function scrollTo(coordinate, time = 500) {
   $('html, body').animate({
     scrollTop: coordinate,
@@ -42,6 +46,7 @@ function upButtonBehavior(event) {
 }
 
 upButton.addEventListener('click', upButtonBehavior);
+logo.addEventListener("click", upButtonBehavior);
 
 function navLinksBehavior() {
   for (let i = 0; i < links.length; i++) {
@@ -207,6 +212,34 @@ function formValidation(event) {
 }
 
 formSubmit.addEventListener('click', formValidation)
+
+document.body.addEventListener("click", openMenu);
+
+function openMenu(event) {
+  if (event.target.closest(".burger") !== null) {
+    mobileMenu.classList.remove("responsiveTopbar__menu_hidden");
+    document.body.removeEventListener("click", openMenu);
+    document.body.addEventListener("click", closeMenu);
+  }
+}
+
+function closeMenu(event) {
+  if ((event.target.closest(".responsiveTopbar__menu") === null) || (isLink(event.target))) {
+    mobileMenu.classList.add("responsiveTopbar__menu_hidden");
+    document.body.removeEventListener("click", closeMenu);
+    document.body.addEventListener("click", openMenu);
+  }
+}
+
+function isLink(element) {
+  let answer = false;
+  links.forEach(function (link) {
+    if (link === element) {
+      answer = true;
+    }
+  });
+  return answer;
+}
 
 window.Fancybox = Fancybox;
 window.initMap = initMap;
