@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body class="page">
+    <header class="header">
+        <div class="container">
+            <div class="cart" id="cart">
+                <div>({{ cartList.length }})</div>
+                <div v-for="(product, index) in cartList" :key="product.id" class="cart__item">
+                    <img :src="imagesPath + product.img" :alt="product.name">
+                    <p>{{product.name}}</p>
+                    <p class="price-box">
+                        <span class="price-box__price" :class="{sale: product.price > product.specialPrice}">
+                            {{product.price.toLocaleString()}} {{ currensySymbol }}
+                        </span>
+                        <span v-if="product.price > product.specialPrice" class="price-box__special-price">
+                            {{product.specialPrice.toLocaleString()}} {{ currensySymbol }}
+                        </span>
+                    </p>
+                    <div class="cart__qty qty">
+                        <button @click="setQty(false, product)" :disabled="product.qty === 1">-</button>
+                        <input v-model="product.qty" type="text">
+                        <button @click="setQty(true, product)">+</button>
+                        <button @click="removeProduct(index)">Remove</button>
+                    </div>
+                    <p>Total price: {{ getTotalProductPrice(product).toLocaleString() }} {{ currensySymbol }}</p>
+                </div>
+                <div v-if="totalCart" class="cart__total">
+                    Cart total {{ totalCart.toLocaleString() }} {{ currensySymbol }}
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <div class="container">
+            <div class="product-list" id="productList">
+                <div class="product-list__item product" v-for="product in products" :key="product.id">
+                    <div class="product__lables labels">
+                        <div class="labels__item" :class="key" v-for="(label, key) in product.labels" :key="key">
+                            {{ label }}
+                        </div>
+                    </div>
+                    <img :src="imagesPath + product.img" :alt="product.name" class="product__img">
+                    <h2 class="product__name">
+                        {{ product.name }} {{ product.sku }}
+                    </h2>
+                    <p class="product__info-title">Description</p>
+                    <ul class="product__info-list">
+                        <li class="product__info-item" v-for="(value, key) in product.characteristics" :key="key">
+                            <strong>{{key}}:</strong> {{value}};
+                        </li>
+                    </ul>
+                    <p class="product__price price-box">
+                        <span class="price-box__price" :class="{sale: product.price > product.specialPrice}">
+                            {{product.price.toLocaleString()}} {{ currensySymbol }}
+                        </span>
+                        <span v-if="product.price > product.specialPrice" class="price-box__special-price">
+                            {{product.specialPrice.toLocaleString()}} {{ currensySymbol }}
+                        </span>
+                    </p>
+                    <div class="product__add-to-cart-wrapper">
+                        <button @click="addToCart(product)" class="product__add-to-cart" v-if="product.instock">
+                            Add To Cart
+                        </button>
+                        <p v-else>
+                            {{ outOfStockMessage }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

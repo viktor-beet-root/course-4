@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .error {
+            color: red;
+        }
+
+        .error-message {
+            display: block;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="userList">
+        <div class="add-user-form">
+            <div :class="{error: !addUserForm.firstName && addUserForm.isValidate}">
+                First Name: <input type="text" v-model="addUserForm.firstName">
+                <strong class="error-message" v-if="!addUserForm.firstName && addUserForm.isValidate">this field is
+                    requaired</strong>
+            </div>
+            <div :class="{error: !addUserForm.lastName && addUserForm.isValidate}">
+                Last Name: <input type="text" v-model="addUserForm.lastName">
+            </div>
+            <div :class="{error: !addUserForm.userName && addUserForm.isValidate}">
+                User Name: <input type="text" v-model="addUserForm.userName">
+            </div>
+            <div :class="{error: !addUserForm.email && addUserForm.isValidate}">
+                Email: <input type="text" v-model="addUserForm.email">
+            </div>
+            <div :class="{error: !addUserForm.password && addUserForm.isValidate}">
+                Password: <input type="text" v-model="addUserForm.password">
+            </div>
+            <div :class="{error: !addUserForm.confirmPassword && addUserForm.isValidate || !confirmedPass}">
+                Confinm Password: <input type="text" v-model="addUserForm.confirmPassword">
+            </div>
+            <div><button @click="addUser">add user</button></div>
+        </div>
+        <div class="user-list">
+            <div v-for="(user, index) in userList" class="user-list__item" :key="user.id">
+                <p>id: {{user.id}}</p>
+                <p>First Name: {{user.firstName}}</p>
+                <p>Last Name: {{user.lastName}}</p>
+                <p>User Name: {{user.userName}}</p>
+                <p>Email: {{user.email}}</p>
+                <p>Password: {{user.pass}}</p>
+                <p><button @click="removeUser(index)">remove user</button></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
