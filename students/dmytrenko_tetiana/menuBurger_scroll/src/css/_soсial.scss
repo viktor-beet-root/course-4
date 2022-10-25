@@ -7,6 +7,11 @@
         height: 32px;
         border-radius: 50%;
         position: relative;
+
+        &:hover {
+            border: 2px solid $link-text-color;
+            box-sizing: border-box;
+        }
     }
 
     &__link:not(:first-child) {
@@ -20,11 +25,3 @@
         transform: translate(-50%, -50%);
     }
 }
-
-// .header {
-
-//     &__sotial-links {
-//         display: flex;
-//         justify-content: flex-end;
-//     }
-// }
