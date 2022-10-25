@@ -1,0 +1,25 @@
+.reviews {
+    &__header {
+    }
+
+    &__main {
+    }
+
+    &__item {
+    }
+}
+
+.review {
+    background-image: url(../images/r1.jpg);
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+
+    &__text {
+    }
+
+    &__author {
+    }
+}
