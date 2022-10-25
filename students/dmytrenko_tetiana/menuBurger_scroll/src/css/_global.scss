@@ -1,0 +1,56 @@
+@include font-face($link-text-style, 'source-sans-pro-v21-latin-regular', 400);
+@include font-face($main-font-style, 'montserrat-v25-latin-regular', 400);
+@include font-face($main-font-style, 'montserrat-v25-latin-700', 700);
+@include font-face($text-font-style, 'open-sans-v34-latin-regular', 400);
+@include font-face($text-font-style, 'open-sans-v34-latin-italic', 400, italic);
+
+@include container;
+@include grid(12);
+
+body {
+    position: relative;
+}
+
+section {
+    margin-bottom: 100px;
+}
+
+.button {
+    display: inline-block;
+    padding: 16px 41px;
+    color: $text-button-color;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid $text-button-color;
+
+    &:hover,
+    &:focus {
+        text-decoration: underline;
+    }
+}
+
+.buttonScrollTop {
+    position: fixed;
+    right: 2%;
+    top: 92%;
+    height: 40px;
+    width: 40px;
+    background-color: $bgMenuSticky;
+    border-radius: 50%;
+    z-index: 100;
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
+
+    &::before {
+        content: '';
+        display: block;
+        height: 12px;
+        width: 12px;
+        border-top: 3px solid $link-text-color;
+        border-left: 3px solid $link-text-color;
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        transform: rotate(45deg);
+    }
+}
