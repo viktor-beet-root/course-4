@@ -9,6 +9,9 @@
         font-family: $second-font-name;
         font-size: 38px;
         margin-bottom: 50px;
+        letter-spacing: 10%;
+        font-style: light;
+        text-align: left;
 
         @include media ('sm') {
             font-size: 28px;
