@@ -6,167 +6,162 @@
 
 @include grid();
 
-.test {
-    background-color: red;
-    padding: 15px;
-}
-
 body {
-    background-color: $bg-color-body;
-    color: $color-blue-dark;
-    font-family: $main-font;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 18px;
-    line-height: 26px;
+  background-color: $bg-color-body;
+  color: $color-blue-dark;
+  font-family: $main-font;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 26px;
 }
 
 .section {
-    margin-bottom: 105px;
+  margin-bottom: 105px;
 }
 
 h1,
 h2,
 h3 {
-    margin: 20px 0;
+  margin: 20px 0;
 }
 
 p {
-    margin: 0 0 20px 0;
-    opacity: 0.8;
+  margin: 0 0 20px 0;
+  opacity: 0.8;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .link {
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 24px;
-    letter-spacing: 0.08em;
-    color: $color-red;
-    position: relative;
-    margin-top: 50px;
-    display: inline-block;
-    text-transform: uppercase;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.08em;
+  color: $color-red;
+  position: relative;
+  margin-top: 50px;
+  display: inline-block;
+  text-transform: uppercase;
+
+  &:hover,
+  &:focus {
+    color: $color-red-dark;
+
+    &::after {
+      background-color: $color-red-dark;
+    }
+  }
+
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 10px;
+    right: -5px;
+    top: 50%;
+    bottom: 0;
+    opacity: 0.3;
+    background-color: $color-red;
+  }
+
+  &-frame {
+    text-align: center;
+    padding: 33px 0;
+    border: 1px solid $color-gray-border;
+    margin-top: 20px;
+    display: block;
 
     &:hover,
     &:focus {
+      border-color: $color-red-dark-border;
+
+      & .link {
         color: $color-red-dark;
 
         &::after {
-            background-color: $color-red-dark;
+          background-color: $color-red-dark;
         }
+      }
     }
 
-
-    &::after {
-        content: "";
-        display: block;
-        position: absolute;
-        left: 10px;
-        right: -5px;
-        top: 50%;
-        bottom: 0;
-        opacity: 0.3;
-        background-color: $color-red;
+    & > .link {
+      margin: 0;
     }
-
-    &-frame {
-        text-align: center;
-        padding: 33px 0;
-        border: 1px solid $color-gray-border;
-        margin-top: 20px;
-        display: block;
-
-        &:hover,
-        &:focus {
-        border-color: $color-red-dark-border;
-
-            & .link {
-                color: $color-red-dark;
-
-                &::after {
-                    background-color: $color-red-dark;
-                }
-            }
-        }
-
-        & > .link {
-            margin: 0;
-        }
-    }
+  }
 }
 
 .container {
-    max-width: $default-width;
-    margin: 0 auto;
-    padding: 0 $gap;
+  max-width: $default-width;
+  margin: 0 auto;
+  padding: 0 $gap;
 }
 
 .title {
-    font-family: $font-playfair;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 40px;
-    line-height: 48px;
+  font-family: $font-playfair;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 48px;
 
-    &__accent {
-        color: $color-green;
-        font-style: italic;
-    }
+  &__accent {
+    color: $color-green;
+    font-style: italic;
+  }
 }
 
 .whitebox-wrapper {
-    background-repeat: no-repeat;
-    background-size: auto 100%;
-    padding: 45px 0;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  padding: 45px 0;
 }
 
 .whitebox {
-    width: 66.666667%;
-    margin-left: auto;
-    background: #FFFFFF;
-    opacity: 0.9;
-    padding: 40px 0 40px 70px;
+  width: 66.666667%;
+  margin-left: auto;
+  background: #FFFFFF;
+  opacity: 0.9;
+  padding: 40px 0 40px 70px;
 }
 
 @media screen and (max-width: 600px) {
-    .title {
-        color: green;
-        font-size: 30px;
-    }
+  .title {
+    color: green;
+    font-size: 30px;
+  }
 }
 
 @media screen and (max-width: 500px) {
-    .title {
-        color: red;
-    }
+  .title {
+    color: red;
+  }
 }
 
 .r {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 150px;
-    height: 150px;
-    background-color: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: 150px;
+  background-color: black;
 
-    @include media(md) {
-        top: 0;
-        transform: translateX(-50%);
-    }
+  @include media(md) {
+    top: 0;
+    transform: translateX(-50%);
+  }
 
-    @include media() {
-        top: unset;
-        bottom: 0;
-    }
+  @include media() {
+    top: unset;
+    bottom: 0;
+  }
 }
 
 .header__login-block {
-    @include media(sm) {
-        display: none;
-    }
+  @include media(sm) {
+    display: none;
+  }
 }
