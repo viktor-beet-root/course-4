@@ -25,6 +25,13 @@
         box-sizing: border-box;
     }
 
+    .note {
+        @include media(sxs) {
+            font-size: 14px;
+            line-height: 0;
+        }
+    }
+
     // [class^=col-]:nth-child(5n+1) {
 
     //     .background {
@@ -126,7 +133,8 @@
         }
 
         @include media(sxs) {
-            font-size: 28px;
+            font-size: 24px;
+            margin-bottom: 1px;
         }
 
     }

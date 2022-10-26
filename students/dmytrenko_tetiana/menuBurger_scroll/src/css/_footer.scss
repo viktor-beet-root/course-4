@@ -6,15 +6,16 @@
     background-size: cover;
 
     &__wrapper {
-        width: 770px;
+        max-width: 770px;
         margin: 0 auto;
     }
 
     padding-top: 203px;
     padding-bottom: 170px;
 
-    &__logo {
-        margin-bottom: 41px;
+    @include media(sm) {
+        padding-top: 150px;
+        padding-bottom: 90px;
     }
 
     &__sotial {
@@ -28,6 +29,26 @@
         font-size: 14px;
         line-height: 17px;
         color: $link-text-color;
+        margin-top: 20px;
+    }
+
+    [class^="col-"] {
+        display: flex;
+        align-items: center;
+    }
+
+    [class^="col-"]:nth-child(2) {
+        justify-content: flex-end;
+    }
+
+    @include media(sm) {
+        [class^="col-"] {
+            justify-content: center;
+        }
+
+        [class^="col-"]:nth-child(2) {
+            justify-content: center;
+        }
     }
 }
 
@@ -37,12 +58,33 @@
 
     .title_section_getInTouch {
         margin-bottom: 60px;
+
+        @include media(xs) {
+            margin-bottom: 40px;
+            font-size: 40px;
+            line-height: 54px;
+        }
+
+        @include media(sxs) {
+            font-size: 27px;
+            line-height: 40px;
+        }
     }
 
     &__getInTouch {
         width: 770px;
+
+        @include media(md) {
+            width: 760px;
+        }
+
         height: auto;
         padding: 60px 40px;
+
+        @include media(sm) {
+            padding-bottom: 30px;
+        }
+
         box-shadow: 0px -15px 34px 0 $shadow-color;
         margin: 0 auto;
         position: absolute;
@@ -50,9 +92,24 @@
         left: 50%;
         transform: translate(-50%);
         background-color: $bg-main-color;
-        box-sizing: border-box
+        box-sizing: border-box;
+
+        @include media(sm) {
+            top: -119%;
+            max-width: 564px;
+        }
+
+        @include media(xs) {
+            max-width: 470px;
+        }
+
+        @include media(sxs) {
+            max-width: 308px;
+        }
     }
 }
+
+
 
 .get {
 
@@ -63,6 +120,10 @@
 
         &:not(:last-child) {
             margin-bottom: 40px;
+
+            @include media(sm) {
+                margin-bottom: 20px;
+            }
         }
 
         &:first-child::before {
@@ -99,10 +160,20 @@
     display: flex;
     flex-direction: column;
 
-    .input {
+    @include media(sm) {
         width: 100%;
+        margin-top: 40px;
+    }
+
+    .input {
+        max-width: 100%;
         padding-bottom: 14px;
         margin-bottom: 30px;
+
+        @include media(sm) {
+            padding-bottom: 10px;
+        }
+
         color: $text-contact-color;
         @include text;
 
@@ -130,6 +201,11 @@
         display: block;
         background-color: unset;
         align-self: flex-end;
+
+        @include media(sm) {
+            align-self: center;
+        }
+
         font-size: 18px;
         line-height: 27px;
     }
