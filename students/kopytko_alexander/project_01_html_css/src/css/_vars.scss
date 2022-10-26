@@ -1,9 +1,3 @@
-//// colors
-//$color-red: red;
-//$color-black: black;
-//$color-white: white;
-
-/* Color styles */
 $color-red: #F1897B;
 $color-green: #85BBB1;
 $color-green-neon: #53F3CD;
@@ -22,7 +16,6 @@ $bg-color-body: $color-white;
 
 $bg-transparent-review: linear-gradient(rgba(25, 28, 41, 0.6),rgba(25, 28, 41, 0.6));
 
-// fonts
 $default-font-name: 'Lato';
 $main-font: $default-font-name,
 Arial,
@@ -33,7 +26,7 @@ $path-fonts: '../fonts/';
 
 $gap: 15px;
 
-$default-width: 1200px;
+$default-width: 1170px;
 
 $breack-points: ("lg": 1200px,
     "md": 1024px,

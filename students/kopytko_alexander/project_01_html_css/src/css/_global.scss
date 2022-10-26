@@ -6,7 +6,7 @@
 
 @include grid();
 
-body {
+.page {
   background-color: $bg-color-body;
   color: $color-blue-dark;
   font-family: $main-font;
@@ -20,19 +20,14 @@ body {
   margin-bottom: 105px;
 }
 
-h1,
-h2,
-h3 {
+.title,
+.promises__heading {
   margin: 20px 0;
 }
 
-p {
+.paragraph {
   margin: 0 0 20px 0;
-  opacity: 0.8;
-}
-
-a {
-  text-decoration: none;
+  color: rgba($color-blue-dark, 0.8);
 }
 
 .link {
@@ -45,6 +40,7 @@ a {
   margin-top: 50px;
   display: inline-block;
   text-transform: uppercase;
+  text-decoration: none;
 
   &:hover,
   &:focus {
@@ -74,6 +70,8 @@ a {
     border: 1px solid $color-gray-border;
     margin-top: 20px;
     display: block;
+    text-decoration: none;
+    max-width: 300px;
 
     &:hover,
     &:focus {
@@ -125,43 +123,4 @@ a {
   background: #FFFFFF;
   opacity: 0.9;
   padding: 40px 0 40px 70px;
-}
-
-@media screen and (max-width: 600px) {
-  .title {
-    color: green;
-    font-size: 30px;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .title {
-    color: red;
-  }
-}
-
-.r {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 150px;
-  height: 150px;
-  background-color: black;
-
-  @include media(md) {
-    top: 0;
-    transform: translateX(-50%);
-  }
-
-  @include media() {
-    top: unset;
-    bottom: 0;
-  }
-}
-
-.header__login-block {
-  @include media(sm) {
-    display: none;
-  }
 }
