@@ -18,6 +18,10 @@
 
 .section {
   margin-bottom: 105px;
+
+  @include media(xs) {
+    margin-bottom: 55px;
+  }
 }
 
 .title,
@@ -73,6 +77,10 @@
     text-decoration: none;
     max-width: 300px;
 
+    @include media(xs) {
+      max-width: unset;
+    }
+
     &:hover,
     &:focus {
       border-color: $color-red-dark-border;
@@ -105,6 +113,11 @@
   font-size: 40px;
   line-height: 48px;
 
+  @include media(xs) {
+    font-size: 30px;
+    line-height: 36px;
+  }
+
   &__accent {
     color: $color-green;
     font-style: italic;
@@ -115,6 +128,12 @@
   background-repeat: no-repeat;
   background-size: auto 100%;
   padding: 45px 0;
+
+  @include media(sm) {
+    padding: 0;
+    margin: 0 -15px;
+    background-size: cover;
+  }
 }
 
 .whitebox {
@@ -123,4 +142,10 @@
   background: #FFFFFF;
   opacity: 0.9;
   padding: 40px 0 40px 70px;
+
+  @include media(sm) {
+    width: 100%;
+    padding: 40px 30px;
+    box-sizing: border-box;
+  }
 }

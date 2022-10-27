@@ -1,7 +1,5 @@
 .info {
   background-image: url(../images/statistic-image.jpg);
-  background-repeat: no-repeat;
-  background-size: auto 100%;
 
   &-right {
     background: #FFFFFF;
@@ -23,6 +21,10 @@
         width: 100px;
         height: 2px;
         margin: 40px auto;
+
+        @include media(xs) {
+          margin: 20px auto;
+        }
       }
 
     }
@@ -33,6 +35,11 @@
       font-weight: 400;
       font-size: 68px;
       line-height: 70px;
+
+      @include media(xs) {
+        font-size: 55px;
+        line-height: 57px;
+      }
     }
 
     &__text {
@@ -44,6 +51,10 @@
 
   &-text {
     padding: 0 30px;
+
+    @include media(xs) {
+      padding: 0;
+    }
   }
 }
 

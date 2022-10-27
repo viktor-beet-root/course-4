@@ -22,6 +22,9 @@
   padding: 30px 40px;
   position: relative;
 
+  @include media(xs) {
+    padding: 15px 20px;
+  }
 
   &.r1 {
     background: $bg-transparent-review, url(../images/r1.jpg);
