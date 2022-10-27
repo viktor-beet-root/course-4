@@ -14,25 +14,33 @@
 }
 
 .logo {
+  @include media(xs) {
+    position: absolute;
+    top: 29px;
+    left: 15px;
+  }
+
   &__img {
     display: block;
   }
 }
 
-.nav-wrapper {
+.logo-wrapper {
   @include media(xs) {
     padding: 0;
   }
 }
 
 .nav {
+  display: flex;
+
   &__menu {
   }
 }
 
 .menu {
   list-style-type: none;
-  display: flex;
+  display: inline-flex;
   justify-content: flex-end;
   margin: 0;
   padding: 0;
@@ -70,7 +78,7 @@
 }
 
 .open-menu-input {
-  @include visuality-hidden;
+
 
   &:checked {
     & + .open-menu-btn {
@@ -110,16 +118,19 @@
 }
 
 .open-menu-btn {
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   border-radius: 5px;
   border: 1px solid $color-gray-border;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  right: 10px;
-  top: 20px;
+  margin-left: auto;
+
+
+  @include media(xs) {
+    display: inline-flex;
+  }
 
   span {
     display: block;

@@ -149,3 +149,7 @@
     box-sizing: border-box;
   }
 }
+
+.visuality-hidden {
+  @include visuality-hidden;
+}

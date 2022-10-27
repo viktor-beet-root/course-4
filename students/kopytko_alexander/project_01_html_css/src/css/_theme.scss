@@ -1,0 +1,11 @@
+.change-theme-btn {
+  display:inline-flex;
+  width:32px;
+    height:32px;
+
+  &::after {
+    content:url("../images/theme_dark.png");
+    //display:block;
+
+  }
+}
