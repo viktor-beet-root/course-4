@@ -75,3 +75,14 @@
         @content;
     }
 }
+
+@mixin visuality-hidden {
+    border: 0 !important;
+    height: 1px !important;
+    width: 1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    clip: rect(0, 0, 0, 0) !important;
+    margin: -1px !important;
+}
