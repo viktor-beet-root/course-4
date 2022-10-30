@@ -1,0 +1,217 @@
+.hidden-checkbox {
+    @include visibility-hidden;
+
+    &:checked+.page {
+        background-image: url(../images/first-screen-black.png);
+        background-color: $page-background-dark;
+        color: $page-main-color-dark;
+        transition: background-image 0.3s linear, background-color 0.3s linear;
+
+        .nav__item {
+            &::after {
+                background: #{$header-nav-color-hover-dark};
+            }
+
+            &>.nav__link {
+                color: $header-nav-color-dark;
+
+                &:visited {
+                    color: $header-nav-color-dark;
+                }
+            }
+        }
+
+        @include media('xs') {
+            .nav {
+                &__item {
+                    border-bottom: 1px solid $header-borders-dark;
+                }
+            }
+
+            .menu-opener {
+                border: 1px solid $header-borders-dark;
+
+                &__line {
+                    background-color: $header-nav-color-dark;
+
+                    &::before {
+                        background-color: $header-nav-color-dark;
+                    }
+
+                    &::after {
+                        background-color: $header-nav-color-dark;
+                    }
+                }
+            }
+
+            .header-mobile {
+                &__switch {
+                    border: 1px solid $header-borders-dark;
+                }
+            }
+        }
+
+        .switch-to-light {
+            display: block;
+        }
+
+        .switch-to-dark {
+            display: none;
+        }
+
+        .header1 {
+            color: $header1_main_color-dark;
+
+            &_accent {
+                color: $header1_main_color_accent-dark;
+            }
+        }
+
+        .header2 {
+            color: $header1_main_color-dark;
+
+            &_accent {
+                color: $header1_main_color_accent-dark;
+            }
+        }
+
+        .global-link {
+            color: $global-link-color-dark;
+
+            &::after {
+                background: $global-link-color-dark;
+            }
+
+            &:hover {
+                color: $global-link-hover-dark;
+
+                &::after {
+                    background: $global-link-hover-dark;
+                }
+            }
+        }
+
+        .sectionContactSales {
+            &__wrapper {
+                background-color: $section2_wrapper_bg-dark;
+            }
+        }
+
+        .digits {
+            &__item {
+                &:not(:last-of-type) {
+                    &::after {
+                        content: '';
+                        background-color: $section2_digits_devider-dark;
+                    }
+                }
+            }
+        }
+
+        .feature {
+            border-top: 1px solid $section3_border_color-dark;
+        }
+
+        .quote {
+            &__image-light {
+                display: none;
+            }
+
+            &__image-dark {
+                display: block;
+            }
+        }
+
+        .sectionVideo {
+            &__video-wrapper {
+                border: 1px solid $section5-video-frame-dark;
+
+                &::before {
+                    content: '';
+                    border: 1px solid $section5-video-frame-dark;
+                }
+
+                &::after {
+                    content: '';
+                    border: 1px solid $section5-video-frame-dark;
+                }
+            }
+
+            &__video-proportion-corrector {
+                border: 1px solid $section5-video-frame-dark;
+            }
+        }
+
+
+        .feature {
+
+            &__item-header {
+
+                color: $section6_feature_header_font-dark;
+
+            }
+
+        }
+
+        .button {
+
+            border: 1px solid $button_frame_color-dark;
+
+
+            &:hover {
+                border: 1px solid $button_frame_hover-dark;
+
+                &>.global-link {
+                    color: $global-link-hover-dark;
+
+                    &::after {
+                        background: $global-link-hover-dark;
+                    }
+                }
+            }
+        }
+
+        .sectionTrading {
+            &__wrapper {
+                background-color: $section6_wrapper_bg-dark;
+            }
+        }
+
+
+
+        .footer {
+            &__line {
+                border-top: 1px solid $footer_devider-dark;
+                border-bottom: 1px solid $footer_devider-dark;
+            }
+        }
+
+        .form {
+            &__input {
+                border-bottom: 1px solid $footer_form_border-dark;
+                color: $footer_form_color-dark;
+                background-color: $page-background-dark;
+
+                @include placeholder() {
+                    color: $footer_form_color-dark;
+                    opacity: .5;
+                }
+            }
+
+
+        }
+
+        .legal {
+            color: $footer_legal_color-dark;
+
+            &__link {
+                color: $footer_link_color-dark;
+
+                &:visited {
+                    color: $footer_link_color_visited-dark;
+                }
+            }
+        }
+
+    }
+}

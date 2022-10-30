@@ -1,0 +1,95 @@
+$default-width: 1170px;
+$gap: 15px;
+$breack-points: (
+    "lg": 1200px,
+    //ok
+    "md": 992px,
+    //ok
+    "sm": 768px,
+    //ok
+    "xs": 576px,
+    "xxs": 480px
+);
+
+/*Fonts*/
+$default-font: 'Lato';
+$default-font-fallback: ', Arial, Helvetica, sans-serif';
+$default-font-header: 'Playfair Display';
+$default-font-header-fallback: ", 'Times New Roman', Times, serif";
+
+/*colors*/
+$color_red: #F1897B;
+$color-red-bright: #E54F3A;
+$color_green: #85BBB1;
+$color_green-neon: #53F3CD;
+$color_green-neon-dark: #02E0AB;
+$color-green-neon-gradient: 'linear-gradient(96.73deg, #53F3CD 6.73%, rgba(83, 243, 205, 0) 116.9%)';
+$color_blue: #689FF2;
+$color_white: #FFFFFF;
+$color_blue_deep: #161926;
+$color_dark-blue: #262A3F;
+$color-grey: #E4E4E4;
+$color-grey-dark: #515773;
+$white-transparent: rgba(255, 255, 255, .9);
+$white-transparent-6: rgba(255, 255, 255, .6);
+$white-transparent-1: rgba(255, 255, 255, .1);
+$black-transparent: rgba(22, 25, 38, .9);
+$grey-transparent-1: rgba(38, 42, 63, .1);
+$grey-transparent: rgba(38, 42, 63, .6);
+
+/*page*/
+$page-background-dark: $color_blue_deep;
+$page-main-color: $color_dark-blue;
+$page-main-color-dark: $color_white;
+$header1_main_color: $color_dark-blue;
+$header1_main_color-dark: $color_white;
+$header1_main_color_accent: $color_green;
+$header1_main_color_accent-dark: $color_blue;
+$global-link-color: $color_red;
+$global-link-color-dark: $color_green-neon;
+$global-link-color-visited: $color_red;
+$global-link-color-dark-visited: $color_green-neon;
+$global-link-hover: $color-red-bright;
+$global-link-hover-dark: $color_green-neon-dark;
+/*header*/
+$header-nav-color-light: $color_dark-blue;
+$header-nav-color-dark: $color_white;
+$header-nav-color-hover-light: $color_red;
+$header-nav-color-hover-dark: $color-green-neon-gradient;
+$header-borders: $color-grey;
+$header-borders-dark: $color-grey-dark;
+/*Sections*/
+$section2_wrapper_bg: $white-transparent;
+$section2_wrapper_bg-dark: $black-transparent;
+$section2_digits_dollar: $color-grey;
+$section2_digits_devider: $color_green;
+$section2_digits_devider-dark: $color_blue ;
+$section3_border_color: $color-grey;
+$section3_border_color-dark: $color-grey-dark;
+$section4-quote-color: $color_white;
+$section5-video-frame: $color-grey;
+$section5-video-frame-dark: $color-grey-dark;
+$section6_wrapper_bg: $white-transparent;
+$section6_wrapper_bg-dark: $black-transparent;
+$section6_feature_header_font: $color_dark-blue;
+$section6_feature_header_font-dark: $color_white;
+$button_frame_color: $color-grey;
+$button_frame_color-dark: $color-grey-dark;
+$button_frame_hover: $color-red-bright;
+$button_frame_hover-dark: $color_green-neon-dark;
+$section7-review-text-color: $color_white;
+
+/*footer*/
+$footer_devider: $color-grey;
+$footer_form_border: $grey-transparent-1;
+$footer_form_color: $color_dark-blue;
+$footer_legal_color: $grey-transparent;
+$footer_link_color: $color_dark-blue;
+$footer_link_color_visited: $color_dark-blue;
+
+$footer_devider-dark: $color-grey-dark;
+$footer_form_border-dark: $white-transparent-1;
+$footer_form_color-dark: $color_white;
+$footer_legal_color-dark: $white-transparent-6;
+$footer_link_color-dark: $color_white;
+$footer_link_color_visited-dark: $color_white;

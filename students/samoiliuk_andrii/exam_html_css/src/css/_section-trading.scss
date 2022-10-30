@@ -1,0 +1,104 @@
+.sectionTrading {
+    &__row {
+        position: relative;
+    }
+
+    &__wrapper {
+        width: math.div($default-width + 2 * $gap, 12) * 8 - $gap;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        display: flex;
+        background-color: $section6_wrapper_bg;
+        z-index: 100;
+        box-sizing: border-box;
+        transform: translate(0, -50%);
+    }
+}
+
+.image-bg-6 {
+    max-width: calc(50% + 2 * $gap);
+    width: 100%;
+    flex-basis: calc(50% + 2 * $gap);
+    padding: $gap;
+    box-sizing: border-box;
+    position: relative;
+
+    &::after {
+        z-index: 100;
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: $gap;
+        background: linear-gradient(0deg, rgba(25, 28, 41, 0.84), rgba(25, 28, 41, 0.84));
+    }
+
+    &__image {
+        max-width: 100%;
+    }
+}
+
+
+
+.features {
+    padding: 75px 15px 15px 69px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    &__list {
+        width: 43%;
+        margin-bottom: 58px;
+
+        &_button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+
+.feature {
+
+    &__item-header {
+        font-family: $default-font-header #{$default-font-header-fallback};
+        font-weight: 400;
+        font-size: 2.4rem;
+        line-height: 4.8rem;
+        color: $section6_feature_header_font;
+        margin-bottom: 7px;
+        letter-spacing: 0.00em;
+        word-spacing: 0.00em;
+
+    }
+
+    &__item {
+        margin-bottom: 10px;
+    }
+}
+
+
+.button {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    padding: 33px 0;
+    border: 1px solid $button_frame_color;
+    text-decoration: none;
+    justify-content: center;
+
+    &:hover {
+        border: 1px solid $button_frame_hover;
+
+        &>.global-link {
+            color: $global-link-hover;
+
+            &::after {
+                background: $global-link-hover;
+            }
+        }
+    }
+}

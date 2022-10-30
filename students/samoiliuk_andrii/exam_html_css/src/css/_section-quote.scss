@@ -1,0 +1,57 @@
+.sectionQuote {
+    &__wrapper {
+        background: linear-gradient(0deg, rgba(25, 28, 41, 0.84), rgba(25, 28, 41, 0.84)), url(../images/quote-background.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        padding: 100px 300px 100px 160px;
+        position: relative;
+        margin: 0;
+    }
+}
+
+.quote {
+    &__quote {
+        font-weight: 400;
+        font-size: 3.2rem;
+        line-height: 4.6rem;
+        letter-spacing: 0.04em;
+        color: $section4-quote-color;
+        position: relative;
+        z-index: 200;
+    }
+
+    &__author {
+        font-family: $default-font-header #{$default-font-header-fallback};
+        font-style: italic;
+        font-weight: 400;
+        font-size: 2.0rem;
+        line-height: 2.0rem;
+        letter-spacing: 0.07em;
+        color: $section4-quote-color;
+        margin-top: 40px;
+        position: relative;
+        z-index: 200;
+
+    }
+
+
+
+    &__image {
+        position: absolute;
+        top: 70px;
+        left: 100px;
+        z-index: 100;
+    }
+
+    // .quote__image-light
+
+    &__image-light {
+        max-width: 100%;
+    }
+
+    &__image-dark {
+        max-width: 100%;
+        display: none;
+    }
+}

@@ -1,0 +1,120 @@
+html {
+    font-size: 10px;
+}
+
+.page {
+    background-image: url(../images/first-screen-white.png);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    font-family: $default-font #{$default-font-fallback};
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1.8rem;
+    line-height: 2.6rem;
+    border-top: 1px solid transparent;
+    margin-top: -1px;
+    color: $page-main-color;
+
+    word-spacing: 0.07em;
+    transition: background-image 0.3s linear, background-color 0.3s linear;
+
+    &__header {
+        margin-top: 30px;
+        margin-bottom: 135px;
+    }
+
+    &__sectionPeerToPeer {
+        margin-bottom: 120px;
+    }
+
+    &__sectionContactSales {
+        margin-bottom: 90px;
+    }
+
+    &__sectionFeatures {
+        margin-bottom: 35px;
+    }
+
+    &__sectionQuote {
+        margin-bottom: 90px;
+    }
+
+    &__sectionVideo {
+        margin-bottom: 90px;
+    }
+
+    &__sectionTrading {
+        margin-bottom: 90px;
+    }
+
+    &__sectionReviews {
+        margin-bottom: 69px;
+    }
+
+    &__footer {}
+}
+
+.header1 {
+    font-family: $default-font-header #{$default-font-header-fallback};
+    font-weight: 400;
+    font-size: 4.4rem;
+    line-height: 5.2rem;
+    color: $header1_main_color;
+    letter-spacing: 0.00em;
+    word-spacing: 0.00em;
+
+    &_accent {
+        font-style: italic;
+        color: $header1_main_color_accent;
+    }
+}
+
+.header2 {
+    font-weight: 400;
+    font-family: $default-font-header #{$default-font-header-fallback};
+    font-size: 4.0rem;
+    line-height: 4.8rem;
+    color: $header1_main_color;
+    letter-spacing: 0.00em;
+    word-spacing: 0.00em;
+
+    &_accent {
+        font-style: italic;
+        color: $header1_main_color_accent;
+    }
+}
+
+.global-link {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 2.0rem;
+    line-height: 2.0rem;
+    letter-spacing: 0.09em;
+    word-spacing: 0.07em;
+    text-transform: uppercase;
+    color: $global-link-color;
+    position: relative;
+    z-index: 0;
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 92%;
+        height: 13px;
+        bottom: -2px;
+        left: 15px;
+        z-index: -10;
+        background: $global-link-color;
+        opacity: 0.3;
+    }
+
+    &:hover {
+        color: $global-link-hover;
+
+        &::after {
+            background: $global-link-hover;
+        }
+
+    }
+}

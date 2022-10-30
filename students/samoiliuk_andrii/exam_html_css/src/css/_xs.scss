@@ -1,0 +1,346 @@
+@include media('xs') {
+    .page {
+        &__header {
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        &__sectionPeerToPeer {
+            margin-bottom: 30px;
+        }
+
+        &__sectionContactSales {
+            margin-bottom: 15px;
+        }
+
+        &__sectionFeatures {
+            margin-bottom: 15px;
+        }
+
+        &__sectionQuote {
+            margin-bottom: 15px;
+        }
+
+        &__sectionVideo {
+            margin-bottom: 15px;
+        }
+
+        &__sectionTrading {
+            margin-bottom: 15px;
+        }
+
+        &__sectionReviews {
+            margin-bottom: 5px;
+        }
+    }
+
+    .header-mobile {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        &__logo {
+            max-width: 100%;
+            order: 1;
+            flex-grow: 2;
+        }
+
+        &__menu {
+            order: 3;
+        }
+
+        &__nav {
+            display: none;
+            order: 4;
+        }
+
+        &__switch {
+            order: 2;
+            border: 1px solid $header-borders;
+            border-radius: 5px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            padding: 0px;
+            cursor: pointer;
+            margin-right: $gap;
+        }
+    }
+
+    .menu-opener-checkbox:checked~.header-mobile__nav {
+        display: flex;
+    }
+
+    .menu-opener-checkbox:checked~.menu-opener {
+        .menu-opener__line {
+            background-color: transparent;
+            ;
+
+            &::before {
+                top: 50%;
+                transform: rotate(45deg);
+            }
+
+            &::after {
+
+                top: 50%;
+                transform: rotate(-45deg);
+            }
+        }
+    }
+
+    .menu-opener {
+        display: block;
+        border: 1px solid $header-borders;
+        border-radius: 5px;
+        width: 40px;
+        height: 40px;
+        box-sizing: border-box;
+        margin-right: 10px;
+        overflow: hidden;
+
+        &__label {
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        &__line {
+            width: 75%;
+            height: 2px;
+            border-radius: 2px;
+            background-color: $header-nav-color-light;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            &::before {
+                content: '';
+                width: 100%;
+                height: 2px;
+                border-radius: 2px;
+                background-color: $header-nav-color-light;
+                position: absolute;
+                top: -7px;
+            }
+
+            &::after {
+                content: '';
+                width: 100%;
+                height: 2px;
+                border-radius: 2px;
+                background-color: $header-nav-color-light;
+                position: absolute;
+                bottom: -7px;
+            }
+        }
+    }
+
+    .nav {
+        width: 100%;
+
+        &__container {
+            width: 100%;
+            flex-direction: column;
+            box-sizing: border-box;
+        }
+
+        &__item {
+            box-sizing: border-box;
+            overflow: hidden;
+            border-bottom: 1px solid $header-borders;
+            width: 100%;
+
+        }
+
+        &__link {
+            display: block;
+            width: 100%;
+            margin-right: 0;
+            padding: math.div($gap, 2) 0 math.div($gap, 2) $gap;
+        }
+    }
+
+
+    .switch-to-dark {
+        margin-right: 8px;
+    }
+
+    .switch-to-light {
+        margin-top: 2px;
+    }
+
+    .sectionContactSales {
+        &__row {
+            position: relative;
+        }
+
+        &__wrapper {
+            width: 100%;
+            padding: 0;
+            position: static;
+            display: flex;
+            flex-wrap: wrap;
+            background-color: $section2_wrapper_bg;
+            z-index: 0;
+            transform: none;
+            padding: $gap 0;
+        }
+
+        &__image-wrapper {
+            position: absolute;
+            padding: $gap 0;
+
+
+            &::after {
+                top: 0;
+                right: 0;
+                left: 0;
+                bottom: 0;
+            }
+        }
+
+        &__digits {
+            width: 100%;
+        }
+
+        &__text {
+            width: 100%;
+            padding: $gap;
+        }
+
+        &__paragraph {
+            margin-bottom: 30px;
+
+
+            &:last-of-type {
+                margin-bottom: 30px;
+            }
+        }
+    }
+
+    .digits {
+
+        &__item {
+            &:not(:last-of-type) {
+                padding-bottom: 70px;
+
+                &::after {
+                    content: '';
+                    bottom: 30px;
+                }
+            }
+        }
+
+        &__strong {
+            font-size: 5.6rem;
+            margin-bottom: 12px;
+
+        }
+
+        &__strong-before {
+            margin-left: 32px;
+        }
+
+    }
+
+    .sectionFeatures {
+        &__feature {
+            margin-bottom: 15px;
+        }
+    }
+
+    .sectionQuote {
+        &__wrapper {
+            padding: 25px 50px 25px 40px;
+        }
+    }
+
+    .quote {
+
+        &__image {
+
+            top: 10px;
+            left: 10px;
+
+        }
+    }
+
+    .sectionTrading {
+        &__row {
+            position: relative;
+        }
+
+        &__wrapper {
+            width: 100%;
+            position: static;
+            right: 0;
+            top: 0;
+            z-index: 100;
+            transform: translate(0, 0);
+        }
+    }
+
+    .image-bg-6 {
+        max-width: 100%;
+        width: 100%;
+        flex-basis: 100%;
+        padding: 0;
+        position: absolute;
+        top: 1px;
+
+        &::after {
+            z-index: 0;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: 0;
+        }
+    }
+
+
+
+    .features {
+        padding: $gap;
+
+        &__list {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+    }
+
+    .legal {
+
+        &__links {
+            text-align: center;
+            margin: -$gap;
+        }
+
+        &__developer {
+            text-align: center;
+            margin: -$gap;
+        }
+
+        &__copyright {
+            text-align: center;
+            margin: -$gap;
+        }
+
+        &__link {
+            &_margin {
+                margin-right: 30px;
+            }
+        }
+    }
+
+    .footer__row2 {
+        margin-top: 10px;
+    }
+}

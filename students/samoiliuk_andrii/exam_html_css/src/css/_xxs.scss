@@ -1,0 +1,173 @@
+@include media('xxs') {
+    html {
+        font-size: 9px;
+    }
+
+    .page {
+        &__header {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        &__sectionPeerToPeer {
+            margin-bottom: 20px;
+        }
+
+        &__sectionContactSales {
+            margin-bottom: 10px;
+        }
+
+        &__sectionFeatures {
+            margin-bottom: 10px;
+        }
+
+        &__sectionQuote {
+            margin-bottom: 10px;
+        }
+
+        &__sectionVideo {
+            margin-bottom: 10px;
+        }
+
+        &__sectionTrading {
+            margin-bottom: 10px;
+        }
+
+        &__sectionReviews {
+            margin-bottom: 5px;
+        }
+    }
+
+    .header1 {
+        font-size: 3.2rem;
+        line-height: 4.0rem;
+    }
+
+    .header2 {
+        font-size: 3.2rem;
+        line-height: 4.0rem;
+    }
+
+    .section1 {
+        &__header1 {
+            margin-bottom: 10px;
+            padding-right: 25px;
+        }
+
+        &__paragraph {
+            margin-bottom: 25px;
+            padding-right: 0px;
+        }
+    }
+
+
+    .digits {
+        &__item {
+            padding-top: 10px;
+            padding-bottom: 0px;
+
+            &:not(:last-of-type) {
+                padding-bottom: 30px;
+
+                &::after {
+                    bottom: 10px;
+                }
+            }
+        }
+
+
+        &__strong {
+            font-size: 4.0rem;
+            line-height: 4.0rem;
+        }
+
+        &__strong-before {
+            margin-left: 10px;
+
+            &::before {
+                font-size: 2.2rem;
+                line-height: 4.0rem;
+                left: 0;
+                bottom: -5px;
+            }
+        }
+
+    }
+
+    .sectionFeatures {
+        &__feature {
+            margin-bottom: 15px;
+        }
+    }
+
+    .feature {
+        margin: -$gap;
+        padding-top: 10px;
+
+        &__header {
+            padding: $gap;
+        }
+
+        &__text {
+            padding: $gap;
+            font-weight: 300;
+        }
+    }
+
+    .sectionQuote {
+        &__wrapper {
+            padding: $gap;
+        }
+    }
+
+
+    .quote {
+        &__quote {
+            font-size: 2.8rem;
+            line-height: 3.5rem;
+        }
+
+        &__author {
+            font-size: 1.6rem;
+            line-height: 2.8rem;
+        }
+    }
+
+    .sectionVideo {
+        &__video-wrapper {
+            margin: -$gap;
+        }
+
+        &__caption {
+            padding-right: 0;
+        }
+    }
+
+    .features {
+
+        &__list {
+
+            margin-bottom: 15px;
+        }
+    }
+
+    .sectionReviews {
+        &__title {
+            padding: $gap;
+        }
+
+    }
+
+    .review {
+        &__content {
+            margin: $gap -$gap;
+            padding: $gap;
+        }
+
+        &__text {
+            line-height: 2.4rem;
+        }
+    }
+
+
+}

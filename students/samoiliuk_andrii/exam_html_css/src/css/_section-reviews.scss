@@ -1,0 +1,57 @@
+.sectionReviews {
+
+    &__title {}
+
+
+    &__header {
+        margin-bottom: 20px;
+    }
+
+    &__text {
+        margin-bottom: 20px;
+    }
+}
+
+.review {
+    position: relative;
+
+    &__image {}
+
+
+    &__content {
+        padding: 30px 40px 30px 40px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: rgba(25, 28, 41, 0.6);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    // .review__text
+
+    &__text {
+        font-weight: 400;
+        font-size: 1.6rem;
+        line-height: 2.6rem;
+        color: $section7-review-text-color;
+        opacity: 0.8;
+        letter-spacing: 0.00em;
+        word-spacing: 0.05em;
+    }
+
+
+    &__author {
+        font-family: $default-font-header #{$default-font-header-fallback};
+        font-style: italic;
+        font-weight: 400;
+        font-size: 2.0rem;
+        line-height: 2.0rem;
+        letter-spacing: 0.08em;
+        color: $section7-review-text-color;
+
+    }
+}

@@ -1,0 +1,95 @@
+.footer {
+    &__row1 {
+        justify-content: space-between;
+    }
+
+    &__row2 {
+        justify-content: space-between;
+    }
+
+    &__line {
+        width: 100%;
+        border-top: 1px solid $footer_devider;
+        border-bottom: 1px solid $footer_devider;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding-top: 15px;
+        padding-bottom: 83px;
+
+    }
+
+    &__label {
+        padding-left: 0;
+        padding-right: 0;
+        margin-top: 47px;
+    }
+
+    &__text {
+        margin-top: 24px;
+
+    }
+
+    &__form {
+        padding-left: 0;
+        padding-right: 0;
+        margin-top: 18px;
+    }
+}
+
+.form {
+    &__input {
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid $footer_form_border;
+        font-family: $default-font-header #{$default-font-header-fallback};
+        font-style: italic;
+        font-weight: 400;
+        font-size: 1.8rem;
+        line-height: 2.0rem;
+        letter-spacing: 0.08em;
+        color: $footer_form_color;
+        padding: 13px 0;
+        margin-bottom: 24px;
+
+        @include placeholder() {
+            opacity: .5;
+        }
+    }
+
+    &__button {
+        font-family: $default-font #{$default-font-fallback};
+        border: none;
+        background-color: transparent;
+        margin-left: -6px;
+        margin-top: 14px;
+    }
+}
+
+.legal {
+    font-size: 1.4rem;
+    line-height: 2.6rem;
+    color: $footer_legal_color;
+    padding-bottom: 15px;
+
+
+    &__links {
+        text-align: right;
+    }
+
+
+    &__link {
+        font-weight: 400;
+        letter-spacing: 0.07em;
+        color: $footer_link_color;
+        text-decoration: none;
+
+        &_margin {
+            margin-right: 30px;
+        }
+
+        &:visited {
+            color: $footer_link_color_visited;
+        }
+    }
+}
