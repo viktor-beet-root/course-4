@@ -123,15 +123,19 @@
         justify-content: center;
         @include font-for-text(400, 14px, 20px);
         border: none;
-        margin: 5px;
+        margin: 4px;
         width: 139px;
         text-transform: uppercase;
         padding: 0 24px;
+        letter-spacing: 0.1em;
     }
 
     &__svg {
         fill: $color-white;
-        padding-right: 12px;
+    }
+
+    &__span {
+        padding-left: 12px;
     }
 }
 
@@ -152,6 +156,12 @@
         margin-top: 4px;
         fill: $color-white;
     }
+
+    &__text {
+        letter-spacing: 0.2em;
+        @include font-style-for-text('Josefin Sans');
+        @include font-for-text(400, 14px, 20px);
+    }
 }
 
 
@@ -165,7 +175,8 @@
         height: 100%;
 
         @include media(xs) {
-            height: 176px;
+            justify-content: flex-start;
+            height: calc(100% - 124px);
         }
     }
 
