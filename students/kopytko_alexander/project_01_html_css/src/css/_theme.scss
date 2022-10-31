@@ -1,11 +1,58 @@
 .change-theme-btn {
-  display:inline-flex;
-  width:32px;
-    height:32px;
+  display: inline-flex;
+  width: 32px;
+  height: 32px;
+  margin-left: 20px;
 
   &::after {
-    content:url("../images/theme_dark.png");
-    //display:block;
-
+    content: url("../images/theme_dark.png");
+    padding-top: 4px;
   }
 }
+
+.change-theme-input {
+  &:checked {
+    & ~ .page {
+      background-color: $color-blue-deep;
+      background-image: url("../images/bg-dark.jpg");
+      color: $color-white;
+
+      & .paragraph {
+        color: rgba($color-white, 0.8);
+      }
+
+      & .menu__link {
+        color: $color-white;
+
+        &:hover:after {
+          background: linear-gradient(96.73deg, #53F3CD 6.73%, rgba(83, 243, 205, 0) 116.9%);
+        }
+      }
+
+      & .title__accent {
+        color: $color-blue;
+      }
+
+      & .link {
+        color: $color-green-neon;
+
+        &:hover,
+        &:focus {
+          color: $color-green-neon-dark;
+
+          &::after {
+            background-color: $color-green-neon-dark;
+          }
+        }
+
+
+        &::after {
+          background-color: $color-green-neon;
+        }
+        }
+
+
+      }
+
+    }
+  }
