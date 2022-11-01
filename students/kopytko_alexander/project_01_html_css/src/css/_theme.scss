@@ -3,10 +3,19 @@
   width: 32px;
   height: 32px;
   margin-left: 20px;
+  order: 2;
+
+  @include media(xs) {
+    order: 0;
+    margin-right: 15px;
+  }
 
   &::after {
-    content: url("../images/theme_dark.png");
-    padding-top: 4px;
+    content: "";
+    background-image: url(../images/theme.png);
+    background-size: 100%;
+    width: 32px;
+    height: 32px;
   }
 }
 
@@ -49,10 +58,54 @@
         &::after {
           background-color: $color-green-neon;
         }
-        }
-
-
       }
 
+      & .whitebox {
+        background: $color-blue-deep;
+      }
+
+      & .money::before {
+        color: $color-white;
+      }
+
+      & .quote__text::before {
+        content: url("../images/quote-icon-dark.svg");
+      }
+
+      & .video__content,
+      & .video__content::before,
+      & .video__content::after,
+      & .video__tablet,
+      & .link-frame {
+        border-color: $color-gray-dark;
+      }
+
+      & .link-frame:hover,
+      & .link-frame:focus {
+        border-color: $color-green-neon-dark;
+
+        & .link {
+          color: $color-green-neon-dark;
+
+          &::after {
+            background-color: $color-green-neon-dark;
+          }
+        }
+      }
+
+      & .form__input {
+        background-color: #161926;
+        border-bottom: 1px solid rgba($color-white, 0.1);
+        color: rgba($color-white, 0.5);
+      }
+
+      & .footer {
+        color: rgba($color-white, 0.6);
+      }
+
+      & .flink {
+        color: $color-white;
+      }
     }
   }
+}
