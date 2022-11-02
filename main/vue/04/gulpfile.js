@@ -6,18 +6,21 @@ const gulp = require('gulp'),
     cleanCSS = require('gulp-clean-css'),
     rename = require("gulp-rename"),
     autoprefixer = require('gulp-autoprefixer'),
-    sass = require('gulp-sass')(require('sass'));
+    sass = require('gulp-sass')(require('sass')),
+    sourcemaps = require('gulp-sourcemaps');
 
 const path = require('./gulp/pathConfig.js');
 const webpackConfig = require('./gulp/webpackConfig.js');
 const isDev = !process.argv.includes('--prod');
 
 function style() {
-    return gulp.src(path.src.css, { sourcemaps: isDev })
+    return gulp.src(path.src.css)
+        .pipe(sourcemaps.init())
         .pipe(sass())
         .pipe(autoprefixer({
             cascade: false
         }))
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest(path.build.css))
         .pipe(cleanCSS())
         .pipe(rename({
