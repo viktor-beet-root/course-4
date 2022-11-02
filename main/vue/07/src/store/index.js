@@ -9,17 +9,27 @@ export default createStore({
         cart: [],
         currensySymbol: '$',
         outOfStockMessage: "Out Of Stock",
+        isShowInStockProduct: true,
     },
     getters: {
         productList(state) {
-            return state.productList;
+            let cart;
+            if (!state.isShowInStockProduct) {
+                cart = state.productList.filter((product) => {
+                    return product.instock;
+                });
+            } else {
+                cart = state.productList;
+            }
+
+            return cart;
         },
         currensySymbol(state) {
             return state.currensySymbol;
         },
         cartList(state) {
             return state.cart;
-        }
+        },
     },
     mutations: {
         setProductList(state, products) {
@@ -32,7 +42,18 @@ export default createStore({
         },
         setQty(state, options) {
             state.cart.splice(options.productIndex, 1, options.newProduct);
-        }
+        },
+        setCart(state, cart) {
+            state.cart = cart;
+        },
+        removeProductCart(state, productId) {
+            const productIndex = state.cart.findIndex((product) => product.id === productId);
+
+            state.cart.splice(productIndex, 1);
+        },
+        toggleInStockProduct(state) {
+            state.isShowInStockProduct = !state.isShowInStockProduct;
+        },
     },
     actions: {
         async getProductList({ commit }) {
@@ -75,7 +96,24 @@ export default createStore({
                 productIndex: options.productIndex,
                 newProduct
             });
-        }
+        },
+        async getCart({ commit }) {
+            const url = `${baseUrl}cart/`;
+            const cart = await request(url);
+
+            commit("setCart", cart);
+        },
+        async removeProductCart({ commit }, product) {
+            const url = `${baseUrl}cart/${product.id}`;
+            const response = await request(url, "DELETE");
+
+            if (response) {
+                commit("removeProductCart", product.id);
+            }
+        },
+        toggleInStockProduct({ commit }) {
+            commit("toggleInStockProduct");
+        },
     },
     modules: {},
 });

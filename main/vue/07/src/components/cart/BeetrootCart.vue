@@ -3,10 +3,10 @@
         <div class="row">
             <beetroot-cart-product
                 class="col-4"
-                v-for="product in cartList"
+                v-for="(product, index) in cartList"
                 :key="product.id"
                 :product="product"
-                @setQty="setQty"
+                :index="index"
             />
         </div>
     </div>
@@ -14,19 +14,22 @@
 
 <script>
 import BeetrootCartProduct from "./BeetrootCartProduct.vue";
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 
 export default {
     components: { BeetrootCartProduct },
     name: "beetroot-cart",
-    emits: ["setQty"],
     computed: {
         ...mapGetters(["cartList"]),
     },
     methods: {
+        ...mapActions(["getCart"]),
         setQty(value, isNewQty, product) {
             this.$emit("setQty", value, isNewQty, product);
         },
+    },
+    mounted() {
+        this.getCart();
     },
 };
 </script>

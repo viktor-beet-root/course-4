@@ -137,6 +137,10 @@ app.get(`${BASE_URL}products`, (req, res) => {
     res.status(200).json(PRODUCTS);
 });
 
+app.get(`${BASE_URL}cart`, (req, res) => {
+    res.status(200).json(CART);
+});
+
 //POST
 app.post(`${BASE_URL}cart/`, (req, res) => {
     const product = { ...req.body };
@@ -149,16 +153,27 @@ app.post(`${BASE_URL}cart/`, (req, res) => {
 
 //PUT
 app.put(`${BASE_URL}cart/:id`, (req, res) => {
-    const productIndex = CART.findIndex((cartProduct) => {
-        return cartProduct.productId === req.params.id;
-    });
-
-
+    const productIndex = getProductIndex(req.params.id);
 
     CART[productIndex] = req.body;
     res.status(202).json(CART[productIndex]);
 });
 
+//DELETE
+app.delete(`${BASE_URL}cart/:id`, (req, res) => {
+    const productIndex = getProductIndex(req.params.id);
+
+    CART.splice(productIndex, 1);
+
+    res.status(200).json(1);
+});
+
 app.listen(PORT, () => {
     console.log(`Server has been started on port ${PORT}...`);
 });
+
+function getProductIndex(productId) {
+    return CART.findIndex((cartProduct) => {
+        return cartProduct.id === productId;
+    });
+}
