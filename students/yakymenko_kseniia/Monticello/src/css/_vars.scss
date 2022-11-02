@@ -1,0 +1,109 @@
+$white: white;
+$gray: #5a5a5a;
+$color-black: #000;
+$color-purple: #5474FD;
+$color-red: #de2e45;
+$color-text-grey: #b9bcd1;
+$quicksilver: #E1E1E1;
+$lightgray: #999;
+$mine-coal: #232323;
+$darkgray: #2C4058;
+$river-bed: #4B5562;
+$blue: #55B7FF;
+$lavender: #7E5AFF;
+$bright-blue: #7C5CF9;
+
+
+
+$input-border-color: $gray;
+$default-border: 1px solid $input-border-color;
+$default-border-radius: 5px;
+
+// padding for Tipografy
+$container-width: 1200px;
+$default-gap: 15px;
+
+// Default body bg color
+$body-bg-color: $white;
+$border-color: $gray;
+
+//header name color
+$color-header-title-h1: $white;
+$color-header-button-bg: $color-purple;
+$color-header-navigation-bg: $color-purple;
+
+//menu
+$border-menu-bottom: $gray;
+$menu-hover-color: $color-purple;
+$menu-default-text-color: $gray;
+$menu-icon-color: $gray;
+$color-overlay-menu-window: $white;
+$color-overlay-menu: $color-black;
+$color-language-deafult: $gray;
+
+// section projects
+$color-projects-bg: $white;
+$color-projects-title: $darkgray;
+$color-projects-subtitle: $darkgray;
+$color-projects-text: $cay;
+$color-projects-button-border: $darkgray;
+$color-projects-button-text: $darkgray;
+$color-projects-location-text: $darkgray;
+$color-projects-trade-bg-before: $blue;
+$color-projects-commerce-bg-aftef: $lavender;
+
+//footer
+$color-footer-bg: $mine-coal;
+$color-footer-title: $white;
+$color-footer-sub-title: $white;
+$color-footer-social-icon: $quicksilver;
+$color-footer-social-icon-hover: $color-purple;
+$color-darkgray: #2c4058;
+$color-cay: #4b5562;
+
+// btn with hover effect
+$color-btn-bg: $color-purple;
+$color-btn-text: $white;
+
+// adding fonts
+$font-folder-path: '../fonts/';
+$folder-image: '../images/';
+
+$font-default-name: '';
+$font-second-name: '';
+$font-third-name: '';
+$font-fourth-name: 'OpenSans-Italic';
+$font-fifth-name: 'OpenSans-Italic-Regular';
+
+//Fonts follback
+$follback: Arial,
+    Helvetica,
+    sans-serif;
+//one
+$font-default: $font-default-name,
+    $follback;
+//two
+$font-second: $font-second-name,
+    $follback;
+//three
+$font-third: $font-third-name,
+    $follback;
+//fourth
+$font-fourth: $font-fourth-name,
+    $follback;
+// fifth
+$font-fifth: $font-fifth-name,
+    $follback;
+
+//Font Size
+$default-font-size: 14px;
+$default-line-height: 2.1875;
+$default-color-text: $darkgray;
+
+// Breack-points for Media @media screen
+$breack-points: (
+    "xl": 1200px,
+    "lg": 992px,
+    "md": 768px,
+    "sm": 576px
+);
