@@ -1,1 +1,1 @@
-https://onlyta.github.io/course-4/students/dmytrenko_tetiana/menuBurger_scroll/build/index.html
+https://onlyta.github.io/course-4/students/dmytrenko_tetiana/exem_2/build/index.html
