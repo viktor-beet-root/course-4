@@ -5,9 +5,6 @@ $main-font: $main-font-style, sans-serif;
 $text-font: $text-font-style, sans-serif;
 $link-text: $link-text-style, sans-serif;
 
-// <i class="fa-brands fa-facebook-f"></i>
-// <i class="fa-brands fa-twitter"></i>
-// <i class="fa-brands fa-instagram"></i>
 $blue: #55B7FF;
 $violet: #7E5AFF;
 $gray: #2C4058;
@@ -26,8 +23,9 @@ $link-text-color: $white;
 $bg-main-color: $white;
 $header-gradient: linear-gradient(243.43deg, #7E5AFF 16.9%, #55B7FF 83.27%);
 $bg-elem-before: $blue;
-$bg-elem-left: $blue;
-$bg-elem-right: $violet;
+$bgMenuSticky: $blue;
+$color-light-blue: $blue;
+$color-purple: $violet;
 $shadow-color: $black-blur;
 
 

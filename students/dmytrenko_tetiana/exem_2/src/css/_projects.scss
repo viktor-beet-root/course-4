@@ -1,118 +1,224 @@
-.projects {
-    &__image-wrapper {
-        max-width: 90%;
-        height: auto;
-        overflow: hidden;
-        position: relative;
-        box-sizing: border-box;
-    }
+.whatWeDo {
+    padding-top: 50px;
 
-    &__image {
-        width: 100%;
-        object-fit: cover;
-        object-position: center;
-    }
+    @include media(sm) {
+        .whatWeDo__row:nth-of-type(2n) {
+            flex-direction: column;
 
-    &__info {
-        height: 100%;
-        display: flex;
-        box-sizing: border-box;
-    }
+            .whatWeDo__row_description {
+                order: 2;
+            }
 
-    &__info-wrapper {
-        height: auto;
-        align-self: flex-end;
-        box-sizing: border-box;
-    }
-
-    // [class^=col-]:nth-child(5n+1) {
-
-    //     .background {
-    //         position: relative;
-
-    //         &::before {
-    //             content: '';
-    //             display: block;
-    //             width: 105%;
-    //             padding-top: 67%;
-    //             background-color: #55B7FF;
-    //             position: absolute;
-    //             top: -12%;
-    //             left: -51%;
-    //         }
-    //     }
-    // }
-
-    // [class^=col-]:nth-child(4n+4) {
-    //     .projects__image-wrapper {
-    //         margin-right: unset;
-    //         margin-left: 10%;
-    //     }
-
-    //     .background {
-    //         position: relative;
-
-    //         &::before {
-    //             content: '';
-    //             display: block;
-    //             width: 105%;
-    //             padding-top: 67%;
-    //             background-color: #7E5AFF;
-    //             position: absolute;
-    //             top: -12%;
-    //             right: -51%;
-    //         }
-    //     }
-    // }
-
-    [class^=col-] {
-        &:first-child {
-            margin-top: 57px;
+            .whatWeDo__row_image {
+                order: 1;
+            }
         }
 
-        &:not(:nth-last-child(-n+2)) {
-            margin-bottom: 177px;
+    }
+
+    &__row:not(:last-child) {
+        margin-bottom: 120px;
+
+        @include media(lg) {
+            margin-bottom: 50px;
+        }
+
+        @include media(sm) {
+            margin-bottom: 30px;
         }
     }
 }
 
-.info {
+.description {
+    &__note {
+        @include media(md) {
+            font-size: 19px;
+            line-height: 24px;
+        }
+
+        @include media(sxs) {
+            @include ellipsis(0);
+            font-size: 17px;
+            line-height: 20px;
+        }
+    }
 
     &__title {
-        text-align: left;
         margin-bottom: 19px;
+        @include ellipsis(1);
+
+        @include media(md) {
+            font-size: 41px;
+            line-height: 49px;
+            margin-bottom: 11px;
+        }
+
+        @include media(sxs) {
+            @include ellipsis(0);
+            font-size: 26px;
+            line-height: 38px;
+            margin-bottom: 8px;
+        }
     }
 
     &__text {
         margin-bottom: 40px;
+        @include ellipsis(3);
+
+        @include media(md) {
+            font-size: 17px;
+            line-height: 27px;
+            margin-bottom: 25px;
+        }
+
     }
 
     &__button {
         margin-bottom: 60px;
+
+        @include media(md) {
+            margin-bottom: 46px;
+        }
+
+        @include media(sm) {
+            margin-bottom: 36px;
+        }
+
+        @include media(sxs) {
+            margin-bottom: 26px;
+        }
+    }
+
+    &__location {
+        margin-bottom: 20px;
+
+        @include media(xs) {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.whatWeDo__row_description {
+    display: flex;
+    align-self: flex-end;
+}
+
+.picture-wrapper {
+    overflow: hidden;
+    position: relative;
+
+    img {
+        width: 94%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+
+        @include media(sm) {
+            width: 100%;
+        }
+    }
+}
+
+.pictureWithBgLeft {
+    margin-top: 57px;
+
+    @include media(sm) {
+        margin-top: 0;
+    }
+
+    .picture-wrapper {
+        padding-bottom: 67%;
+
+        img {
+            left: 0;
+        }
+    }
+
+    &__wrapper {
+        position: absolute;
+        left: 0;
+        transform: translate(0, -112%);
+        z-index: -10;
+        max-height: 458px;
+        overflow: hidden;
+        width: 50vw;
+
+        @include media(lg) {
+            width: 53vw;
+            max-height: 330px;
+        }
+
+        @include media(md) {
+            max-height: 218px;
+        }
+
+        @include media(sm) {
+            display: none;
+        }
+    }
+
+    &__shadow {
+        margin-right: 215px;
+        background-color: $color-light-blue;
+        padding-top: 40vw;
+    }
+}
+
+.pictureWithBgRight {
+    margin-top: 57px;
+
+    @include media(sm) {
+        margin-top: 0;
+    }
+
+    .picture-wrapper {
+        padding-bottom: 67%;
+
+        img {
+            left: 40px;
+
+            @include media(sm) {
+                left: 0;
+            }
+        }
+
+    }
+
+    &__wrapper {
+        position: absolute;
+        right: 0;
+        transform: translate(0, -112%);
+        z-index: -10;
+        max-height: 458px;
+        overflow: hidden;
+        width: 50vw;
+
+        @include media(lg) {
+            width: 53vw;
+            max-height: 330px;
+        }
+
+        @include media(md) {
+            max-height: 218px;
+        }
+
+        @include media(sm) {
+            display: none;
+        }
+    }
+
+    &__shadow {
+        margin-left: 215px;
+        background-color: $color-purple;
+        padding-top: 40vw;
     }
 }
 
 .location {
-    font-family: $text-font;
-    font-style: italic;
-    font-weight: $font-weight-text;
-    font-size: 15px;
-    line-height: 20px;
-
-    color: $text-button-color;
-    margin-bottom: 30px;
-    position: relative;
-    padding-left: 17px;
 
     &::before {
-        content: '';
-        display: block;
-        width: 9px;
-        height: 20px;
-        background-image: url("../images/location.svg");
-        background-repeat: no-repeat;
-        position: absolute;
-        top: 0;
-        left: 0;
+        content: url("../images/whatWeDo/location.svg");
+        margin-right: 5px;
     }
 }

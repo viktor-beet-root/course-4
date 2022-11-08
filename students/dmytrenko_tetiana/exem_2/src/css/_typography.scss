@@ -4,7 +4,6 @@
     font-weight: $font-weight-title;
     font-size: 44px;
     line-height: 54px;
-    text-align: center;
     color: $text-color;
     text-transform: uppercase;
 }
@@ -13,6 +12,22 @@
     &_section {
         position: relative;
         margin-bottom: 90px;
+        text-align: center;
+
+        @include media(sm) {
+            margin-bottom: 60px;
+        }
+
+        @include media(xs) {
+            margin-bottom: 40px;
+            font-size: 40px;
+            line-height: 54px;
+        }
+
+        @include media(sxs) {
+            font-size: 27px;
+            line-height: 40px;
+        }
 
         &:before {
             content: '';
@@ -24,6 +39,10 @@
             top: -30px;
             left: 50%;
             transform: translate(-50%);
+
+            @include media(sxs) {
+                top: -20px;
+            }
         }
     }
 }
@@ -46,7 +65,7 @@
     color: $text-color;
 }
 
-.content__location {
+.description__location {
     font-family: $text-font;
     font-style: italic;
     font-weight: $font-weight-text;
@@ -56,10 +75,14 @@
 }
 
 .button {
-    font-family: 'Montserrat';
+    font-family: $main-font;
     font-style: normal;
     font-weight: $font-weight-text;
     font-size: 14px;
     line-height: 17px;
     color: $text-button-color;
+
+    @include media(sxs) {
+        font-size: 13px;
+    }
 }

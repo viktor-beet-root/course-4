@@ -1,0 +1,241 @@
+.aboutUs {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+
+    @include media(lg) {
+        padding-top: 0;
+    }
+
+    @include media(md) {
+        padding-top: 69px;
+    }
+
+    @include media(sm) {
+        padding-top: 66px;
+    }
+}
+
+.slider_item {
+    max-width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider_title-wrapper {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    @include media(md) {
+        top: 40%;
+        transform: translate(-50%, -50%);
+    }
+
+    @include media(sm) {
+        top: 40%;
+        transform: translate(-50%, -50%);
+    }
+
+    @include media(xs) {
+        top: 40%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.slider__note {
+    text-align: center;
+    color: $link-text-color;
+    letter-spacing: 0.3em;
+    line-height: 22px;
+
+    @include media(lg) {
+        font-size: 20px;
+        line-height: 30px;
+        letter-spacing: 0.1em;
+    }
+
+    @include media(md) {
+        font-size: 18px;
+        line-height: 22px;
+        letter-spacing: 0.1em;
+    }
+
+    @include media(xs) {
+        font-size: 13px;
+        line-height: 14px;
+        letter-spacing: 0.05em;
+    }
+
+    @include media(sxs) {
+        font-size: 11px;
+        line-height: 6px;
+    }
+}
+
+.slider__title {
+    color: $link-text-color;
+    font-weight: 700;
+    font-size: 80px;
+    line-height: 98px;
+    letter-spacing: 0.1em;
+    color: $link-text-color;
+    text-align: center;
+    margin-bottom: 15px;
+
+    @include media(lg) {
+        font-size: 60px;
+        line-height: 75px;
+    }
+
+    @include media(md) {
+        font-size: 50px;
+        line-height: 60px;
+        letter-spacing: 0.05em;
+    }
+
+    @include media(xs) {
+        font-size: 28px;
+        line-height: 36px;
+    }
+
+    @include media(sxs) {
+        font-size: 22px;
+        line-height: 30px;
+    }
+}
+
+.scrollButton {
+    width: 40px;
+    height: 40px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid white;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: transparent;
+    position: relative;
+}
+
+.scrollButton::after {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-left: 1px solid $link-text-color;
+    border-bottom: 1px solid $link-text-color;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+    -ms-transform: translate(-50%, -50%) rotate(-45deg);
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.aboutUs__scrollButton {
+    position: absolute;
+    left: 50%;
+    bottom: 50px;
+    -webkit-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+
+    @include media(md) {
+        bottom: 95px;
+    }
+}
+
+/* Слайдер */
+.slick-slider {
+    min-width: 0;
+}
+
+/* Ограничивающая оболочка */
+.slick-list {
+    overflow: hidden; //important
+    height: 100%;
+}
+
+/* Лента слайдов */
+.slick-track {
+    display: flex; //important
+    height: 100vh;
+}
+
+/* Слайд */
+.slick-slide {
+    height: 100%;
+
+    &>div {
+        height: 100%;
+    }
+}
+
+/* Точки (булиты) */
+.slick-dotted {
+    position: relative;
+}
+
+.slick-dots {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: 52px;
+    z-index: 1;
+
+    @include media(md) {
+        top: 44%;
+    }
+
+    @include media(sm) {
+        right: 28px;
+    }
+
+    @include media(xs) {
+        @include visuality-hidden;
+    }
+}
+
+.slick-dots li {
+    margin-top: 0px;
+    margin-bottom: 40px;
+
+    @include media(lg) {
+        margin-bottom: 32px;
+    }
+}
+
+/* Активная точка */
+.slick-dots li.slick-active {
+    border-radius: 50%;
+}
+
+/* Элемент точки */
+.slick-dots li button {
+    font-size: 0;
+    line-height: 0;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    background-color: transparent;
+}
+
+.slick-dots .slick-active button {
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+
+}

@@ -4,5 +4,25 @@
 }
 
 #map {
-    height: 700px;
+    height: 100vh;
+
+    @include media(lg) {
+        height: 1250px;
+    }
+
+    @include media(md) {
+        height: 1000px;
+    }
+
+    @include media(sm) {
+        height: 500px;
+    }
+
+    @include media(xs) {
+        height: 450px;
+    }
+}
+
+section.contact {
+    margin-bottom: 0;
 }
