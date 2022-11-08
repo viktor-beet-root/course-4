@@ -1,0 +1,17 @@
+@use 'sass:math';
+@import '../../node_modules/swiper/swiper.scss';
+@import '../../node_modules/swiper/modules/pagination/pagination.scss';
+@import '../../node_modules/swiper/modules/navigation/navigation.scss';
+@import '../../node_modules/@fancyapps/ui/src/Fancybox/Fancybox.scss';
+@import './vars';
+@import './mixins';
+@import './menu';
+@import './global';
+@import './typography';
+@import './soсial';
+@import './about-us';
+@import './projects';
+@import './news';
+@import './gallery';
+@import './contact';
+@import './footer';

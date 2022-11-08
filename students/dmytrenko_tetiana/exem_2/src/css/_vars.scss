@@ -1,0 +1,49 @@
+$main-font-style: 'Montserrat';
+$text-font-style: 'Open Sans';
+$link-text-style: 'Source Sans Pro';
+$main-font: $main-font-style, sans-serif;
+$text-font: $text-font-style, sans-serif;
+$link-text: $link-text-style, sans-serif;
+
+$blue: #55B7FF;
+$violet: #7E5AFF;
+$gray: #2C4058;
+$black: #000000;
+$black-blur: rgba(0, 0, 0, 0.08);
+$white: #fff;
+$light-gray: #4b5562;
+
+
+$color-before: $gray;
+$color-plaseholder: $light-gray;
+$text-color: $gray;
+$text-button-color: $black;
+$text-contact-color: $black;
+$link-text-color: $white;
+$bg-main-color: $white;
+$header-gradient: linear-gradient(243.43deg, #7E5AFF 16.9%, #55B7FF 83.27%);
+$bg-elem-before: $blue;
+$bgMenuSticky: $blue;
+$color-light-blue: $blue;
+$color-purple: $violet;
+$shadow-color: $black-blur;
+
+
+
+$path-fonts: '../fonts/';
+$default-width: 1200px;
+$gap: 15px;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+
+$font-weight-text: $font-weight-normal;
+$font-weight-title: $font-weight-bold;
+
+$breack-points: (
+    "lg": 1200px,
+    "md": 992px,
+    "sm": 768px,
+    "xs": 576px,
+    "sxs": 480px,
+    "uxs": 320px
+);

@@ -1,0 +1,78 @@
+@include font-face($link-text-style, 'source-sans-pro-v21-latin-regular', 400);
+@include font-face($main-font-style, 'montserrat-v25-latin-regular', 400);
+@include font-face($main-font-style, 'montserrat-v25-latin-700', 700);
+@include font-face($text-font-style, 'open-sans-v34-latin-regular', 400);
+@include font-face($text-font-style, 'open-sans-v34-latin-italic', 400, italic);
+
+@include container;
+@include grid(12);
+
+body {
+    position: relative;
+}
+
+section {
+    margin-bottom: 100px;
+
+    @include media(md) {
+        margin-bottom: 50px;
+    }
+}
+
+.button {
+    display: inline-block;
+    padding: 16px 41px;
+    color: $text-button-color;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid $text-button-color;
+
+    @include media(sxs) {
+        padding: 16px 30px;
+    }
+
+    &:hover,
+    &:focus {
+        text-decoration: underline;
+    }
+}
+
+.upButton {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border: 1px solid $link-text-color;
+    border-radius: 50%;
+    cursor: pointer;
+    overflow: hidden;
+    background-color: $violet;
+    position: fixed;
+    right: 5vh;
+    top: 95vh;
+    -webkit-transform: translate(0%, -100%) rotate(180deg);
+    -ms-transform: translate(0%, -100%) rotate(180deg);
+    transform: translate(0%, -100%) rotate(180deg);
+    z-index: 999;
+    opacity: 0;
+    transition: opacity .4s ease-in-out;
+
+    @include media(xs) {
+        right: 1vh;
+        top: 98vh;
+    }
+}
+
+.upButton::after {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-left: 1px solid $link-text-color;
+    border-bottom: 1px solid $link-text-color;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+    -ms-transform: translate(-50%, -50%) rotate(-45deg);
+    transform: translate(-50%, -50%) rotate(-45deg)
+}

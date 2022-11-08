@@ -1,0 +1,88 @@
+.title {
+    font-family: $main-font;
+    font-style: normal;
+    font-weight: $font-weight-title;
+    font-size: 44px;
+    line-height: 54px;
+    color: $text-color;
+    text-transform: uppercase;
+}
+
+.title {
+    &_section {
+        position: relative;
+        margin-bottom: 90px;
+        text-align: center;
+
+        @include media(sm) {
+            margin-bottom: 60px;
+        }
+
+        @include media(xs) {
+            margin-bottom: 40px;
+            font-size: 40px;
+            line-height: 54px;
+        }
+
+        @include media(sxs) {
+            font-size: 27px;
+            line-height: 40px;
+        }
+
+        &:before {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 1px;
+            background-color: $color-before;
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translate(-50%);
+
+            @include media(sxs) {
+                top: -20px;
+            }
+        }
+    }
+}
+
+.note {
+    font-family: $main-font;
+    font-style: normal;
+    font-weight: $font-weight-text;
+    font-size: 22px;
+    line-height: 27px;
+    color: $text-color;
+}
+
+.text {
+    font-family: $text-font;
+    font-style: normal;
+    font-weight: $font-weight-text;
+    font-size: 18px;
+    line-height: 30px;
+    color: $text-color;
+}
+
+.description__location {
+    font-family: $text-font;
+    font-style: italic;
+    font-weight: $font-weight-text;
+    font-size: 15px;
+    line-height: 20px;
+    color: $text-button-color;
+}
+
+.button {
+    font-family: $main-font;
+    font-style: normal;
+    font-weight: $font-weight-text;
+    font-size: 14px;
+    line-height: 17px;
+    color: $text-button-color;
+
+    @include media(sxs) {
+        font-size: 13px;
+    }
+}
