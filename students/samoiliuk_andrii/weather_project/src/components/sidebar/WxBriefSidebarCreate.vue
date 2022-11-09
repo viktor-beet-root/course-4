@@ -1,13 +1,28 @@
 <template>
     <label for="groupName">Name:</label>
-    <input id="groupName" type="text" />
+    <input id="groupName" v-model="name" type="text" />
     <label for="airports">Airports:</label>
-    <textarea id="airports"> </textarea>
-    <button>Create group</button>
+    <textarea id="airports" v-model="airports"> </textarea>
+    <button @click="addGroup">Create group</button>
 </template>
 
 <script>
-export default {};
+export default {
+    data() {
+        return {
+            name: "",
+            airports: "",
+        };
+    },
+    emits: ["addGroup"],
+    methods: {
+        addGroup() {
+            if (this.name && this.airports) {
+                this.$emit("addGroup", this.name, this.airports);
+            }
+        },
+    },
+};
 </script>
 
 <style lang="scss">

@@ -1,7 +1,7 @@
 <template>
     <div class="page">
         <div class="page__sidebar">
-            <wx-brief-sidebar />
+            <wx-brief-sidebar :groups="groups" @addGroup="addGroup" />
         </div>
         <div class="page__main"></div>
     </div>
@@ -18,8 +18,20 @@ export default {
 
     data() {
         return {
-            groups: {},
+            groups: [],
+            newGroup: {
+                name: "",
+                airports: "",
+            },
         };
+    },
+    methods: {
+        addGroup(name, airports) {
+            this.newGroup.name = name;
+            this.newGroup.airports = airports;
+            this.groups.push(this.newGroup);
+            console.log(this.groups);
+        },
     },
 };
 </script>
@@ -42,7 +54,6 @@ export default {
         left: 0;
         bottom: 0;
         border: 1px solid $main-color;
-        overflow-y: scroll;
     }
 
     &__main {
