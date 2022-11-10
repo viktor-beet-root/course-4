@@ -1,0 +1,29 @@
+$default-font-name: 'Aleo';
+
+$another-fonts: Arial, Helvetica, sans-serif;
+$main-font: $default-font-name, $another-fonts;
+
+$path-fonts: '../fonts/';
+
+$default-width: 1200px;
+
+$gap: 15px;
+
+$color-orange: #FF9900;
+$color-white: #FFFFFF;
+$color-black: #000000;
+$color-gray: #999999;
+$color-darkgray: #333333;
+$color-lightgary: #F4F4F4;
+$color-darkblue: #5373FD;
+$color-red: #FF6363;
+$color-blue: #00A2FF;
+$color-gray-opacity: rgba(35, 35, 35, 0.9);
+
+$breack-points: (
+    "lg": 1200px,
+    "md": 1024px,
+    "sm": 768px,
+    "xs": 576px,
+    "xxs": 480px
+);
