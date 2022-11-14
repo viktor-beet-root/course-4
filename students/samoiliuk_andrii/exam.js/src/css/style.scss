@@ -3,6 +3,7 @@
 @import './grid-class-generator';
 @include grid(12);
 @import '../../node_modules/@fancyapps/ui/src/Fancybox/Fancybox.scss';
+@import '../../node_modules/popup-validation/src/style.scss';
 @import './leaflet';
 @import './reset.scss';
 @import './mixins';

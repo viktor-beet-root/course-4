@@ -2,6 +2,7 @@ import $, { event } from "jquery";
 import 'slick-carousel';
 import { Fancybox } from "@fancyapps/ui";
 import L from "leaflet";
+import validation from "../../node_modules/popup-validation/bin/validation.es6";
 
 const logo = document.querySelector(".logo");
 const upButton = document.querySelector(".upButton");
@@ -187,6 +188,8 @@ const customIcon = L.icon({
 
 L.marker([40.68, -73.897], { icon: customIcon }).addTo(map);
 
+validation.init("#footerFormValidation");
+
 function validateName() {
   return !!formName.value;
 }
@@ -197,16 +200,15 @@ function validateEmail() {
 }
 
 function formValidation(event) {
-  const redUnderline = "border-bottom: 1px solid rgba(238, 114, 123, 1)";
-  formName.style = " ";
-  formEmail.style = " ";
+  validation.hide(formName);
+  validation.hide(formEmail);
   if (!validateName() || !validateEmail()) {
     event.preventDefault();
     if (!validateName()) {
-      formName.style = redUnderline;
+      validation.show(formName, "Please, enter name");
     };
     if (!validateEmail()) {
-      formEmail.style = redUnderline;
+      validation.show(formEmail, "Please, enter correct email")
     };
   }
 }
@@ -240,6 +242,8 @@ function isLink(element) {
   });
   return answer;
 }
+
+
 
 window.Fancybox = Fancybox;
 window.initMap = initMap;
