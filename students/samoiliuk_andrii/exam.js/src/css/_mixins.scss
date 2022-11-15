@@ -1,0 +1,22 @@
+@mixin scrollButton {
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+    border: 1px solid white;
+    border-radius: 50%;
+    cursor: pointer;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+    padding: 0;
+    background-color: transparent;
+    overflow: hidden;
+
+    &::after {
+        content: url("../images/header/arrow.svg");
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}

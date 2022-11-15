@@ -1,0 +1,214 @@
+.footerBg {
+    background: url('../images/footerbg.png') top right, linear-gradient(251.06deg, #7E5AFF -2.19%, #55B7FF 103.21%);
+    background-size: cover;
+    padding-top: 550px;
+    position: relative;
+}
+
+.displace {
+    position: absolute;
+    max-width: 770px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: -302px;
+    z-index: 997;
+}
+
+.contacts {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: $font-color-white;
+    padding: 60px 60px 40px 60px;
+
+    &__header {
+        width: 100%;
+        margin-bottom: 42px;
+    }
+
+    &__info {
+        box-sizing: border-box;
+        width: 50%;
+        padding-right: $gap;
+    }
+
+    &__form {
+        width: 50%;
+        box-sizing: border-box;
+        padding-left: $gap;
+    }
+}
+
+.subfooter {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 54px;
+
+    &__logo {}
+
+    // .subfooter__social
+
+    &__social {}
+}
+
+.copyright {
+    font-family: 'Montserrat';
+    font-size: 14px;
+    line-height: 17px;
+    color: $font-color-white;
+    padding-top: 41px;
+}
+
+
+.contacts {
+
+    // .contacts__info
+
+    &__info {}
+}
+
+.contactInformation {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Montserrat';
+    font-size: 18px;
+    line-height: 28px;
+    color: $font-color-dark;
+
+    &__item {
+        margin-bottom: 28px;
+    }
+
+    &__address {
+        display: flex;
+        align-items: center;
+
+        &::before {
+            content: url("../images/location-dot-solid.svg");
+            display: block;
+            width: 13px;
+            object-fit: contain;
+            font-size: 0;
+            line-height: 0;
+            margin-right: 7px;
+        }
+    }
+
+    &__phone {
+        color: $font-color-dark;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+
+        &::before {
+            content: url("../images/phone-solid.svg");
+            display: block;
+            width: 16px;
+            object-fit: contain;
+            font-size: 0;
+            line-height: 0;
+            margin-right: 7px;
+        }
+    }
+
+    &__email {
+        text-decoration: none;
+        color: $font-color-dark;
+        display: flex;
+        align-items: center;
+
+        &::before {
+            content: url("../images/envelope-regular.svg");
+            display: block;
+            width: 16px;
+            object-fit: contain;
+            font-size: 0;
+            line-height: 0;
+            margin-right: 10px;
+        }
+    }
+
+    &__workingHours {
+        display: flex;
+        align-items: center;
+
+        &::before {
+            content: url("../images/clock-regular.svg");
+            display: block;
+            width: 15px;
+            object-fit: contain;
+            font-size: 0;
+            line-height: 0;
+            margin-right: 11px;
+        }
+    }
+}
+
+.footerForm {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-left: 4px;
+
+    &__name {
+        width: 100%;
+        font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 27px;
+        color: $font-color-dark;
+        border: none;
+        border-bottom: 1px solid #4B5562;
+        margin-bottom: 33px;
+        padding-bottom: 10px;
+
+
+        &::placeholder {
+            color: #4B5562;
+            opacity: 0.5;
+        }
+
+        &:focus {
+            color: $font-color-dark;
+            border-bottom: 1px solid #2C4058;
+            opacity: 1;
+        }
+    }
+
+
+    &__email {
+        width: 100%;
+        width: 100%;
+        font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 27px;
+        border: none;
+        border-bottom: 1px solid #4B5562;
+        color: $font-color-dark;
+        margin-bottom: 33px;
+        padding-bottom: 10px;
+
+        &::placeholder {
+            color: #4B5562;
+            opacity: 0.5;
+        }
+
+        &:focus {
+            color: $font-color-dark;
+            border-bottom: 1px solid #2C4058;
+            opacity: 1;
+        }
+    }
+
+    &__submit {
+        max-width: 140px;
+        background: none;
+        background-color: transparent;
+        font-size: 18px;
+    }
+}

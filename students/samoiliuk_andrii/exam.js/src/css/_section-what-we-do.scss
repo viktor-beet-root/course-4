@@ -1,0 +1,93 @@
+.whatWeDo {
+    padding-top: 100px;
+
+    &__rowOne {
+        margin-bottom: 90px;
+    }
+
+    &__rowTwo {
+        margin-bottom: 120px;
+    }
+
+    &__rowThree {
+        margin-bottom: 150px;
+    }
+}
+
+.description {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: end;
+
+    &__header {
+        margin-bottom: 19px;
+    }
+
+    &__text {
+        margin-bottom: 31px;
+    }
+
+    &__button {
+        margin-bottom: 60px;
+    }
+
+    &__location {
+        margin-bottom: 26px;
+    }
+}
+
+.pictureWithBgLeft {
+    padding-right: 40px;
+    margin-top: 57px;
+
+    &__wrapper {
+        position: absolute;
+        left: 0;
+        transform: translate(0, -112%);
+        z-index: -10;
+        max-height: 470px;
+        overflow: hidden;
+        width: 50vw;
+    }
+
+    &__shadow {
+        margin-right: 215px;
+        background-color: $color-light-blue;
+        padding-top: 40vw;
+    }
+}
+
+.pictureWithBgRight {
+    padding-left: 40px;
+    margin-top: 57px;
+
+    &__wrapper {
+        position: absolute;
+        right: 0;
+        transform: translate(0, -112%);
+        z-index: -10;
+        max-height: 470px;
+        overflow: hidden;
+        width: 50vw;
+    }
+
+    &__shadow {
+        margin-left: 215px;
+        background-color: $color-purple;
+        padding-top: 40vw;
+    }
+}
+
+.location {
+    font-style: italic;
+    font-size: 15px;
+    line-height: 20px;
+    color: $font-color-dark;
+
+    &::before {
+        content: url("../images/locatin-marker.svg");
+        margin-right: 5px;
+    }
+}

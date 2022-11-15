@@ -1,0 +1,55 @@
+.container {
+    max-width: $grid-max-width;
+    margin: 0 auto;
+    padding-left: $gap;
+    padding-right: $gap;
+}
+
+
+
+@mixin media($point) {
+    @media screen and (max-width: map-get($break-points, $point)) {
+        @content;
+    }
+}
+
+@mixin grid($count: 12) {
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 (-$gap);
+    }
+
+
+
+    @for $i from 1 through $count {
+        $width: math.div(100%, $count) * $i;
+
+        .col-#{$i} {
+            max-width: $width;
+            width: 100%;
+            flex-basis: $width;
+            padding-left: $gap;
+            padding-right: $gap;
+            box-sizing: border-box;
+        }
+    }
+
+    @each $breakpoint,
+    $breakpoint-value in $break-points {
+        @media screen and (max-width: $breakpoint-value) {
+            @for $i from 1 through $count {
+                $width: math.div(100%, $count) * $i;
+
+                .col-#{$breakpoint}-#{$i} {
+                    max-width: $width;
+                    width: 100%;
+                    flex-basis: $width;
+                    padding-left: $gap;
+                    padding-right: $gap;
+                    box-sizing: border-box;
+                }
+            }
+        }
+    }
+}

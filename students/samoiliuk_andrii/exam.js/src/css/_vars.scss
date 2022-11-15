@@ -1,0 +1,37 @@
+$gap: 15px;
+$grid-max-width: 1170px;
+
+$break-points: (
+    "lg": 1200px,
+    "md": 992px,
+    "sm": 768px,
+    "xs": 576px,
+    "xxs": 480px
+);
+
+// colors
+
+$color-white: #ffffff;
+$color-black: #2C4058;
+$color-dark: #000000;
+$color-light-blue: #55B7FF;
+$color-purple: #7E5AFF;
+$gradient: linear-gradient(243.43deg, $color-purple 16.9%, $color-light-blue 83.27%);
+//global
+
+$font-color-white: $color-white;
+$font-color-black: $color-black;
+$font-color-dark: $color-dark;
+
+
+$button-color-black: $color-dark;
+$button-color-border: $color-black;
+
+//slider
+$slider-dots-color: $color-white;
+
+//header
+$header-bg-gradient: $gradient;
+
+
+$fallback: Arial, Helvetica, sans-serif;
