@@ -23,25 +23,46 @@ export default {
     data() {
         return {
             groups: [],
+            defaultGroups: [
+                {
+                    index: 1,
+                    name: "Ukraine",
+                    airports: ["UKBB", "UKLL", "UKHH", "UKOO"],
+                },
+                {
+                    index: 2,
+                    name: "London",
+                    airports: ["EGKK", "EGLL", "EGLC", "EGSS"],
+                },
+                {
+                    index: 3,
+                    name: "USA",
+                    airports: ["KJFK", "KMIA", "KORD"],
+                },
+            ],
         };
+    },
+    mounted: function () {
+        this.groups.push(...JSON.parse(localStorage.getItem("userAirports")));
+
+        if (this.groups.length === 0) {
+            this.groups.push(...this.defaultGroups);
+        }
     },
     methods: {
         addGroup(name, airports) {
             this.groups.push({
                 name: name,
-                airports: airports,
+                airports: this.validateAirports(airports),
                 index: this.setIndex(),
             });
+            localStorage.setItem("userAirports", JSON.stringify(this.groups));
         },
-        getIndex(groupIndex) {
-            return this.groups.findIndex(function (element) {
-                if (element.index === groupIndex) {
-                    return true;
-                }
-            });
-        },
-        removeGroup(index) {
-            this.groups.splice(this.getIndex(index), 1);
+        validateAirports(airportsString) {
+            let string = airportsString.replace(/[^a-zA-Z ]/g, "");
+            string = string.toUpperCase();
+            let array = string.split(" ");
+            return array.filter((airportCode) => airportCode.length === 4);
         },
         setIndex() {
             if (this.groups.length === 0) {
@@ -55,6 +76,17 @@ export default {
                     ) + 1
                 );
             }
+        },
+        getIndex(groupIndex) {
+            return this.groups.findIndex(function (element) {
+                if (element.index === groupIndex) {
+                    return true;
+                }
+            });
+        },
+        removeGroup(index) {
+            this.groups.splice(this.getIndex(index), 1);
+            localStorage.setItem("userAirports", JSON.stringify(this.groups));
         },
     },
 };

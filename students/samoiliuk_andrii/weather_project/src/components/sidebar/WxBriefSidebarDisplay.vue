@@ -3,10 +3,10 @@
         <div
             class="displayGroups__item"
             v-for="group in groups"
-            :key="group.name"
+            :key="group.index"
         >
             <h3>{{ group.name }}</h3>
-            <p>{{ group.airports }}</p>
+            <p>{{ group.airports.join(", ") }}</p>
             <button>Display</button>
             <button @click="removeGroup(group.index)">Remove</button>
         </div>
