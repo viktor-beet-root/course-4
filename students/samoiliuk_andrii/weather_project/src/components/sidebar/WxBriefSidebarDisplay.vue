@@ -7,6 +7,8 @@
         >
             <h3>{{ group.name }}</h3>
             <p>{{ group.airports }}</p>
+            <button>Display</button>
+            <button @click="removeGroup(group.index)">Remove</button>
         </div>
     </div>
 </template>
@@ -15,6 +17,12 @@
 export default {
     props: {
         groups: Array,
+    },
+    emits: ["removeGroup"],
+    methods: {
+        removeGroup(index) {
+            this.$emit("removeGroup", index);
+        },
     },
 };
 </script>

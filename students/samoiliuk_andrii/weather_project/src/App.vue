@@ -1,7 +1,11 @@
 <template>
     <div class="page">
         <div class="page__sidebar">
-            <wx-brief-sidebar :groups="groups" @addGroup="addGroup" />
+            <wx-brief-sidebar
+                :groups="groups"
+                @addGroup="addGroup"
+                @removeGroup="removeGroup"
+            />
         </div>
         <div class="page__main"></div>
     </div>
@@ -19,18 +23,38 @@ export default {
     data() {
         return {
             groups: [],
-            newGroup: {
-                name: "",
-                airports: "",
-            },
         };
     },
     methods: {
         addGroup(name, airports) {
-            this.newGroup.name = name;
-            this.newGroup.airports = airports;
-            this.groups.push(this.newGroup);
-            console.log(this.groups);
+            this.groups.push({
+                name: name,
+                airports: airports,
+                index: this.setIndex(),
+            });
+        },
+        getIndex(groupIndex) {
+            return this.groups.findIndex(function (element) {
+                if (element.index === groupIndex) {
+                    return true;
+                }
+            });
+        },
+        removeGroup(index) {
+            this.groups.splice(this.getIndex(index), 1);
+        },
+        setIndex() {
+            if (this.groups.length === 0) {
+                return 1;
+            } else {
+                return (
+                    Math.max(
+                        ...this.groups.map(function (element) {
+                            return element.index;
+                        })
+                    ) + 1
+                );
+            }
         },
     },
 };
