@@ -5,6 +5,7 @@
                 :groups="groups"
                 @addGroup="addGroup"
                 @removeGroup="removeGroup"
+                @displayMetarTaf="displayMetarTaf"
             />
         </div>
         <div class="page__main"></div>
@@ -40,6 +41,8 @@ export default {
                     airports: ["KJFK", "KMIA", "KORD"],
                 },
             ],
+            metarTafCache: [],
+            currentDisplay: [],
         };
     },
     mounted: function () {
@@ -87,6 +90,41 @@ export default {
         removeGroup(index) {
             this.groups.splice(this.getIndex(index), 1);
             localStorage.setItem("userAirports", JSON.stringify(this.groups));
+        },
+        getMetarTaf(request, index, callback) {
+            const apiKey = "435ea74fd7424bf1ac1065acf9";
+            const url = `https://api.checkwx.com/metar/${request}/decoded`;
+            const xhr = new XMLHttpRequest();
+
+            xhr.onload = () => {
+                if (xhr.status < 400) {
+                    console.log(xhr.response);
+                    if (typeof callback === "function") {
+                        callback(xhr.response, index);
+                    }
+                }
+            };
+
+            xhr.onerror = (e) => {
+                console.error(e);
+            };
+
+            xhr.open("GET", url, true);
+            xhr.setRequestHeader("X-API-Key", apiKey);
+            xhr.send();
+        },
+        displayMetarTaf(index) {
+            const request =
+                this.groups[this.getIndex(index)].airports.join(",");
+            console.log(request);
+            this.getMetarTaf(request, index, this.pushToLoocal);
+        },
+        pushToLoocal(data, index) {
+            this.metarTafCache.push({
+                index: index,
+                data: data,
+            });
+            console.log(this.metarTafCache);
         },
     },
 };

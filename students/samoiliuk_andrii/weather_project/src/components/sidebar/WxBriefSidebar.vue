@@ -5,6 +5,7 @@
         <wx-brief-sidebar-display
             class="sidebar__display"
             @removeGroup="removeGroup"
+            @displayMetarTaf="displayMetarTaf"
             :groups="groups"
         />
     </div>
@@ -22,13 +23,16 @@ export default {
     props: {
         groups: Array,
     },
-    emits: ["addGroup", "removeGroup"],
+    emits: ["addGroup", "removeGroup", "displayMetarTaf"],
     methods: {
         addGroup(name, airports) {
             this.$emit("addGroup", name, airports);
         },
         removeGroup(index) {
             this.$emit("removeGroup", index);
+        },
+        displayMetarTaf(index) {
+            this.$emit("displayMetarTaf", index);
         },
     },
 };

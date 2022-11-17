@@ -7,7 +7,7 @@
         >
             <h3>{{ group.name }}</h3>
             <p>{{ group.airports.join(", ") }}</p>
-            <button>Display</button>
+            <button @click="displayMetarTaf(group.index)">Display</button>
             <button @click="removeGroup(group.index)">Remove</button>
         </div>
     </div>
@@ -18,10 +18,13 @@ export default {
     props: {
         groups: Array,
     },
-    emits: ["removeGroup"],
+    emits: ["removeGroup", "displayMetarTaf"],
     methods: {
         removeGroup(index) {
             this.$emit("removeGroup", index);
+        },
+        displayMetarTaf(index) {
+            this.$emit("displayMetarTaf", index);
         },
     },
 };
