@@ -1,0 +1,51 @@
+.gallery {
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+  }
+
+  &__item {
+    position: relative;
+    display: block;
+    padding-top: 75%;
+    transition: padding-top 0.3s ease-in-out;
+
+    &-main {
+      grid-column-end: span 2;
+      grid-row-end: span 2;
+
+      &::before {
+        content: url(../images/gallery/bi_zoom-in.svg);
+        position: absolute;
+        z-index: 20;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+      }
+    }
+  }
+
+  &__link {
+  }
+
+  &__img {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__btn {
+    display: block;
+    width: 190px;
+    margin: auto;
+    margin-top: 60px;
+    text-align: center;
+  }
+
+  &__hidden {
+    padding-top: 0;
+  }
+}

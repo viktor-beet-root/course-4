@@ -1,0 +1,122 @@
+.projects {
+    &__item {
+        &:not(:last-child) {
+            margin-bottom: 90px;
+
+            @include media(xs) {
+                margin-bottom: 0;
+            }
+        }
+
+        &-left {
+            & .projects__wrapper {
+                &::before {
+                    left: -700%;
+                    right: 41%;
+                    background-color: $color-light-blue;
+                }
+            }
+
+            & .projects__picture {
+                padding-right: 70px;
+            }
+
+            & .projects__description {
+                padding-left: 0;
+
+                @include media(xs) {
+                    padding-left: 15px;
+                }
+            }
+        }
+
+        &-right {
+            & .projects__wrapper {
+                &::before {
+                    left: 41%;
+                    right: -700%;
+                    background-color: $color-purple;
+                }
+            }
+
+            & .projects__picture {
+                padding-left: 70px;
+            }
+
+            & .projects__description {
+                padding-right: 0;
+
+                @include media(xs) {
+                    padding-right: 15px;
+                }
+            }
+        }
+    }
+
+    &__picture {
+        padding-top: 72px;
+
+        @include media(xs) {
+            order: 1;
+        }
+    }
+
+    &__wrapper {
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            height: 100%;
+            z-index: -100;
+            transform: translateY(-57px);
+        }
+    }
+
+
+    &__img {
+    }
+
+    &__description {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+
+        @include media(xs) {
+            order: 2;
+        }
+    }
+
+    &__pretitle {
+        font-size: 22px;
+        line-height: 27px;
+    }
+
+    &__title {
+        margin-bottom: 19px;
+    }
+
+    &__text {
+        margin-bottom: 40px;
+    }
+
+    &__btn {
+        margin-bottom: 60px;
+    }
+
+    &__address {
+        margin-bottom: 25px;
+        font-family: $font-open-sans;
+        font-style: italic;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 20px;
+        color: $color-black;
+
+        &::before {
+            content: url("../images/locatin-marker.svg");
+            margin-right: 5px;
+        }
+    }
+}

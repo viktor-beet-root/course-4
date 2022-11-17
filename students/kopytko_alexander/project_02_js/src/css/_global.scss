@@ -1,0 +1,82 @@
+@include font-face('montserrat-v25-latin-regular');
+@include font-face($_font-file: 'montserrat-v25-latin-700', $_font-name: $default-font-name, $_font-weight: 700, $_font-style: normal);
+@include font-face($_font-file: 'open-sans-v34-latin-regular', $_font-name: 'Open Sans', $_font-weight: 400, $_font-style: normal);
+@include font-face($_font-file: 'open-sans-v34-latin-italic', $_font-name: 'Open Sans', $_font-weight: 400, $_font-style: italic);
+@include font-face($_font-file: 'source-sans-pro-v21-latin-regular', $_font-name: 'Source Sans Pro', $_font-weight: 400, $_font-style: normal);
+
+@include grid();
+
+
+.page {
+  color: $color-default;
+  font-family: $main-font;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.section {
+  margin-bottom: 105px;
+  overflow: hidden;
+
+  &-title {
+    text-align: center;
+    position: relative;
+    padding: 30px 0 75px 0;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 100px;
+      height: 1px;
+      background-color: $color-default;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  @include media(xs) {
+    margin-bottom: 55px;
+  }
+}
+
+.container {
+  max-width: $default-width;
+  margin: 0 auto;
+  padding: 0 $gap;
+}
+
+.paragraph {
+  font-family: $font-open-sans;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 54px;
+  text-transform: uppercase;
+
+  @include media(xs) {
+    font-size: 30px;
+    line-height: 36px;
+  }
+}
+
+.btn {
+  border: 1px solid $color-default;
+  padding: 17px 40px;
+  color: $color-black;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 17px;
+  display: inline-block;
+}
+
+.visuality-hidden {
+  @include visuality-hidden;
+}
