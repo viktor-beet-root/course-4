@@ -105,26 +105,16 @@ export default {
             localStorage.setItem("userAirports", JSON.stringify(this.groups));
         },
 
-        getMetarTaf(request, index, callback) {
+        getMetarTaf(request) {
             const apiKey = "435ea74fd7424bf1ac1065acf9";
             const url = `https://api.checkwx.com/metar/${request}/decoded`;
-            const xhr = new XMLHttpRequest();
-
-            xhr.onload = () => {
-                if (xhr.status < 400) {
-                    if (typeof callback === "function") {
-                        callback(JSON.parse(xhr.response), index);
-                    }
-                }
+            const options = {
+                method: "GET",
+                headers: {
+                    "X-API-Key": apiKey,
+                },
             };
-
-            xhr.onerror = (e) => {
-                console.error(e);
-            };
-
-            xhr.open("GET", url, true);
-            xhr.setRequestHeader("X-API-Key", apiKey);
-            xhr.send();
+            return fetch(url, options).then((response) => response.json());
         },
 
         async displayMetarTaf(index) {
@@ -136,7 +126,7 @@ export default {
                 );
 
             if (indexInArray === -1) {
-                await this.getMetarTaf(request, index, this.pushToLocal);
+                this.pushToLocal(await this.getMetarTaf(request), index);
             } else {
                 const presentTime = Date.now();
                 if (
@@ -144,7 +134,7 @@ export default {
                     timeDelay
                 ) {
                     this.metarTafCache.splice(indexInArray, 1);
-                    await this.getMetarTaf(request, index, this.pushToLocal);
+                    this.pushToLocal(await this.getMetarTaf(request), index);
                 }
             }
 
