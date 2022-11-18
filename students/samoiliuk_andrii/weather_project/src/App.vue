@@ -8,17 +8,21 @@
                 @displayMetarTaf="displayMetarTaf"
             />
         </div>
-        <div class="page__main"></div>
+        <div class="page__main">
+            <wx-brief-main-window :currentDisplay="currentDisplay" />
+        </div>
     </div>
 </template>
 
 <script>
+import WxBriefMainWindow from "./components/main/WxBriefMainWindow.vue";
 import WxBriefSidebar from "./components/sidebar/WxBriefSidebar.vue";
 
 export default {
     name: "App",
     components: {
         WxBriefSidebar,
+        WxBriefMainWindow,
     },
 
     data() {
@@ -42,9 +46,13 @@ export default {
                 },
             ],
             metarTafCache: [],
-            currentDisplay: [],
+            currentDisplay: {
+                data: [],
+                time: 0,
+            },
         };
     },
+
     mounted: function () {
         this.groups.push(...JSON.parse(localStorage.getItem("userAirports")));
 
@@ -52,6 +60,7 @@ export default {
             this.groups.push(...this.defaultGroups);
         }
     },
+
     methods: {
         addGroup(name, airports) {
             this.groups.push({
@@ -61,12 +70,14 @@ export default {
             });
             localStorage.setItem("userAirports", JSON.stringify(this.groups));
         },
+
         validateAirports(airportsString) {
             let string = airportsString.replace(/[^a-zA-Z ]/g, "");
             string = string.toUpperCase();
             let array = string.split(" ");
             return array.filter((airportCode) => airportCode.length === 4);
         },
+
         setIndex() {
             if (this.groups.length === 0) {
                 return 1;
@@ -80,17 +91,20 @@ export default {
                 );
             }
         },
-        getIndex(groupIndex) {
-            return this.groups.findIndex(function (element) {
+
+        getIndex(groupIndex, array) {
+            return array.findIndex(function (element) {
                 if (element.index === groupIndex) {
                     return true;
                 }
             });
         },
+
         removeGroup(index) {
-            this.groups.splice(this.getIndex(index), 1);
+            this.groups.splice(this.getIndex(index, this.groups), 1);
             localStorage.setItem("userAirports", JSON.stringify(this.groups));
         },
+
         getMetarTaf(request, index, callback) {
             const apiKey = "435ea74fd7424bf1ac1065acf9";
             const url = `https://api.checkwx.com/metar/${request}/decoded`;
@@ -98,9 +112,8 @@ export default {
 
             xhr.onload = () => {
                 if (xhr.status < 400) {
-                    console.log(xhr.response);
                     if (typeof callback === "function") {
-                        callback(xhr.response, index);
+                        callback(JSON.parse(xhr.response), index);
                     }
                 }
             };
@@ -113,18 +126,45 @@ export default {
             xhr.setRequestHeader("X-API-Key", apiKey);
             xhr.send();
         },
-        displayMetarTaf(index) {
+
+        async displayMetarTaf(index) {
+            let indexInArray = this.getIndex(index, this.metarTafCache);
+            const timeDelay = 60000;
             const request =
-                this.groups[this.getIndex(index)].airports.join(",");
-            console.log(request);
-            this.getMetarTaf(request, index, this.pushToLoocal);
+                this.groups[this.getIndex(index, this.groups)].airports.join(
+                    ","
+                );
+
+            if (indexInArray === -1) {
+                await this.getMetarTaf(request, index, this.pushToLocal);
+            } else {
+                const presentTime = Date.now();
+                if (
+                    presentTime - this.metarTafCache[indexInArray].time >
+                    timeDelay
+                ) {
+                    this.metarTafCache.splice(indexInArray, 1);
+                    await this.getMetarTaf(request, index, this.pushToLocal);
+                }
+            }
+
+            indexInArray = this.getIndex(index, this.metarTafCache);
+            console.log(indexInArray);
+
+            this.currentDisplay = {
+                data: this.metarTafCache[indexInArray].data,
+                time: this.metarTafCache[indexInArray].time,
+            };
+
+            console.log(this.currentDisplay);
         },
-        pushToLoocal(data, index) {
+
+        pushToLocal(data, index) {
             this.metarTafCache.push({
                 index: index,
                 data: data,
+                time: Date.now(),
             });
-            console.log(this.metarTafCache);
         },
     },
 };
