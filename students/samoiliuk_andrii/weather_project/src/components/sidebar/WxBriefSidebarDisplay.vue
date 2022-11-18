@@ -7,7 +7,12 @@
         >
             <h3>{{ group.name }}</h3>
             <p>{{ group.airports.join(", ") }}</p>
-            <button @click="displayMetarTaf(group.index)">Display</button>
+            <button
+                @click="displayMetarTaf(group.index)"
+                :disabled="isDisabled"
+            >
+                Display
+            </button>
             <button @click="removeGroup(group.index)">Remove</button>
         </div>
     </div>
@@ -17,6 +22,7 @@
 export default {
     props: {
         groups: Array,
+        isDisabled: Boolean,
     },
     emits: ["removeGroup", "displayMetarTaf"],
     methods: {

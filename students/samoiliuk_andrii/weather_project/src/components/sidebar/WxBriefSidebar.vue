@@ -7,6 +7,7 @@
             @removeGroup="removeGroup"
             @displayMetarTaf="displayMetarTaf"
             :groups="groups"
+            :isDisabled="isDisabled"
         />
     </div>
 </template>
@@ -22,6 +23,7 @@ export default {
     },
     props: {
         groups: Array,
+        isDisabled: Boolean,
     },
     emits: ["addGroup", "removeGroup", "displayMetarTaf"],
     methods: {

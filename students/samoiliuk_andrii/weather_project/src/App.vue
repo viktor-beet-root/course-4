@@ -3,6 +3,7 @@
         <div class="page__sidebar">
             <wx-brief-sidebar
                 :groups="groups"
+                :isDisabled="isDisabled"
                 @addGroup="addGroup"
                 @removeGroup="removeGroup"
                 @displayMetarTaf="displayMetarTaf"
@@ -50,6 +51,7 @@ export default {
                 data: [],
                 time: 0,
             },
+            isDisabled: false,
         };
     },
 
@@ -106,6 +108,7 @@ export default {
         },
 
         getMetarTaf(request) {
+            this.isDisabled = true;
             const apiKey = "435ea74fd7424bf1ac1065acf9";
             const url = `https://api.checkwx.com/metar/${request}/decoded`;
             const options = {
@@ -127,6 +130,7 @@ export default {
 
             if (indexInArray === -1) {
                 this.pushToLocal(await this.getMetarTaf(request), index);
+                this.isDisabled = false;
             } else {
                 const presentTime = Date.now();
                 if (
@@ -135,6 +139,7 @@ export default {
                 ) {
                     this.metarTafCache.splice(indexInArray, 1);
                     this.pushToLocal(await this.getMetarTaf(request), index);
+                    this.isDisabled = false;
                 }
             }
 
