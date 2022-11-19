@@ -61,6 +61,15 @@ export default {
         if (this.groups.length === 0) {
             this.groups.push(...this.defaultGroups);
         }
+
+        this.metarTafCache.push(
+            ...JSON.parse(localStorage.getItem("metarTafCache"))
+        );
+
+        this.currentDisplay = {
+            data: this.metarTafCache[0].data,
+            time: this.metarTafCache[0].time,
+        };
     },
 
     methods: {
@@ -104,10 +113,18 @@ export default {
 
         removeGroup(index) {
             this.groups.splice(this.getIndex(index, this.groups), 1);
+            this.metarTafCache.splice(
+                this.getIndex(index, this.metarTafCache),
+                1
+            );
             localStorage.setItem("userAirports", JSON.stringify(this.groups));
+            localStorage.setItem(
+                "metarTafCache",
+                JSON.stringify(this.metarTafCache)
+            );
         },
 
-        getMetarTaf(request) {
+        getMetar(request) {
             this.isDisabled = true;
             const apiKey = "435ea74fd7424bf1ac1065acf9";
             const url = `https://api.checkwx.com/metar/${request}/decoded`;
@@ -120,16 +137,33 @@ export default {
             return fetch(url, options).then((response) => response.json());
         },
 
+        getTaf(request) {
+            this.isDisabled = true;
+            const apiKey = "435ea74fd7424bf1ac1065acf9";
+            const url = `https://api.checkwx.com/taf/${request}/decoded`;
+            const options = {
+                method: "GET",
+                headers: {
+                    "X-API-Key": apiKey,
+                },
+            };
+            return fetch(url, options).then((response) => response.json());
+        },
+
         async displayMetarTaf(index) {
             let indexInArray = this.getIndex(index, this.metarTafCache);
-            const timeDelay = 600000;
+            const timeDelay = 900000;
             const request =
                 this.groups[this.getIndex(index, this.groups)].airports.join(
                     ","
                 );
 
             if (indexInArray === -1) {
-                this.pushToLocal(await this.getMetarTaf(request), index);
+                this.pushToLocal(
+                    await this.getMetar(request),
+                    await this.getTaf(request),
+                    index
+                );
                 this.isDisabled = false;
             } else {
                 const presentTime = Date.now();
@@ -138,28 +172,34 @@ export default {
                     timeDelay
                 ) {
                     this.metarTafCache.splice(indexInArray, 1);
-                    this.pushToLocal(await this.getMetarTaf(request), index);
+                    this.pushToLocal(
+                        await this.getMetar(request),
+                        await this.getTaf(request),
+                        index
+                    );
                     this.isDisabled = false;
                 }
             }
 
             indexInArray = this.getIndex(index, this.metarTafCache);
-            console.log(indexInArray);
 
             this.currentDisplay = {
                 data: this.metarTafCache[indexInArray].data,
                 time: this.metarTafCache[indexInArray].time,
             };
-
-            console.log(this.currentDisplay);
         },
 
-        pushToLocal(data, index) {
+        pushToLocal(data, taf, index) {
             this.metarTafCache.push({
                 index: index,
                 data: data,
+                taf: taf,
                 time: Date.now(),
             });
+            localStorage.setItem(
+                "metarTafCache",
+                JSON.stringify(this.metarTafCache)
+            );
         },
     },
 };
@@ -175,7 +215,6 @@ export default {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: $main-color;
-    margin-top: 60px;
 
     &__sidebar {
         width: $sidebar-width;
@@ -187,7 +226,14 @@ export default {
     }
 
     &__main {
-        padding-left: $sidebar-width;
+        position: absolute;
+        top: 0;
+        left: $sidebar-width;
+        bottom: 0;
+        right: 0;
+        border: 1px solid $main-color;
+        border-left: none;
+        overflow-y: scroll;
     }
 }
 </style>
