@@ -49,5 +49,9 @@ export default {
     &__display {
         flex-grow: 2;
     }
+
+    &__header {
+        padding: 15px;
+    }
 }
 </style>

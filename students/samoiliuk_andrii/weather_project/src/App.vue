@@ -122,7 +122,7 @@ export default {
 
         async displayMetarTaf(index) {
             let indexInArray = this.getIndex(index, this.metarTafCache);
-            const timeDelay = 60000;
+            const timeDelay = 600000;
             const request =
                 this.groups[this.getIndex(index, this.groups)].airports.join(
                     ","
@@ -166,6 +166,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import "./assets/css/reset.scss";
 .page {
     $sidebar-width: 200px;
     $main-color: #2c3e50;

@@ -39,5 +39,8 @@ export default {
 <style lang="scss">
 .displayGroups {
     overflow-y: scroll;
+    &__item {
+        padding: 15px;
+    }
 }
 </style>
