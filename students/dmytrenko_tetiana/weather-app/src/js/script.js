@@ -48,7 +48,7 @@ const fetchData = async () => {
             wind: { speed: windSpeed },
         } = data;
 
-        console.log("data", data);
+        // console.log("data", data);
 
         store = {
             ...store,

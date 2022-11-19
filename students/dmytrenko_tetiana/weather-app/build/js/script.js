@@ -6059,8 +6059,7 @@ var fetchData = /*#__PURE__*/function () {
             return result.json();
           case 7:
             data = _context.sent;
-            cloudsAll = data.clouds.all, _data$main = data.main, temp = _data$main.temp, feelsLike = _data$main.feels_like, humidity = _data$main.humidity, pressure = _data$main.pressure, name = data.name, timezone = data.timezone, visibility = data.visibility, isDay = data.isDay, _data$weather = _slicedToArray(data.weather, 1), _data$weather$ = _data$weather[0], weatherId = _data$weather$.id, weatherMain = _data$weather$.main, weatherDescription = _data$weather$.description, weatherIcon = _data$weather$.icon, windSpeed = data.wind.speed;
-            console.log("data", data);
+            cloudsAll = data.clouds.all, _data$main = data.main, temp = _data$main.temp, feelsLike = _data$main.feels_like, humidity = _data$main.humidity, pressure = _data$main.pressure, name = data.name, timezone = data.timezone, visibility = data.visibility, isDay = data.isDay, _data$weather = _slicedToArray(data.weather, 1), _data$weather$ = _data$weather[0], weatherId = _data$weather$.id, weatherMain = _data$weather$.main, weatherDescription = _data$weather$.description, weatherIcon = _data$weather$.icon, windSpeed = data.wind.speed; // console.log("data", data);
             store = _objectSpread(_objectSpread({}, store), {}, {
               city: name,
               temp: temp,
@@ -6104,18 +6103,18 @@ var fetchData = /*#__PURE__*/function () {
               }
             });
             renderComponent();
-            _context.next = 17;
+            _context.next = 16;
             break;
-          case 14:
-            _context.prev = 14;
+          case 13:
+            _context.prev = 13;
             _context.t0 = _context["catch"](0);
             console.log(_context.t0);
-          case 17:
+          case 16:
           case "end":
             return _context.stop();
         }
       }
-    }, _callee, null, [[0, 14]]);
+    }, _callee, null, [[0, 13]]);
   }));
   return function fetchData() {
     return _ref.apply(this, arguments);
