@@ -45,3 +45,8 @@ export default {
     },
 };
 </script>
+  <style lang="scss" scoped>
+.product {
+    vertical-align: middle;
+}
+</style>
