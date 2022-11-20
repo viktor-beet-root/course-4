@@ -1,0 +1,229 @@
+.menu {
+
+    @include media() {
+        position: absolute;
+        top: 100%;
+        left: -1000%;
+        opacity: 0;
+        border-top: 1px solid $color-white;
+        border-bottom: 1px solid $color-white;
+    }
+
+    &__wrapper {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include media(xxs) {
+            flex-direction: column;
+        }
+    }
+
+    &__item {
+        &:not(:last-child) {
+            padding-right: 70px;
+
+            @include media() {
+                padding-right: 35px;
+            }
+
+            @include media(xxs) {
+                padding-right: 0px;
+            }
+        }
+
+        @include media(xxs) {
+            padding: 5px;
+            width: 100%;
+            text-align: center;
+        }
+
+    }
+
+    &__link {
+        padding-left: 23px;
+        position: relative;
+        @include font-for-text(400, 14px, 18px);
+        @include font-style-for-text('Source Sans Pro');
+        color: $color-white;
+        text-decoration: none;
+
+        &::before {
+            content: '';
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            box-sizing: border-box;
+            border: 1px solid $color-white;
+            position: absolute;
+            top: 50%;
+            left: 0px;
+            transform: translate(0, -50%);
+        }
+
+        &:hover {
+            &::before {
+                background-color: $color-white;
+            }
+        }
+
+
+    }
+
+}
+
+.header {
+
+    &__row {
+        flex-wrap: wrap;
+    }
+
+    &__logo {
+        @include media(md) {
+            order: 1;
+
+        }
+
+        @include media(xs) {
+            padding-bottom: 0px;
+
+            & img {
+                margin: 0 auto;
+            }
+        }
+    }
+
+    &__menu {
+        @include media(md) {
+            order: 3;
+        }
+    }
+
+    &__links {
+        @include media(md) {
+            order: 2;
+        }
+    }
+
+}
+
+.menu__link-on {
+    &::before {
+        background-color: $color-white;
+    }
+}
+
+.links {
+
+    &__wrapper {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        @include media(xs) {
+            justify-content: center;
+        }
+    }
+
+    &__item {
+        height: 40px;
+        width: 40px;
+        min-width: 40px;
+        border-radius: 50%;
+        border: 1px solid $color-white;
+
+        &:not(:last-child) {
+            margin-right: 32px;
+        }
+
+    }
+
+    &__link {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 0;
+        font-size: 0;
+
+        & img {
+            display: block;
+        }
+    }
+}
+
+$menu-btn-width: 26px;
+$menu-btn-gap: 8px;
+
+.menu-btn {
+
+    @include media-mob() {
+        display: none;
+    }
+
+    position: relative;
+
+    & span {
+        position: absolute;
+        display: block;
+        content: '';
+        width: $menu-btn-width;
+        height: 3px;
+        background-color: $color-white;
+        border-radius: 10px;
+        top: calc(50% - 1.5px);
+        left: calc(50% - $menu-btn-width / 2);
+        transition: all 0.3s ease-in-out;
+
+        &::after,
+        &::before {
+            position: absolute;
+            display: block;
+            content: '';
+            width: $menu-btn-width;
+            height: 3px;
+            background-color: $color-white;
+            border-radius: 25px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        &::after {
+            top: calc(50% - 1.5px - $menu-btn-gap);
+        }
+
+        &::before {
+            top: calc(50% - 1.5px + $menu-btn-gap);
+        }
+    }
+}
+
+.menu-btn._active {
+    & span {
+        height: 0;
+
+        &::after,
+        &::before {
+            top: 50%;
+            transform: translateX(-50%);
+            transition: all 0.3s ease-in-out;
+        }
+
+        &::after {
+            transform: rotate(45deg);
+        }
+
+        &::before {
+            transform: rotate(-45deg);
+        }
+    }
+
+}
+
+.menu-adaptive {
+    left: unset;
+    opacity: 1;
+    transition: all 0.4s ease-in-out;
+}

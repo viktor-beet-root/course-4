@@ -1,0 +1,213 @@
+@import './leaflet';
+
+#map {
+    height: 700px;
+}
+
+.footer {
+    position: relative;
+
+    &__bottom {
+        padding-top: 350px;
+        background: url(../images/footer-bg.png) no-repeat, $gradient-dblue-blue;
+        background-size: cover;
+    }
+
+    &__wrapper {
+        position: absolute;
+        z-index: 1000;
+        top: 400px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 770px;
+
+        @include media(md) {
+            width: 100%;
+        }
+
+    }
+
+    &__inTouch {
+        padding: 60px;
+        background: url(../images/footer-contacts-bg.png) center bottom no-repeat, $color-white;
+
+        @include media() {
+            padding: 30px;
+        }
+    }
+
+    &__main-title {
+        margin: 0 auto;
+        padding-top: 30px;
+        text-align: center;
+        position: relative;
+        margin-bottom: 42px;
+
+        @include media() {
+            margin-bottom: 15px;
+        }
+
+        &::before {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 0px;
+            border-top: 1px solid $color-black;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    &__contacts-wrapper {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    &__form-wrapper {
+        width: calc(50% - $gap);
+        margin-left: $gap;
+
+        @include media() {
+            width: 100%;
+            margin-right: unset;
+        }
+    }
+
+    &__contacts {
+        width: calc(50% - $gap);
+        margin-right: $gap;
+
+        @include media() {
+            width: 100%;
+            margin-right: unset;
+        }
+
+    }
+
+    &__end {
+
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        margin-top: 54px;
+        margin-bottom: 15px;
+
+        @include media(md) {
+            margin: $gap;
+        }
+
+        @include media() {
+            & div:nth-child(1) {
+                order: 2;
+            }
+
+            & div:nth-child(2) {
+                order: 1;
+            }
+        }
+    }
+
+    &__logo-wrapper,
+    &__links {
+        @include media() {
+            width: 100%;
+            margin: 15px;
+        }
+    }
+
+    &__links .links__wrapper {
+        @include media() {
+            justify-content: center;
+        }
+
+    }
+
+    &__logo-wrapper p {
+        @include media() {
+            text-align: center;
+            margin: 15px;
+        }
+    }
+
+
+    &__logo-wrapper img {
+        @include media() {
+            margin: 0 auto;
+        }
+
+    }
+}
+
+.contacts {
+
+    &__item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 28px;
+
+        &:last-child {
+            margin-bottom: 8px;
+
+            @include media() {
+                margin-bottom: 28px;
+            }
+        }
+    }
+
+    &__img {
+        box-sizing: border-box;
+        width: 20px;
+
+        @include media() {
+            width: 16px;
+        }
+    }
+
+    &__description {
+        @include font-style-for-text('Montserrat');
+        @include font-for-text(400, 18px, 28px);
+        color: $color-black;
+        padding-left: 10px;
+
+        @include media() {
+            font-size: 16px;
+        }
+    }
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    @include media() {
+        align-items: center;
+    }
+
+    &__name {
+        margin-bottom: 33px;
+    }
+
+    &__email {
+        margin-bottom: 30px;
+    }
+
+    &__btn {
+        @include font-for-text(400, 18px, 27px);
+        padding: 11px 34px;
+
+        @include media() {
+            font-size: 16px;
+        }
+    }
+}
+
+.copyrights {
+    @include font-for-text(400, 14px, 17px);
+    @include font-style-for-text('Montserrat');
+    margin-top: 41px;
+}

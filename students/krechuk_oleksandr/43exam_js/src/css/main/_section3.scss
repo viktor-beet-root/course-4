@@ -1,0 +1,86 @@
+@import "../../node_modules/@fancyapps/ui/src/Fancybox/Fancybox.scss";
+
+.gallary {
+    padding-top: 120px;
+    padding-bottom: 150px;
+
+    @include media() {
+        padding-top: 60px;
+        padding-bottom: 30px;
+    }
+
+    &__main-title {
+        margin: 0 auto;
+        padding-top: 30px;
+        text-align: center;
+        position: relative;
+        margin-bottom: 90px;
+
+        @include media() {
+            margin-bottom: 30px;
+        }
+
+        &::before {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 0px;
+            border-top: 1px solid $color-black;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    &__container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 10px;
+
+        @include media() {
+            grid-template-columns: 1fr 1fr;
+        }
+
+
+        :first-child {
+            grid-column-end: span 2;
+            grid-row-end: span 2;
+        }
+    }
+
+    &__item {
+        position: relative;
+
+        &:hover {
+            &::after {
+                content: url(../images/section3/zoom-in.svg);
+                position: absolute;
+                z-index: 50;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+
+    &__img {
+        display: block;
+        min-height: 100%;
+        object-fit: cover;
+    }
+
+    &__button {
+        margin: 0 auto;
+        margin-top: 60px;
+    }
+
+    & .hidden {
+        display: none;
+
+    }
+}
+
+.fancybox__container {
+    z-index: 20000;
+}
