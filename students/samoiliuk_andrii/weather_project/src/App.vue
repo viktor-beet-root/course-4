@@ -1,4 +1,5 @@
 <template>
+    <wx-brief-header />
     <div class="page">
         <div class="page__sidebar">
             <wx-brief-sidebar
@@ -16,6 +17,7 @@
 </template>
 
 <script>
+import WxBriefHeader from "./components/header/WxBriefHeader.vue";
 import WxBriefMainWindow from "./components/main/WxBriefMainWindow.vue";
 import WxBriefSidebar from "./components/sidebar/WxBriefSidebar.vue";
 
@@ -24,6 +26,7 @@ export default {
     components: {
         WxBriefSidebar,
         WxBriefMainWindow,
+        WxBriefHeader,
     },
 
     data() {
@@ -32,8 +35,8 @@ export default {
             defaultGroups: [
                 {
                     index: 1,
-                    name: "Ukraine",
-                    airports: ["UKBB", "UKLL", "UKHH", "UKOO"],
+                    name: "Poland",
+                    airports: ["EPWA", "EPKK", "EPRZ"],
                 },
                 {
                     index: 2,
@@ -57,9 +60,13 @@ export default {
     },
 
     mounted: function () {
-        this.groups.push(...JSON.parse(localStorage.getItem("userAirports")));
+        if (JSON.parse(localStorage.getItem("userAirports"))) {
+            this.groups.push(
+                ...JSON.parse(localStorage.getItem("userAirports"))
+            );
+        }
 
-        if (this.groups.length === 0) {
+        if (!this.groups.length) {
             this.groups.push(...this.defaultGroups);
         }
 
@@ -72,8 +79,6 @@ export default {
             time: this.metarTafCache[0].time,
             taf: this.metarTafCache[0].taf,
         };
-
-        console.log(this.currentDisplay);
     },
 
     methods: {
@@ -222,22 +227,21 @@ export default {
     color: $main-color;
 
     &__sidebar {
+        box-sizing: border-box;
         width: $sidebar-width;
         position: absolute;
-        top: 0;
+        top: 100px;
         left: 0;
         bottom: 0;
-        border: 1px solid $main-color;
     }
 
     &__main {
         position: absolute;
-        top: 0;
+        top: 100px;
         left: $sidebar-width;
         bottom: 0;
         right: 0;
-        border: 1px solid $main-color;
-        border-left: none;
+
         overflow-y: scroll;
     }
 }

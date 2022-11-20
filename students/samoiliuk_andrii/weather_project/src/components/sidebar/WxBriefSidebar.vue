@@ -1,6 +1,6 @@
 <template>
     <div class="sidebar">
-        <h3 class="sidebar__header">My Groups</h3>
+        <h3 class="sidebar__header">My Airport Groups</h3>
         <wx-brief-sidebar-create class="sidebar__create" @addGroup="addGroup" />
         <wx-brief-sidebar-display
             class="sidebar__display"
@@ -51,7 +51,8 @@ export default {
     }
 
     &__header {
-        padding: 15px;
+        padding: 0 15px;
+        font-weight: 700;
     }
 }
 </style>

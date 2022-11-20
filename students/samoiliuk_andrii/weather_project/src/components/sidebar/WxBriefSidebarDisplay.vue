@@ -1,19 +1,22 @@
 <template>
     <div class="displayGroups">
         <div
-            class="displayGroups__item"
+            class="displayGroups__item group"
             v-for="group in groups"
             :key="group.index"
         >
-            <h3>{{ group.name }}</h3>
-            <p>{{ group.airports.join(", ") }}</p>
+            <h3 class="group__name">{{ group.name }}</h3>
+            <p class="group__text">{{ group.airports.join(", ") }}</p>
             <button
+                class="group__display"
                 @click="displayMetarTaf(group.index)"
                 :disabled="isDisabled"
             >
                 Display
             </button>
-            <button @click="removeGroup(group.index)">Remove</button>
+            <button class="group__remove" @click="removeGroup(group.index)">
+                Remove
+            </button>
         </div>
     </div>
 </template>
@@ -40,7 +43,31 @@ export default {
 .displayGroups {
     overflow-y: scroll;
     &__item {
-        padding: 15px;
+        margin: 15px 0 15px 15px;
+    }
+}
+
+.group {
+    &__name {
+        font-weight: 700;
+        margin-bottom: 5px;
+    }
+
+    &__text {
+        margin-bottom: 5px;
+    }
+
+    &__display {
+        border: 1px solid grey;
+        border-radius: 3px;
+        width: 49%;
+        margin-right: 2%;
+    }
+
+    &__remove {
+        width: 49%;
+        border: 1px solid grey;
+        border-radius: 3px;
     }
 }
 </style>
