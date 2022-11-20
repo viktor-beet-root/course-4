@@ -1,7 +1,7 @@
 <template>
     <wx-brief-header />
     <div class="page">
-        <div class="page__sidebar">
+        <aside class="page__sidebar">
             <wx-brief-sidebar
                 :groups="groups"
                 :isDisabled="isDisabled"
@@ -9,10 +9,10 @@
                 @removeGroup="removeGroup"
                 @displayMetarTaf="displayMetarTaf"
             />
-        </div>
-        <div class="page__main">
+        </aside>
+        <main class="page__main">
             <wx-brief-main-window :currentDisplay="currentDisplay" />
-        </div>
+        </main>
     </div>
 </template>
 
@@ -233,6 +233,7 @@ export default {
         top: 100px;
         left: 0;
         bottom: 0;
+        padding-right: 5px;
     }
 
     &__main {
@@ -241,7 +242,7 @@ export default {
         left: $sidebar-width;
         bottom: 0;
         right: 0;
-
+        border-left: 1px solid black;
         overflow-y: scroll;
     }
 }
