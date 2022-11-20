@@ -1,6 +1,6 @@
 <template>
-    <wx-brief-header />
     <div class="page">
+        <wx-brief-header />
         <aside class="page__sidebar">
             <wx-brief-sidebar
                 :groups="groups"
@@ -13,6 +13,8 @@
         <main class="page__main">
             <wx-brief-main-window :currentDisplay="currentDisplay" />
         </main>
+
+        <wx-brief-footer class="page__footer" />
     </div>
 </template>
 
@@ -20,6 +22,7 @@
 import WxBriefHeader from "./components/header/WxBriefHeader.vue";
 import WxBriefMainWindow from "./components/main/WxBriefMainWindow.vue";
 import WxBriefSidebar from "./components/sidebar/WxBriefSidebar.vue";
+import WxBriefFooter from "./components/footer/WxBriefFooter.vue";
 
 export default {
     name: "App",
@@ -27,6 +30,7 @@ export default {
         WxBriefSidebar,
         WxBriefMainWindow,
         WxBriefHeader,
+        WxBriefFooter,
     },
 
     data() {
@@ -70,9 +74,13 @@ export default {
             this.groups.push(...this.defaultGroups);
         }
 
-        this.metarTafCache.push(
-            ...JSON.parse(localStorage.getItem("metarTafCache"))
-        );
+        if (JSON.parse(localStorage.getItem("metarTafCache"))) {
+            this.metarTafCache.push(
+                ...JSON.parse(localStorage.getItem("metarTafCache"))
+            );
+        } else {
+            this.displayMetarTaf(1);
+        }
 
         this.currentDisplay = {
             data: this.metarTafCache[0].data,
@@ -232,7 +240,7 @@ export default {
         position: absolute;
         top: 100px;
         left: 0;
-        bottom: 0;
+        bottom: 20px;
         padding-right: 5px;
     }
 
@@ -240,10 +248,18 @@ export default {
         position: absolute;
         top: 100px;
         left: $sidebar-width;
-        bottom: 0;
+        bottom: 20px;
         right: 0;
         border-left: 1px solid black;
         overflow-y: scroll;
+    }
+
+    &__footer {
+        position: absolute;
+        height: 20px;
+        bottom: 0;
+        left: 0;
+        right: 0;
     }
 }
 </style>
