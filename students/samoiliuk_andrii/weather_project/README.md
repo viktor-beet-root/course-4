@@ -1,3 +1,5 @@
+https://asamoiliuk.github.io/course-4/students/samoiliuk_andrii/weather_project/dist/index.html
+
 # weather_project
 
 ## Project setup
