@@ -48,6 +48,7 @@ export default {
             ],
             metarTafCache: [],
             currentDisplay: {
+                taf: [],
                 data: [],
                 time: 0,
             },
@@ -69,7 +70,10 @@ export default {
         this.currentDisplay = {
             data: this.metarTafCache[0].data,
             time: this.metarTafCache[0].time,
+            taf: this.metarTafCache[0].taf,
         };
+
+        console.log(this.currentDisplay);
     },
 
     methods: {
@@ -186,6 +190,7 @@ export default {
             this.currentDisplay = {
                 data: this.metarTafCache[indexInArray].data,
                 time: this.metarTafCache[indexInArray].time,
+                taf: this.metarTafCache[indexInArray].taf,
             };
         },
 
