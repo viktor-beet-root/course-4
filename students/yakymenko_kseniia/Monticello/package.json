@@ -33,7 +33,13 @@
     "webpack-stream": "^7.0.0"
   },
   "dependencies": {
+    "jquery": "^3.6.1",
+    "lightbox2": "^2.11.3",
     "masonry-layout": "^4.2.2",
-    "swiper": "^8.4.2"
+    "polyfill": "^0.1.0",
+    "slick-carousel": "^1.8.1",
+    "slick-slider": "^1.8.2",
+    "swiper": "^8.4.2",
+    "validator": "^13.7.0"
   }
 }

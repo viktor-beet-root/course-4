@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import headerSlider from './headerSlider';
+import headerSlider from './header_slider';
 
 setTimeout(function () {
     const menuList = document.querySelector(".menu__items"),
