@@ -123,19 +123,16 @@ function headerScroll() {
     };
     if (scrollTop >= heighWindow - heightHeader) {
         headerNav.classList.add('hide2');
-        headerMenu.classList.add('hide3');
     } else {
         headerNav.classList.remove('hide2');
-        headerMenu.classList.remove('hide3');
     };
 }
 
 const menuWrap = document.querySelector('.menu__wrapper');
 const navMenu = menuWrap.closest("nav");
-const headerDiv = headerNav.closest("div");
 
 function menuBg() {
-    if (navMenu.classList.contains('menu-adaptive') && headerDiv.classList.contains('hide2')) {
+    if (navMenu.classList.contains('menu-adaptive')) {
         headerMenu.classList.add('hide3');
     }
     else {
@@ -147,6 +144,7 @@ function menuBg() {
 menuBg();
 headerScroll();
 window.addEventListener("scroll", headerScroll);
+window.addEventListener("click", menuBg);
 
 
 //ARROW
@@ -232,49 +230,52 @@ window.addEventListener("scroll", navDotsWhite);
 
 //VALIDATION
 
-const formName = document.querySelector(".form__name");
-const formEmail = document.querySelector(".form__email");
-const formSubmit = document.querySelector(".form__btn");
+const formName = document.getElementById("formName");
+const formEmail = document.getElementById("formEmail");
+const formSubmit = document.getElementById("formSubmit");
 
-function validateName() {
-    return !!formName;
-}
+const requiredMessage = "This field is required";
+const invalidEmail = 'An incorrect email address';
 
-function validateEmail() {
-    const emailRegExp = new RegExp(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
-    return emailRegExp.test(formEmail.value);
-}
+formSubmit.addEventListener('click', (e) => {
+    e.preventDefault();
+    checkInputs();
+})
 
-function formValidation(event) {
-    const redUnderline = "border-bottom: 1px solid #FF0000";
-    formName.style = " ";
-    formEmail.style = " ";
-    if (!validateName() || !validateEmail()) {
-        event.preventDefault();
-        if (!validateName()) {
-            formName.style = redUnderline;
-        };
-        if (!validateEmail()) {
-            formEmail.style = redUnderline;
-        };
+function checkInputs() {
+    const formNameValue = formName.value.trim();
+    const formEmailValue = formEmail.value.trim();
+
+    if (formNameValue === '') {
+        setErrorFor(formName, requiredMessage)
+    } else {
+        setSuccessFor(formName)
+    }
+
+    if (formEmailValue === '') {
+        setErrorFor(formEmail, requiredMessage)
+    } else if (!isEmail(formEmailValue)) {
+        setErrorFor(formEmail, invalidEmail)
+    } else {
+        setSuccessFor(formEmail)
     }
 }
 
-formSubmit.addEventListener('click', formValidation)
 
+function setErrorFor(iput, message) {
+    const formItem = iput.parentElement;
+    const span = formItem.querySelector('span');
+    span.innerText = message;
+    formItem.classList.add('error')
+}
 
-//IMG HEIGHT
+function setSuccessFor(iput) {
+    const formItem = iput.parentElement;
+    formItem.classList.remove('error')
+}
 
-const weDoImg = document.querySelector('.whatWeDo__img');
-let weDoImgHeight = weDoImg.clientHeight + 'px';
-const weDoBefore = '.whatWeDo__before';
-$(weDoBefore).css('height', weDoImgHeight);
+const regEx = new RegExp("([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\"\(\[\]!#-[^-~ \t]|(\\[\t -~]))+\")@([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\[[\t -Z^-~]*])");
 
-
-//footer bottom
-
-const footerEndHeight = $('.footer__end').outerHeight(true);
-const footerInTouchHeignt = $('.footer__inTouch').outerHeight(true);
-const footerBottom = '.footer__bottom';
-const footerBottomPad = footerInTouchHeignt - 300 + footerEndHeight + 'px';
-$(footerBottom).css('padding-top', footerBottomPad);
+function isEmail(email) {
+    return regEx.test(email);
+}

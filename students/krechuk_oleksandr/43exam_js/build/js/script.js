@@ -2326,6 +2326,72 @@ var store = __webpack_require__(/*! ../internals/shared-store */ "./node_modules
 
 /***/ }),
 
+/***/ "./node_modules/core-js/internals/string-trim-forced.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/core-js/internals/string-trim-forced.js ***!
+  \**************************************************************/
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+var PROPER_FUNCTION_NAME = (__webpack_require__(/*! ../internals/function-name */ "./node_modules/core-js/internals/function-name.js").PROPER);
+var fails = __webpack_require__(/*! ../internals/fails */ "./node_modules/core-js/internals/fails.js");
+var whitespaces = __webpack_require__(/*! ../internals/whitespaces */ "./node_modules/core-js/internals/whitespaces.js");
+
+var non = '\u200B\u0085\u180E';
+
+// check that a method works with the correct list
+// of whitespaces and has a correct name
+module.exports = function (METHOD_NAME) {
+  return fails(function () {
+    return !!whitespaces[METHOD_NAME]()
+      || non[METHOD_NAME]() !== non
+      || (PROPER_FUNCTION_NAME && whitespaces[METHOD_NAME].name !== METHOD_NAME);
+  });
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/internals/string-trim.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/core-js/internals/string-trim.js ***!
+  \*******************************************************/
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+var uncurryThis = __webpack_require__(/*! ../internals/function-uncurry-this */ "./node_modules/core-js/internals/function-uncurry-this.js");
+var requireObjectCoercible = __webpack_require__(/*! ../internals/require-object-coercible */ "./node_modules/core-js/internals/require-object-coercible.js");
+var toString = __webpack_require__(/*! ../internals/to-string */ "./node_modules/core-js/internals/to-string.js");
+var whitespaces = __webpack_require__(/*! ../internals/whitespaces */ "./node_modules/core-js/internals/whitespaces.js");
+
+var replace = uncurryThis(''.replace);
+var whitespace = '[' + whitespaces + ']';
+var ltrim = RegExp('^' + whitespace + whitespace + '*');
+var rtrim = RegExp(whitespace + whitespace + '*$');
+
+// `String.prototype.{ trim, trimStart, trimEnd, trimLeft, trimRight }` methods implementation
+var createMethod = function (TYPE) {
+  return function ($this) {
+    var string = toString(requireObjectCoercible($this));
+    if (TYPE & 1) string = replace(string, ltrim, '');
+    if (TYPE & 2) string = replace(string, rtrim, '');
+    return string;
+  };
+};
+
+module.exports = {
+  // `String.prototype.{ trimLeft, trimStart }` methods
+  // https://tc39.es/ecma262/#sec-string.prototype.trimstart
+  start: createMethod(1),
+  // `String.prototype.{ trimRight, trimEnd }` methods
+  // https://tc39.es/ecma262/#sec-string.prototype.trimend
+  end: createMethod(2),
+  // `String.prototype.trim` method
+  // https://tc39.es/ecma262/#sec-string.prototype.trim
+  trim: createMethod(3)
+};
+
+
+/***/ }),
+
 /***/ "./node_modules/core-js/internals/symbol-constructor-detection.js":
 /*!************************************************************************!*\
   !*** ./node_modules/core-js/internals/symbol-constructor-detection.js ***!
@@ -2661,6 +2727,19 @@ module.exports = function (name) {
 
 /***/ }),
 
+/***/ "./node_modules/core-js/internals/whitespaces.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/core-js/internals/whitespaces.js ***!
+  \*******************************************************/
+/***/ (function(module) {
+
+// a string of all valid unicode whitespaces
+module.exports = '\u0009\u000A\u000B\u000C\u000D\u0020\u00A0\u1680\u2000\u2001\u2002' +
+  '\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200A\u202F\u205F\u3000\u2028\u2029\uFEFF';
+
+
+/***/ }),
+
 /***/ "./node_modules/core-js/modules/es.array.map.js":
 /*!******************************************************!*\
   !*** ./node_modules/core-js/modules/es.array.map.js ***!
@@ -2959,6 +3038,29 @@ if (NOT_GENERIC || INCORRECT_NAME) {
     return '/' + pattern + '/' + flags;
   }, { unsafe: true });
 }
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/modules/es.string.trim.js":
+/*!********************************************************!*\
+  !*** ./node_modules/core-js/modules/es.string.trim.js ***!
+  \********************************************************/
+/***/ (function(__unused_webpack_module, __unused_webpack_exports, __webpack_require__) {
+
+"use strict";
+
+var $ = __webpack_require__(/*! ../internals/export */ "./node_modules/core-js/internals/export.js");
+var $trim = (__webpack_require__(/*! ../internals/string-trim */ "./node_modules/core-js/internals/string-trim.js").trim);
+var forcedStringTrimMethod = __webpack_require__(/*! ../internals/string-trim-forced */ "./node_modules/core-js/internals/string-trim-forced.js");
+
+// `String.prototype.trim` method
+// https://tc39.es/ecma262/#sec-string.prototype.trim
+$({ target: 'String', proto: true, forced: forcedStringTrimMethod('trim') }, {
+  trim: function trim() {
+    return $trim(this);
+  }
+});
 
 
 /***/ }),
@@ -31447,19 +31549,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/web.dom-collections.for-each.js */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
 /* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var core_js_modules_es_regexp_constructor_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! core-js/modules/es.regexp.constructor.js */ "./node_modules/core-js/modules/es.regexp.constructor.js");
-/* harmony import */ var core_js_modules_es_regexp_constructor_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_regexp_constructor_js__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! core-js/modules/es.regexp.exec.js */ "./node_modules/core-js/modules/es.regexp.exec.js");
-/* harmony import */ var core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var core_js_modules_es_regexp_to_string_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! core-js/modules/es.regexp.to-string.js */ "./node_modules/core-js/modules/es.regexp.to-string.js");
-/* harmony import */ var core_js_modules_es_regexp_to_string_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_regexp_to_string_js__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var slick_carousel__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! slick-carousel */ "./node_modules/slick-carousel/slick/slick.js");
-/* harmony import */ var slick_carousel__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(slick_carousel__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _fancyapps_ui__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fancyapps/ui */ "./node_modules/@fancyapps/ui/dist/fancybox.esm.js");
-/* harmony import */ var leaflet__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! leaflet */ "./node_modules/leaflet/dist/leaflet-src.js");
-/* harmony import */ var leaflet__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(leaflet__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var core_js_modules_es_string_trim_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! core-js/modules/es.string.trim.js */ "./node_modules/core-js/modules/es.string.trim.js");
+/* harmony import */ var core_js_modules_es_string_trim_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_trim_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var core_js_modules_es_regexp_constructor_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! core-js/modules/es.regexp.constructor.js */ "./node_modules/core-js/modules/es.regexp.constructor.js");
+/* harmony import */ var core_js_modules_es_regexp_constructor_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_regexp_constructor_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! core-js/modules/es.regexp.exec.js */ "./node_modules/core-js/modules/es.regexp.exec.js");
+/* harmony import */ var core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var core_js_modules_es_regexp_to_string_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! core-js/modules/es.regexp.to-string.js */ "./node_modules/core-js/modules/es.regexp.to-string.js");
+/* harmony import */ var core_js_modules_es_regexp_to_string_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_regexp_to_string_js__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var slick_carousel__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! slick-carousel */ "./node_modules/slick-carousel/slick/slick.js");
+/* harmony import */ var slick_carousel__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(slick_carousel__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _fancyapps_ui__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fancyapps/ui */ "./node_modules/@fancyapps/ui/dist/fancybox.esm.js");
+/* harmony import */ var leaflet__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! leaflet */ "./node_modules/leaflet/dist/leaflet-src.js");
+/* harmony import */ var leaflet__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(leaflet__WEBPACK_IMPORTED_MODULE_10__);
 
 
 
@@ -31470,7 +31574,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-jquery__WEBPACK_IMPORTED_MODULE_6___default()('.header__slider').slick({
+
+jquery__WEBPACK_IMPORTED_MODULE_7___default()('.header__slider').slick({
   infinite: true,
   slidesToShow: 1,
   slidesToScroll: 1,
@@ -31487,7 +31592,7 @@ jquery__WEBPACK_IMPORTED_MODULE_6___default()('.header__slider').slick({
     }
   }]
 });
-jquery__WEBPACK_IMPORTED_MODULE_6___default()('.latestNews__slider').slick({
+jquery__WEBPACK_IMPORTED_MODULE_7___default()('.latestNews__slider').slick({
   infinite: true,
   slidesToShow: 3,
   slidesToScroll: 1,
@@ -31511,8 +31616,8 @@ jquery__WEBPACK_IMPORTED_MODULE_6___default()('.latestNews__slider').slick({
 
 //GALLARY
 
-_fancyapps_ui__WEBPACK_IMPORTED_MODULE_8__.Fancybox.bind('[data-fancybox="gallery"]', {});
-window.Fancybox = _fancyapps_ui__WEBPACK_IMPORTED_MODULE_8__.Fancybox;
+_fancyapps_ui__WEBPACK_IMPORTED_MODULE_9__.Fancybox.bind('[data-fancybox="gallery"]', {});
+window.Fancybox = _fancyapps_ui__WEBPACK_IMPORTED_MODULE_9__.Fancybox;
 
 //GALLARY BUTTON
 
@@ -31538,17 +31643,17 @@ var mapOptions = {
   zoomControl: true,
   scrollWheelZoom: false
 };
-var map = leaflet__WEBPACK_IMPORTED_MODULE_9___default().map('map', mapOptions).setView([40.66, -73.89], 13);
-leaflet__WEBPACK_IMPORTED_MODULE_9___default().tileLayer('https://tile.thunderforest.com/atlas/{z}/{x}/{y}.png?apikey=c249793cfe414eb185594b90ac79c6a7', {
+var map = leaflet__WEBPACK_IMPORTED_MODULE_10___default().map('map', mapOptions).setView([40.66, -73.89], 13);
+leaflet__WEBPACK_IMPORTED_MODULE_10___default().tileLayer('https://tile.thunderforest.com/atlas/{z}/{x}/{y}.png?apikey=c249793cfe414eb185594b90ac79c6a7', {
   maxZoom: 19,
   attribution: '&copy; <a href="https://www.thunderforest.com/">Thunderforest</a> | &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
-var customIcon = leaflet__WEBPACK_IMPORTED_MODULE_9___default().icon({
+var customIcon = leaflet__WEBPACK_IMPORTED_MODULE_10___default().icon({
   iconUrl: './images/svg-form/map-pin.svg',
   iconSize: [106, 106],
   iconAnchor: [81, 54]
 });
-leaflet__WEBPACK_IMPORTED_MODULE_9___default().marker([40.680570, -73.898024], {
+leaflet__WEBPACK_IMPORTED_MODULE_10___default().marker([40.680570, -73.898024], {
   icon: customIcon
 }).addTo(map);
 
@@ -31578,18 +31683,15 @@ function headerScroll() {
   ;
   if (scrollTop >= heighWindow - heightHeader) {
     headerNav.classList.add('hide2');
-    headerMenu.classList.add('hide3');
   } else {
     headerNav.classList.remove('hide2');
-    headerMenu.classList.remove('hide3');
   }
   ;
 }
 var menuWrap = document.querySelector('.menu__wrapper');
 var navMenu = menuWrap.closest("nav");
-var headerDiv = headerNav.closest("div");
 function menuBg() {
-  if (navMenu.classList.contains('menu-adaptive') && headerDiv.classList.contains('hide2')) {
+  if (navMenu.classList.contains('menu-adaptive')) {
     headerMenu.classList.add('hide3');
   } else {
     headerMenu.classList.remove('hide3');
@@ -31598,6 +31700,7 @@ function menuBg() {
 menuBg();
 headerScroll();
 window.addEventListener("scroll", headerScroll);
+window.addEventListener("click", menuBg);
 
 //ARROW
 
@@ -31626,7 +31729,7 @@ var menuLink = document.querySelectorAll('.menu__link');
 var navId = [aboutUs, projects, news, contact];
 function goTo(place) {
   var time = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 100;
-  jquery__WEBPACK_IMPORTED_MODULE_6___default()('html, body').animate({
+  jquery__WEBPACK_IMPORTED_MODULE_7___default()('html, body').animate({
     scrollTop: place
   }, time);
 }
@@ -31676,48 +31779,45 @@ window.addEventListener("scroll", navDotsWhite);
 
 //VALIDATION
 
-var formName = document.querySelector(".form__name");
-var formEmail = document.querySelector(".form__email");
-var formSubmit = document.querySelector(".form__btn");
-function validateName() {
-  return !!formName;
-}
-function validateEmail() {
-  var emailRegExp = new RegExp(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
-  return emailRegExp.test(formEmail.value);
-}
-function formValidation(event) {
-  var redUnderline = "border-bottom: 1px solid #FF0000";
-  formName.style = " ";
-  formEmail.style = " ";
-  if (!validateName() || !validateEmail()) {
-    event.preventDefault();
-    if (!validateName()) {
-      formName.style = redUnderline;
-    }
-    ;
-    if (!validateEmail()) {
-      formEmail.style = redUnderline;
-    }
-    ;
+var formName = document.getElementById("formName");
+var formEmail = document.getElementById("formEmail");
+var formSubmit = document.getElementById("formSubmit");
+var requiredMessage = "This field is required";
+var invalidEmail = 'An incorrect email address';
+formSubmit.addEventListener('click', function (e) {
+  e.preventDefault();
+  checkInputs();
+});
+function checkInputs() {
+  var formNameValue = formName.value.trim();
+  var formEmailValue = formEmail.value.trim();
+  if (formNameValue === '') {
+    setErrorFor(formName, requiredMessage);
+  } else {
+    setSuccessFor(formName);
+  }
+  if (formEmailValue === '') {
+    setErrorFor(formEmail, requiredMessage);
+  } else if (!isEmail(formEmailValue)) {
+    setErrorFor(formEmail, invalidEmail);
+  } else {
+    setSuccessFor(formEmail);
   }
 }
-formSubmit.addEventListener('click', formValidation);
-
-//IMG HEIGHT
-
-var weDoImg = document.querySelector('.whatWeDo__img');
-var weDoImgHeight = weDoImg.clientHeight + 'px';
-var weDoBefore = '.whatWeDo__before';
-jquery__WEBPACK_IMPORTED_MODULE_6___default()(weDoBefore).css('height', weDoImgHeight);
-
-//footer bottom
-
-var footerEndHeight = jquery__WEBPACK_IMPORTED_MODULE_6___default()('.footer__end').outerHeight(true);
-var footerInTouchHeignt = jquery__WEBPACK_IMPORTED_MODULE_6___default()('.footer__inTouch').outerHeight(true);
-var footerBottom = '.footer__bottom';
-var footerBottomPad = footerInTouchHeignt - 300 + footerEndHeight + 'px';
-jquery__WEBPACK_IMPORTED_MODULE_6___default()(footerBottom).css('padding-top', footerBottomPad);
+function setErrorFor(iput, message) {
+  var formItem = iput.parentElement;
+  var span = formItem.querySelector('span');
+  span.innerText = message;
+  formItem.classList.add('error');
+}
+function setSuccessFor(iput) {
+  var formItem = iput.parentElement;
+  formItem.classList.remove('error');
+}
+var regEx = new RegExp("([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\"\(\[\]!#-[^-~ \t]|(\\[\t -~]))+\")@([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\[[\t -Z^-~]*])");
+function isEmail(email) {
+  return regEx.test(email);
+}
 }();
 /******/ })()
 ;

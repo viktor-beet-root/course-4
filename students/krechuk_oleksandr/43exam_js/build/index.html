@@ -280,11 +280,17 @@
                         </ul>
                         <div class="footer__form-wrapper">
                             <form action="#" method="get" class="footer__form form">
-                                <input type="text" name="name" class="form__name iput" placeholder="Full Name"
-                                    autocomplete="off">
-                                <input type="text" name="email" class="form__email iput" placeholder="Email"
-                                    autocomplete="off">
-                                <button type="submit" class="form__btn btn clickable">Submit</button>
+                                <div class="form__item">
+                                    <input type="text" id="formName" name="name" class="form__name iput "
+                                        placeholder="Full Name" autocomplete="off">
+                                    <span class="required">Error</span>
+                                </div>
+                                <div class="form__item">
+                                    <input type="text" name="email" id="formEmail" class="form__email iput"
+                                        placeholder="Email" autocomplete="off">
+                                    <span class="required">Error</span>
+                                </div>
+                                <button type="submit" id="formSubmit" class="form__btn btn clickable">Submit</button>
                             </form>
                         </div>
                     </div>

@@ -1999,6 +1999,11 @@ svg.leaflet-image-layer.leaflet-interactive path {
   background: url(../images/footer-bg.png) no-repeat, linear-gradient(237.1deg, #24CCFA 11.16%, #3C7FD4 89.18%);
   background-size: cover;
 }
+@media screen and (max-width: 768px) {
+  .footer__bottom {
+    padding-top: 545px;
+  }
+}
 .footer__wrapper {
   position: absolute;
   z-index: 1000;
@@ -2196,13 +2201,22 @@ svg.leaflet-image-layer.leaflet-interactive path {
     align-items: center;
   }
 }
-.form__name {
-  margin-bottom: 33px;
-}
 .form__email {
-  margin-bottom: 30px;
+  margin-top: 33px;
+}
+.form__item {
+  position: relative;
+  width: 100%;
+}
+.form__item.error .iput {
+  border-bottom: 1px solid #FF0000;
+}
+.form__item.error .required {
+  visibility: visible;
+  opacity: 1;
 }
 .form__btn {
+  margin-top: 30px;
   font-weight: 400;
   font-size: 18px;
   line-height: 27px;
@@ -2221,6 +2235,22 @@ svg.leaflet-image-layer.leaflet-interactive path {
   font-family: "Montserrat", Arial, Helvetica, sans-serif;
   font-style: normal;
   margin-top: 41px;
+}
+
+.required {
+  position: absolute;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  font-style: normal;
+  margin: 5px 0;
+  display: block;
+  width: 100%;
+  color: #FF0000;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .whatWeDo {
@@ -2317,16 +2347,24 @@ svg.leaflet-image-layer.leaflet-interactive path {
   }
 }
 .whatWeDo__before {
-  height: 470px;
+  height: calc(100% - 57px - 30px - 100px);
   z-index: -1;
   position: absolute;
   width: calc(50% + 100px - 260px - 15px);
+  top: 100px;
   bottom: 57px;
 }
 @media screen and (max-width: 768px) {
   .whatWeDo__before {
     width: 100%;
     bottom: unset;
+    top: unset;
+    height: 50%;
+  }
+}
+@media screen and (max-width: 576px) {
+  .whatWeDo__before {
+    visibility: hidden;
   }
 }
 .whatWeDo__before-first {

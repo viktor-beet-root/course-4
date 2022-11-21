@@ -76,15 +76,22 @@
     }
 
     &__before {
-        height: 470px;
+        height: calc(100% - 57px - 2 * $gap - 100px);
         z-index: -1;
         position: absolute;
         width: calc(50% + 100px - 260px - 15px);
+        top: 100px;
         bottom: 57px;
 
         @include media() {
             width: 100%;
             bottom: unset;
+            top: unset;
+            height: 50%;
+        }
+
+        @include media(xs) {
+            visibility: hidden;
         }
 
         &-first {
