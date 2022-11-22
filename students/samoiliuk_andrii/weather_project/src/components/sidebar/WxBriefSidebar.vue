@@ -44,15 +44,20 @@ export default {
 .sidebar {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    &__header {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 33px;
+        margin-bottom: 40px;
+    }
+    &__create {
+        padding-bottom: 40px;
+        border-bottom: 1px solid #a1a1a1;
+        margin-bottom: 40px;
+    }
 
     &__display {
         flex-grow: 2;
-    }
-
-    &__header {
-        padding: 0 15px;
-        font-weight: 700;
     }
 }
 </style>

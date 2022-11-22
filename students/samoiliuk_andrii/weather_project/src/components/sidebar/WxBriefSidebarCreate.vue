@@ -41,46 +41,104 @@ export default {
 
 <style lang="scss">
 .create {
-    padding: 15px 0 15px 15px;
+    width: 100%;
 
     &__name {
+        display: block;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 22px;
+        margin-bottom: 10px;
     }
 
     &__nameInput {
         box-sizing: border-box;
         width: 100%;
+        font-size: 16px;
+        line-height: 22px;
+        padding: 10px;
+
         &::placeholder {
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: inherit;
+            color: #939191;
         }
-        margin-bottom: 5px;
-        border: 1px solid grey;
+
+        &:focus {
+            border: 1px solid #ffffff;
+        }
+
+        font-family: inherit;
+        border: 1px solid #a2a2a2;
+        border-radius: 4px;
+        background-color: transparent;
+        color: inherit;
+        margin-bottom: 20px;
     }
 
     // .create__airports
 
     &__airports {
+        display: block;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 22px;
+        margin-bottom: 10px;
     }
 
     // .create__airportsInput
 
     &__airportsInput {
+        font-family: inherit;
         box-sizing: border-box;
         width: 100%;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22px;
+        background-color: transparent;
+        color: inherit;
+        padding: 10px;
+
         &::placeholder {
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: inherit;
+            color: #939191;
         }
-        min-height: 80px;
-        margin-bottom: 5px;
-        border: 1px solid grey;
+
+        &:focus {
+            border: 1px solid #ffffff;
+        }
+
+        border: 1px solid #a2a2a2;
+        border-radius: 4px;
+        margin-bottom: 40px;
+
+        height: 45px;
     }
 
     // .create__button
 
     &__button {
-        border: 1px solid grey;
-        border-radius: 3px;
         box-sizing: border-box;
         width: 100%;
+
+        font-size: 16px;
+        line-height: 22px;
+
+        text-align: center;
+
+        color: #f3f3f3;
+        padding: 10px;
+        background: #1673ff;
+        border-radius: 4px;
+        border: 1px solid transparent;
+
+        &:hover {
+            background: #003688;
+        }
+
+        &:active {
+            background: transparent;
+            border: 1px solid #a1a1a1;
+        }
     }
 }
 </style>

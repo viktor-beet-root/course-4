@@ -1,20 +1,31 @@
 <template>
     <div class="page">
-        <wx-brief-header />
-        <aside class="page__sidebar">
-            <wx-brief-sidebar
-                :groups="groups"
-                :isDisabled="isDisabled"
-                @addGroup="addGroup"
-                @removeGroup="removeGroup"
-                @displayMetarTaf="displayMetarTaf"
-            />
-        </aside>
+        <header class="page__header">
+            <wx-brief-header />
+        </header>
         <main class="page__main">
-            <wx-brief-main-window :currentDisplay="currentDisplay" />
+            <div class="container">
+                <div class="row">
+                    <aside class="col-3">
+                        <wx-brief-sidebar
+                            :groups="groups"
+                            :isDisabled="isDisabled"
+                            @addGroup="addGroup"
+                            @removeGroup="removeGroup"
+                            @displayMetarTaf="displayMetarTaf"
+                        />
+                    </aside>
+                    <div class="col-9">
+                        <wx-brief-main-window
+                            :currentDisplay="currentDisplay"
+                        />
+                    </div>
+                </div>
+            </div>
         </main>
-
-        <wx-brief-footer class="page__footer" />
+        <footer class="page__footer">
+            <wx-brief-footer />
+        </footer>
     </div>
 </template>
 
@@ -91,7 +102,7 @@ export default {
 
     methods: {
         addGroup(name, airports) {
-            this.groups.push({
+            this.groups.unshift({
                 name: name,
                 airports: this.validateAirports(airports),
                 index: this.setIndex(),
@@ -224,42 +235,35 @@ export default {
 </script>
 
 <style lang="scss">
+@use "sass:math";
 @import "./assets/css/reset.scss";
+@import "./assets/css/grid.scss";
+@import "./assets/css/fonts.scss";
+@include grid(12);
+
+body {
+    background-color: #252326;
+    color: #f3f3f3;
+    font-family: "Manrope", Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+}
+
 .page {
-    $sidebar-width: 200px;
-    $main-color: #2c3e50;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 
-    font-family: Arial, Helvetica, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    color: $main-color;
-
-    &__sidebar {
-        box-sizing: border-box;
-        width: $sidebar-width;
-        position: absolute;
-        top: 100px;
-        left: 0;
-        bottom: 20px;
-        padding-right: 5px;
+    &__header {
+        margin-bottom: 35px;
     }
 
     &__main {
-        position: absolute;
-        top: 100px;
-        left: $sidebar-width;
-        bottom: 20px;
-        right: 0;
-        border-left: 1px solid black;
-        overflow-y: scroll;
+        flex-grow: 2;
     }
 
     &__footer {
-        position: absolute;
-        height: 20px;
-        bottom: 0;
-        left: 0;
-        right: 0;
+        background-color: #060606;
     }
 }
 </style>

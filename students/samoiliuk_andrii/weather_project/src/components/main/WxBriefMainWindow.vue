@@ -360,10 +360,6 @@ export default {
 }
 
 .tabs {
-    position: fixed;
-    top: 100px;
-    left: 200px;
-    right: 0;
     background-color: white;
     border-bottom: 1px solid black;
     z-index: 10;

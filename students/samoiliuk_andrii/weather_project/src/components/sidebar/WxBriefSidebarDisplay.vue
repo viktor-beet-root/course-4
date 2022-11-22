@@ -7,16 +7,19 @@
         >
             <h3 class="group__name">{{ group.name }}</h3>
             <p class="group__text">{{ group.airports.join(", ") }}</p>
-            <button
-                class="group__display"
-                @click="displayMetarTaf(group.index)"
-                :disabled="isDisabled"
-            >
-                Display
-            </button>
-            <button class="group__remove" @click="removeGroup(group.index)">
-                Remove
-            </button>
+            <div class="group__buttons">
+                <button class="group__remove" @click="removeGroup(group.index)">
+                    Delete
+                </button>
+
+                <button
+                    class="group__display"
+                    @click="displayMetarTaf(group.index)"
+                    :disabled="isDisabled"
+                >
+                    Display
+                </button>
+            </div>
         </div>
     </div>
 </template>
@@ -41,33 +44,86 @@ export default {
 
 <style lang="scss">
 .displayGroups {
-    overflow-y: scroll;
+    width: 100%;
     &__item {
-        margin: 15px 0 15px 15px;
+        margin-bottom: 20px;
     }
 }
 
 .group {
+    border: 1px solid #a1a1a1;
+    border-radius: 4px;
+    padding: 20px;
+
     &__name {
         font-weight: 700;
-        margin-bottom: 5px;
+        font-size: 20px;
+        line-height: 27px;
+        margin-bottom: 20px;
     }
 
     &__text {
-        margin-bottom: 5px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22px;
+        margin-bottom: 20px;
     }
-
+    &__buttons {
+        display: flex;
+        justify-content: space-between;
+    }
     &__display {
-        border: 1px solid grey;
-        border-radius: 3px;
-        width: 49%;
-        margin-right: 2%;
+        box-sizing: border-box;
+        width: 45%;
+
+        font-size: 16px;
+        line-height: 22px;
+
+        text-align: center;
+
+        color: #f3f3f3;
+        padding: 10px;
+        background: #1673ff;
+        border-radius: 4px;
+        border: 1px solid transparent;
+
+        &:hover {
+            background: #003688;
+        }
+
+        &:active {
+            background: transparent;
+            border: 1px solid #a1a1a1;
+        }
+
+        &:disabled {
+            background: transparent;
+            border: 1px solid #a1a1a1;
+        }
     }
 
     &__remove {
-        width: 49%;
-        border: 1px solid grey;
-        border-radius: 3px;
+        box-sizing: border-box;
+        width: 45%;
+
+        font-size: 16px;
+        line-height: 22px;
+
+        text-align: center;
+
+        color: #f3f3f3;
+        padding: 10px;
+        background: transparent;
+        border-radius: 4px;
+        border: 1px solid #a1a1a1;
+
+        &:hover {
+            border: 1px solid #ffffff;
+        }
+
+        &:active {
+            border: 1px solid #ffffff;
+        }
     }
 }
 </style>

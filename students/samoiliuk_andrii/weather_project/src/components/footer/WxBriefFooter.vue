@@ -1,50 +1,47 @@
 <template>
-    <footer class="footer">
-        <div class="footer__name">Weather Briefing</div>
-        <div class="footer__wrapper">
-            <div class="footer__disclaimer">
-                Disclamer: this is front-end student project, do not use for
-                operations.
-            </div>
-            <div class="footer__contacts">
-                <a class="footer__link" href="mailto:andrewsamoiliuk@gmail.com"
-                    >Contact author</a
-                >
-                <a
-                    class="footer__link"
-                    href="https://www.checkwxapi.com/"
-                    target="blanc"
-                    >Aviation Weather API</a
-                >
-                <a
-                    class="footer__link"
-                    href="https://beetroot.academy/"
-                    target="blanc"
-                    >Beetroot academy</a
-                >
+    <div class="container">
+        <div class="row footer">
+            <div class="col-3 footer__name">Weather Briefing</div>
+            <div class="col-9 footer__wrapper">
+                <div class="footer__disclaimer">
+                    Disclamer: this is front-end student project, do not use for
+                    operations.
+                </div>
+                <div class="footer__contacts">
+                    <a
+                        class="footer__link"
+                        href="mailto:andrewsamoiliuk@gmail.com"
+                        >Contact author</a
+                    >
+                    <a
+                        class="footer__link"
+                        href="https://www.checkwxapi.com/"
+                        target="blanc"
+                        >Aviation Weather API</a
+                    >
+                    <a
+                        class="footer__link"
+                        href="https://beetroot.academy/"
+                        target="blanc"
+                        >Beetroot academy</a
+                    >
+                </div>
             </div>
         </div>
-    </footer>
+    </div>
 </template>
-
-<script>
-export default {};
-</script>
 
 <style lang="scss">
 .footer {
-    color: white;
-    background-color: black;
-    display: flex;
+    padding: 5px 0;
     align-items: center;
+
     &__name {
         text-align: center;
-        width: 200px;
         font-weight: 700;
     }
     &__wrapper {
         align-items: center;
-        flex-grow: 2;
         display: flex;
         justify-content: space-between;
     }
