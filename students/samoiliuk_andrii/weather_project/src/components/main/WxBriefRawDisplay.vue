@@ -1,54 +1,65 @@
 <template>
-    <section class="section">
-        <h3 class="section__name">Present weather</h3>
+    <div v-if="currentDisplay.data.data" class="table">
+        <div class="table__header">
+            <div class="table__cell">Airport</div>
+            <div class="table__cell">METAR</div>
+            <div class="table__cell">TAF</div>
+        </div>
         <div
-            class="rawReport"
             v-for="airport in currentDisplay.data.data"
-            :key="airport.name"
+            :key="airport.icao"
+            class="table__row"
         >
-            <h6 class="name">
-                <span
+            <div class="table__cell airport">
+                <p class="airport__icao">
+                    {{ airport.icao }}
+                </p>
+                <p class="airport__name">
+                    {{ airport.station.name }}
+                </p>
+                <p
+                    class="airport__category airport__category_green"
                     v-if="airport.flight_category === 'VFR'"
-                    class="category_vfr"
                 >
                     {{ airport.flight_category }}
-                </span>
-                <span
+                </p>
+                <p
+                    class="airport__category airport__category_yellow"
                     v-if="airport.flight_category === 'MVFR'"
-                    class="category_mvfr"
                 >
                     {{ airport.flight_category }}
-                </span>
-                <span
+                </p>
+                <p
+                    class="airport__category airport__category_amber"
                     v-if="airport.flight_category === 'IFR'"
-                    class="category_ifr"
                 >
                     {{ airport.flight_category }}
-                </span>
-                <span
+                </p>
+                <p
+                    class="airport__category airport__category_red"
                     v-if="airport.flight_category === 'LIFR'"
-                    class="category_lifr"
                 >
                     {{ airport.flight_category }}
-                </span>
-                {{ airport.icao }} {{ airport.station.name }}
-            </h6>
-            <p>{{ airport.raw_text }}</p>
+                </p>
+            </div>
+            <div class="table__cell">
+                <div v-if="airport.observed">
+                    <p class="card__item">
+                        {{ airport.raw_text }}
+                    </p>
+                </div>
+                <div v-else>No data</div>
+            </div>
+            <div class="table__cell">
+                <div v-if="airport.forecast.icao">
+                    <p class="card__item">
+                        {{ airport.forecast.raw_text }}
+                    </p>
+                </div>
+                <div v-else>No data</div>
+            </div>
         </div>
-    </section>
-    <section class="section">
-        <h3 class="section__name">Forecast</h3>
-        <div
-            class="rawReport"
-            v-for="forecast in currentDisplay.taf.data"
-            :key="forecast.raw_text"
-        >
-            <h6 class="name">
-                {{ forecast.icao }} {{ forecast.station.name }}
-            </h6>
-            {{ forecast.raw_text }}
-        </div>
-    </section>
+    </div>
 </template>
 
 <script>

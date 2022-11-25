@@ -17,7 +17,28 @@
                 <p class="airport__name">
                     {{ airport.station.name }}
                 </p>
-                <p class="airport__category">
+                <p
+                    class="airport__category airport__category_green"
+                    v-if="airport.flight_category === 'VFR'"
+                >
+                    {{ airport.flight_category }}
+                </p>
+                <p
+                    class="airport__category airport__category_yellow"
+                    v-if="airport.flight_category === 'MVFR'"
+                >
+                    {{ airport.flight_category }}
+                </p>
+                <p
+                    class="airport__category airport__category_amber"
+                    v-if="airport.flight_category === 'IFR'"
+                >
+                    {{ airport.flight_category }}
+                </p>
+                <p
+                    class="airport__category airport__category_red"
+                    v-if="airport.flight_category === 'LIFR'"
+                >
                     {{ airport.flight_category }}
                 </p>
             </div>
@@ -88,12 +109,8 @@
             </div>
             <div class="table__cell">
                 <div v-if="airport.forecast.icao">
-                    <h6 class="name forecast__name">
-                        TAF {{ airport.forecast.icao }}
-                        {{ airport.forecast.station.name }}
-                    </h6>
                     <span class="forecast__time">
-                        Issued
+                        Issued:
                         {{ airport.forecast.timestamp.issued }}</span
                     >
                     <ul
@@ -166,29 +183,4 @@ export default {
 </script>
 
 <style lang="scss">
-.table {
-    &__row {
-        margin-top: 20px;
-        display: flex;
-        justify-content: space-between;
-    }
-    &__cell {
-        width: 33%;
-    }
-
-    &__header {
-        display: flex;
-        justify-content: space-between;
-        font-weight: 700;
-        border-bottom: 1px solid #a1a1a1;
-        padding-bottom: 20px;
-    }
-}
-.airport {
-    font-weight: 700;
-    line-height: 22px;
-    &__name {
-        margin-bottom: 20px;
-    }
-}
 </style>

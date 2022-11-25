@@ -72,44 +72,78 @@ export default {
     }
 }
 
-.name {
-    font-weight: 700;
+.tabs {
+    display: inline-block;
+    border: 1px solid #a1a1a1;
+    border-radius: 4px;
+    overflow: hidden;
+    &:hover {
+        border: 1px solid #ffffff;
+    }
+    &__button {
+        font-size: 16px;
+        line-height: 22px;
+        background-color: transparent;
+        padding: 10px;
+        border: none;
+        color: #f3f3f3;
+        width: 205px;
+        text-align: center;
+        border-radius: 4px;
+    }
+    &__selected {
+        background-color: #1673ff;
+    }
 }
 
-.category {
-    &_vfr {
-        font-weight: 400;
-        background-color: lightgreen;
+.table {
+    &__row {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #a1a1a1;
+        &:last-of-type {
+            margin-bottom: 20px;
+            border-bottom: none;
+        }
+        padding-bottom: 20px;
     }
-    &_mvfr {
-        font-weight: 400;
-        background-color: rgb(251, 251, 70);
+    &__cell {
+        width: 33%;
     }
 
-    &_ifr {
-        font-weight: 400;
-        background-color: rgb(224, 150, 40);
-    }
-
-    &_lifr {
-        font-weight: 400;
-        background-color: rgb(231, 80, 30);
-    }
-}
-
-.report {
-    padding: 15px 0;
-}
-
-.rawReport {
-    padding: 15px 0;
-}
-
-.section {
-    padding: 15px;
-    &__name {
-        font-size: 18px;
+    &__header {
+        display: flex;
+        justify-content: space-between;
         font-weight: 700;
+        border-bottom: 1px solid #a1a1a1;
+        padding-bottom: 20px;
+    }
+}
+.airport {
+    font-weight: 700;
+    line-height: 22px;
+    &__name {
+        margin-bottom: 20px;
+    }
+    &__category {
+        padding: 10px;
+        width: 40px;
+        text-align: center;
+        color: #000000;
+        border-radius: 4px;
+        &_green {
+            background-color: #24ba21;
+        }
+        &_yellow {
+            background-color: #cbce1a;
+        }
+        &_amber {
+            background-color: #cf8b24;
+        }
+        &_red {
+            background-color: #cf2424;
+        }
     }
 }
 
@@ -124,6 +158,7 @@ export default {
         padding: 15px;
     }
 }
+
 .card {
     line-height: 120%;
     &__name {
@@ -160,39 +195,8 @@ export default {
         }
     }
 
-    // .forecast__list
-
-    &__list {
-    }
-
-    // .forecast__listItem
-
     &__listItem {
         margin-left: 30px;
-    }
-}
-
-.tabs {
-    display: inline-block;
-    border: 1px solid #a1a1a1;
-    border-radius: 4px;
-    overflow: hidden;
-    &:hover {
-        border: 1px solid #ffffff;
-    }
-    &__button {
-        font-size: 16px;
-        line-height: 22px;
-        background-color: transparent;
-        padding: 10px;
-        border: none;
-        color: #f3f3f3;
-        width: 205px;
-        text-align: center;
-        border-radius: 4px;
-    }
-    &__selected {
-        background-color: #1673ff;
     }
 }
 </style>
