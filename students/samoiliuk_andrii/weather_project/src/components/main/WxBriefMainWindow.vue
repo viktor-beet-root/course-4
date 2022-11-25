@@ -1,234 +1,35 @@
 <template>
-    <div class="tabs">
-        <button class="tabs__button" @click="displayDecoded" :style="tabOne">
-            Decoded METAR/TAF
-        </button>
-        <button class="tabs__button" @click="displayRaw" :style="tabTwo">
-            Raw METAR/TAF
-        </button>
-    </div>
-    <div class="display">
-        <div v-if="decoded">
-            <section class="section">
-                <h3 class="section__name">Present weather</h3>
-                <div class="weatherCards">
-                    <div
-                        v-for="airport in currentDisplay.data.data"
-                        :key="airport.name"
-                        class="card weatherCards__item"
-                    >
-                        <h6 class="name card__name">
-                            <span
-                                v-if="airport.flight_category === 'VFR'"
-                                class="category_vfr"
-                            >
-                                {{ airport.flight_category }}
-                            </span>
-                            <span
-                                v-if="airport.flight_category === 'MVFR'"
-                                class="category_mvfr"
-                            >
-                                {{ airport.flight_category }}
-                            </span>
-                            <span
-                                v-if="airport.flight_category === 'IFR'"
-                                class="category_ifr"
-                            >
-                                {{ airport.flight_category }}
-                            </span>
-                            <span
-                                v-if="airport.flight_category === 'LIFR'"
-                                class="category_lifr"
-                            >
-                                {{ airport.flight_category }}
-                            </span>
-                            {{ airport.icao }} {{ airport.station.name }}
-                        </h6>
-                        <p class="card__time">
-                            Observation time: {{ airport.observed }}
-                        </p>
-                        <ul class="card__itemList">
-                            <li>
-                                Pressure:
-                                {{ Math.round(airport.barometer.kpa * 10) }} hPa
-                            </li>
-                            <li class="card__item">
-                                Clouds:
-                                <ul class="card__sublist">
-                                    <li
-                                        class="card__sublistItem"
-                                        v-for="cloud in airport.clouds"
-                                        :key="cloud"
-                                    >
-                                        {{ cloud.text }} {{ cloud.feet }}
-                                        <span v-if="cloud.feet">ft</span>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li v-if="airport.conditions" class="card__item">
-                                Conditions:
-                                <ul class="card__sublist">
-                                    <li
-                                        class="card__sublistItem"
-                                        v-for="condition in airport.conditions"
-                                        :key="condition"
-                                    >
-                                        {{ condition.text }}
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="card__item">
-                                Temperature: {{ airport.temperature.celsius }}°C
-                            </li>
-                            <li class="card__item">
-                                Dew point: {{ airport.dewpoint.celsius }}°C
-                            </li>
-                            <li class="card__item">
-                                Visibility:
-                                {{ airport.visibility.meters }} meters
-                            </li>
-                            <li class="card__item">
-                                Wind: {{ airport.wind.degrees }} degrees,
-                                {{ airport.wind.speed_kts }} knots<span
-                                    v-if="airport.wind.gust_kts"
-                                    >, gusting
-                                    {{ airport.wind.gust_kts }} knots</span
-                                >;
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-            <section class="section">
-                <h3 class="section__name">Forecast</h3>
-                <div class="weatherCards">
-                    <div
-                        class="rawReport weatherCards__item forecast"
-                        v-for="airportTAF in currentDisplay.taf.data"
-                        :key="airportTAF.raw_text"
-                    >
-                        <h6 class="name forecast__name">
-                            TAF {{ airportTAF.icao }}
-                            {{ airportTAF.station.name }}
-                        </h6>
-                        <span class="forecast__time">
-                            Issued {{ airportTAF.timestamp.issued }}</span
-                        >
-                        <ul
-                            class="forecast__period"
-                            v-for="period in airportTAF.forecast"
-                            :key="period.timestamp.from"
-                        >
-                            <li class="forecast__item">
-                                <span v-if="period.change">
-                                    {{ period.change.indicator.text }}
-                                </span>
-                                {{ period.timestamp.from.slice(-6) }} to
-                                {{ period.timestamp.to.slice(-6) }} <br />
-                            </li>
-                            <li v-if="period.wind" class="forecast__item">
-                                Wind direction:
-                                {{ period.wind.degrees }} degrees
-                                {{ period.wind.speed_kts }} knots<span
-                                    v-if="period.wind.gust_kts"
-                                    >, gusting
-                                    {{ period.wind.gust_kts }} knots</span
-                                >;
-                            </li>
-                            <li v-if="period.visibility" class="forecast__item">
-                                Visibility:
-                                {{ period.visibility.meters }} meters;
-                            </li>
-                            <li
-                                v-if="period.clouds.length > 0"
-                                class="forecast__item"
-                            >
-                                Clouds:
-                                <ul class="forecast__list">
-                                    <li
-                                        class="forecast__listItem"
-                                        v-for="cloud in period.clouds"
-                                        :key="cloud"
-                                    >
-                                        {{ cloud.text }} {{ cloud.feet }}
-                                        <span v-if="cloud.feet">ft</span>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li v-if="period.conditions" class="forecast__item">
-                                Conditions:
-                                <ul class="forecast__list">
-                                    <li
-                                        class="forecast__listItem"
-                                        v-for="condition in period.conditions"
-                                        :key="condition.text"
-                                    >
-                                        {{ condition.text }}
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
+    <div class="mainWindow">
+        <h2 class="mainWindow__header">
+            Briefing for airport group: {{ currentDisplay.name }}
+        </h2>
+        <div class="mainWindow__tabs tabs">
+            <button :class="tabOne" @click="displayDecoded">
+                Decoded METAR/TAF
+            </button>
+            <button :class="tabTwo" @click="displayRaw">Raw METAR/TAF</button>
         </div>
-        <div v-if="raw">
-            <section class="section">
-                <h3 class="section__name">Present weather</h3>
-                <div
-                    class="rawReport"
-                    v-for="airport in currentDisplay.data.data"
-                    :key="airport.name"
-                >
-                    <h6 class="name">
-                        <span
-                            v-if="airport.flight_category === 'VFR'"
-                            class="category_vfr"
-                        >
-                            {{ airport.flight_category }}
-                        </span>
-                        <span
-                            v-if="airport.flight_category === 'MVFR'"
-                            class="category_mvfr"
-                        >
-                            {{ airport.flight_category }}
-                        </span>
-                        <span
-                            v-if="airport.flight_category === 'IFR'"
-                            class="category_ifr"
-                        >
-                            {{ airport.flight_category }}
-                        </span>
-                        <span
-                            v-if="airport.flight_category === 'LIFR'"
-                            class="category_lifr"
-                        >
-                            {{ airport.flight_category }}
-                        </span>
-                        {{ airport.icao }} {{ airport.station.name }}
-                    </h6>
-                    <p>{{ airport.raw_text }}</p>
-                </div>
-            </section>
-            <section class="section">
-                <h3 class="section__name">Forecast</h3>
-                <div
-                    class="rawReport"
-                    v-for="forecast in currentDisplay.taf.data"
-                    :key="forecast.raw_text"
-                >
-                    <h6 class="name">
-                        {{ forecast.icao }} {{ forecast.station.name }}
-                    </h6>
-                    {{ forecast.raw_text }}
-                </div>
-            </section>
+        <div class="mainWindow__display display">
+            <div class="display__decoded" v-if="decoded">
+                <wx-brief-decoded-display :currentDisplay="currentDisplay" />
+            </div>
+            <div class="display__raw" v-if="raw">
+                <wx-brief-raw-display :currentDisplay="currentDisplay" />
+            </div>
         </div>
     </div>
 </template>
 
 <script>
+import WxBriefRawDisplay from "./WxBriefRawDisplay.vue";
+import WxBriefDecodedDisplay from "./WxBriefDecodedDisplay.vue";
+
 export default {
+    components: {
+        WxBriefRawDisplay,
+        WxBriefDecodedDisplay,
+    },
+
     props: {
         currentDisplay: Object,
     },
@@ -236,29 +37,41 @@ export default {
         return {
             decoded: true,
             raw: false,
-            tabOne: "",
-            tabTwo: "border-bottom: 1px solid black;",
-            tabStyle: "border-bottom: 1px solid black;",
+            tabOne: "tabs__button tabs__selected",
+            tabTwo: "tabs__button",
         };
     },
     methods: {
         displayDecoded() {
             this.decoded = true;
             this.raw = false;
-            this.tabOne = "";
-            this.tabTwo = this.tabStyle;
+            this.tabOne = "tabs__button tabs__selected";
+            this.tabTwo = "tabs__button";
         },
         displayRaw() {
             this.decoded = false;
             this.raw = true;
-            this.tabTwo = "";
-            this.tabOne = this.tabStyle;
+            this.tabTwo = "tabs__button tabs__selected";
+            this.tabOne = "tabs__button";
         },
     },
 };
 </script>
 
 <style lang="scss">
+.mainWindow {
+    &__header {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 33px;
+        margin-bottom: 72px;
+    }
+
+    &__tabs {
+        margin-bottom: 40px;
+    }
+}
+
 .name {
     font-weight: 700;
 }
@@ -360,19 +173,26 @@ export default {
 }
 
 .tabs {
-    background-color: white;
-    border-bottom: 1px solid black;
-    z-index: 10;
-    &__button {
-        margin-bottom: -1px;
-        background-color: white;
-        border: 1px solid black;
-        border-radius: 3px 3px 0 0;
-        z-index: 20;
-        border-bottom: 1px solid white;
+    display: inline-block;
+    border: 1px solid #a1a1a1;
+    border-radius: 4px;
+    overflow: hidden;
+    &:hover {
+        border: 1px solid #ffffff;
     }
-}
-.display {
-    margin-top: 20px;
+    &__button {
+        font-size: 16px;
+        line-height: 22px;
+        background-color: transparent;
+        padding: 10px;
+        border: none;
+        color: #f3f3f3;
+        width: 205px;
+        text-align: center;
+        border-radius: 4px;
+    }
+    &__selected {
+        background-color: #1673ff;
+    }
 }
 </style>

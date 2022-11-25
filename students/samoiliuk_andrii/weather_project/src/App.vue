@@ -66,9 +66,10 @@ export default {
             ],
             metarTafCache: [],
             currentDisplay: {
-                taf: [],
-                data: [],
-                time: 0,
+                index: "",
+                data: "",
+                time: "",
+                name: "",
             },
             isDisabled: false,
         };
@@ -81,7 +82,7 @@ export default {
             );
         }
 
-        if (!this.groups.length) {
+        if (this.groups.length === 0) {
             this.groups.push(...this.defaultGroups);
         }
 
@@ -92,12 +93,14 @@ export default {
         } else {
             this.displayMetarTaf(1);
         }
-
-        this.currentDisplay = {
-            data: this.metarTafCache[0].data,
-            time: this.metarTafCache[0].time,
-            taf: this.metarTafCache[0].taf,
-        };
+        if (this.metarTafCache[0]) {
+            this.currentDisplay = {
+                name: this.groups[0].name,
+                data: this.metarTafCache[0].data,
+                time: this.metarTafCache[0].time,
+                taf: this.metarTafCache[0].taf,
+            };
+        }
     },
 
     methods: {
@@ -108,6 +111,7 @@ export default {
                 index: this.setIndex(),
             });
             localStorage.setItem("userAirports", JSON.stringify(this.groups));
+            this.displayMetarTaf(this.groups[0].index);
         },
 
         validateAirports(airportsString) {
@@ -212,18 +216,26 @@ export default {
             indexInArray = this.getIndex(index, this.metarTafCache);
 
             this.currentDisplay = {
+                index: this.metarTafCache[indexInArray].index,
                 data: this.metarTafCache[indexInArray].data,
                 time: this.metarTafCache[indexInArray].time,
-                taf: this.metarTafCache[indexInArray].taf,
+                name: this.groups[this.getIndex(index, this.groups)].name,
             };
         },
 
-        pushToLocal(data, taf, index) {
+        pushToLocal(metar, taf, index) {
+            for (let i = 0; i < metar.data.length; i++) {
+                metar.data[i].forecast = taf.data.find(function (element) {
+                    if (element.icao === metar.data[i].icao) {
+                        return true;
+                    }
+                });
+            }
+
             this.metarTafCache.push({
                 index: index,
-                data: data,
-                taf: taf,
                 time: Date.now(),
+                data: metar,
             });
             localStorage.setItem(
                 "metarTafCache",

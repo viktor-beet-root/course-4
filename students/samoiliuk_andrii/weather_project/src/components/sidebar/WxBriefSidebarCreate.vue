@@ -34,6 +34,8 @@ export default {
             if (this.name && this.airports) {
                 this.$emit("addGroup", this.name, this.airports);
             }
+            this.name = "";
+            this.airports = "";
         },
     },
 };

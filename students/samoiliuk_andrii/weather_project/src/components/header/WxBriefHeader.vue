@@ -12,7 +12,7 @@
             </div>
             <div class="col-9">
                 <h1 class="header__text">
-                    Weather Briefing<br />
+                    Weather Briefing
                     <span class="header__text_subtext"
                         >Get latest aviation weather reports and forecasts</span
                     >
@@ -30,14 +30,16 @@ export default {};
 .header {
     &__text {
         margin-top: 40px;
-        font-weight: 700;
-        font-size: 24px;
-        line-height: 33px;
+        font-weight: 500;
+        font-size: 40px;
+        line-height: 40px;
 
         &_subtext {
+            display: block;
             font-weight: 400;
             font-size: 16px;
-            line-height: 22px;
+            line-height: 16px;
+            margin-top: 10px;
         }
     }
 }

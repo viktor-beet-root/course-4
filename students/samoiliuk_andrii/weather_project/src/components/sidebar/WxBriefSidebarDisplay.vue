@@ -99,6 +99,7 @@ export default {
         &:disabled {
             background: transparent;
             border: 1px solid #a1a1a1;
+            cursor: wait;
         }
     }
 
