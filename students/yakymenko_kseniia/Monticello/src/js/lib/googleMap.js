@@ -142,7 +142,7 @@ function initMap() {
         position: coordinates,
         map: map,
         title: 'The Evergreens Cemetery',
-        icon: '../images/map_marker.png',
+        icon: './images/marker.png',
     });
 
 };

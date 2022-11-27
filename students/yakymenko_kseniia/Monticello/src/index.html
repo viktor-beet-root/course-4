@@ -11,22 +11,19 @@
 </head>
 
 <body class="page">
-    //= html_includes/_header.html
+    @@include("html_includes/_header.html")
     <main class="main">
-        //= html_includes/_header-simple.html
-        //= html_includes/_header.html
-        //= html_includes/_info.html
-        //= html_includes/_news.html
-        //= html_includes/_gallery.html
-        //= html_includes/_map.html
+        @@include("html_includes/_header-section-simple.html")
+        @@include("html_includes/_projects.html")
+        @@include("html_includes/_news.html")
+        @@include("html_includes/_gallery.html")
+        @@include("html_includes/_map.html")
     </main>
-    //= html_includes/_footer.html
+    @@include("html_includes/_footer.html")
 
     <script src="./js/script.js"></script>
 
-    <script async
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUzuaSAJEG3Rx-MDFcUJmeird8bSWeaVs&callback=initMap">
-        </script>
+
 </body>
 
 </html>

@@ -1,5 +1,6 @@
 import $ from 'jquery';
 
+// Validation Form
 function formValidationFooter() {
     function validateEmail(email) {
         const remail = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -68,7 +69,7 @@ function formValidationFooter() {
     $("#email").on("input", validate);
     $("#userName").on("input", validate2);
 
-    $(document).ready(function () {
+    $(function () {
         let setNameColorRed = function setNameColorRedFunction() {
             $("#result2").text('Input your name');
             $("#result2").css("color", "red");

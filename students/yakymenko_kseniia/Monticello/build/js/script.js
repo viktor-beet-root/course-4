@@ -15,12 +15,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var slick_carousel__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(slick_carousel__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var lightbox2__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lightbox2 */ "./node_modules/lightbox2/dist/js/lightbox.js");
 /* harmony import */ var lightbox2__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lightbox2__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _lib_header_slider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./lib/header_slider */ "./src/js/lib/header_slider.js");
-/* harmony import */ var _lib_news_slider__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./lib/news_slider */ "./src/js/lib/news_slider.js");
-/* harmony import */ var _lib_header_nav_menu__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./lib/header_nav_menu */ "./src/js/lib/header_nav_menu.js");
-/* harmony import */ var _lib_see_more__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./lib/see_more */ "./src/js/lib/see_more.js");
-/* harmony import */ var _lib_validation_form__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./lib/validation_form */ "./src/js/lib/validation_form.js");
-/* harmony import */ var _lib_google_map__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./lib/google_map */ "./src/js/lib/google_map.js");
+/* harmony import */ var _lib_headerSlider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./lib/headerSlider */ "./src/js/lib/headerSlider.js");
+/* harmony import */ var _lib_newsSlider__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./lib/newsSlider */ "./src/js/lib/newsSlider.js");
+/* harmony import */ var _lib_headerMenuNavigation__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./lib/headerMenuNavigation */ "./src/js/lib/headerMenuNavigation.js");
+/* harmony import */ var _lib_seeMore__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./lib/seeMore */ "./src/js/lib/seeMore.js");
+/* harmony import */ var _lib_validationForm__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./lib/validationForm */ "./src/js/lib/validationForm.js");
 
 
 
@@ -29,12 +28,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+//import initMap from './lib/googleMap';
 
-(0,_lib_header_slider__WEBPACK_IMPORTED_MODULE_3__["default"])();
-(0,_lib_news_slider__WEBPACK_IMPORTED_MODULE_4__["default"])();
-(0,_lib_header_nav_menu__WEBPACK_IMPORTED_MODULE_5__["default"])();
-(0,_lib_see_more__WEBPACK_IMPORTED_MODULE_6__["default"])();
-(0,_lib_validation_form__WEBPACK_IMPORTED_MODULE_7__["default"])();
+(0,_lib_headerSlider__WEBPACK_IMPORTED_MODULE_3__["default"])();
+(0,_lib_newsSlider__WEBPACK_IMPORTED_MODULE_4__["default"])();
+(0,_lib_headerMenuNavigation__WEBPACK_IMPORTED_MODULE_5__["default"])();
+(0,_lib_seeMore__WEBPACK_IMPORTED_MODULE_6__["default"])();
+(0,_lib_validationForm__WEBPACK_IMPORTED_MODULE_7__["default"])();
 
 /***/ }),
 
@@ -14537,10 +14537,10 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 /***/ }),
 
-/***/ "./src/js/lib/google_map.js":
-/*!**********************************!*\
-  !*** ./src/js/lib/google_map.js ***!
-  \**********************************/
+/***/ "./src/js/lib/googleMap.js":
+/*!*********************************!*\
+  !*** ./src/js/lib/googleMap.js ***!
+  \*********************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -14689,7 +14689,7 @@ function initMap() {
         position: coordinates,
         map: map,
         title: 'The Evergreens Cemetery',
-        icon: '../images/map_marker.png',
+        icon: './images/marker.png',
     });
 
 };
@@ -14699,42 +14699,45 @@ function initMap() {
 
 /***/ }),
 
-/***/ "./src/js/lib/header_nav_menu.js":
-/*!***************************************!*\
-  !*** ./src/js/lib/header_nav_menu.js ***!
-  \***************************************/
+/***/ "./src/js/lib/headerMenuNavigation.js":
+/*!********************************************!*\
+  !*** ./src/js/lib/headerMenuNavigation.js ***!
+  \********************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _header_slider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./header_slider */ "./src/js/lib/header_slider.js");
+/* harmony import */ var _headerSlider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./headerSlider */ "./src/js/lib/headerSlider.js");
 
 
 
+//Open Burger Menu
 setTimeout(function () {
     const menuList = document.querySelector(".menu__items"),
-        menuBurgerBtn = document.querySelector(".menu__hidden_button"),
+        menuBurgerBtn = document.querySelector(".menu__hidden_btn"),
         menuBurgerBtnSocial = document.querySelector(".social__items-js"),
-        menuBurgerBtnAnimate = document.querySelector(".menu__hidden_button-string");
-    menuBurgerBtn.addEventListener("click", (function () {
-        menuList.classList.toggle("menu-open");
-        menuBurgerBtnSocial.classList.toggle("social__items-header-burger-btn-active");
-        menuBurgerBtnAnimate.classList.toggle("active");
-    }));
+        menuBurgerBtnAnimate = document.querySelector(".menu__hidden_btn-line");
+    //    menuBurgerBtn.addEventListener("click", function () {
+    // menuList.classList.toggle("menu-open");
+    // menuBurgerBtnSocial.classList.toggle("social__items-header-burger-btn-active");
+    // menuBurgerBtnAnimate.classList.toggle("active");
+    //    }, 0);
 }, 0);
 
-jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
+// Close Burger Menu after click on link
+jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
     setTimeout(function () {
         jquery__WEBPACK_IMPORTED_MODULE_0___default()(".menu__item-link, .social__item-link-header-burger-btn").on('click', function () {
             jquery__WEBPACK_IMPORTED_MODULE_0___default()(".menu__items").removeClass('menu-open');
             jquery__WEBPACK_IMPORTED_MODULE_0___default()(".social__items-js").removeClass('social__items-header-burger-btn-active');
-            jquery__WEBPACK_IMPORTED_MODULE_0___default()(".menu__hidden_button-string").removeClass('active');
+            jquery__WEBPACK_IMPORTED_MODULE_0___default()(".menu__hidden_btn-line").removeClass('active');
         });
     }, 0);
 });
 
+//Heder Menu Naviagation
 function headerMenuNavigation() {
     const $header = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#header');
     let isSticky = false;
@@ -14769,6 +14772,7 @@ window.addEventListener('scroll', () => {
     }, 0);
 });
 
+// Плавная прокрутка к якорю на странице
 setTimeout(function () {
     jquery__WEBPACK_IMPORTED_MODULE_0___default()('ul a').on('click', smothScroll);
     jquery__WEBPACK_IMPORTED_MODULE_0___default()('.header__link').on('click', smothScroll);
@@ -14781,15 +14785,16 @@ const smothScroll = function () {
     jquery__WEBPACK_IMPORTED_MODULE_0___default()('html, body').animate({
         scrollTop: jquery__WEBPACK_IMPORTED_MODULE_0___default()(href).offset().top
     }, {
-        duration: 700,
-        easing: "linear"
+        duration: 700, // по умолчанию «400» 
+        easing: "linear" // по умолчанию «swing» 
     });
     return false;
 }
 
-jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
+//Checkbox Burger menu (hides the menu when you click on it)
+jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
     setTimeout(function () {
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()(".menu__item-url").on('click', function () {
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(".menu__item-link").on('click', function () {
             jquery__WEBPACK_IMPORTED_MODULE_0___default()("#menuBtn").prop("checked", !jquery__WEBPACK_IMPORTED_MODULE_0___default()("#menuBtn").prop("checked"));
         });
         jquery__WEBPACK_IMPORTED_MODULE_0___default()(".social__item-link-header-burger-btn").on('click', function () {
@@ -14803,10 +14808,10 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
 
 /***/ }),
 
-/***/ "./src/js/lib/header_slider.js":
-/*!*************************************!*\
-  !*** ./src/js/lib/header_slider.js ***!
-  \*************************************/
+/***/ "./src/js/lib/headerSlider.js":
+/*!************************************!*\
+  !*** ./src/js/lib/headerSlider.js ***!
+  \************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -14818,10 +14823,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+// Header Slider (slick-carousel) (Simple Modern)
 function headerSlider() {
     jquery__WEBPACK_IMPORTED_MODULE_0___default()('.header-section__slider').slick({
         infinite: true,
         slidesToShow: 1,
+        // slidesToScroll: 3
         appendDots: jquery__WEBPACK_IMPORTED_MODULE_0___default()('.header-section__dots'),
         dots: true,
         arrows: false,
@@ -14833,10 +14840,10 @@ function headerSlider() {
 
 /***/ }),
 
-/***/ "./src/js/lib/news_slider.js":
-/*!***********************************!*\
-  !*** ./src/js/lib/news_slider.js ***!
-  \***********************************/
+/***/ "./src/js/lib/newsSlider.js":
+/*!**********************************!*\
+  !*** ./src/js/lib/newsSlider.js ***!
+  \**********************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -14848,19 +14855,27 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+//News Slider (slick carousel) (Latest News)
+
 function newsSlider() {
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
         jquery__WEBPACK_IMPORTED_MODULE_0___default()('.news-slider').slick({
             slidesToShow: 3,
+            // Стрелки
+            // arrows: true,
+
+            // Navigation Buttons previous and next
             prevArrow: jquery__WEBPACK_IMPORTED_MODULE_0___default()('.news__navigation-previous'),
             nextArrow: jquery__WEBPACK_IMPORTED_MODULE_0___default()('.news__navigation-next'),
 
+            // Dots
+            // dotsClass: 'news__slick-dots',
             appendDots: jquery__WEBPACK_IMPORTED_MODULE_0___default()('.news__section-dots'),
             dots: true,
-
+            // infinite: true,
             autoplay: true,
             autoplaySpeed: 4000,
-
+            // Responsive
             responsive: [{
                 breakpoint: 992,
                 settings: {
@@ -14875,6 +14890,7 @@ function newsSlider() {
             },
             {
                 breakpoint: 576,
+                // settings: 'unslick',
                 settings: {
                     slidesToShow: 1
                 }
@@ -14889,10 +14905,10 @@ function newsSlider() {
 
 /***/ }),
 
-/***/ "./src/js/lib/see_more.js":
-/*!********************************!*\
-  !*** ./src/js/lib/see_more.js ***!
-  \********************************/
+/***/ "./src/js/lib/seeMore.js":
+/*!*******************************!*\
+  !*** ./src/js/lib/seeMore.js ***!
+  \*******************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -14900,35 +14916,50 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 
-
+//See more
 function seeMore() {
     const htmlGalleryPhotos = `
 <div class="container append">
     <div class="row append__row append__row_adaptive id="seeMoreP">
-
-    <div class="col-3 col-md-6 img-list__image-wrapper img-list__image-wrapper_left">
-    <a class="img-list__image-url" href="../images/gallery2.png" data-lightbox="lbox" data-name="Gallery 2">
-    <img class="img-list__img" src="../images/gallery2.png" alt="gallery">
-</a>
-<a class="img-list__image-url" href="../images/gallery3.png" data-lightbox="lbox"
-    data-title="Gallery 3">
-    <img class="img-list__img" src="../images/gallery3.png" alt="gallery">
-</a>
-</div>
-<div class="col-3 col-md-6 img-list__image-wrapper img-list__image-wrapper_right">
-<a class="img-list__image-url" href="../images/gallery4.png" data-lightbox="lbox"
-    data-title="Gallery 4">
-    <img class="img-list__img" src="../images/gallery4.png" alt="gallery">
-</a>
-<a class="img-list__image-url" href="../images/news5.jpg" data-lightbox="lbox" data-title="Gallery 5">
-    <img class="img-list__img" src="../images/news5.jpg" alt="gallery">
-</a>
-</div>
-</div>
+        <div class="col-3 col-md-6 img-list__image-wrapper-a img-list__image-wrapper_left">
+            <a class="img-list__image-link-a" href="./images/gallery_2.png" data-lightbox="lbox">
+                <img class="img-list__img-a" src="./images/gallery_2.png" alt="gallery">
+            </a>
+            <a class="img-list__image-link-a" href="./images/gallery_3.png" data-lightbox="lbox">
+                <img class="img-list__img-a" src="./images/gallery_3.png" alt="gallery">
+            </a>
+        </div>
+        <div class="col-3 col-md-6 img-list__image-wrapper-a img-list__image-wrapper_right">
+            <a class="img-list__image-link-a" href="./images/gallery_4.png" data-lightbox="lbox">
+                <img class="img-list__img-a" src="./images/gallery_4.png" alt="gallery">
+            </a>
+            <a class="img-list__image-link-a" href="./images/gallery_5.png" data-lightbox="lbox">
+                <img class="img-list__img-a" src="./images/gallery_5.png" alt="gallery">
+            </a>
+        </div>
+        <div class="col-3 col-md-6 img-list__image-wrapper-a img-list__image-wrapper_left">
+            <a class="img-list__image-link-a" href="./images/gallery_2.png" data-lightbox="lbox">
+                <img class="img-list__img-a" src="./images/gallery_2.png" alt="gallery">
+            </a>
+            <a class="img-list__image-link-a" href="./images/gallery_3.png" data-lightbox="lbox">
+                <img class="img-list__img-a" src="./images/gallery_3.png" alt="gallery">
+            </a>
+        </div>
+        <div class="col-3 col-md-6 img-list__image-wrapper-a img-list__image-wrapper_right">
+            <a class="img-list__image-link-a" href="./images/gallery_4.png" data-lightbox="lbox">
+                <img class="img-list__img-a" src="./images/gallery_4.png" alt="gallery">
+            </a>
+            <a class="img-list__image-link-a" href="./images/gallery_5.png" data-lightbox="lbox">
+                <img class="img-list__img-a" src="./images/gallery_5.png" alt="gallery">
+            </a>
+        </div>
+    </div>
 </div>
 `
 
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
+    //Add photos at Gallery Section
+
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
         let $seeMore = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#seeMore');
         setTimeout(function () {
             $seeMore.on("click", function () {
@@ -14944,10 +14975,10 @@ function seeMore() {
 
 /***/ }),
 
-/***/ "./src/js/lib/validation_form.js":
-/*!***************************************!*\
-  !*** ./src/js/lib/validation_form.js ***!
-  \***************************************/
+/***/ "./src/js/lib/validationForm.js":
+/*!**************************************!*\
+  !*** ./src/js/lib/validationForm.js ***!
+  \**************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -14956,6 +14987,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 
 
+// Validation Form
 function formValidationFooter() {
     function validateEmail(email) {
         const remail = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -15024,7 +15056,7 @@ function formValidationFooter() {
     jquery__WEBPACK_IMPORTED_MODULE_0___default()("#email").on("input", validate);
     jquery__WEBPACK_IMPORTED_MODULE_0___default()("#userName").on("input", validate2);
 
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
         let setNameColorRed = function setNameColorRedFunction() {
             jquery__WEBPACK_IMPORTED_MODULE_0___default()("#result2").text('Input your name');
             jquery__WEBPACK_IMPORTED_MODULE_0___default()("#result2").css("color", "red");
@@ -15127,13 +15159,13 @@ function formValidationFooter() {
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	__webpack_require__("./src/js/script.js");
+/******/ 	__webpack_require__("./src/js/lib/googleMap.js");
 /******/ 	// This entry module is referenced by other modules so it can't be inlined
-/******/ 	__webpack_require__("./src/js/lib/google_map.js");
-/******/ 	__webpack_require__("./src/js/lib/header_nav_menu.js");
-/******/ 	__webpack_require__("./src/js/lib/header_slider.js");
-/******/ 	__webpack_require__("./src/js/lib/news_slider.js");
-/******/ 	__webpack_require__("./src/js/lib/see_more.js");
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/js/lib/validation_form.js");
+/******/ 	__webpack_require__("./src/js/lib/headerMenuNavigation.js");
+/******/ 	__webpack_require__("./src/js/lib/headerSlider.js");
+/******/ 	__webpack_require__("./src/js/lib/newsSlider.js");
+/******/ 	__webpack_require__("./src/js/lib/seeMore.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/js/lib/validationForm.js");
 /******/ 	
 /******/ })()
 ;

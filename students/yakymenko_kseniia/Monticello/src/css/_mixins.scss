@@ -72,6 +72,7 @@
     }
 }
 
+// Adaptive font size
 $containerMaxWidth: 1200;
 
 @mixin adaptive-font-size($pcDesktopFontSize, $mobilePhoneFontSize) {

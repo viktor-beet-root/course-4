@@ -1,94 +1,107 @@
-$white: white;
-$gray: #5a5a5a;
+$color-white: white;
 $color-black: #000;
-$color-purple: #5474FD;
-$color-red: #de2e45;
-$color-text-grey: #b9bcd1;
-$quicksilver: #E1E1E1;
-$lightgray: #999;
-$mine-coal: #232323;
-$darkgray: #2C4058;
+$grey: #5a5a5a;
+$dodger-blue: #5474FD;
+$window-red: #de2e45;
+$window-text-grey: #b9bcd1;
+$mercury: #E1E1E1;
+$abbey: #999;
+$mine-shaft: #232323;
+$pickled-bluewood: #2C4058;
 $river-bed: #4B5562;
-$blue: #55B7FF;
-$lavender: #7E5AFF;
-$bright-blue: #7C5CF9;
+$malibu: #55B7FF;
+$heliotrope: #7E5AFF;
+$cornflower-blue: #7C5CF9;
 
 
-$input-border-color: $gray;
+
+// Defaul Border and border radius and color
+$input-border-color: $grey;
 $default-border: 1px solid $input-border-color;
 $default-border-radius: 5px;
 
+// Ширина Контейнера и Паддинг для Tipografy
 $container-width: 1200px;
 $default-gap: 15px;
 
-$body-bg-color: $white;
-$border-color: $gray;
+// Defaul body bg color
+$body-bg-color: $color-white;
+$border-color: $grey;
 
-$color-header-name-h1: $white;
-$color-header-button-bg: $color-purple;
-$color-header-navigation-bg: $color-purple;
+//header title color
+$color-header-title-h1: $color-white;
+$color-header-button-bg: $dodger-blue;
+$color-header-navigation-bg: $dodger-blue;
 
-$border-menu-bottom: $gray;
-$menu-hover-color: $color-purple;
-$menu-default-text-color: $gray;
-$menu-icon-color: $gray;
-$color-overlay-menu-window: $white;
+//menu
+$border-menu-bottom: $grey;
+$menu-hover-color: $dodger-blue;
+$menu-default-text-color: $grey;
+$menu-icon-color: $grey;
+$color-overlay-menu-window: $color-white;
 $color-overlay-menu: $color-black;
-$color-language-deafult: $gray;
+$color-language-deafult: $grey;
 
-$color-info-bg: $white;
-$color-info-name: $darkgray;
-$color-info-subname: $darkgray;
-$color-info-text: $cay;
-$color-info-button-border: $darkgray;
-$color-info-button-text: $darkgray;
-$color-info-location-text: $darkgray;
-$color-info-trade-bg-before: $blue;
-$color-info-commerce-bg: $lavender;
+// section projects
+$color-projects-bg: $color-white;
+$color-projects-title: $pickled-bluewood;
+$color-projects-subtitle: $pickled-bluewood;
+$color-projects-text: $river-bed;
+$color-projects-button-border: $pickled-bluewood;
+$color-projects-button-text: $pickled-bluewood;
+$color-projects-location-text: $pickled-bluewood;
+$color-projects-trade-bg-before: $malibu;
+$color-projects-commerce-bg-aftef: $heliotrope;
 
-$color-footer-bg: $mine-coal;
-$color-footer-name: $white;
-$color-footer-sub-name: $white;
-$color-footer-social-icon: $quicksilver;
-$color-footer-social-icon-hover: $color-purple;
-$color-darkgray: #2c4058;
-$color-cay: #4b5562;
+//footer
+$color-footer-bg: $mine-shaft;
+$color-footer-title: $color-white;
+$color-footer-sub-title: $color-white;
+$color-footer-social-icon: $mercury;
+$color-footer-social-icon-hover: $dodger-blue;
+$color-pickled-bluewood: #2c4058;
+$color-river-bed: #4b5562;
 
-$color-btn-bg: $color-purple;
-$color-btn-text: $white;
+// Кнопка с ховер эффектом
+$color-btn-bg: $dodger-blue;
+$color-btn-text: $color-white;
 
+// Подключение шрифтов
 $font-folder-path: '../fonts/';
 $folder-image: '../images/';
 
-$font-default-name: 'Montserrat500';
-$font-second-name: 'Montserrat700';
-$font-third-name: 'Montserrat-Regular';
+$font-default-name: 'Gotham-Book';
+$font-second-name: 'Gotham-Medium';
+$font-third-name: 'Gotham-Bold';
 $font-fourth-name: 'OpenSans-Italic';
 $font-fifth-name: 'OpenSans-Italic-Regular';
 
+//Fonts follback
 $follback: Arial,
     Helvetica,
     sans-serif;
-
+//one
 $font-default: $font-default-name,
     $follback;
-
+//two
 $font-second: $font-second-name,
     $follback;
-
+//three
 $font-third: $font-third-name,
     $follback;
-
+//fourth
 $font-fourth: $font-fourth-name,
     $follback;
-
+// fifth
 $font-fifth: $font-fifth-name,
     $follback;
 
+//Font Size
 $default-font-size: 14px;
 $default-line-height: 2.1875;
-$default-color-text: $darkgray;
+$default-color-text: $pickled-bluewood;
 
+// Breack-points для Media @media screen
 $breack-points: (
     "xl": 1200px,
     "lg": 992px,

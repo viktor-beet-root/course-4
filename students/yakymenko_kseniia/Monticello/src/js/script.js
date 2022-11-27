@@ -1,15 +1,15 @@
 import $ from 'jquery';
 import 'slick-carousel';
 import 'lightbox2';
-import headerSlider from './lib/header_slider';
-import news_slider from './lib/news_slider';
-import header_nav_menu from './lib/header_nav_menu';
-import see_more from './lib/see_more';
-import formValidationFooter from './lib/validation_form';
-import initMap from './lib/google_map';
+import headerSlider from './lib/headerSlider';
+import newsSlider from './lib/newsSlider';
+import headerMenuNavigation from './lib/headerMenuNavigation';
+import seeMore from './lib/seeMore';
+import formValidationFooter from './lib/validationForm';
+//import initMap from './lib/googleMap';
 
 headerSlider();
-news_slider();
-header_nav_menu();
-see_more();
+newsSlider();
+headerMenuNavigation();
+seeMore();
 formValidationFooter();

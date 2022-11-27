@@ -1,11 +1,14 @@
 .footer {
-    background-image: url("../images/footer_background.jpg");
+    background-image: url("../images/footer-bg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
     background-color: #7d5cfa;
 
     &__container {
+
+        // For Perfect pixel
+        // padding-top: 400px;
         @media screen and (max-width:768px) {
             max-width: 100%;
         }
@@ -13,7 +16,7 @@
 
     &__contact-wrapper {
         position: relative;
-        background-image: url("../images/footer_bg.png");
+        background-image: url("../images/footer-city.png");
         background-position: bottom;
         background-repeat: no-repeat;
         margin: 0 auto;
@@ -21,6 +24,7 @@
         background-color: #fff;
         max-width: 770px;
         margin-bottom: 55px;
+        // Set margin when there is a map
         margin: -314px auto 0;
     }
 
@@ -34,7 +38,7 @@
         padding-top: 85px;
         margin-bottom: 43px;
         position: relative;
-        @include line-before-upper($darkgray, 60px);
+        @include line-before-upper($color-pickled-bluewood, 60px);
         @include adaptive-font-size(44, 26);
 
         &::after {
@@ -142,7 +146,7 @@
         }
     }
 
-    &__contact-form-button {
+    &__contact-form-btn {
         line-height: 1.15;
         overflow: visible;
         font-family: $font-default;
@@ -212,7 +216,7 @@
     &__text {
         font-size: 14px;
         font-family: $font-default;
-        color: $white;
+        color: $color-white;
         line-height: 1.571;
         margin-right: 18px;
 
@@ -254,6 +258,7 @@
     }
 }
 
+// Social Item Footer
 .social {
 
     &__items {
@@ -281,11 +286,11 @@
         justify-content: center;
         width: 40px;
         height: 40px;
-        border: 1px solid $white;
+        border: 1px solid $color-white;
         border-radius: 50%;
     }
 
     &__item-svg {
-        fill: $white;
+        fill: $color-white;
     }
 }
