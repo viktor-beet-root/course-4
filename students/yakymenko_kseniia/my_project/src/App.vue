@@ -18,7 +18,8 @@
 nav {
     padding: 30px;
     background-color: rgb(255, 217, 0);
-
+    position: sticky;
+    top: 0;
     a {
         font-weight: bold;
         color: rgb(134, 37, 37);

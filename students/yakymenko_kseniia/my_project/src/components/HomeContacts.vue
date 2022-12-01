@@ -4,16 +4,17 @@
             <div class="container footer__container">
                 <div class="row footer__row">
                     <div class="col row__col footer__col col-12">
-                        <h1 class="footer__title">Contact us</h1>
-                        <span class="footer__title-description"
-                            >Visit our social</span
-                        >
-                        <br />
+                        <h3 class="footer__title">Contact us</h3>
                         <img
                             class="logo"
                             alt="Vue logo"
                             src="../assets/logo.png"
                         />
+                        <br />
+                        <span class="footer__title-description"
+                            >Visit our social</span
+                        >
+
                         <div class="col col-12 footer-icons">
                             <a
                                 class="footer-icons__link"
@@ -57,11 +58,16 @@
 .header__container {
     color: azure;
     background-color: brown;
+    margin-top: -100px;
+    height: 100%;
+}
+.footer__title {
+    font-size: 15px;
 }
 .footer-icons {
     display: flex;
     justify-content: center;
-    padding: 75px;
+    padding: 15px;
 }
 
 .footer-icons__icons2 {

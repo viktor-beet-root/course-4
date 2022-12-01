@@ -48,6 +48,13 @@ export default {
   
   <style lang="scss" scoped>
 .product {
-    vertical-align: middle;
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+}
+
+.product__add-to-cart {
+    outline: none;
+    transition: 0.5s all;
 }
 </style>

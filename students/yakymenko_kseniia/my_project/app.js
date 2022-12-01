@@ -74,7 +74,7 @@ const PRODUCTS = [
     },
     {
         id: v4(),
-        name: "Orange sweater with a free cut",
+        name: "Orange sweater",
         price: 150,
         specialPrice: 130,
         labels: {},

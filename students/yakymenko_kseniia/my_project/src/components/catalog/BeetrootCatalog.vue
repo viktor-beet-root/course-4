@@ -35,8 +35,9 @@ export default {
     },
 };
 </script>
-  <style lang="scss" scoped>
-.product {
-    vertical-align: middle;
+
+<style lang="scss" scoped>
+.row {
+    max-width: 100%;
 }
 </style>

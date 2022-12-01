@@ -32,3 +32,8 @@ export default {
     },
 };
 </script>
+<style>
+.row {
+    max-width: 100%;
+}
+</style>
