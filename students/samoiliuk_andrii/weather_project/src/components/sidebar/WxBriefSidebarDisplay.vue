@@ -64,7 +64,7 @@ export default {
 
     &__text {
         font-weight: 400;
-        font-size: 16px;
+
         line-height: 22px;
         margin-bottom: 20px;
     }
@@ -76,7 +76,6 @@ export default {
         box-sizing: border-box;
         width: 45%;
 
-        font-size: 16px;
         line-height: 22px;
 
         text-align: center;
@@ -107,7 +106,6 @@ export default {
         box-sizing: border-box;
         width: 45%;
 
-        font-size: 16px;
         line-height: 22px;
 
         text-align: center;

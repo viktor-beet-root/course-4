@@ -48,16 +48,12 @@ export default {
     &__name {
         display: block;
         font-weight: 700;
-        font-size: 16px;
-        line-height: 22px;
         margin-bottom: 10px;
     }
 
     &__nameInput {
         box-sizing: border-box;
         width: 100%;
-        font-size: 16px;
-        line-height: 22px;
         padding: 10px;
 
         &::placeholder {
@@ -82,8 +78,6 @@ export default {
     &__airports {
         display: block;
         font-weight: 700;
-        font-size: 16px;
-        line-height: 22px;
         margin-bottom: 10px;
     }
 
@@ -94,8 +88,6 @@ export default {
         box-sizing: border-box;
         width: 100%;
         font-weight: 400;
-        font-size: 16px;
-        line-height: 22px;
         background-color: transparent;
         color: inherit;
         padding: 10px;
@@ -121,10 +113,6 @@ export default {
     &__button {
         box-sizing: border-box;
         width: 100%;
-
-        font-size: 16px;
-        line-height: 22px;
-
         text-align: center;
 
         color: #f3f3f3;

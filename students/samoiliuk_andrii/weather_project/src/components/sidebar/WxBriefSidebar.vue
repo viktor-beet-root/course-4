@@ -59,5 +59,8 @@ export default {
     &__display {
         flex-grow: 2;
     }
+    &__mobile {
+        display: none;
+    }
 }
 </style>
