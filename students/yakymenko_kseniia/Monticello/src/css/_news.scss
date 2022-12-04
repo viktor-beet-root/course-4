@@ -63,7 +63,6 @@
         left: 0;
         right: 0;
         bottom: 0;
-        /* fallback for old browsers */
         background: #000000;
         background: linear-gradient(180deg, rgba(0, 0, 0, 0.6615021008403361) 0%, rgba(0, 0, 0, 0.6895133053221288) 53%, rgba(0, 0, 0, 0.8519782913165266) 100%);
         z-index: 1;
@@ -175,15 +174,15 @@
         margin-right: 20px;
 
         &_user1 {
-            background-image: url("../images/news-author-photo-1.png");
+            background-image: url("../images/alja_brun.png");
         }
 
         &_user2 {
-            background-image: url("../images/news-author-photo-2.png");
+            background-image: url("../images/dominic_freeman.png");
         }
 
         &_user3 {
-            background-image: url("../images/news-author-photo-3.png");
+            background-image: url("../images/alice_ward.png");
         }
     }
 
@@ -241,10 +240,6 @@
     }
 }
 
-// Slider Button
-//  Connecting in script.js
-// prevArrow: $('.news__navigation-previous'),
-// nextArrow: $('.news__navigation-next'),
 .news-slider-btn {
     display: flex;
     justify-content: center;
@@ -351,7 +346,6 @@
     opacity: 1;
 }
 
-//Dosts
 .news__section-dots {
     position: absolute;
     display: inline-block;

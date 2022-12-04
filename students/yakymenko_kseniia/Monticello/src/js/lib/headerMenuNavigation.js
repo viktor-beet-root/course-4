@@ -1,20 +1,18 @@
 import $ from 'jquery';
 import headerSlider from './headerSlider';
 
-//Open Burger Menu
 setTimeout(function () {
     const menuList = document.querySelector(".menu__items"),
         menuBurgerBtn = document.querySelector(".menu__hidden_btn"),
         menuBurgerBtnSocial = document.querySelector(".social__items-js"),
         menuBurgerBtnAnimate = document.querySelector(".menu__hidden_btn-line");
-    //    menuBurgerBtn.addEventListener("click", function () {
-    // menuList.classList.toggle("menu-open");
-    // menuBurgerBtnSocial.classList.toggle("social__items-header-burger-btn-active");
-    // menuBurgerBtnAnimate.classList.toggle("active");
-    //    }, 0);
+    menuBurgerBtn.addEventListener("click", function () {
+        menuList.classList.toggle("menu-open");
+        menuBurgerBtnSocial.classList.toggle("social__items-header-burger-btn-active");
+        menuBurgerBtnAnimate.classList.toggle("active");
+    }, 0);
 }, 0);
 
-// Close Burger Menu after click on link
 $(function () {
     setTimeout(function () {
         $(".menu__item-link, .social__item-link-header-burger-btn").on('click', function () {
@@ -25,7 +23,6 @@ $(function () {
     }, 0);
 });
 
-//Heder Menu Naviagation
 function headerMenuNavigation() {
     const $header = $('#header');
     let isSticky = false;
@@ -60,7 +57,6 @@ window.addEventListener('scroll', () => {
     }, 0);
 });
 
-// Плавная прокрутка к якорю на странице
 setTimeout(function () {
     $('ul a').on('click', smothScroll);
     $('.header__link').on('click', smothScroll);
@@ -73,13 +69,12 @@ const smothScroll = function () {
     $('html, body').animate({
         scrollTop: $(href).offset().top
     }, {
-        duration: 700, // по умолчанию «400» 
-        easing: "linear" // по умолчанию «swing» 
+        duration: 700,
+        easing: "linear"
     });
     return false;
 }
 
-//Checkbox Burger menu (hides the menu when you click on it)
 $(function () {
     setTimeout(function () {
         $(".menu__item-link").on('click', function () {

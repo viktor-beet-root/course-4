@@ -7,8 +7,6 @@
 
     &__container {
 
-        // For Perfect pixel
-        // padding-top: 400px;
         @media screen and (max-width:768px) {
             max-width: 100%;
         }
@@ -24,7 +22,6 @@
         background-color: #fff;
         max-width: 770px;
         margin-bottom: 55px;
-        // Set margin when there is a map
         margin: -314px auto 0;
     }
 
@@ -258,7 +255,6 @@
     }
 }
 
-// Social Item Footer
 .social {
 
     &__items {

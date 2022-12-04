@@ -6,10 +6,11 @@ import newsSlider from './lib/newsSlider';
 import headerMenuNavigation from './lib/headerMenuNavigation';
 import seeMore from './lib/seeMore';
 import formValidationFooter from './lib/validationForm';
-//import initMap from './lib/googleMap';
+import initMap from './lib/googleMap';
 
 headerSlider();
 newsSlider();
 headerMenuNavigation();
 seeMore();
 formValidationFooter();
+initMap();

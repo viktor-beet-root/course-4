@@ -1,5 +1,5 @@
 import $ from 'jquery';
-//See more
+
 function seeMore() {
     const htmlGalleryPhotos = `
 <div class="container append">
@@ -39,8 +39,6 @@ function seeMore() {
     </div>
 </div>
 `
-
-    //Add photos at Gallery Section
 
     $(function () {
         let $seeMore = $('#seeMore');

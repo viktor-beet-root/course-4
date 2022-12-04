@@ -20,6 +20,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lib_headerMenuNavigation__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./lib/headerMenuNavigation */ "./src/js/lib/headerMenuNavigation.js");
 /* harmony import */ var _lib_seeMore__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./lib/seeMore */ "./src/js/lib/seeMore.js");
 /* harmony import */ var _lib_validationForm__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./lib/validationForm */ "./src/js/lib/validationForm.js");
+/* harmony import */ var _lib_googleMap__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./lib/googleMap */ "./src/js/lib/googleMap.js");
 
 
 
@@ -28,13 +29,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-//import initMap from './lib/googleMap';
 
 (0,_lib_headerSlider__WEBPACK_IMPORTED_MODULE_3__["default"])();
 (0,_lib_newsSlider__WEBPACK_IMPORTED_MODULE_4__["default"])();
 (0,_lib_headerMenuNavigation__WEBPACK_IMPORTED_MODULE_5__["default"])();
 (0,_lib_seeMore__WEBPACK_IMPORTED_MODULE_6__["default"])();
 (0,_lib_validationForm__WEBPACK_IMPORTED_MODULE_7__["default"])();
+(0,_lib_googleMap__WEBPACK_IMPORTED_MODULE_8__["default"])();
 
 /***/ }),
 
@@ -14550,8 +14551,8 @@ let map;
 
 function initMap() {
     const coordinates = {
-        lat: 40.679947441061444,
-        lng: -73.90163573236964,
+        lat: 41.655604988243276,
+        lng: -74.68981191288131,
     }
 
     map = new google.maps.Map(document.getElementById('map'), {
@@ -14688,8 +14689,8 @@ function initMap() {
     const marker = new google.maps.Marker({
         position: coordinates,
         map: map,
-        title: 'The Evergreens Cemetery',
-        icon: './images/marker.png',
+        title: 'Monticello',
+        icon: '../../images/map_marker.png',
     });
 
 };
@@ -14713,20 +14714,18 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-//Open Burger Menu
 setTimeout(function () {
     const menuList = document.querySelector(".menu__items"),
         menuBurgerBtn = document.querySelector(".menu__hidden_btn"),
         menuBurgerBtnSocial = document.querySelector(".social__items-js"),
         menuBurgerBtnAnimate = document.querySelector(".menu__hidden_btn-line");
-    //    menuBurgerBtn.addEventListener("click", function () {
-    // menuList.classList.toggle("menu-open");
-    // menuBurgerBtnSocial.classList.toggle("social__items-header-burger-btn-active");
-    // menuBurgerBtnAnimate.classList.toggle("active");
-    //    }, 0);
+    menuBurgerBtn.addEventListener("click", function () {
+        menuList.classList.toggle("menu-open");
+        menuBurgerBtnSocial.classList.toggle("social__items-header-burger-btn-active");
+        menuBurgerBtnAnimate.classList.toggle("active");
+    }, 0);
 }, 0);
 
-// Close Burger Menu after click on link
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
     setTimeout(function () {
         jquery__WEBPACK_IMPORTED_MODULE_0___default()(".menu__item-link, .social__item-link-header-burger-btn").on('click', function () {
@@ -14737,7 +14736,6 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
     }, 0);
 });
 
-//Heder Menu Naviagation
 function headerMenuNavigation() {
     const $header = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#header');
     let isSticky = false;
@@ -14772,7 +14770,6 @@ window.addEventListener('scroll', () => {
     }, 0);
 });
 
-// Плавная прокрутка к якорю на странице
 setTimeout(function () {
     jquery__WEBPACK_IMPORTED_MODULE_0___default()('ul a').on('click', smothScroll);
     jquery__WEBPACK_IMPORTED_MODULE_0___default()('.header__link').on('click', smothScroll);
@@ -14785,13 +14782,12 @@ const smothScroll = function () {
     jquery__WEBPACK_IMPORTED_MODULE_0___default()('html, body').animate({
         scrollTop: jquery__WEBPACK_IMPORTED_MODULE_0___default()(href).offset().top
     }, {
-        duration: 700, // по умолчанию «400» 
-        easing: "linear" // по умолчанию «swing» 
+        duration: 700,
+        easing: "linear"
     });
     return false;
 }
 
-//Checkbox Burger menu (hides the menu when you click on it)
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
     setTimeout(function () {
         jquery__WEBPACK_IMPORTED_MODULE_0___default()(".menu__item-link").on('click', function () {
@@ -14823,12 +14819,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// Header Slider (slick-carousel) (Simple Modern)
 function headerSlider() {
     jquery__WEBPACK_IMPORTED_MODULE_0___default()('.header-section__slider').slick({
         infinite: true,
         slidesToShow: 1,
-        // slidesToScroll: 3
         appendDots: jquery__WEBPACK_IMPORTED_MODULE_0___default()('.header-section__dots'),
         dots: true,
         arrows: false,
@@ -14855,27 +14849,19 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-//News Slider (slick carousel) (Latest News)
-
 function newsSlider() {
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
         jquery__WEBPACK_IMPORTED_MODULE_0___default()('.news-slider').slick({
             slidesToShow: 3,
-            // Стрелки
-            // arrows: true,
+            arrows: true,
 
-            // Navigation Buttons previous and next
             prevArrow: jquery__WEBPACK_IMPORTED_MODULE_0___default()('.news__navigation-previous'),
             nextArrow: jquery__WEBPACK_IMPORTED_MODULE_0___default()('.news__navigation-next'),
 
-            // Dots
-            // dotsClass: 'news__slick-dots',
             appendDots: jquery__WEBPACK_IMPORTED_MODULE_0___default()('.news__section-dots'),
             dots: true,
-            // infinite: true,
             autoplay: true,
             autoplaySpeed: 4000,
-            // Responsive
             responsive: [{
                 breakpoint: 992,
                 settings: {
@@ -14890,7 +14876,6 @@ function newsSlider() {
             },
             {
                 breakpoint: 576,
-                // settings: 'unslick',
                 settings: {
                     slidesToShow: 1
                 }
@@ -14916,7 +14901,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 
-//See more
+
 function seeMore() {
     const htmlGalleryPhotos = `
 <div class="container append">
@@ -14957,8 +14942,6 @@ function seeMore() {
 </div>
 `
 
-    //Add photos at Gallery Section
-
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
         let $seeMore = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#seeMore');
         setTimeout(function () {
@@ -14987,7 +14970,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 
 
-// Validation Form
 function formValidationFooter() {
     function validateEmail(email) {
         const remail = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -15159,8 +15141,8 @@ function formValidationFooter() {
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	__webpack_require__("./src/js/script.js");
-/******/ 	__webpack_require__("./src/js/lib/googleMap.js");
 /******/ 	// This entry module is referenced by other modules so it can't be inlined
+/******/ 	__webpack_require__("./src/js/lib/googleMap.js");
 /******/ 	__webpack_require__("./src/js/lib/headerMenuNavigation.js");
 /******/ 	__webpack_require__("./src/js/lib/headerSlider.js");
 /******/ 	__webpack_require__("./src/js/lib/newsSlider.js");

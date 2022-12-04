@@ -3,8 +3,8 @@ let map;
 
 function initMap() {
     const coordinates = {
-        lat: 40.679947441061444,
-        lng: -73.90163573236964,
+        lat: 41.655604988243276,
+        lng: -74.68981191288131,
     }
 
     map = new google.maps.Map(document.getElementById('map'), {
@@ -141,8 +141,8 @@ function initMap() {
     const marker = new google.maps.Marker({
         position: coordinates,
         map: map,
-        title: 'The Evergreens Cemetery',
-        icon: './images/marker.png',
+        title: 'Monticello',
+        icon: '../../images/map_marker.png',
     });
 
 };
