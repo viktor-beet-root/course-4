@@ -1,8 +1,8 @@
 <template>
     <div class="container">
         <div class="row footer">
-            <div class="col-3 footer__name">Weather Briefing</div>
-            <div class="col-9 footer__wrapper">
+            <div class="col-3 col-xxs-12 footer__name">Weather Briefing</div>
+            <div class="col-9 col-xxs-12 footer__wrapper">
                 <div class="footer__disclaimer">
                     Disclamer: this is front-end student project, do not use for
                     operations.
@@ -11,19 +11,19 @@
                     <a
                         class="footer__link"
                         href="mailto:andrewsamoiliuk@gmail.com"
-                        >Contact author</a
+                        >Contact&nbsp;author</a
                     >
                     <a
                         class="footer__link"
                         href="https://www.checkwxapi.com/"
                         target="blanc"
-                        >Aviation Weather API</a
+                        >Aviation&nbsp;Weather&nbsp;API</a
                     >
                     <a
                         class="footer__link"
                         href="https://beetroot.academy/"
                         target="blanc"
-                        >Beetroot academy</a
+                        >Beetroot&nbsp;academy</a
                     >
                 </div>
             </div>
@@ -47,6 +47,7 @@
     }
     &__disclaimer {
         font-size: 10px;
+        margin: 0 15px;
     }
 
     &__link {

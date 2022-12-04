@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="row">
-            <div class="col-3 col-sm-4">
+            <div class="col-3 col-sm-4 col-xs-12">
                 <a href="#" class="header__link">
                     <img
                         src="../../assets/images/logo.svg"
@@ -10,7 +10,7 @@
                     />
                 </a>
             </div>
-            <div class="col-9 col-sm-8">
+            <div class="col-9 col-sm-8 hiddenBlock">
                 <h1 class="header__text">
                     Weather Briefing
                     <span class="header__text_subtext"

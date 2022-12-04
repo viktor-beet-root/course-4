@@ -114,12 +114,9 @@
             top: -15px;
 
             &_closed {
-                left: -385px;
+                left: -600px;
             }
         }
-
-
-        &__mainWindow {}
     }
 
     .mobileMenuButton {
@@ -162,5 +159,111 @@
         line-height: 33px;
         margin-bottom: 40px;
         cursor: pointer;
+    }
+}
+
+@media screen and (max-width: map-get($break-points, "xs")) {
+    .page {
+        &__header {
+            margin-bottom: 15px;
+        }
+    }
+
+    .hiddenBlock {
+        display: none;
+    }
+
+    .tabs {
+        margin-right: 15px;
+
+        &__button {
+            width: 195px;
+        }
+    }
+
+    .mainWindow {
+        &__header {
+            margin-bottom: 15px;
+        }
+    }
+
+    .mobile {
+        &__sidebar {
+            border-radius: 0;
+        }
+    }
+}
+
+@media screen and (max-width: map-get($break-points, "xxs")) {
+    .hiddenText {
+        display: none;
+    }
+
+    .tabs {
+        margin-right: 15px;
+
+        &__button {
+            width: 105px;
+        }
+    }
+
+    .footer {
+        &__disclaimer {
+            margin-left: 0;
+            margin-right: 30px;
+        }
+    }
+
+    .sidebar {
+        &__header {
+            margin-bottom: 15px;
+        }
+
+        &__create {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+        }
+
+        &__close {
+            margin-bottom: 15px;
+        }
+    }
+
+    .create {
+        &__nameInput {
+            margin-bottom: 15px;
+        }
+
+        &__airports {
+            margin-bottom: 15px;
+        }
+
+        &__airportsInput {
+            margin-bottom: 15px;
+            height: 45px;
+        }
+    }
+
+
+    .group {
+        padding: 15px;
+
+        &__name {
+            margin-bottom: 15px;
+        }
+
+        &__text {
+            margin-bottom: 15px;
+        }
+
+        &__display {
+            width: 45%;
+            order: 2;
+            margin-bottom: 0;
+        }
+
+        &__remove {
+            width: 45%;
+        }
     }
 }

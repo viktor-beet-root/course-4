@@ -73,15 +73,11 @@ export default {
         margin-bottom: 20px;
     }
 
-    // .create__airports
-
     &__airports {
         display: block;
         font-weight: 700;
         margin-bottom: 10px;
     }
-
-    // .create__airportsInput
 
     &__airportsInput {
         font-family: inherit;
@@ -107,8 +103,6 @@ export default {
 
         height: 45px;
     }
-
-    // .create__button
 
     &__button {
         box-sizing: border-box;

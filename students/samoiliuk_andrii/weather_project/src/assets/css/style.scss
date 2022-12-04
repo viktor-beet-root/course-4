@@ -3,7 +3,6 @@
 @import "./_grid.scss";
 @import "./_fonts.scss";
 @include grid(12);
-@import "./_responsive.scss";
 
 body {
     background-color: #252326;
@@ -32,3 +31,5 @@ body {
         background-color: #060606;
     }
 }
+
+@import "./_responsive.scss";

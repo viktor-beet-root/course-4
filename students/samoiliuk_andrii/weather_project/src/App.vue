@@ -7,7 +7,10 @@
             <div class="container">
                 <div class="row mobile">
                     <aside
-                        :class="'col-3 col-sm-6 mobile__sidebar ' + this.closed"
+                        :class="
+                            'col-3 col-sm-6 col-xs-12 mobile__sidebar ' +
+                            this.closed
+                        "
                     >
                         <wx-brief-sidebar
                             :groups="groups"
