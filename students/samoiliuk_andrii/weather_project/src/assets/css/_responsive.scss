@@ -94,6 +94,14 @@
             display: block;
         }
     }
+
+    .taf {
+
+        &__periods {
+            grid-template-columns: 1fr 1fr;
+        }
+
+    }
 }
 
 @media screen and (max-width: map-get($break-points, "sm")) {
@@ -160,6 +168,7 @@
         margin-bottom: 40px;
         cursor: pointer;
     }
+
 }
 
 @media screen and (max-width: map-get($break-points, "xs")) {
@@ -265,5 +274,13 @@
         &__remove {
             width: 45%;
         }
+    }
+
+    .taf {
+
+        &__periods {
+            grid-template-columns: 1fr;
+        }
+
     }
 }

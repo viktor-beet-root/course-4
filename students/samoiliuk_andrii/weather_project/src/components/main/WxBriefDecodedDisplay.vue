@@ -129,12 +129,12 @@
                             {{ period.timestamp.to.slice(-6, -1) }} UTC
                         </li>
                         <li v-if="period.wind" class="tafPeriod__item">
-                            Wind direction:
-                            {{ period.wind.degrees }} degrees
+                            Wind:
+                            {{ period.wind.degrees }} degrees,
                             {{ period.wind.speed_kts }} knots<span
                                 v-if="period.wind.gust_kts"
                                 >, gusting
-                                {{ period.wind.gust_kts }} knots</span
+                                {{ period.wind.gust_kts }} knots;</span
                             >;
                         </li>
                         <li v-if="period.visibility" class="tafPeriod__item">
