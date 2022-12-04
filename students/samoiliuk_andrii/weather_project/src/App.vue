@@ -1,5 +1,5 @@
 <template>
-    <div class="page">
+    <div class="page" @click="closeSidebar">
         <header class="page__header">
             <wx-brief-header />
         </header>
@@ -228,6 +228,8 @@ export default {
                 time: this.metarTafCache[indexInArray].time,
                 name: this.groups[this.getIndex(index, this.groups)].name,
             };
+
+            this.displaySidebar();
         },
 
         pushToLocal(metar, taf, index) {
@@ -256,6 +258,20 @@ export default {
             } else if (this.closed === "") {
                 this.closed = this.closedStyle;
             }
+        },
+        closeSidebar(event) {
+            if (event.target.closest(".closeButton")) {
+                if (this.closed === "") {
+                    this.closed = this.closedStyle;
+                }
+            } else if (
+                !event.target.closest(".mobileMenuButton") &&
+                !event.target.closest(".tabs") &&
+                !event.target.closest(".mobile__sidebar")
+            )
+                if (this.closed === "") {
+                    this.closed = this.closedStyle;
+                }
         },
     },
 };

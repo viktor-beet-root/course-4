@@ -154,8 +154,13 @@
                 fill: white;
             }
         }
-
     }
 
-
+    .closeButton {
+        display: inline;
+        font-size: 18px;
+        line-height: 33px;
+        margin-bottom: 40px;
+        cursor: pointer;
+    }
 }
