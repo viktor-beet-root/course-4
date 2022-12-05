@@ -51,10 +51,13 @@ export default {
     display: flex;
     flex-direction: column;
     padding-left: 30px;
+    padding: 60px;
+    max-width: 60%;
 }
 
 .product__add-to-cart {
     outline: none;
     transition: 0.5s all;
+    margin-right: 40px;
 }
 </style>
