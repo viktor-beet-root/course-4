@@ -1,0 +1,40 @@
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include font-style-for-text('Montserrat');
+    @include font-for-text(400, 14px, 17px);
+    text-align: center;
+    color: $color-black;
+    background: transparent;
+    padding: 0;
+    border: 1px solid $color-lightblack;
+    text-transform: uppercase;
+}
+
+.main__btn {
+    width: 189px;
+    height: 49px;
+}
+
+.iput {
+    padding: 0;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid $color-lightblack;
+    @include font-style-for-text('Montserrat');
+    @include font-for-text(400, 18px, 27px);
+    padding-bottom: 14px;
+    outline: none;
+
+    @include placeholder {
+        color: $color-gray-opacity;
+        opacity: 0.5;
+    }
+
+    &:focus {
+        color: $color-black;
+        border-bottom: 1px solid #2C4058;
+        opacity: 1;
+    }
+}

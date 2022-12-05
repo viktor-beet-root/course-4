@@ -1,0 +1,95 @@
+@import './fonts';
+@import './form';
+
+@include grid();
+
+body {
+    font-family: $main-font;
+    color: $color-white;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+.main {
+    color: $color-lightblack;
+}
+
+.title-h2 {
+    @include font-style-for-text('Montserrat');
+    @include font-for-text(700, 80px, 98px);
+    letter-spacing: 0.1em;
+
+    @include media(md) {
+        font-size: 50px;
+        margin: 0 30px;
+    }
+
+    @include media(xs) {
+        font-size: 42px;
+        margin: 0 15px;
+    }
+}
+
+
+.title-h3 {
+    @include font-style-for-text('Montserrat');
+    @include font-for-text(700, 44px, 54px);
+    color: $color-lightblack;
+
+    @include media(md) {
+        font-size: 36px;
+    }
+
+    @include media() {
+        font-size: 30px;
+    }
+
+}
+
+
+.title-h4 {
+    @include font-style-for-text('Montserrat');
+    @include font-for-text(700, 22px, 27px);
+    letter-spacing: 0.1em;
+
+    @include media() {
+        font-size: 18px;
+    }
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.logo {
+    min-width: 241px;
+    display: block;
+}
+
+.arrow__top {
+    @include arrow;
+    background-color: $color-purple;
+    transform: rotate(180deg);
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    z-index: 2000;
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+}
+
+.hide__arrow {
+    z-index: -1;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+html {
+    scroll-behavior: smooth;
+}

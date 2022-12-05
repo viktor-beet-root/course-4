@@ -1,0 +1,103 @@
+@import './header-menu';
+@import './header-slider';
+
+
+.header {
+    display: relative;
+
+    &__navigation {
+        position: fixed;
+        margin: 0 auto;
+        width: 100%;
+        z-index: 10000;
+        margin-top: 53px;
+        transition: all 0.3s ease-in-out;
+
+        @include media() {
+            margin-top: 0;
+        }
+
+    }
+
+    &__slider {
+        background: $slider-bg-gradient;
+        height: 100vh;
+    }
+
+    &__title-h2 {
+        margin-bottom: 20px;
+    }
+
+    &__subtitle {
+        @include font-style-for-text('Montserrat');
+        @include font-for-text(400, 18px, 22px);
+        letter-spacing: 0.3em;
+
+        @include media(md) {
+            font-size: 16px;
+        }
+
+        @include media(xs) {
+            font-size: 12px;
+        }
+
+    }
+
+    &__arrow-wrapper {
+        width: 40px;
+        height: 40px;
+        box-sizing: border-box;
+        border: 1px solid $color-white;
+        border-radius: 50px;
+        position: absolute;
+        bottom: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__arrow-down-img {
+        width: 12px;
+    }
+}
+
+.slider {
+
+    &__bg {
+        opacity: 0.1;
+        min-height: 100%;
+        object-fit: cover;
+    }
+
+    &__item {
+        height: 100%;
+        position: relative;
+    }
+
+    &__text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.hide1 {
+    margin: 0;
+    transition: margin 0.3s ease-in-out;
+}
+
+.hide2 {
+    background: $gradient-header;
+    transition: all 0.3s ease-in-out;
+}
+
+.hide3 {
+    @include media() {
+        background: $gradient-header;
+    }
+}

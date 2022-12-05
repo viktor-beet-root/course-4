@@ -1,0 +1,105 @@
+.latestNews {
+    min-width: 0;
+
+    .slick-slider {
+        min-width: 0;
+        position: relative;
+    }
+
+    .slick-list {
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    .slick-track {
+        display: flex;
+    }
+
+    .slick-slide {
+        height: inherit;
+        margin-left: $gap;
+        margin-right: $gap;
+    }
+
+    .slick-arrow {
+        position: absolute;
+        top: 50%;
+    }
+
+    .slick-arrow.slick-prev {
+        @include arrow;
+        left: 0;
+        z-index: 10;
+        transform: translate(-100%, -50%) rotate(90deg);
+        left: -45px;
+        background-color: transparent;
+        font-size: 0;
+        line-height: 0;
+        padding: 0;
+        margin: 0;
+
+
+    }
+
+    .slick-arrow.slick-next {
+        @include arrow;
+        right: 0;
+        z-index: 10;
+        transform: translate(100%, -50%) rotate(-90deg);
+        right: -55px;
+        background-color: transparent;
+        font-size: 0;
+        line-height: 0;
+        padding: 0;
+        margin: 0;
+
+    }
+
+    @media screen and (max-width: 1440px) {
+        .slick-arrow.slick-prev {
+            transform: translate(-50%, -100%) rotate(90deg);
+            top: -$gap;
+            right: 45px;
+            left: unset;
+        }
+
+        .slick-arrow.slick-next {
+            right: -5px;
+            transform: translate(-50%, -100%) rotate(-90deg);
+            top: -$gap;
+        }
+    }
+
+    .slick-dots {
+        display: flex;
+        position: absolute;
+        bottom: -40px;
+        transform: translate(-50%, 100%);
+        z-index: 100;
+        left: 50%;
+
+    }
+
+    .slick-dots li {
+        font-size: 0;
+        line-height: 0;
+        margin: 0 20px;
+    }
+
+    .slick-dots li.slick-active {
+        border-radius: 50%;
+        background-color: $slider-dots-color;
+    }
+
+    .slick-dots li button {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: 1px solid $slider-dots-color;
+        background-color: transparent;
+        font-size: 0;
+    }
+}

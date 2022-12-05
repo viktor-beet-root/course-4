@@ -1,0 +1,5 @@
+@include font-face(open-sans-v34-latin-regular);
+@include font-face($_font-file: montserrat-v25-latin-regular, $_font-name: 'Montserrat');
+@include font-face($_font-file: montserrat-v25-latin-700, $_font-name: 'Montserrat', $_font-weight: 700);
+@include font-face($_font-file: open-sans-v34-latin-italic, $_font-name: 'Open Sans', $_font-style: italic);
+@include font-face($_font-file: source-sans-pro-v21-latin-regular, $_font-name: 'Source Sans Pro');
