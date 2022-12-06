@@ -52,7 +52,7 @@ const PRODUCTS = [
     },
     {
         id: v4(),
-        name: "Brown sweater of a free cut",
+        name: "Brown sweater (free cut)",
         price: 140,
         specialPrice: 130,
         labels: {},
@@ -94,7 +94,7 @@ const PRODUCTS = [
     },
     {
         id: v4(),
-        name: "White sweater with a free cut",
+        name: "White sweater free cut)",
         price: 140,
         specialPrice: 130,
         labels: {},
