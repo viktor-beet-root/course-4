@@ -1,0 +1,93 @@
+$color-white: white;
+$color-black: #000;
+$grey: #5a5a5a;
+$dodger-blue: #5474FD;
+$window-red: #de2e45;
+$window-text-grey: #b9bcd1;
+$mercury: #E1E1E1;
+$abbey: #999;
+$mine-shaft: #232323;
+$pickled-bluewood: #2C4058;
+$river-bed: #4B5562;
+$malibu: #55B7FF;
+$heliotrope: #7E5AFF;
+$cornflower-blue: #7C5CF9;
+
+
+$input-border-color: $grey;
+$default-border: 1px solid $input-border-color;
+$default-border-radius: 5px;
+
+$container-width: 1200px;
+$default-gap: 15px;
+
+$body-bg-color: $color-white;
+$border-color: $grey;
+
+$color-header-title-h1: $color-white;
+$color-header-button-bg: $dodger-blue;
+$color-header-navigation-bg: $dodger-blue;
+
+$border-menu-bottom: $grey;
+$menu-hover-color: $dodger-blue;
+$menu-default-text-color: $grey;
+$menu-icon-color: $grey;
+$color-overlay-menu-window: $color-white;
+$color-overlay-menu: $color-black;
+$color-language-deafult: $grey;
+
+$color-projects-bg: $color-white;
+$color-projects-title: $pickled-bluewood;
+$color-projects-subtitle: $pickled-bluewood;
+$color-projects-text: $river-bed;
+$color-projects-button-border: $pickled-bluewood;
+$color-projects-button-text: $pickled-bluewood;
+$color-projects-location-text: $pickled-bluewood;
+$color-projects-trade-bg-before: $malibu;
+$color-projects-commerce-bg-aftef: $heliotrope;
+
+$color-footer-bg: $mine-shaft;
+$color-footer-title: $color-white;
+$color-footer-sub-title: $color-white;
+$color-footer-social-icon: $mercury;
+$color-footer-social-icon-hover: $dodger-blue;
+$color-pickled-bluewood: #2c4058;
+$color-river-bed: #4b5562;
+
+$color-btn-bg: $dodger-blue;
+$color-btn-text: $color-white;
+
+$font-folder-path: '../fonts/';
+$folder-image: '../images/';
+
+
+$font-default-name: 'Montserrat';
+$font-second-name: 'Montserrat';
+$font-third-name: 'Montserrat';
+$font-fourth-name: 'OpenSans-Italic';
+$font-fifth-name: 'OpenSans-Italic-Regular';
+
+$follback: Arial,
+    Helvetica,
+    sans-serif;
+$font-default: $font-default-name,
+    $follback;
+$font-second: $font-second-name,
+    $follback;
+$font-third: $font-third-name,
+    $follback;
+$font-fourth: $font-fourth-name,
+    $follback;
+$font-fifth: $font-fifth-name,
+    $follback;
+
+$default-font-size: 14px;
+$default-line-height: 2.1875;
+$default-color-text: $pickled-bluewood;
+
+$breack-points: (
+    "xl": 1200px,
+    "lg": 992px,
+    "md": 768px,
+    "sm": 576px
+);
