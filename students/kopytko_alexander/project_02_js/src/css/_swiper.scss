@@ -1,0 +1,82 @@
+@import '../../node_modules/swiper/swiper.scss';
+@import '../../node_modules/swiper/modules/pagination/pagination.scss';
+@import '../../node_modules/swiper/modules/navigation/navigation.scss';
+@import '../../node_modules/swiper/modules/scrollbar/scrollbar.scss';
+
+
+.hero .swiper-horizontal > .swiper-pagination-bullets {
+    bottom: unset;
+    left: unset;
+    width: unset;
+    right: 52px;
+
+    @include media(xxs) {
+        display: none;
+    }
+
+    & .swiper-pagination-bullet {
+        display: block !important;
+        margin: 0;
+
+
+        &:not(:first-child) {
+            margin-top: 40px;
+
+            @include media(md) {
+                margin-top: 20px;
+            }
+        }
+
+    }
+}
+
+.news {
+    & .swiper-pagination-bullet {
+        &:not(:first-child) {
+            margin-left: 40px;
+        }
+    }
+
+    & .swiper-button-prev,
+    & .swiper-button-next {
+        top: 61%;
+    }
+
+    & .swiper-button-prev {
+        left: -40px;
+        &::after {
+            content: url("../images/left.svg");
+            width: 40px;
+            height: 40px;
+            display: block;
+        }
+    }
+    & .swiper-button-next {
+        right: -40px;
+        &::after {
+            content: url("../images/right.svg");
+            width: 40px;
+            height: 40px;
+            display: block;
+        }
+    }
+}
+
+.swiper-pagination-bullet {
+    opacity: unset;
+    width: 10px;
+    height: 10px;
+    background: unset;
+    border: 1px solid $color-white;
+    margin: 0;
+
+    &.swiper-pagination-bullet-active {
+        background-color: $color-white;
+    }
+}
+
+.news .swiper-pagination-news {
+    position: absolute;
+    text-align: center;
+    bottom: -55px;
+}

@@ -1,0 +1,72 @@
+.hero {
+  height: 100vh;
+  background: linear-gradient(243.43deg, #7E5AFF 16.9%, #55B7FF 83.27%);
+  position: relative;
+
+  &__swiper {
+    height: 100%;
+  }
+
+  &__slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__img {
+    opacity: 0.06;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+  }
+
+  &__text {
+    text-align: center;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    width: 70%;
+    margin: auto;
+
+  }
+
+  &__heading {
+    font-weight: 700;
+    font-size: 80px;
+    line-height: 98px;
+    letter-spacing: 0.1em;
+    margin-bottom: 20px;
+
+    @include media(md) {
+      font-size: 48px;
+      line-height: 58px;
+    }
+  }
+
+  &__additional {
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.3em;
+  }
+
+  &__scrollDown {
+    position: absolute;
+    z-index: 100;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+}
+
+.scrollDown {
+  cursor: pointer;
+
+  &::before {
+    content: url(../images/arrow.svg);
+    width: 40px;
+    height: 40px;
+    display: block;
+
+  }
+}
