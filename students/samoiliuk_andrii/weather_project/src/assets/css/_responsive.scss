@@ -1,0 +1,266 @@
+@import "./vars.scss";
+
+@media screen and (max-width: map-get($break-points, "lg")) {
+    .create {
+        &__airportsInput {
+            height: 70px;
+        }
+    }
+}
+
+
+@media screen and (max-width: map-get($break-points, "md")) {
+
+    .page {
+        &__header {
+            margin-bottom: 35px;
+        }
+    }
+
+    .header {
+        &__text {
+            font-size: 30px;
+            line-height: 30px;
+
+            &_subtext {
+                font-size: 14px;
+                line-height: 14px;
+            }
+        }
+    }
+
+    .sidebar {
+        &__header {
+            font-size: 18px;
+            line-height: 33px;
+            margin-bottom: 30px;
+        }
+    }
+
+    .mainWindow {
+        &__header {
+            font-size: 18px;
+            line-height: 33px;
+            margin-bottom: 63px;
+        }
+    }
+
+    .group {
+        &__buttons {
+            flex-wrap: wrap;
+        }
+
+        &__display {
+            order: 1;
+            width: 100%;
+            margin-bottom: 15px;
+
+        }
+
+        &__remove {
+            order: 2;
+            width: 100%;
+
+        }
+    }
+
+    .footer {
+        &__contacts {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__link {
+            display: block;
+        }
+    }
+
+    .taf {
+
+        &__periods {
+            grid-template-columns: 1fr 1fr;
+        }
+
+    }
+}
+
+@media screen and (max-width: map-get($break-points, "sm")) {
+    .mobile {
+        position: relative;
+
+        &__sidebar {
+            padding-top: 15px;
+            position: absolute;
+            z-index: 20;
+            background-color: #252326;
+            border-right: 1px solid white;
+            border-top: 1px solid white;
+            border-bottom: 1px solid white;
+            border-radius: 0 4px 4px 0;
+            transition: left 0.3s ease-in-out;
+            left: 0;
+            top: -15px;
+
+            &_closed {
+                left: -600px;
+            }
+        }
+    }
+
+    .mobileMenuButton {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: static;
+        left: 50%;
+        top: 143px;
+        width: 40px;
+        height: 40px;
+        border-radius: 4px;
+        line-height: 0;
+        font-size: 0;
+        background-color: #1673ff;
+        cursor: pointer;
+
+        &:hover {
+            background: #003688;
+        }
+
+        &:active {
+            background: transparent;
+            border: 1px solid #a1a1a1;
+        }
+
+        &>svg {
+            transform: translate(-2px) rotate(45deg);
+            width: 60%;
+
+            &>g>path {
+                fill: white;
+            }
+        }
+    }
+
+    .closeButton {
+        display: inline;
+        font-size: 18px;
+        line-height: 33px;
+        margin-bottom: 40px;
+        cursor: pointer;
+    }
+
+}
+
+@media screen and (max-width: map-get($break-points, "xs")) {
+    .page {
+        &__header {
+            margin-bottom: 15px;
+        }
+    }
+
+    .hiddenBlock {
+        display: none;
+    }
+
+    .tabs {
+        margin-right: 15px;
+
+        &__button {
+            width: 195px;
+        }
+    }
+
+    .mainWindow {
+        &__header {
+            margin-bottom: 15px;
+        }
+    }
+
+    .mobile {
+        &__sidebar {
+            border-radius: 0;
+        }
+    }
+}
+
+@media screen and (max-width: map-get($break-points, "xxs")) {
+    .hiddenText {
+        display: none;
+    }
+
+    .tabs {
+        margin-right: 15px;
+
+        &__button {
+            width: 105px;
+        }
+    }
+
+    .footer {
+        &__disclaimer {
+            margin-left: 0;
+            margin-right: 30px;
+        }
+    }
+
+    .sidebar {
+        &__header {
+            margin-bottom: 15px;
+        }
+
+        &__create {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+        }
+
+        &__close {
+            margin-bottom: 15px;
+        }
+    }
+
+    .create {
+        &__nameInput {
+            margin-bottom: 15px;
+        }
+
+        &__airports {
+            margin-bottom: 15px;
+        }
+
+        &__airportsInput {
+            margin-bottom: 15px;
+            height: 45px;
+        }
+    }
+
+
+    .group {
+        padding: 15px;
+
+        &__name {
+            margin-bottom: 15px;
+        }
+
+        &__text {
+            margin-bottom: 15px;
+        }
+
+        &__display {
+            width: 45%;
+            order: 2;
+            margin-bottom: 0;
+        }
+
+        &__remove {
+            width: 45%;
+        }
+    }
+
+    .taf {
+
+        &__periods {
+            grid-template-columns: 1fr;
+        }
+
+    }
+}
