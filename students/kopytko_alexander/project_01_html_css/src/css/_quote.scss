@@ -1,0 +1,50 @@
+.quote {
+  background-image: url("../images/quote-background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 46px;
+  letter-spacing: 0.04em;
+  color: $color-white;
+  padding: 85px 145px;
+
+  @include media(sm) {
+    margin: 0 -15px;
+  }
+
+  @include media(xs) {
+
+    padding: 10px 35px;
+    font-size: 22px;
+    line-height: 26px;
+  }
+
+  &__text {
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
+
+    &::before {
+      content: url("../images/quote-icon.svg");
+      position: absolute;
+      left: -60px;
+      top: -30px;
+      z-index: -1;
+
+      @include media(xs) {
+        left: -25px;
+        top: -15px;
+      }
+    }
+  }
+
+  &__signature {
+    font-family: $font-playfair;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 20px;
+    letter-spacing: 0.08em;
+  }
+}

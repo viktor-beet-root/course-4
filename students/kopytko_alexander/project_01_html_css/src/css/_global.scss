@@ -1,0 +1,155 @@
+@include font-face('lato-v23-latin-regular');
+@include font-face($_font-file: 'lato-v23-latin-300', $_font-name: $default-font-name, $_font-weight: 300, $_font-style: normal);
+@include font-face($_font-file: 'lato-v23-latin-700', $_font-name: $default-font-name, $_font-weight: 700, $_font-style: normal);
+@include font-face($_font-file: 'playfair-display-v30-latin-regular', $_font-name: 'Playfair Display', $_font-weight: 400, $_font-style: normal);
+@include font-face($_font-file: 'playfair-display-v30-latin-italic', $_font-name: 'Playfair Display', $_font-weight: 400, $_font-style: italic);
+
+@include grid();
+
+.page {
+  background-color: $bg-color-body;
+  color: $color-blue-dark;
+  font-family: $main-font;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.section {
+  margin-bottom: 105px;
+
+  @include media(xs) {
+    margin-bottom: 55px;
+  }
+}
+
+.title,
+.promises__heading {
+  margin: 20px 0;
+}
+
+.paragraph {
+  margin: 0 0 20px 0;
+  color: rgba($color-blue-dark, 0.8);
+}
+
+.link {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.08em;
+  color: $color-red;
+  position: relative;
+  margin-top: 50px;
+  display: inline-block;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $color-red-dark;
+
+    &::after {
+      background-color: $color-red-dark;
+    }
+  }
+
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 10px;
+    right: -5px;
+    top: 50%;
+    bottom: 0;
+    opacity: 0.3;
+    background-color: $color-red;
+  }
+
+  &-frame {
+    text-align: center;
+    padding: 33px 0;
+    border: 1px solid $color-gray-border;
+    margin-top: 20px;
+    display: block;
+    text-decoration: none;
+    max-width: 300px;
+
+    @include media(xs) {
+      max-width: unset;
+    }
+
+    &:hover,
+    &:focus {
+      border-color: $color-red-dark-border;
+
+      & .link {
+        color: $color-red-dark;
+
+        &::after {
+          background-color: $color-red-dark;
+        }
+      }
+    }
+
+    & > .link {
+      margin: 0;
+    }
+  }
+}
+
+.container {
+  max-width: $default-width;
+  margin: 0 auto;
+  padding: 0 $gap;
+}
+
+.title {
+  font-family: $font-playfair;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 48px;
+
+  @include media(xs) {
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+  &__accent {
+    color: $color-green;
+    font-style: italic;
+  }
+}
+
+.whitebox-wrapper {
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  padding: 45px 0;
+
+  @include media(sm) {
+    padding: 0;
+    margin: 0 -15px;
+    background-size: cover;
+  }
+}
+
+.whitebox {
+  width: 66.666667%;
+  margin-left: auto;
+  background: #FFFFFF;
+  opacity: 0.9;
+  padding: 40px 0 40px 70px;
+
+  @include media(sm) {
+    width: 100%;
+    padding: 40px 30px;
+    box-sizing: border-box;
+  }
+}
+
+.visuality-hidden {
+  @include visuality-hidden;
+}

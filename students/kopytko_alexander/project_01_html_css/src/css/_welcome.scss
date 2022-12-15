@@ -1,0 +1,19 @@
+.welcome {
+  margin-top: 135px;
+  margin-bottom: 30px;
+
+  &__title {
+
+    font-size: 44px;
+    line-height: 52px;
+
+    @include media(xs) {
+      font-size: 30px;
+      line-height: 36px;
+    }
+
+  }
+
+  &__text {
+  }
+}

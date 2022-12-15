@@ -1,0 +1,111 @@
+.change-theme-btn {
+  display: inline-flex;
+  width: 32px;
+  height: 32px;
+  margin-left: 20px;
+  order: 2;
+
+  @include media(xs) {
+    order: 0;
+    margin-right: 15px;
+  }
+
+  &::after {
+    content: "";
+    background-image: url(../images/theme.png);
+    background-size: 100%;
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.change-theme-input {
+  &:checked {
+    & ~ .page {
+      background-color: $color-blue-deep;
+      background-image: url("../images/bg-dark.jpg");
+      color: $color-white;
+
+      & .paragraph {
+        color: rgba($color-white, 0.8);
+      }
+
+      & .menu__link {
+        color: $color-white;
+
+        &:hover:after {
+          background: linear-gradient(96.73deg, #53F3CD 6.73%, rgba(83, 243, 205, 0) 116.9%);
+        }
+      }
+
+      & .title__accent {
+        color: $color-blue;
+      }
+
+      & .link {
+        color: $color-green-neon;
+
+        &:hover,
+        &:focus {
+          color: $color-green-neon-dark;
+
+          &::after {
+            background-color: $color-green-neon-dark;
+          }
+        }
+
+
+        &::after {
+          background-color: $color-green-neon;
+        }
+      }
+
+      & .whitebox {
+        background: $color-blue-deep;
+      }
+
+      & .money::before {
+        color: $color-white;
+      }
+
+      & .quote__text::before {
+        content: url("../images/quote-icon-dark.svg");
+      }
+
+      & .video__content,
+      & .video__content::before,
+      & .video__content::after,
+      & .video__tablet,
+      & .link-frame {
+        border-color: $color-gray-dark;
+      }
+
+      & .link-frame:hover,
+      & .link-frame:focus {
+        border-color: $color-green-neon-dark;
+
+        & .link {
+          color: $color-green-neon-dark;
+
+          &::after {
+            background-color: $color-green-neon-dark;
+          }
+        }
+      }
+
+      & .form__input {
+        background-color: #161926;
+        border-bottom: 1px solid rgba($color-white, 0.1);
+        color: rgba($color-white, 0.5);
+      }
+
+      & .footer {
+        color: rgba($color-white, 0.6);
+      }
+
+      & .flink {
+        color: $color-white;
+      }
+    }
+  }
+}
