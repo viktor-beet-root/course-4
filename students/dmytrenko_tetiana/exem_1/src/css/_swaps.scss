@@ -1,0 +1,117 @@
+.swaps {
+    .swaps__container {
+        background-image: url(../images/features-background-image.jpg);
+        background-repeat: no-repeat;
+        background-size: 50%;
+
+        @media screen and (max-width: 992px) {
+            background-size: 54%;
+        }
+
+        @media screen and (max-width: 768px) {
+            background-image: none;
+        }
+
+        &>.row>[class^="col-"]:last-child {
+            margin: 35px 0;
+            background-color: rgba(255, 255, 255, .9);
+            padding-top: 0;
+            padding-bottom: 0;
+
+            .box-switcher__input:checked~main & {
+                background-color: rgba(22, 25, 38, .9);
+            }
+
+            @media screen and (max-width: 768px) {
+                margin: 10px 0;
+            }
+
+            @media screen and (max-width: 480px) {
+                margin: 0;
+            }
+        }
+
+
+        @media screen and (max-width: 768px) {
+            &>.row>[class^="col-"]:first-child {
+                display: none;
+            }
+        }
+    }
+
+    .swaps__wrapper {
+        display: flex;
+        justify-content: space-around;
+        padding-top: 44px;
+        padding-bottom: 30px;
+
+        @media screen and (max-width: 1200px) {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    }
+
+    .swaps__element {
+        margin-bottom: 25px;
+        @include h3(24px, 48px);
+        @include p(18px, 26px);
+
+        @media screen and (max-width: 992px) {
+            @include h3(23px, 45px);
+            @include p(17px, 23px);
+        }
+
+        max-width: 300px;
+
+        @media screen and (max-width: 1200px) {
+            margin-bottom: 0;
+        }
+
+        h3,
+        p {
+            margin-bottom: 7px;
+
+            @media screen and (max-width: 992px) {
+                margin-bottom: 0;
+            }
+        }
+
+        .element__link {
+            max-width: 300px;
+            height: 90px;
+            border: 1px solid $text-accent;
+            position: relative;
+            transition: all .3s ease-in-out;
+
+            &:hover {
+                border-color: $hover-button-red;
+
+                .box-switcher__input:checked~main & {
+                    border-color: $button-green;
+                }
+            }
+        }
+
+        a {
+            @extend %red-link;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+
+            &::after {
+                @extend %red-link-line;
+                width: 112px;
+                left: 9%;
+
+                @media screen and (max-width: 576px) {
+                    width: 95px;
+                }
+            }
+
+            &:hover {
+                color: $hover-button-red;
+            }
+        }
+    }
+}

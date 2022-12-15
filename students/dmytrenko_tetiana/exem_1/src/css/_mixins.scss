@@ -1,0 +1,145 @@
+@mixin font-face($_font-name, $_font-file, $_font-weight, $_font-style: normal) {
+    @font-face {
+        font-family: $_font-name;
+        font-style: $_font-style;
+        font-weight: $_font-weight;
+        src: local(''),
+        url('#{$path-fonts}#{$_font-file}.woff2') format('woff2'),
+        url('#{$path-fonts}#{$_font-file}.woff') format('woff');
+    }
+}
+
+@mixin h3-and-span($font-size, $line-height, $color: $main-color, $font-family: $title-font, $text-align: left) {
+    h3 {
+        font-family: $font-family;
+        font-size: $font-size;
+        line-height: $line-height;
+        text-align: $text-align;
+        color: $color;
+
+        .box-switcher__input:checked~main & {
+            color: $contrast-color;
+        }
+
+        span {
+            color: $selection-color-light;
+            font-style: italic;
+
+            .box-switcher__input:checked~main & {
+                color: $selection-color-dark;
+                font-style: italic;
+            }
+        }
+    }
+}
+
+@mixin h3($font-size, $line-height, $color: $main-color, $font-family: $title-font, $text-align: left) {
+    h3 {
+        font-family: $font-family;
+        font-size: $font-size;
+        line-height: $line-height;
+        text-align: $text-align;
+        color: $color;
+
+        .box-switcher__input:checked~main & {
+            color: $contrast-color;
+        }
+    }
+}
+
+@mixin p($font-size: 18px, $line-height: 26px, $color: $main-color, $font-family: $main-font, $font-weight: 300, $text-align: left, $opacity: 0.8) {
+    p {
+        font-family: $font-family;
+        font-size: $font-size;
+        line-height: $line-height;
+        text-align: $text-align;
+        color: $color;
+        font-weight: $font-weight;
+        opacity: $opacity;
+
+        .box-switcher__input:checked~main & {
+            color: $contrast-color;
+            opacity: 0.8
+        }
+    }
+}
+
+// @mixin container($container-width: 1200px, $gap, $m-top: 0, $m-bottom: 0, $m-left: auto, $m-right: auto) {
+//     max-width: $container-width;
+//     padding: $gap;
+//     margin-top: $m-top;
+//     margin-bottom: $m-bottom;
+//     margin-left: $m-left;
+//     margin-right: $m-right;
+// }
+
+@mixin grid($count) {
+    @include container;
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 (-$gap);
+    }
+
+    [class^="col-"] {
+        padding: $gap;
+        box-sizing: border-box;
+    }
+
+    @for $i from 1 through $count {
+        $width: math.div(100%, $count) * $i;
+
+        .col-#{$i} {
+            max-width: $width;
+            width: 100%;
+            flex-basis: $width;
+        }
+    }
+
+    @each $breackpoint,
+    $breackpoint-value in $breack-points {
+        @media screen and (max-width: $breackpoint-value) {
+            @for $i from 1 through $count {
+                $width: math.div(100%, $count) * $i;
+
+                .col-#{$breackpoint}-#{$i} {
+                    max-width: $width;
+                    width: 100%;
+                    flex-basis: $width;
+                }
+            }
+        }
+    }
+}
+
+@mixin media($point) {
+    @media screen and (max-width: map-get($breack-points, $point)) {
+        @content;
+    }
+}
+
+@mixin media-min($point) {
+    @media screen and (min-width: map-get($breack-points, $point)) {
+        @content;
+    }
+}
+
+@mixin container {
+    .container {
+        max-width: $default-width;
+        padding: $gap;
+        margin: 0 auto;
+    }
+}
+
+@mixin visuality-hidden {
+    border: none !important;
+    height: 1px !important;
+    width: 1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    clip: rect(0, 0, 0, 0) !important;
+    margin: -1px !important;
+}

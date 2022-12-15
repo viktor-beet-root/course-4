@@ -1,0 +1,87 @@
+.footer {
+    @include p;
+
+    @media screen and (max-width: 768px) {
+        @include p(17px, 10px);
+    }
+
+    .border {
+        border-top: 1px solid $text-accent;
+        padding-top: $gap;
+    }
+
+    p {
+        opacity: 0.6;
+    }
+
+    a {
+        text-decoration: none;
+        font-family: $main-font;
+        font-size: 16px;
+        line-height: 26px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        color: $main-color;
+
+        @media screen and (max-width: 768px) {
+            font-size: 14px;
+            line-height: 10px;
+        }
+
+        &:hover {
+            color: #f82e13;
+        }
+    }
+
+    .copyright {
+        display: flex;
+        justify-content: flex-start;
+
+        @media screen and (max-width: 1200px) {
+            justify-content: center;
+            padding-top: 7px;
+            padding-bottom: 7px;
+        }
+
+        p {
+            align-self: center;
+        }
+    }
+
+    .sight-link {
+        display: flex;
+        justify-content: center;
+
+        @media screen and (max-width: 1200px) {
+            padding-top: 7px;
+            padding-bottom: 7px;
+        }
+
+        p {
+            align-self: center;
+        }
+
+        a {
+            margin-left: 12px;
+        }
+    }
+
+    .links {
+        display: flex;
+        justify-content: flex-end;
+
+        @media screen and (max-width: 1200px) {
+            justify-content: center;
+            padding-top: 7px;
+            padding-bottom: 7px;
+        }
+
+        a {
+            align-self: center;
+
+            &:last-child {
+                margin-left: 32px;
+            }
+        }
+    }
+}

@@ -1,0 +1,107 @@
+.background {
+    background-image: url(../images/First-Screen-Bg-Image.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    margin-top: -32px;
+
+    .box-switcher__input:checked~& {
+        background-color: $bg-dark-color;
+    }
+}
+
+.main-screen {
+    &__wrapper {
+        max-width: 523px;
+        margin-top: 120px;
+        margin-bottom: 30px;
+
+        @media screen and (max-width: 1200px) {
+            margin-top: 82px;
+            margin-bottom: 0px;
+        }
+
+        @media screen and (max-width: 992px) {
+            margin-top: 10px;
+        }
+
+        h1 {
+            font-family: $title-font;
+            font-size: 44px;
+            line-height: 52px;
+            text-align: left;
+            color: $main-color;
+            margin-bottom: 20px;
+
+            .box-switcher__input:checked~main & {
+                color: $contrast-color;
+            }
+
+            @media screen and (max-width: 768px) {
+                max-width: 73%;
+                font-size: 33px;
+                line-height: 41px;
+
+            }
+
+            @media screen and (max-width: 480px) {
+                max-width: 100%;
+            }
+
+            span {
+                color: $selection-color-light;
+                font-style: italic;
+
+                .box-switcher__input:checked~main & {
+                    color: $selection-color-dark;
+                }
+            }
+        }
+
+        p {
+            font-family: $main-font;
+            font-size: 18px;
+            line-height: 26px;
+            text-align: left;
+            color: $main-color;
+            margin-bottom: 50px;
+
+            .box-switcher__input:checked~main & {
+                color: $contrast-color;
+                opacity: 0.8
+            }
+
+            @media screen and (max-width: 992px) {
+                margin-bottom: 20px;
+            }
+        }
+
+        a {
+            @extend %red-link;
+
+            // .box-switcher__input:checked~main & {
+            //     background-color: red;
+            // }
+
+            &::after {
+                @extend %red-link-line;
+                width: 112px;
+                left: 9%;
+
+                @media screen and (max-width: 576px) {
+                    width: 97px;
+                }
+            }
+
+            &:hover {
+                color: $hover-button-red;
+            }
+        }
+    }
+
+}

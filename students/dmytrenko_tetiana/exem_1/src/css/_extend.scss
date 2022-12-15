@@ -1,0 +1,37 @@
+%red-link {
+    display: inline-block;
+    font-family: $main-font;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 20px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $button-red;
+    outline: none;
+    position: relative;
+    transition: all .3s ease-in-out;
+
+    .box-switcher__input:checked~main & {
+        color: $button-green;
+    }
+
+    @media screen and (max-width: 576px) {
+        font-size: 17px;
+        line-height: 16px;
+    }
+}
+
+%red-link-line {
+    content: '';
+    display: block;
+    height: 13px;
+    background-color: $button-red;
+    opacity: 0.3;
+    position: absolute;
+    top: 50%;
+
+    .box-switcher__input:checked~main & {
+        background-color: $button-green;
+    }
+}

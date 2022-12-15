@@ -1,0 +1,97 @@
+.client-reviews {
+    @include h3-and-span(40px, 39px);
+
+    @media screen and (max-width: 768px) {
+        @include h3-and-span(30px, 38px);
+    }
+
+    @include p;
+
+    @media screen and (max-width: 768px) {
+        @include p(17px, 24px);
+    }
+
+
+    [class^="col-"] {
+        display: flex;
+    }
+
+    .client-reviews__title {
+        margin-bottom: 20px;
+    }
+
+    .client-reviews__text {
+        max-width: 374px;
+        margin-bottom: 50px;
+
+        @media screen and (max-width: 1200px) {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+[class^="col-"]:nth-child(1) {
+    .list__content {
+        background-image: url(../images/bg-1.jpg);
+    }
+}
+
+[class^="col-"]:nth-child(2) {
+    .list__content {
+        background-image: url(../images/bg-2.jpg);
+    }
+}
+
+[class^="col-"]:nth-child(3) {
+    .list__content {
+        background-image: url(../images/bg-3.jpg);
+    }
+}
+
+.list {
+    &__content {
+        padding: 30px 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        height: auto;
+
+        @media screen and (max-width: 480px) {
+            padding: 20px 15px;
+        }
+
+        @media screen and (max-width: 480px) {
+            background-size: 121%;
+        }
+
+        .content__text {
+            font-family: $main-font;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 26px;
+            color: $contrast-color;
+            margin-bottom: 30px;
+
+            flex-grow: 1;
+        }
+
+        .content__span {
+            display: block;
+            font-family: $title-font;
+            font-style: italic;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 20px;
+            letter-spacing: 0.08em;
+            color: $contrast-color;
+        }
+    }
+}

@@ -1,0 +1,198 @@
+.contact {
+    .border {
+        border-top: 1px solid $text-accent;
+
+        .box-switcher__input:checked~main & {
+            border-top: 1px solid $border-color-contrast;
+        }
+    }
+
+    [class^=col-]:last-child {
+        justify-content: flex-end;
+
+        @media screen and (max-width: 992px) {
+            justify-content: center;
+        }
+    }
+
+    [class^="col-"] {
+        display: flex;
+
+        @media screen and (max-width: 992px) {
+            justify-content: center;
+        }
+    }
+
+    @include h3-and-span(40px, 39px);
+
+    @media screen and (max-width: 768px) {
+        @include h3-and-span(30px, 38px);
+    }
+
+    @include p;
+
+    @media screen and (max-width: 768px) {
+        @include p(17px, 24px);
+    }
+
+    h3 {
+        margin-bottom: 20px;
+    }
+
+    .text {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+
+        @media screen and (max-width: 992px) {
+            margin-top: 30px;
+        }
+    }
+
+    .form {
+        &__about-user {
+            display: flex;
+            flex-direction: column;
+            min-width: 100%;
+
+            @media screen and (min-width: 576px) {
+                min-width: 470px;
+            }
+        }
+    }
+}
+
+.form {
+
+    input {
+        padding-top: 8px;
+        padding-bottom: 8px;
+        margin-top: 30px;
+
+        @media screen and (max-width: 768px) {
+            margin-top: 18px;
+        }
+
+        @media screen and (max-width: 576px) {
+            margin-top: 5px;
+        }
+    }
+
+    textarea {
+        height: 22px;
+        padding-top: 12px;
+        padding-bottom: 10px;
+        margin-top: 32px;
+        resize: none;
+        overflow: hidden;
+
+        @media screen and (max-width: 768px) {
+            margin-top: 18px;
+        }
+
+        @media screen and (max-width: 576px) {
+            margin-top: 5px;
+        }
+    }
+
+    input,
+    textarea {
+        border: none;
+        border-bottom: 1px solid $text-accent;
+        position: relative;
+        font-family: $main-font;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 26px;
+        color: $main-color;
+        opacity: 0.8;
+
+        .box-switcher__input:checked~main & {
+            background-color: $bg-dark-color;
+            border-bottom: 1px solid $border-color-contrast;
+            color: $contrast-color;
+        }
+
+        &::-webkit-input-placeholder {
+            font-family: $title-font;
+            font-style: italic;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 20px;
+            letter-spacing: 0.08em;
+            color: $main-color;
+            opacity: 0.5;
+
+            .box-switcher__input:checked~main & {
+                color: $contrast-color;
+                opacity: 0.5;
+            }
+        }
+
+        &::-moz-placeholder {
+            font-family: $title-font;
+            font-style: italic;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 20px;
+            letter-spacing: 0.08em;
+            color: $main-color;
+            opacity: 0.5;
+        }
+
+        /* Firefox 19+ */
+        &:-moz-placeholder {
+            font-family: $title-font;
+            font-style: italic;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 20px;
+            letter-spacing: 0.08em;
+            color: $main-color;
+            opacity: 0.5;
+        }
+
+        /* Firefox 18- */
+        &:-ms-input-placeholder {
+            font-family: $title-font;
+            font-style: italic;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 20px;
+            letter-spacing: 0.08em;
+            color: $main-color;
+            opacity: 0.5;
+        }
+    }
+
+    button {
+        border: none;
+        width: 165px;
+        padding: 0;
+        background: unset;
+        margin-top: 40px;
+
+        @media screen and (max-width: 992px) {
+            margin: 40px auto 0;
+        }
+
+        span {
+            @extend %red-link;
+
+            &::after {
+                @extend %red-link-line;
+                width: 163px;
+                left: 6%;
+
+                @media screen and (max-width: 576px) {
+                    width: 139px;
+                }
+            }
+
+            &:hover {
+                color: $hover-button-red;
+            }
+        }
+
+    }
+}
